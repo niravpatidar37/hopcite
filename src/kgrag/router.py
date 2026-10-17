@@ -105,7 +105,7 @@ FEW_SHOT = [
      _shot("graph", 0.8, "count", ["Synopsys"], [["OFFERS"]], "out", "Product")),
     ("What does Synopsys say about its approach to research and development?",
      _shot("vector", 0.9, "lookup", ["Synopsys"], [], "any", None)),
-    ("What is the capital of France?",
+    ("Who painted the Mona Lisa?",
      _shot("out_of_scope", 0.95, "lookup", [], [], "any", None)),
 ]  # fmt: skip
 

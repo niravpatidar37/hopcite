@@ -70,6 +70,15 @@ def test_committed_benchmark_is_well_formed() -> None:
             assert q.provenance
 
 
+def test_router_few_shots_do_not_leak_benchmark_questions() -> None:
+    from kgrag.router import FEW_SHOT
+
+    bench = [set(q.question.lower().split()) for q in load_questions(ROOT / "bench" / "questions.jsonl")]
+    for shot, _ in FEW_SHOT:
+        words = set(shot.lower().split())
+        assert max(len(words & b) / len(words | b) for b in bench) < 0.5, shot
+
+
 def test_low_confidence_falls_back_to_both_paths() -> None:
     out = {
         "route": "graph",
