@@ -1,0 +1,231 @@
+{
+ "entities": [
+  {
+   "name": "QUALCOMM Incorporated",
+   "type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0001",
+   "confidence": 0.95,
+   "aliases": [
+    "QUALCOMM"
+   ]
+  },
+  {
+   "name": "Taiwan Semiconductor Manufacturing Company",
+   "type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0029",
+   "confidence": 0.95,
+   "aliases": [
+    "TSMC"
+   ]
+  },
+  {
+   "name": "Samsung Electronics",
+   "type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0029",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Global Foundries",
+   "type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0029",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Snapdragon",
+   "type": "Product",
+   "chunk_id": "QCOM-10-K-2025#c0001",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Qualcomm Dragonwing",
+   "type": "Product",
+   "chunk_id": "QCOM-10-K-2025#c0001",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Qualcomm Oryon",
+   "type": "Technology",
+   "chunk_id": "QCOM-10-K-2025#c0026",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Kryo",
+   "type": "Technology",
+   "chunk_id": "QCOM-10-K-2025#c0026",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Hexagon NPU",
+   "type": "Technology",
+   "chunk_id": "QCOM-10-K-2025#c0026",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Adreno GPU",
+   "type": "Technology",
+   "chunk_id": "QCOM-10-K-2025#c0026",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "QCT",
+   "type": "Segment",
+   "chunk_id": "QCOM-10-K-2025#c0004",
+   "confidence": 0.95,
+   "aliases": [
+    "Qualcomm CDMA Technologies"
+   ]
+  },
+  {
+   "name": "QTL",
+   "type": "Segment",
+   "chunk_id": "QCOM-10-K-2025#c0004",
+   "confidence": 0.95,
+   "aliases": [
+    "Qualcomm Technology Licensing"
+   ]
+  },
+  {
+   "name": "QSI",
+   "type": "Segment",
+   "chunk_id": "QCOM-10-K-2025#c0004",
+   "confidence": 0.95,
+   "aliases": [
+    "Qualcomm Strategic Initiatives"
+   ]
+  },
+  {
+   "name": "5G",
+   "type": "Technology",
+   "chunk_id": "QCOM-10-K-2025#c0021",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "6G",
+   "type": "Technology",
+   "chunk_id": "QCOM-10-K-2025#c0021",
+   "confidence": 0.8,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "QUALCOMM Incorporated",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Snapdragon",
+   "object_type": "Product",
+   "chunk_id": "QCOM-10-K-2025#c0001",
+   "evidence": "sales of integrated circuit products, including our Snapdragon® ... families",
+   "confidence": 0.95
+  },
+  {
+   "subject": "QUALCOMM Incorporated",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Qualcomm Dragonwing",
+   "object_type": "Product",
+   "chunk_id": "QCOM-10-K-2025#c0001",
+   "evidence": "sales of integrated circuit products, including ... Qualcomm Dragonwing™ families",
+   "confidence": 0.95
+  },
+  {
+   "subject": "QUALCOMM Incorporated",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "QCT",
+   "object_type": "Segment",
+   "chunk_id": "QCOM-10-K-2025#c0004",
+   "evidence": "our QCT (Qualcomm CDMA Technologies) semiconductor business",
+   "confidence": 0.95
+  },
+  {
+   "subject": "QUALCOMM Incorporated",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "QTL",
+   "object_type": "Segment",
+   "chunk_id": "QCOM-10-K-2025#c0004",
+   "evidence": "our QTL (Qualcomm Technology Licensing) licensing business",
+   "confidence": 0.95
+  },
+  {
+   "subject": "QUALCOMM Incorporated",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "QSI",
+   "object_type": "Segment",
+   "chunk_id": "QCOM-10-K-2025#c0004",
+   "evidence": "Our QSI (Qualcomm Strategic Initiatives) reportable segment",
+   "confidence": 0.95
+  },
+  {
+   "subject": "QUALCOMM Incorporated",
+   "subject_type": "Company",
+   "relation": "USES_TECHNOLOGY",
+   "object": "AI",
+   "object_type": "Technology",
+   "chunk_id": "QCOM-10-K-2025#c0001",
+   "evidence": "development and commercialization of foundational technologies, including on-device artificial intelligence (AI)",
+   "confidence": 0.95
+  },
+  {
+   "subject": "QUALCOMM Incorporated",
+   "subject_type": "Company",
+   "relation": "USES_TECHNOLOGY",
+   "object": "5G",
+   "object_type": "Technology",
+   "chunk_id": "QCOM-10-K-2025#c0021",
+   "evidence": "foundational technologies for 5G",
+   "confidence": 0.9
+  },
+  {
+   "subject": "QUALCOMM Incorporated",
+   "subject_type": "Company",
+   "relation": "USES_TECHNOLOGY",
+   "object": "6G",
+   "object_type": "Technology",
+   "chunk_id": "QCOM-10-K-2025#c0021",
+   "evidence": "we envision 6G will integrate advanced capabilities",
+   "confidence": 0.8
+  },
+  {
+   "subject": "TSMC",
+   "subject_type": "Company",
+   "relation": "MANUFACTURES_FOR",
+   "object": "QUALCOMM Incorporated",
+   "object_type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0029",
+   "evidence": "primary foundry suppliers ... include Taiwan Semiconductor Manufacturing Company (TSMC)",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Samsung Electronics",
+   "subject_type": "Company",
+   "relation": "MANUFACTURES_FOR",
+   "object": "QUALCOMM Incorporated",
+   "object_type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0029",
+   "evidence": "primary foundry suppliers ... include ... Samsung Electronics",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Global Foundries",
+   "subject_type": "Company",
+   "relation": "MANUFACTURES_FOR",
+   "object": "QUALCOMM Incorporated",
+   "object_type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0029",
+   "evidence": "primary foundry suppliers ... include ... Global Foundries",
+   "confidence": 0.95
+  }
+ ]
+}

@@ -1,0 +1,4575 @@
+[
+ {
+  "id": "company:ablecom-technology",
+  "name": "Ablecom Technology, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Ablecom",
+   "Ablecom Technology, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:advanced-micro-devices",
+  "name": "Advanced Micro Devices, Inc.",
+  "type": "Company",
+  "aliases": [
+   "AMD",
+   "Advanced Micro Devices, Inc."
+  ],
+  "mentions": 17
+ },
+ {
+  "id": "company:advanced-semiconductor-engineering",
+  "name": "Advanced Semiconductor Engineering, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Advanced Semiconductor Engineering",
+   "Advanced Semiconductor Engineering, Inc."
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "company:alchip-technologies",
+  "name": "Alchip Technologies",
+  "type": "Company",
+  "aliases": [
+   "Alchip",
+   "Alchip Technologies"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:alibaba",
+  "name": "Alibaba Group",
+  "type": "Company",
+  "aliases": [
+   "Alibaba Group"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:alphabet",
+  "name": "Alphabet Inc.",
+  "type": "Company",
+  "aliases": [
+   "Alphabet Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:altera",
+  "name": "Altera",
+  "type": "Company",
+  "aliases": [
+   "Altera"
+  ],
+  "mentions": 3
+ },
+ {
+  "id": "company:altium",
+  "name": "Altium Limited",
+  "type": "Company",
+  "aliases": [
+   "Altium Limited"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:amazon",
+  "name": "Amazon, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Amazon",
+   "Amazon, Inc."
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "company:ambarella",
+  "name": "Ambarella, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Ambarella, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:amkor-technology",
+  "name": "Amkor Technology, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Amkor Technology",
+   "Amkor Technology, Inc."
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "company:analog-devices",
+  "name": "Analog Devices, Inc.",
+  "type": "Company",
+  "aliases": [
+   "ADI",
+   "Analog Devices",
+   "Analog Devices, Inc."
+  ],
+  "mentions": 5
+ },
+ {
+  "id": "company:ansys",
+  "name": "ANSYS, Inc.",
+  "type": "Company",
+  "aliases": [
+   "ANSYS, Inc.",
+   "Ansys",
+   "Ansys, Inc."
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "company:apple",
+  "name": "Apple Inc.",
+  "type": "Company",
+  "aliases": [
+   "Apple",
+   "Apple Inc."
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "company:applied-materials",
+  "name": "Applied Materials, Inc.",
+  "type": "Company",
+  "aliases": [
+   "AMAT",
+   "Applied Materials, Inc."
+  ],
+  "mentions": 8
+ },
+ {
+  "id": "company:arm",
+  "name": "Arm Limited",
+  "type": "Company",
+  "aliases": [
+   "Arm Limited"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:arm-artisan-foundation-ip-business",
+  "name": "Arm Artisan foundation IP business",
+  "type": "Company",
+  "aliases": [
+   "Arm Artisan",
+   "Arm Artisan foundation IP business"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:asm-international",
+  "name": "ASM International",
+  "type": "Company",
+  "aliases": [
+   "ASM International"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:asml",
+  "name": "ASML Holding N.V.",
+  "type": "Company",
+  "aliases": [
+   "ASML",
+   "ASML Holding N.V."
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "company:astera-labs",
+  "name": "Astera Labs, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Astera Labs, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:at-and-t-bell-labs",
+  "name": "AT&T/Bell Labs",
+  "type": "Company",
+  "aliases": [
+   "AT&T/Bell Labs"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:ayar-labs",
+  "name": "Ayar Labs, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Ayar Labs",
+   "Ayar Labs, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:baidu",
+  "name": "Baidu, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Baidu, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:berkeley-design-automation",
+  "name": "Berkeley Design Automation",
+  "type": "Company",
+  "aliases": [
+   "Berkeley Design Automation"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:broadcom",
+  "name": "Broadcom Inc.",
+  "type": "Company",
+  "aliases": [
+   "AVGO",
+   "Broadcom",
+   "Broadcom Corporation",
+   "Broadcom Inc."
+  ],
+  "mentions": 11
+ },
+ {
+  "id": "company:brocade-communications-systems",
+  "name": "Brocade Communications Systems, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Brocade Communications Systems, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:ca",
+  "name": "CA, Inc.",
+  "type": "Company",
+  "aliases": [
+   "CA, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:cadence-design-systems",
+  "name": "Cadence Design Systems, Inc.",
+  "type": "Company",
+  "aliases": [
+   "CDNS",
+   "Cadence",
+   "Cadence Design Systems",
+   "Cadence Design Systems, Inc."
+  ],
+  "mentions": 11
+ },
+ {
+  "id": "company:celestial-ai",
+  "name": "Celestial AI, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Celestial",
+   "Celestial AI, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:ceva",
+  "name": "CEVA, Inc.",
+  "type": "Company",
+  "aliases": [
+   "CEVA, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:changxin-memory-technologies",
+  "name": "ChangXin Memory Technologies, Inc.",
+  "type": "Company",
+  "aliases": [
+   "CXMT",
+   "ChangXin Memory Technologies, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:cisco-systems",
+  "name": "Cisco Systems, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Cisco",
+   "Cisco Systems, Inc."
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "company:commodore-international",
+  "name": "Commodore International, Ltd.",
+  "type": "Company",
+  "aliases": [
+   "Commodore International, Ltd."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:compuware-technology",
+  "name": "Compuware Technology, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Compuware",
+   "Compuware Technology, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:conexant-systems",
+  "name": "Conexant Systems, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Conexant Systems, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:credo-technology",
+  "name": "Credo Technology Group Holding Ltd",
+  "type": "Company",
+  "aliases": [
+   "Credo Technology Group Holding Ltd"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:cypress-semiconductor",
+  "name": "Cypress Semiconductor Corporation",
+  "type": "Company",
+  "aliases": [
+   "Cypress Semiconductor Corporation"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:dell",
+  "name": "Dell",
+  "type": "Company",
+  "aliases": [
+   "Dell"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:denso",
+  "name": "DENSO Corporation",
+  "type": "Company",
+  "aliases": [
+   "DENSO",
+   "DENSO Corporation"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:dexcom",
+  "name": "DexCom, Inc.",
+  "type": "Company",
+  "aliases": [
+   "DexCom, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:esmc",
+  "name": "ESMC",
+  "type": "Company",
+  "aliases": [
+   "ESMC"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:fabrinet",
+  "name": "Fabrinet",
+  "type": "Company",
+  "aliases": [
+   "Fabrinet"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:foxconn-technology",
+  "name": "Foxconn Technology Group",
+  "type": "Company",
+  "aliases": [
+   "Foxconn",
+   "Foxconn Technology Group"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "company:general-motors",
+  "name": "General Motors Corporation",
+  "type": "Company",
+  "aliases": [
+   "General Motors Corporation"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:giga-design-automation",
+  "name": "Giga Design Automation",
+  "type": "Company",
+  "aliases": [
+   "Giga Design Automation"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:global-unichip",
+  "name": "Global Unichip Corporation",
+  "type": "Company",
+  "aliases": [
+   "GUC",
+   "Global Unichip Corporation"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "company:globalfoundries",
+  "name": "GLOBALFOUNDRIES Inc.",
+  "type": "Company",
+  "aliases": [
+   "GF",
+   "GLOBALFOUNDRIES Inc.",
+   "Global Foundries",
+   "GlobalFoundries"
+  ],
+  "mentions": 3
+ },
+ {
+  "id": "company:google",
+  "name": "Google",
+  "type": "Company",
+  "aliases": [
+   "Google"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:gray-cary-ware-and-freidenrich",
+  "name": "Gray, Cary, Ware & Freidenrich",
+  "type": "Company",
+  "aliases": [
+   "Gray, Cary, Ware & Freidenrich"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:hewlett-packard",
+  "name": "Hewlett-Packard Company",
+  "type": "Company",
+  "aliases": [
+   "Hewlett-Packard Company"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:hewlett-packard-enterprise",
+  "name": "Hewlett-Packard Enterprise",
+  "type": "Company",
+  "aliases": [
+   "Hewlett-Packard Enterprise"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:hitachi",
+  "name": "Hitachi, Ltd.",
+  "type": "Company",
+  "aliases": [
+   "Hitachi, Ltd."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:hitachi-high-tech",
+  "name": "Hitachi High-Tech Corporation",
+  "type": "Company",
+  "aliases": [
+   "Hitachi High-Tech Corporation"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:hon-hai-precision-industry",
+  "name": "Hon Hai Precision Industry Co., Ltd.",
+  "type": "Company",
+  "aliases": [
+   "Hon Hai Precision Industry Co., Ltd."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:huada-empyrean",
+  "name": "Huada Empyrean",
+  "type": "Company",
+  "aliases": [
+   "Huada Empyrean"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:huawei-technologies",
+  "name": "Huawei Technologies Co. Ltd.",
+  "type": "Company",
+  "aliases": [
+   "Huawei",
+   "Huawei Technologies Co. Ltd."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:hume-industries",
+  "name": "Hume Industries Ltd.",
+  "type": "Company",
+  "aliases": [
+   "Hume Industries Ltd."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:infineon-technologies",
+  "name": "Infineon Technologies AG",
+  "type": "Company",
+  "aliases": [
+   "Infineon",
+   "Infineon Technologies AG"
+  ],
+  "mentions": 4
+ },
+ {
+  "id": "company:integrated-circuit-systems",
+  "name": "Integrated Circuit Systems, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Integrated Circuit Systems, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:integrated-device-technology",
+  "name": "Integrated Device Technology, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Integrated Device Technology, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:intel",
+  "name": "Intel Corporation",
+  "type": "Company",
+  "aliases": [
+   "INTC",
+   "Intel",
+   "Intel Corporation"
+  ],
+  "mentions": 32
+ },
+ {
+  "id": "company:jasm",
+  "name": "JASM",
+  "type": "Company",
+  "aliases": [
+   "JASM"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "company:keysight-technologies",
+  "name": "Keysight Technologies, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Keysight Technologies, Inc."
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "company:king-yuan-electronics",
+  "name": "King Yuan Electronics Company",
+  "type": "Company",
+  "aliases": [
+   "KYEC",
+   "King Yuan Electronics Company"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:kioxia",
+  "name": "Kioxia Holdings Corporation",
+  "type": "Company",
+  "aliases": [
+   "Kioxia Holdings Corporation"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:kla",
+  "name": "KLA Corporation",
+  "type": "Company",
+  "aliases": [
+   "KLA",
+   "KLA Corporation",
+   "KLAC"
+  ],
+  "mentions": 7
+ },
+ {
+  "id": "company:kla-tencor",
+  "name": "KLA-Tencor Corporation",
+  "type": "Company",
+  "aliases": [
+   "KLA-Tencor Corporation"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:lam-research",
+  "name": "Lam Research Corporation",
+  "type": "Company",
+  "aliases": [
+   "LRCX",
+   "Lam",
+   "Lam Research",
+   "Lam Research Corporation"
+  ],
+  "mentions": 7
+ },
+ {
+  "id": "company:lasertec",
+  "name": "Lasertec, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Lasertec, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:lattice-semiconductor",
+  "name": "Lattice Semiconductor Corporation",
+  "type": "Company",
+  "aliases": [
+   "Lattice Semiconductor Corporation"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:leia",
+  "name": "Leia Inc.",
+  "type": "Company",
+  "aliases": [
+   "Leia Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:lenovo",
+  "name": "Lenovo",
+  "type": "Company",
+  "aliases": [
+   "Lenovo"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:leshan-phoenix-semiconductor",
+  "name": "Leshan-Phoenix Semiconductor Company Limited",
+  "type": "Company",
+  "aliases": [
+   "Leshan",
+   "Leshan-Phoenix Semiconductor Company Limited"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:leshan-radio",
+  "name": "Leshan Radio Company Ltd.",
+  "type": "Company",
+  "aliases": [
+   "Leshan Radio",
+   "Leshan Radio Company Ltd."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:life-technologies",
+  "name": "Life Technologies Corporation",
+  "type": "Company",
+  "aliases": [
+   "Life Technologies Corporation"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:lightmatter",
+  "name": "Lightmatter, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Lightmatter",
+   "Lightmatter, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:lsi",
+  "name": "LSI Corporation",
+  "type": "Company",
+  "aliases": [
+   "LSI Corporation"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "company:lucent",
+  "name": "Lucent",
+  "type": "Company",
+  "aliases": [
+   "Lucent"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:lumentum",
+  "name": "Lumentum Holdings Inc.",
+  "type": "Company",
+  "aliases": [
+   "Lumentum Holdings Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:macom-technology-solutions",
+  "name": "MACOM Technology Solutions Holdings, Inc.",
+  "type": "Company",
+  "aliases": [
+   "MACOM Technology Solutions Holdings, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:marvell-technology",
+  "name": "Marvell Technology, Inc.",
+  "type": "Company",
+  "aliases": [
+   "MRVL",
+   "MTI",
+   "Marvell Technology Group, Ltd.",
+   "Marvell Technology, Inc."
+  ],
+  "mentions": 5
+ },
+ {
+  "id": "company:mediatek",
+  "name": "MediaTek Inc.",
+  "type": "Company",
+  "aliases": [
+   "MediaTek Inc."
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "company:mellanox",
+  "name": "Mellanox",
+  "type": "Company",
+  "aliases": [
+   "Mellanox"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:mentor-graphics",
+  "name": "Mentor Graphics",
+  "type": "Company",
+  "aliases": [
+   "Mentor Graphics"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:meta",
+  "name": "Meta",
+  "type": "Company",
+  "aliases": [
+   "Meta"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:microchip-technology",
+  "name": "Microchip Technology Incorporated",
+  "type": "Company",
+  "aliases": [
+   "MCHP",
+   "Microchip Technology Inc.",
+   "Microchip Technology Incorporated"
+  ],
+  "mentions": 3
+ },
+ {
+  "id": "company:micron-technology",
+  "name": "Micron Technology, Inc.",
+  "type": "Company",
+  "aliases": [
+   "MU",
+   "Micron Technology, Inc."
+  ],
+  "mentions": 8
+ },
+ {
+  "id": "company:microsemi",
+  "name": "Microsemi Corporation",
+  "type": "Company",
+  "aliases": [
+   "Microsemi Corporation"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:microsoft",
+  "name": "Microsoft Corporation",
+  "type": "Company",
+  "aliases": [
+   "Microsoft",
+   "Microsoft Corporation"
+  ],
+  "mentions": 4
+ },
+ {
+  "id": "company:microsoft-azure",
+  "name": "Microsoft Azure",
+  "type": "Company",
+  "aliases": [
+   "Microsoft Azure"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:monolithic-power-systems",
+  "name": "Monolithic Power Systems Inc.",
+  "type": "Company",
+  "aliases": [
+   "Monolithic Power Systems Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:montage-technology",
+  "name": "Montage Technology",
+  "type": "Company",
+  "aliases": [
+   "Montage Technology"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:nexperia",
+  "name": "Nexperia BV",
+  "type": "Company",
+  "aliases": [
+   "Nexperia BV"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:nvidia",
+  "name": "NVIDIA Corporation",
+  "type": "Company",
+  "aliases": [
+   "NVDA",
+   "NVIDIA",
+   "NVIDIA Corporation",
+   "Nvidia",
+   "Nvidia Corporation"
+  ],
+  "mentions": 16
+ },
+ {
+  "id": "company:nxp-semiconductors",
+  "name": "NXP Semiconductors N.V.",
+  "type": "Company",
+  "aliases": [
+   "NXP",
+   "NXP Semiconductors N.V."
+  ],
+  "mentions": 4
+ },
+ {
+  "id": "company:nxp-semiconductors-germany",
+  "name": "NXP Semiconductors Germany GmbH",
+  "type": "Company",
+  "aliases": [
+   "NXP Semiconductors Germany GmbH"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:omnivision-technologies",
+  "name": "Omnivision Technologies Inc.",
+  "type": "Company",
+  "aliases": [
+   "Omnivision Technologies Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:on-semiconductor",
+  "name": "ON Semiconductor Corporation",
+  "type": "Company",
+  "aliases": [
+   "ON",
+   "ON Semiconductor Corporation",
+   "onsemi"
+  ],
+  "mentions": 11
+ },
+ {
+  "id": "company:onto-innovation",
+  "name": "Onto Innovation, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Onto Innovation, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:orexigen-therapeutics",
+  "name": "Orexigen Therapeutics, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Orexigen Therapeutics, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:pacven-investment",
+  "name": "Pacven Investment, Ltd.",
+  "type": "Company",
+  "aliases": [
+   "Pacven Investment, Ltd."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:pepsico",
+  "name": "PepsiCo, Inc.",
+  "type": "Company",
+  "aliases": [
+   "PepsiCo, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:phison-electronics",
+  "name": "Phison Electronics Corporation",
+  "type": "Company",
+  "aliases": [
+   "Phison Electronics Corporation"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:primarius-technologies",
+  "name": "Primarius Technologies",
+  "type": "Company",
+  "aliases": [
+   "Primarius Technologies"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:qualcomm",
+  "name": "QUALCOMM Incorporated",
+  "type": "Company",
+  "aliases": [
+   "QCOM",
+   "QTI",
+   "QUALCOMM",
+   "QUALCOMM Incorporated",
+   "Qualcomm",
+   "Qualcomm Inc.",
+   "Qualcomm Incorporated",
+   "Qualcomm Technologies, Inc."
+  ],
+  "mentions": 15
+ },
+ {
+  "id": "company:quanta-computer",
+  "name": "Quanta Computer",
+  "type": "Company",
+  "aliases": [
+   "Quanta Computer"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:rambus",
+  "name": "Rambus, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Rambus, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:ranovus",
+  "name": "Ranovus Inc.",
+  "type": "Company",
+  "aliases": [
+   "Ranovus",
+   "Ranovus Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:realtek-semiconductor",
+  "name": "Realtek Semiconductor Corporation",
+  "type": "Company",
+  "aliases": [
+   "Realtek Semiconductor Corporation"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:renesas-electronics",
+  "name": "Renesas Electronics Corporation",
+  "type": "Company",
+  "aliases": [
+   "Renesas Electronics Corporation"
+  ],
+  "mentions": 3
+ },
+ {
+  "id": "company:robert-bosch",
+  "name": "Robert Bosch GmbH",
+  "type": "Company",
+  "aliases": [
+   "Robert Bosch GmbH"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:rohm-semiconductor",
+  "name": "ROHM Semiconductor",
+  "type": "Company",
+  "aliases": [
+   "ROHM Semiconductor"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:royal-philips",
+  "name": "Royal Philips",
+  "type": "Company",
+  "aliases": [
+   "Royal Philips"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:samsung-electronics",
+  "name": "Samsung Electronics Co., Ltd.",
+  "type": "Company",
+  "aliases": [
+   "Samsung",
+   "Samsung Electronics",
+   "Samsung Electronics Co., Ltd.",
+   "Samsung Electronics Company, Ltd."
+  ],
+  "mentions": 8
+ },
+ {
+  "id": "company:sandisk",
+  "name": "SanDisk Corporation",
+  "type": "Company",
+  "aliases": [
+   "SanDisk Corporation",
+   "Sandisk Corporation"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "company:sanmina",
+  "name": "Sanmina Corporation",
+  "type": "Company",
+  "aliases": [
+   "Sanmina",
+   "Sanmina Corporation"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:schrodinger",
+  "name": "Schr\u00f6dinger, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Schr\u00f6dinger, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:screen",
+  "name": "Screen Holding Co., Ltd.",
+  "type": "Company",
+  "aliases": [
+   "Screen Holding Co., Ltd."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:secure-ic",
+  "name": "Secure-IC",
+  "type": "Company",
+  "aliases": [
+   "Secure-IC"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:semes",
+  "name": "Semes Co., Ltd.",
+  "type": "Company",
+  "aliases": [
+   "Semes Co., Ltd."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:semtech",
+  "name": "Semtech Corporation",
+  "type": "Company",
+  "aliases": [
+   "Semtech Corporation"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:shamago-advisors",
+  "name": "Shamago Advisors",
+  "type": "Company",
+  "aliases": [
+   "Shamago Advisors"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:siemens-digital-industries",
+  "name": "Siemens Digital Industries",
+  "type": "Company",
+  "aliases": [
+   "Siemens Digital Industries"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:siemens-digital-industries-software",
+  "name": "Siemens Digital Industries Software",
+  "type": "Company",
+  "aliases": [
+   "Siemens Digital Industries Software"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:siemens-eda",
+  "name": "Siemens EDA",
+  "type": "Company",
+  "aliases": [
+   "Siemens EDA"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "company:silicon-motion-technology",
+  "name": "Silicon Motion Technology Corporation",
+  "type": "Company",
+  "aliases": [
+   "Silicon Motion Technology Corporation"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:siliconware-precision-industries",
+  "name": "Siliconware Precision Industries Co., Ltd.",
+  "type": "Company",
+  "aliases": [
+   "SPIL",
+   "Siliconware Precision Industries",
+   "Siliconware Precision Industries Co., Ltd.",
+   "Siliconware Precision Industries Ltd."
+  ],
+  "mentions": 3
+ },
+ {
+  "id": "company:sk-hynix",
+  "name": "SK hynix Inc.",
+  "type": "Company",
+  "aliases": [
+   "SK Hynix Inc.",
+   "SK hynix Inc."
+  ],
+  "mentions": 3
+ },
+ {
+  "id": "company:smic",
+  "name": "SMIC",
+  "type": "Company",
+  "aliases": [
+   "SMIC"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:socionext",
+  "name": "Socionext Inc.",
+  "type": "Company",
+  "aliases": [
+   "Socionext Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:sony-interactive-entertainment",
+  "name": "Sony Interactive Entertainment, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Sony Interactive Entertainment, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:sony-semiconductor-manufacturing",
+  "name": "Sony Semiconductor Manufacturing Corporation",
+  "type": "Company",
+  "aliases": [
+   "Sony Semiconductor Manufacturing Corporation"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:sony-semiconductor-solution",
+  "name": "Sony Semiconductor Solution Corporation",
+  "type": "Company",
+  "aliases": [
+   "Sony",
+   "Sony Semiconductor Solution Corporation"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "company:statschippac",
+  "name": "STATSChipPAC",
+  "type": "Company",
+  "aliases": [
+   "STATSChipPAC"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:stmicroelectronics",
+  "name": "STMicroelectronics N.V.",
+  "type": "Company",
+  "aliases": [
+   "STMicroelectronics N.V."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:super-micro-computer",
+  "name": "Super Micro Computer, Inc.",
+  "type": "Company",
+  "aliases": [
+   "SMCI",
+   "Super Micro Computer, Inc.",
+   "Supermicro"
+  ],
+  "mentions": 7
+ },
+ {
+  "id": "company:symantec-enterprise-security",
+  "name": "Symantec Enterprise Security",
+  "type": "Company",
+  "aliases": [
+   "Symantec Enterprise Security"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:synopsys",
+  "name": "Synopsys, Inc.",
+  "type": "Company",
+  "aliases": [
+   "SNPS",
+   "Synopsys",
+   "Synopsys, Inc."
+  ],
+  "mentions": 11
+ },
+ {
+  "id": "company:systems-on-silicon-manufacturing-company-pte",
+  "name": "Systems on Silicon Manufacturing Company Pte. Ltd.",
+  "type": "Company",
+  "aliases": [
+   "SSMC",
+   "Systems on Silicon Manufacturing Company Pte. Ltd."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:taiwan-semiconductor-manufacturing",
+  "name": "Taiwan Semiconductor Manufacturing Company Limited",
+  "type": "Company",
+  "aliases": [
+   "TSM",
+   "TSMC",
+   "Taiwan Semiconductor Manufacturing Company",
+   "Taiwan Semiconductor Manufacturing Company Limited"
+  ],
+  "mentions": 23
+ },
+ {
+  "id": "company:tesla",
+  "name": "Tesla, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Tesla, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:texas-instruments",
+  "name": "Texas Instruments Incorporated",
+  "type": "Company",
+  "aliases": [
+   "TXN",
+   "Texas Instruments Incorporated"
+  ],
+  "mentions": 4
+ },
+ {
+  "id": "company:tokyo-electron",
+  "name": "Tokyo Electron, Ltd.",
+  "type": "Company",
+  "aliases": [
+   "Tokyo Electron, Ltd."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:tongfu-microelectronics",
+  "name": "Tongfu Microelectronics Co., Ltd.",
+  "type": "Company",
+  "aliases": [
+   "Tongfu Microelectronics Co., Ltd."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:toyota-motor",
+  "name": "Toyota Motor Corporation",
+  "type": "Company",
+  "aliases": [
+   "Toyota",
+   "Toyota Motor Corporation"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:tsmc-arizona",
+  "name": "TSMC Arizona",
+  "type": "Company",
+  "aliases": [
+   "TSMC Arizona"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:tsmc-china",
+  "name": "TSMC China",
+  "type": "Company",
+  "aliases": [
+   "TSMC China"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:tsmc-global",
+  "name": "TSMC Global Ltd.",
+  "type": "Company",
+  "aliases": [
+   "TSMC Global",
+   "TSMC Global Ltd."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:tsmc-nanjing",
+  "name": "TSMC Nanjing",
+  "type": "Company",
+  "aliases": [
+   "TSMC Nanjing"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "company:tsmc-washington",
+  "name": "TSMC Washington, LLC",
+  "type": "Company",
+  "aliases": [
+   "TSMC Washington",
+   "TSMC Washington, LLC"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:umc",
+  "name": "UMC",
+  "type": "Company",
+  "aliases": [
+   "UMC",
+   "United Microelectronics Corporation"
+  ],
+  "mentions": 3
+ },
+ {
+  "id": "company:univista",
+  "name": "Univista",
+  "type": "Company",
+  "aliases": [
+   "Univista"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:us-department-of-commerce",
+  "name": "U.S. Department of Commerce",
+  "type": "Company",
+  "aliases": [
+   "DOC",
+   "U.S. Department of Commerce"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:valve",
+  "name": "Valve",
+  "type": "Company",
+  "aliases": [
+   "Valve"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:vanguard-international-semiconductor",
+  "name": "Vanguard International Semiconductor Corporation",
+  "type": "Company",
+  "aliases": [
+   "VIS",
+   "Vanguard International Semiconductor Corporation"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:varian-semiconductor-equipment-associates",
+  "name": "Varian Semiconductor Equipment Associates, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Varian Semiconductor Equipment Associates, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:verisity",
+  "name": "Verisity Ltd.",
+  "type": "Company",
+  "aliases": [
+   "Verisity Ltd."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:visera-technologies",
+  "name": "VisEra Technologies Company, Ltd.",
+  "type": "Company",
+  "aliases": [
+   "VisEra Technologies",
+   "VisEra Technologies Company, Ltd."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:vmware",
+  "name": "VMware, Inc.",
+  "type": "Company",
+  "aliases": [
+   "VMware, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:volcano",
+  "name": "Volcano Corporation",
+  "type": "Company",
+  "aliases": [
+   "Volcano Corporation"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:western-digital",
+  "name": "Western Digital Corporation",
+  "type": "Company",
+  "aliases": [
+   "Western Digital Corporation"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:wistron",
+  "name": "Wistron Corporation",
+  "type": "Company",
+  "aliases": [
+   "Wistron Corporation"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:wiwynn",
+  "name": "Wiwynn Corporation",
+  "type": "Company",
+  "aliases": [
+   "Wiwynn Corporation"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:wolfspeed",
+  "name": "Wolfspeed Inc.",
+  "type": "Company",
+  "aliases": [
+   "Wolfspeed Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:wonik-ips",
+  "name": "Wonik IPS",
+  "type": "Company",
+  "aliases": [
+   "Wonik IPS"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:x-epic",
+  "name": "X-EPIC",
+  "type": "Company",
+  "aliases": [
+   "X-EPIC"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:xiaomi",
+  "name": "Xiaomi",
+  "type": "Company",
+  "aliases": [
+   "Xiaomi"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:xilinx",
+  "name": "Xilinx, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Xilinx, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:xintec",
+  "name": "Xintec, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Xintec, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:xpeedic-technology",
+  "name": "Xpeedic Technology",
+  "type": "Company",
+  "aliases": [
+   "Xpeedic Technology"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:yangtze-memory-technologies",
+  "name": "Yangtze Memory Technologies Co., Ltd.",
+  "type": "Company",
+  "aliases": [
+   "YMTC",
+   "Yangtze Memory Technologies Co., Ltd."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:zt-group-intl",
+  "name": "ZT Group Int\u2019l, Inc.",
+  "type": "Company",
+  "aliases": [
+   "ZT Group Int\u2019l, Inc.",
+   "ZT Systems"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "company:zuken",
+  "name": "Zuken, Inc.",
+  "type": "Company",
+  "aliases": [
+   "Zuken, Inc."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:argentina",
+  "name": "Argentina",
+  "type": "Location",
+  "aliases": [
+   "Argentina"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:arizona",
+  "name": "Arizona",
+  "type": "Location",
+  "aliases": [
+   "Arizona"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:asia",
+  "name": "Asia",
+  "type": "Location",
+  "aliases": [
+   "Asia"
+  ],
+  "mentions": 3
+ },
+ {
+  "id": "location:beaverton-oregon",
+  "name": "Beaverton, Oregon",
+  "type": "Location",
+  "aliases": [
+   "Beaverton, Oregon"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:camas-washington",
+  "name": "Camas, Washington",
+  "type": "Location",
+  "aliases": [
+   "Camas, Washington"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:china",
+  "name": "China",
+  "type": "Location",
+  "aliases": [
+   "China"
+  ],
+  "mentions": 4
+ },
+ {
+  "id": "location:costa-rica",
+  "name": "Costa Rica",
+  "type": "Location",
+  "aliases": [
+   "Costa Rica"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:dallas-texas",
+  "name": "Dallas, Texas",
+  "type": "Location",
+  "aliases": [
+   "Dallas, Texas"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:delaware",
+  "name": "Delaware",
+  "type": "Location",
+  "aliases": [
+   "Delaware"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:dresden-germany",
+  "name": "Dresden, Germany",
+  "type": "Location",
+  "aliases": [
+   "Dresden, Germany"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:europe",
+  "name": "Europe",
+  "type": "Location",
+  "aliases": [
+   "Europe"
+  ],
+  "mentions": 3
+ },
+ {
+  "id": "location:fremont-california",
+  "name": "Fremont, California",
+  "type": "Location",
+  "aliases": [
+   "Fremont, California"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:germany",
+  "name": "Germany",
+  "type": "Location",
+  "aliases": [
+   "Germany"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "location:hsinchu-taiwan",
+  "name": "Hsinchu, Taiwan",
+  "type": "Location",
+  "aliases": [
+   "Hsinchu, Taiwan"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:india",
+  "name": "India",
+  "type": "Location",
+  "aliases": [
+   "India"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:ireland",
+  "name": "Ireland",
+  "type": "Location",
+  "aliases": [
+   "Ireland"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:israel",
+  "name": "Israel",
+  "type": "Location",
+  "aliases": [
+   "Israel"
+  ],
+  "mentions": 3
+ },
+ {
+  "id": "location:japan",
+  "name": "Japan",
+  "type": "Location",
+  "aliases": [
+   "Japan"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "location:korea",
+  "name": "Korea",
+  "type": "Location",
+  "aliases": [
+   "Korea"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:kumamoto-japan",
+  "name": "Kumamoto, Japan",
+  "type": "Location",
+  "aliases": [
+   "Kumamoto, Japan"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:leshan-china",
+  "name": "Leshan, China",
+  "type": "Location",
+  "aliases": [
+   "Leshan, China"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:limerick-ireland",
+  "name": "Limerick, Ireland",
+  "type": "Location",
+  "aliases": [
+   "Limerick, Ireland"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:malaysia",
+  "name": "Malaysia",
+  "type": "Location",
+  "aliases": [
+   "Malaysia"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:nanjing",
+  "name": "Nanjing",
+  "type": "Location",
+  "aliases": [
+   "Nanjing"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:new-mexico",
+  "name": "New Mexico",
+  "type": "Location",
+  "aliases": [
+   "New Mexico"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:ohio",
+  "name": "Ohio",
+  "type": "Location",
+  "aliases": [
+   "Ohio"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:oregon",
+  "name": "Oregon",
+  "type": "Location",
+  "aliases": [
+   "Oregon"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:penang-malaysia",
+  "name": "Penang, Malaysia",
+  "type": "Location",
+  "aliases": [
+   "Penang, Malaysia"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:philippines",
+  "name": "Philippines",
+  "type": "Location",
+  "aliases": [
+   "Philippines"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:phoenix-arizona",
+  "name": "Phoenix, Arizona",
+  "type": "Location",
+  "aliases": [
+   "Phoenix, Arizona"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:poland",
+  "name": "Poland",
+  "type": "Location",
+  "aliases": [
+   "Poland"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:santa-clara-california",
+  "name": "Santa Clara, California",
+  "type": "Location",
+  "aliases": [
+   "Santa Clara, California"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:silicon-valley",
+  "name": "Silicon Valley",
+  "type": "Location",
+  "aliases": [
+   "Silicon Valley"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:singapore",
+  "name": "Singapore",
+  "type": "Location",
+  "aliases": [
+   "Singapore"
+  ],
+  "mentions": 4
+ },
+ {
+  "id": "location:south-korea",
+  "name": "South Korea",
+  "type": "Location",
+  "aliases": [
+   "South Korea"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:taiwan",
+  "name": "Taiwan",
+  "type": "Location",
+  "aliases": [
+   "Taiwan"
+  ],
+  "mentions": 3
+ },
+ {
+  "id": "location:thailand",
+  "name": "Thailand",
+  "type": "Location",
+  "aliases": [
+   "Thailand"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:united-states",
+  "name": "United States",
+  "type": "Location",
+  "aliases": [
+   "United States"
+  ],
+  "mentions": 4
+ },
+ {
+  "id": "location:us",
+  "name": "U.S.",
+  "type": "Location",
+  "aliases": [
+   "U.S."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:vietnam",
+  "name": "Vietnam",
+  "type": "Location",
+  "aliases": [
+   "Vietnam"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "location:wilmington-delaware",
+  "name": "Wilmington, Delaware",
+  "type": "Location",
+  "aliases": [
+   "Wilmington, Delaware"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "location:wilmington-massachusetts",
+  "name": "Wilmington, Massachusetts",
+  "type": "Location",
+  "aliases": [
+   "Wilmington, Massachusetts"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:5g",
+  "name": "5G",
+  "type": "Market",
+  "aliases": [
+   "5G"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:5g-infrastructure-market",
+  "name": "5G infrastructure market",
+  "type": "Market",
+  "aliases": [
+   "5G infrastructure market"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:5g-market",
+  "name": "5G market",
+  "type": "Market",
+  "aliases": [
+   "5G market"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:5g-telco",
+  "name": "5G Telco",
+  "type": "Market",
+  "aliases": [
+   "5G Telco"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:aerospace-and-defense",
+  "name": "aerospace and defense",
+  "type": "Market",
+  "aliases": [
+   "aerospace and defense"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "market:aerospace-and-defense-market",
+  "name": "Aerospace and Defense Market",
+  "type": "Market",
+  "aliases": [
+   "Aerospace and Defense Market",
+   "aerospace and defense market"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "market:ai-data-centers",
+  "name": "AI data centers",
+  "type": "Market",
+  "aliases": [
+   "AI data center",
+   "AI data centers"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "market:ai-market",
+  "name": "AI market",
+  "type": "Market",
+  "aliases": [
+   "AI market"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:ai-workloads",
+  "name": "AI workloads",
+  "type": "Market",
+  "aliases": [
+   "AI workloads"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:artificial-intelligence",
+  "name": "Artificial intelligence",
+  "type": "Market",
+  "aliases": [
+   "AI",
+   "Artificial intelligence"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:audio-video-and-broadcasting-market",
+  "name": "Audio, Video and Broadcasting Market",
+  "type": "Market",
+  "aliases": [
+   "Audio, Video and Broadcasting Market"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:automotive",
+  "name": "Automotive",
+  "type": "Market",
+  "aliases": [
+   "Automotive",
+   "automotive"
+  ],
+  "mentions": 4
+ },
+ {
+  "id": "market:automotive-market",
+  "name": "automotive market",
+  "type": "Market",
+  "aliases": [
+   "Automotive Market",
+   "Automotive market",
+   "automotive market"
+  ],
+  "mentions": 5
+ },
+ {
+  "id": "market:automotive-vehicles",
+  "name": "automotive vehicles",
+  "type": "Market",
+  "aliases": [
+   "automotive vehicles"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:client-market",
+  "name": "Client Market",
+  "type": "Market",
+  "aliases": [
+   "Client Market"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:cloud",
+  "name": "Cloud",
+  "type": "Market",
+  "aliases": [
+   "Cloud"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:cloud-and-enterprise-servers",
+  "name": "cloud and enterprise servers",
+  "type": "Market",
+  "aliases": [
+   "cloud and enterprise servers"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:cloud-computing-infrastructure-market",
+  "name": "cloud computing infrastructure market",
+  "type": "Market",
+  "aliases": [
+   "cloud computing infrastructure market"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:cloud-services-market",
+  "name": "cloud services market",
+  "type": "Market",
+  "aliases": [
+   "cloud services market"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:commercial",
+  "name": "Commercial",
+  "type": "Market",
+  "aliases": [
+   "Commercial"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:communications-infrastructure-market",
+  "name": "Communications Infrastructure Market",
+  "type": "Market",
+  "aliases": [
+   "Communications Infrastructure Market"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:communications-market",
+  "name": "communications market",
+  "type": "Market",
+  "aliases": [
+   "communications market"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:computing-market",
+  "name": "computing market",
+  "type": "Market",
+  "aliases": [
+   "computing market"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:consumer",
+  "name": "Consumer",
+  "type": "Market",
+  "aliases": [
+   "Consumer"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:consumer-electronics",
+  "name": "consumer electronics",
+  "type": "Market",
+  "aliases": [
+   "consumer electronics"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:consumer-iot",
+  "name": "Consumer IoT",
+  "type": "Market",
+  "aliases": [
+   "Consumer IoT"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:consumer-market",
+  "name": "Consumer market",
+  "type": "Market",
+  "aliases": [
+   "Consumer market"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:data-center",
+  "name": "data center",
+  "type": "Market",
+  "aliases": [
+   "data center"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:data-center-market",
+  "name": "Data center market",
+  "type": "Market",
+  "aliases": [
+   "Data Center market",
+   "Data center market"
+  ],
+  "mentions": 3
+ },
+ {
+  "id": "market:data-centers",
+  "name": "Data centers",
+  "type": "Market",
+  "aliases": [
+   "Data centers"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:data-storage-devices",
+  "name": "data storage devices",
+  "type": "Market",
+  "aliases": [
+   "data storage devices"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:drug-discovery",
+  "name": "drug discovery",
+  "type": "Market",
+  "aliases": [
+   "drug discovery"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:edge-computing",
+  "name": "Edge computing",
+  "type": "Market",
+  "aliases": [
+   "Edge computing"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:edge-computing-market",
+  "name": "Edge computing market",
+  "type": "Market",
+  "aliases": [
+   "Edge computing market"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:electric-vehicles",
+  "name": "Electric vehicles",
+  "type": "Market",
+  "aliases": [
+   "Electric vehicles"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:emulation-and-prototyping-market",
+  "name": "Emulation and Prototyping Market",
+  "type": "Market",
+  "aliases": [
+   "Emulation and Prototyping Market"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:enterprise",
+  "name": "Enterprise",
+  "type": "Market",
+  "aliases": [
+   "Enterprise"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:enterprise-market",
+  "name": "Enterprise market",
+  "type": "Market",
+  "aliases": [
+   "Enterprise market"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "market:foundry-logic",
+  "name": "Foundry/logic",
+  "type": "Market",
+  "aliases": [
+   "Foundry/logic"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:gaming-market",
+  "name": "Gaming market",
+  "type": "Market",
+  "aliases": [
+   "Gaming Market",
+   "Gaming market"
+  ],
+  "mentions": 3
+ },
+ {
+  "id": "market:handsets",
+  "name": "Handsets",
+  "type": "Market",
+  "aliases": [
+   "Handsets"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:healthcare",
+  "name": "Healthcare",
+  "type": "Market",
+  "aliases": [
+   "Healthcare"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:healthcare-market",
+  "name": "Healthcare market",
+  "type": "Market",
+  "aliases": [
+   "Healthcare market"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:highperformance-computing",
+  "name": "High\u2011performance computing",
+  "type": "Market",
+  "aliases": [
+   "HPC",
+   "High\u2011performance computing"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "market:hyperscalers-market",
+  "name": "hyperscalers market",
+  "type": "Market",
+  "aliases": [
+   "hyperscalers market"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:industrial",
+  "name": "industrial",
+  "type": "Market",
+  "aliases": [
+   "industrial"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:industrial-and-edge-networking-iot",
+  "name": "Industrial and Edge Networking IoT",
+  "type": "Market",
+  "aliases": [
+   "Industrial and Edge Networking IoT"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:industrial-applications",
+  "name": "Industrial applications",
+  "type": "Market",
+  "aliases": [
+   "Industrial applications"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:industrial-market",
+  "name": "Industrial Market",
+  "type": "Market",
+  "aliases": [
+   "Industrial Market"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:internet-of-things",
+  "name": "internet of things",
+  "type": "Market",
+  "aliases": [
+   "IoT",
+   "internet of things"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:medical",
+  "name": "medical",
+  "type": "Market",
+  "aliases": [
+   "medical"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:memory",
+  "name": "Memory",
+  "type": "Market",
+  "aliases": [
+   "Memory"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:mobile",
+  "name": "mobile",
+  "type": "Market",
+  "aliases": [
+   "mobile"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:mobile-phones",
+  "name": "mobile phones",
+  "type": "Market",
+  "aliases": [
+   "mobile phones"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:pc-industry",
+  "name": "PC industry",
+  "type": "Market",
+  "aliases": [
+   "PC industry"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:pc-market",
+  "name": "PC market",
+  "type": "Market",
+  "aliases": [
+   "PC market"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "market:personal-computers",
+  "name": "personal computers",
+  "type": "Market",
+  "aliases": [
+   "personal computers"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:retail",
+  "name": "Retail",
+  "type": "Market",
+  "aliases": [
+   "Retail"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:semiconductor-design",
+  "name": "semiconductor design",
+  "type": "Market",
+  "aliases": [
+   "semiconductor design"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:semiconductor-industry",
+  "name": "semiconductor industry",
+  "type": "Market",
+  "aliases": [
+   "semiconductor industry"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:semiconductor-memory-and-storage-market",
+  "name": "semiconductor memory and storage market",
+  "type": "Market",
+  "aliases": [
+   "semiconductor memory and storage market"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "market:smartphone-market",
+  "name": "smartphone market",
+  "type": "Market",
+  "aliases": [
+   "smartphone market"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:test-and-measurement-market",
+  "name": "Test and Measurement Market",
+  "type": "Market",
+  "aliases": [
+   "Test and Measurement Market"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:us-government-market",
+  "name": "U.S. government market",
+  "type": "Market",
+  "aliases": [
+   "U.S. government market"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:vision-and-healthcare-market",
+  "name": "Vision and Healthcare Market",
+  "type": "Market",
+  "aliases": [
+   "Vision and Healthcare Market"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "market:wearables",
+  "name": "wearables",
+  "type": "Market",
+  "aliases": [
+   "wearables"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "person:ajay-k-puri",
+  "name": "Ajay K. Puri",
+  "type": "Person",
+  "aliases": [
+   "Ajay K. Puri"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "person:april-s-arnzen",
+  "name": "April S. Arnzen",
+  "type": "Person",
+  "aliases": [
+   "April S. Arnzen"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "person:ava-a-harter",
+  "name": "Ava A. Harter",
+  "type": "Person",
+  "aliases": [
+   "Ava A. Harter"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "person:charlie-b-kawwas-ph-d",
+  "name": "Charlie B. Kawwas, Ph.D.",
+  "type": "Person",
+  "aliases": [
+   "Charlie B. Kawwas, Ph.D."
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "person:colette-m-kress",
+  "name": "Colette M. Kress",
+  "type": "Person",
+  "aliases": [
+   "Colette M. Kress"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "person:debora-shoquist",
+  "name": "Debora Shoquist",
+  "type": "Person",
+  "aliases": [
+   "Debora Shoquist"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "person:douglas-r-bettinger",
+  "name": "Douglas R. Bettinger",
+  "type": "Person",
+  "aliases": [
+   "Douglas R. Bettinger"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "person:dr-raja",
+  "name": "Dr. Raja",
+  "type": "Person",
+  "aliases": [
+   "Dr. Raja"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "person:hassane-el-khoury",
+  "name": "Hassane El-Khoury",
+  "type": "Person",
+  "aliases": [
+   "Hassane El-Khoury"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "person:heather-ace",
+  "name": "Heather Ace",
+  "type": "Person",
+  "aliases": [
+   "Heather Ace"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "person:hock-e-tan",
+  "name": "Hock E. Tan",
+  "type": "Person",
+  "aliases": [
+   "Hock E. Tan"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "person:jen-hsun-huang",
+  "name": "Jen-Hsun Huang",
+  "type": "Person",
+  "aliases": [
+   "Jen-Hsun Huang"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "person:karthikeyan-rammohan",
+  "name": "Karthikeyan (Karthik) Rammohan",
+  "type": "Person",
+  "aliases": [
+   "Karthikeyan (Karthik) Rammohan"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "person:manish-bhatia",
+  "name": "Manish Bhatia",
+  "type": "Person",
+  "aliases": [
+   "Manish Bhatia"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "person:marc-taxay",
+  "name": "Marc Taxay",
+  "type": "Person",
+  "aliases": [
+   "Marc Taxay"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "person:mark-d-brazeal",
+  "name": "Mark D. Brazeal",
+  "type": "Person",
+  "aliases": [
+   "Mark D. Brazeal"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "person:michael-d-cordano",
+  "name": "Michael D. Cordano",
+  "type": "Person",
+  "aliases": [
+   "Michael D. Cordano"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "person:mike-ellow",
+  "name": "Mike Ellow",
+  "type": "Person",
+  "aliases": [
+   "Mike Ellow"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "person:mr-dickerson",
+  "name": "Mr. Dickerson",
+  "type": "Person",
+  "aliases": [
+   "Mr. Dickerson"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "person:mr-hill",
+  "name": "Mr. Hill",
+  "type": "Person",
+  "aliases": [
+   "Mr. Hill"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "person:neil-j-fernandes",
+  "name": "Neil J. Fernandes",
+  "type": "Person",
+  "aliases": [
+   "Neil J. Fernandes"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "person:paul-scannell",
+  "name": "Paul Scannell",
+  "type": "Person",
+  "aliases": [
+   "Paul Scannell"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "person:scott-j-deboer",
+  "name": "Scott J. DeBoer",
+  "type": "Person",
+  "aliases": [
+   "Scott J. DeBoer"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "person:seshasayee-varadarajan",
+  "name": "Seshasayee (Sesha) Varadarajan",
+  "type": "Person",
+  "aliases": [
+   "Seshasayee (Sesha) Varadarajan"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "person:sudhir-gopalswamy",
+  "name": "Sudhir Gopalswamy",
+  "type": "Person",
+  "aliases": [
+   "Sudhir Gopalswamy"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "person:thad-trent",
+  "name": "Thad Trent",
+  "type": "Person",
+  "aliases": [
+   "Thad Trent"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "person:timothy-m-archer",
+  "name": "Timothy M. Archer",
+  "type": "Person",
+  "aliases": [
+   "Timothy M. Archer"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "person:timothy-s-teter",
+  "name": "Timothy S. Teter",
+  "type": "Person",
+  "aliases": [
+   "Timothy S. Teter"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "person:vahid-vahedi",
+  "name": "Vahid Vahedi",
+  "type": "Person",
+  "aliases": [
+   "Vahid Vahedi"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:200v-series",
+  "name": "200V Series",
+  "type": "Product",
+  "aliases": [
+   "200V Series"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:5d-analyzer",
+  "name": "5D Analyzer",
+  "type": "Product",
+  "aliases": [
+   "5D Analyzer",
+   "5D Analyzer \u00ae"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:adaptive-soc-products",
+  "name": "adaptive SoC products",
+  "type": "Product",
+  "aliases": [
+   "adaptive SoC products"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:aisight",
+  "name": "aiSIGHT",
+  "type": "Product",
+  "aliases": [
+   "aiSIGHT",
+   "aiSIGHT\u2122"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:allegro",
+  "name": "Allegro",
+  "type": "Product",
+  "aliases": [
+   "Allegro"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:alveo-products",
+  "name": "Alveo products",
+  "type": "Product",
+  "aliases": [
+   "Alveo products"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:amd-instinct-mi350-series-gpus",
+  "name": "AMD Instinct MI350 series GPUs",
+  "type": "Product",
+  "aliases": [
+   "AMD Instinct MI350 series GPUs",
+   "MI350X",
+   "MI355X"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:amd-instinct-mi455x-gpus",
+  "name": "AMD Instinct MI455X GPUs",
+  "type": "Product",
+  "aliases": [
+   "AMD Instinct MI455X GPUs"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:amd-radeon-rx",
+  "name": "AMD Radeon RX",
+  "type": "Product",
+  "aliases": [
+   "AMD Radeon RX"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:amd-ryzen",
+  "name": "AMD Ryzen",
+  "type": "Product",
+  "aliases": [
+   "AMD Ryzen"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:amd-ryzen-ai",
+  "name": "AMD Ryzen AI",
+  "type": "Product",
+  "aliases": [
+   "AMD Ryzen AI"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:amd-ultrascale",
+  "name": "AMD UltraScale+",
+  "type": "Product",
+  "aliases": [
+   "AMD UltraScale+"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:amd-vivadotm-design-suite",
+  "name": "AMD Vivado\u2122 Design Suite",
+  "type": "Product",
+  "aliases": [
+   "AMD Vivado\u2122 Design Suite"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:amd-zynq-soc",
+  "name": "AMD Zynq SoC",
+  "type": "Product",
+  "aliases": [
+   "AMD Zynq SoC"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:anchor",
+  "name": "Anchor",
+  "type": "Product",
+  "aliases": [
+   "Anchor",
+   "Anchor product family"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:arm-based-platforms",
+  "name": "Arm\u00ae-based platforms",
+  "type": "Product",
+  "aliases": [
+   "Arm\u00ae-based platforms"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:blackwell-gpus",
+  "name": "Blackwell GPUs",
+  "type": "Product",
+  "aliases": [
+   "Blackwell GPUs"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:bluetooth-6",
+  "name": "Bluetooth 6",
+  "type": "Product",
+  "aliases": [
+   "Bluetooth 6"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:bravera-hdd-controllers",
+  "name": "Bravera HDD controllers",
+  "type": "Product",
+  "aliases": [
+   "Bravera HDD controllers"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:cats",
+  "name": "CATS \u00ae",
+  "type": "Product",
+  "aliases": [
+   "CATS \u00ae"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:ccg-semiconductor-products",
+  "name": "CCG semiconductor products",
+  "type": "Product",
+  "aliases": [
+   "CCG semiconductor products"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:clara",
+  "name": "Clara",
+  "type": "Product",
+  "aliases": [
+   "Clara"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:client-cpus",
+  "name": "Client CPUs",
+  "type": "Product",
+  "aliases": [
+   "Client CPUs"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:cloud-ran-platform",
+  "name": "cloud RAN Platform",
+  "type": "Product",
+  "aliases": [
+   "cloud RAN Platform"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:configurable-arc-processors",
+  "name": "configurable ARC processors",
+  "type": "Product",
+  "aliases": [
+   "configurable ARC processors"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:cpu",
+  "name": "CPU",
+  "type": "Product",
+  "aliases": [
+   "CPU"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:cryptographic-cores",
+  "name": "cryptographic cores",
+  "type": "Product",
+  "aliases": [
+   "cryptographic cores"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:cuda-development-platform",
+  "name": "CUDA development platform",
+  "type": "Product",
+  "aliases": [
+   "CUDA development platform"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:cuda-x-collection",
+  "name": "CUDA-X collection",
+  "type": "Product",
+  "aliases": [
+   "CUDA-X collection"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:dcai-semiconductor-products",
+  "name": "DCAI semiconductor products",
+  "type": "Product",
+  "aliases": [
+   "DCAI semiconductor products"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:digital-signal-processor-cores",
+  "name": "Digital Signal Processor cores",
+  "type": "Product",
+  "aliases": [
+   "Digital Signal Processor cores"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:dragonwing",
+  "name": "Dragonwing",
+  "type": "Product",
+  "aliases": [
+   "Dragonwing"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:dram",
+  "name": "DRAM",
+  "type": "Product",
+  "aliases": [
+   "DRAM"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:eda-products",
+  "name": "EDA products",
+  "type": "Product",
+  "aliases": [
+   "EDA products"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:emulation-and-prototyping-systems",
+  "name": "emulation and prototyping systems",
+  "type": "Product",
+  "aliases": [
+   "emulation and prototyping systems"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:fabvision",
+  "name": "FabVision",
+  "type": "Product",
+  "aliases": [
+   "FabVision",
+   "FabVision \u00ae Series"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:fbar-filters",
+  "name": "FBAR filters",
+  "type": "Product",
+  "aliases": [
+   "FBAR filters"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:flexcore",
+  "name": "FlexCore",
+  "type": "Product",
+  "aliases": [
+   "FlexCore"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:flexran",
+  "name": "FlexRAN",
+  "type": "Product",
+  "aliases": [
+   "FlexRAN"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:fpga-products",
+  "name": "FPGA products",
+  "type": "Product",
+  "aliases": [
+   "FPGA products"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:geforce-gpus",
+  "name": "GeForce GPUs",
+  "type": "Product",
+  "aliases": [
+   "GeForce GPUs"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:grace-cpu",
+  "name": "Grace CPU",
+  "type": "Product",
+  "aliases": [
+   "Grace CPU"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:helios-system",
+  "name": "Helios system",
+  "type": "Product",
+  "aliases": [
+   "Helios system"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:hpc-products",
+  "name": "HPC products",
+  "type": "Product",
+  "aliases": [
+   "HPC products"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:i-pat",
+  "name": "I-PAT",
+  "type": "Product",
+  "aliases": [
+   "I-PAT",
+   "I-PAT \u00ae"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:infrastructure-processing-units",
+  "name": "Infrastructure Processing Units (IPUs)",
+  "type": "Product",
+  "aliases": [
+   "Infrastructure Processing Units (IPUs)"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:innovus",
+  "name": "Innovus",
+  "type": "Product",
+  "aliases": [
+   "Innovus"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:integritytm-3d-ic-platform",
+  "name": "Integrity\u2122 3D-IC Platform",
+  "type": "Product",
+  "aliases": [
+   "Integrity\u2122 3D-IC Platform"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "product:intel-14a",
+  "name": "Intel 14A",
+  "type": "Product",
+  "aliases": [
+   "Intel 14A"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:intel-18a",
+  "name": "Intel 18A",
+  "type": "Product",
+  "aliases": [
+   "Intel 18A"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:intel-18a-p",
+  "name": "Intel 18A-P",
+  "type": "Product",
+  "aliases": [
+   "Intel 18A-P"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:intel-arc-b-series",
+  "name": "Intel Arc B-Series",
+  "type": "Product",
+  "aliases": [
+   "Intel Arc B-Series"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:intel-arc-graphics-family",
+  "name": "Intel Arc graphics family",
+  "type": "Product",
+  "aliases": [
+   "Intel Arc graphics family"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:intel-core",
+  "name": "Intel Core",
+  "type": "Product",
+  "aliases": [
+   "Intel Core",
+   "Intel Core processors"
+  ],
+  "mentions": 3
+ },
+ {
+  "id": "product:intel-core-ultra",
+  "name": "Intel Core Ultra",
+  "type": "Product",
+  "aliases": [
+   "Intel Core Ultra"
+  ],
+  "mentions": 3
+ },
+ {
+  "id": "product:intel-core-ultra-series-1",
+  "name": "Intel Core Ultra Series 1",
+  "type": "Product",
+  "aliases": [
+   "Intel Core Ultra Series 1"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:intel-core-ultra-series-2",
+  "name": "Intel Core Ultra Series 2",
+  "type": "Product",
+  "aliases": [
+   "Intel Core Ultra Series 2"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:intel-core-ultra-series-3",
+  "name": "Intel Core Ultra Series 3",
+  "type": "Product",
+  "aliases": [
+   "Intel Core Ultra Series 3",
+   "Intel Core Ultra Series 3 processors"
+  ],
+  "mentions": 3
+ },
+ {
+  "id": "product:intel-ethernet-controllers-and-network-adapters-e600-series",
+  "name": "Intel Ethernet Controllers & Network Adapters E600 series",
+  "type": "Product",
+  "aliases": [
+   "Intel Ethernet Controllers & Network Adapters E600 series"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:intel-ethernet-controllers-and-network-adapters-e800-series",
+  "name": "Intel Ethernet Controllers & Network Adapters E800 series",
+  "type": "Product",
+  "aliases": [
+   "Intel Ethernet Controllers & Network Adapters E800 series"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:intel-vpro-fleet-services",
+  "name": "Intel vPro Fleet Services",
+  "type": "Product",
+  "aliases": [
+   "Intel vPro Fleet Services"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:intel-vpro-platform",
+  "name": "Intel vPro Platform",
+  "type": "Product",
+  "aliases": [
+   "Intel vPro Platform"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:intel-xeon",
+  "name": "Intel Xeon",
+  "type": "Product",
+  "aliases": [
+   "Intel Xeon"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:intel-xeon-6-series-processors",
+  "name": "Intel Xeon 6 series processors",
+  "type": "Product",
+  "aliases": [
+   "Intel Xeon 6 series processors"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:klarity",
+  "name": "Klarity",
+  "type": "Product",
+  "aliases": [
+   "Klarity",
+   "Klarity \u00ae"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:logic-libraries-and-embedded-memories",
+  "name": "Logic libraries and embedded memories",
+  "type": "Product",
+  "aliases": [
+   "Logic libraries and embedded memories"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:m2000-supercomputer",
+  "name": "M2000 supercomputer",
+  "type": "Product",
+  "aliases": [
+   "M2000 supercomputer"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:millenniumtm-multiphysics-enterprise-platform",
+  "name": "Millennium\u2122 Multiphysics Enterprise Platform",
+  "type": "Product",
+  "aliases": [
+   "Millennium\u2122 Multiphysics Enterprise Platform"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:nand",
+  "name": "NAND",
+  "type": "Product",
+  "aliases": [
+   "NAND"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:neural-network-processors",
+  "name": "Neural Network processors",
+  "type": "Product",
+  "aliases": [
+   "Neural Network processors"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:nor",
+  "name": "NOR",
+  "type": "Product",
+  "aliases": [
+   "NOR"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:nvidia-ai-enterprise",
+  "name": "NVIDIA AI Enterprise",
+  "type": "Product",
+  "aliases": [
+   "NVIDIA AI Enterprise"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "product:nvidia-drive-stack",
+  "name": "NVIDIA DRIVE stack",
+  "type": "Product",
+  "aliases": [
+   "NVIDIA DRIVE stack"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:nvidia-gpus",
+  "name": "NVIDIA GPUs",
+  "type": "Product",
+  "aliases": [
+   "NVIDIA GPUs"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:nvidia-hgx-rubin-nvl8",
+  "name": "NVIDIA HGX Rubin NVL8",
+  "type": "Product",
+  "aliases": [
+   "NVIDIA HGX Rubin NVL8"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:nvidia-vera-rubin-nvl72",
+  "name": "NVIDIA Vera Rubin NVL72",
+  "type": "Product",
+  "aliases": [
+   "NVIDIA Vera Rubin NVL72"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:nvidia-vgpu-software",
+  "name": "NVIDIA vGPU software",
+  "type": "Product",
+  "aliases": [
+   "NVIDIA vGPU software"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:omniverse",
+  "name": "Omniverse",
+  "type": "Product",
+  "aliases": [
+   "Omniverse"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:open-edge",
+  "name": "Open Edge",
+  "type": "Product",
+  "aliases": [
+   "Open Edge"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:ovalis",
+  "name": "OVALiS",
+  "type": "Product",
+  "aliases": [
+   "OVALiS"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:panther-lake",
+  "name": "Panther Lake",
+  "type": "Product",
+  "aliases": [
+   "Panther Lake"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:prodata",
+  "name": "ProDATA",
+  "type": "Product",
+  "aliases": [
+   "ProDATA",
+   "ProDATA\u2122"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:proetch",
+  "name": "ProETCH",
+  "type": "Product",
+  "aliases": [
+   "ProETCH",
+   "ProETCH \u00ae"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:prolith",
+  "name": "PROLITH",
+  "type": "Product",
+  "aliases": [
+   "PROLITH",
+   "PROLITH\u2122"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:proteus-tm",
+  "name": "Proteus TM",
+  "type": "Product",
+  "aliases": [
+   "Proteus TM"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:quadro-nvidia-rtx-gpus",
+  "name": "Quadro/NVIDIA RTX GPUs",
+  "type": "Product",
+  "aliases": [
+   "Quadro/NVIDIA RTX GPUs"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:qualcomm-dragonwing",
+  "name": "Qualcomm Dragonwing",
+  "type": "Product",
+  "aliases": [
+   "Qualcomm Dragonwing"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:quantumatk",
+  "name": "QuantumATK \u00ae",
+  "type": "Product",
+  "aliases": [
+   "QuantumATK \u00ae"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:radeon-rx-9000-series",
+  "name": "Radeon RX 9000 Series",
+  "type": "Product",
+  "aliases": [
+   "Radeon RX 9000 Series"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:rdc",
+  "name": "RDC",
+  "type": "Product",
+  "aliases": [
+   "RDC"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:side-emitting-lasers",
+  "name": "side emitting lasers",
+  "type": "Product",
+  "aliases": [
+   "side emitting lasers"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:snapdragon",
+  "name": "Snapdragon",
+  "type": "Product",
+  "aliases": [
+   "Snapdragon"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "product:spot",
+  "name": "SPOT",
+  "type": "Product",
+  "aliases": [
+   "SPOT",
+   "SPOT \u00ae"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:surfscan",
+  "name": "Surfscan",
+  "type": "Product",
+  "aliases": [
+   "Surfscan",
+   "Surfscan \u00ae Series"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:synopsys-cloud",
+  "name": "Synopsys Cloud",
+  "type": "Product",
+  "aliases": [
+   "Synopsys Cloud"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:synopsys-tcad",
+  "name": "Synopsys TCAD",
+  "type": "Product",
+  "aliases": [
+   "Synopsys TCAD"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:tensor-core-gpu",
+  "name": "Tensor Core GPU",
+  "type": "Product",
+  "aliases": [
+   "Tensor Core GPU"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:thunderbolt-5",
+  "name": "Thunderbolt 5",
+  "type": "Product",
+  "aliases": [
+   "Thunderbolt 5"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:tsmc-3dfabric",
+  "name": "TSMC 3DFabric\u00ae",
+  "type": "Product",
+  "aliases": [
+   "3DFabric",
+   "TSMC 3DFabric\u00ae"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:tsmc-cowos",
+  "name": "TSMC CoWoS\u00ae",
+  "type": "Product",
+  "aliases": [
+   "CoWoS",
+   "TSMC CoWoS\u00ae"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:tsmc-soic",
+  "name": "TSMC SoIC\u00ae",
+  "type": "Product",
+  "aliases": [
+   "SoIC",
+   "TSMC SoIC\u00ae"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:ultrascale-7-series",
+  "name": "UltraScale 7 Series",
+  "type": "Product",
+  "aliases": [
+   "UltraScale 7 Series"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:versal",
+  "name": "Versal",
+  "type": "Product",
+  "aliases": [
+   "Versal"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:versal-premium-series-gen-2",
+  "name": "Versal Premium Series Gen 2",
+  "type": "Product",
+  "aliases": [
+   "Versal Premium Series Gen 2"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:versal-rf-series",
+  "name": "Versal RF Series",
+  "type": "Product",
+  "aliases": [
+   "Versal RF Series"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:vertical-cavity-surface-emitting-laser",
+  "name": "vertical-cavity surface emitting laser",
+  "type": "Product",
+  "aliases": [
+   "vertical-cavity surface emitting laser"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:virtuoso",
+  "name": "Virtuoso",
+  "type": "Product",
+  "aliases": [
+   "Virtuoso"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:vitis-ai-unified-software-platform",
+  "name": "Vitis AI unified software platform",
+  "type": "Product",
+  "aliases": [
+   "Vitis AI unified software platform"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:vitistm-unified-software-platform",
+  "name": "Vitis\u2122 unified software platform",
+  "type": "Product",
+  "aliases": [
+   "Vitis\u2122 unified software platform"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:wafer-fabrication-processes",
+  "name": "Wafer Fabrication Processes",
+  "type": "Product",
+  "aliases": [
+   "Wafer Fabrication Processes"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:wifi-7",
+  "name": "Wi\u2011Fi 7",
+  "type": "Product",
+  "aliases": [
+   "Wi\u2011Fi 7"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:yield-explorer-odyssey",
+  "name": "Yield Explorer Odyssey",
+  "type": "Product",
+  "aliases": [
+   "Yield Explorer Odyssey"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:yield-manager",
+  "name": "Yield-Manager \u00ae",
+  "type": "Product",
+  "aliases": [
+   "Yield-Manager \u00ae"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:zynq-ultrascale-mpsoc",
+  "name": "Zynq UltraScale+ MPSoC",
+  "type": "Product",
+  "aliases": [
+   "Zynq UltraScale+ MPSoC"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "product:zynq-ultrascale-rfsoc",
+  "name": "Zynq UltraScale+ RFSoC",
+  "type": "Product",
+  "aliases": [
+   "Zynq UltraScale+ RFSoC"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "segment:amg",
+  "name": "AMG",
+  "type": "Segment",
+  "aliases": [
+   "AMG"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "segment:analog",
+  "name": "Analog",
+  "type": "Segment",
+  "aliases": [
+   "Analog"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "segment:applied-global-services",
+  "name": "Applied Global Services\u00ae (AGS)",
+  "type": "Segment",
+  "aliases": [
+   "AGS",
+   "Applied Global Services\u00ae (AGS)"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "segment:ccg",
+  "name": "CCG",
+  "type": "Segment",
+  "aliases": [
+   "CCG"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "segment:client-and-gaming-segment",
+  "name": "Client and Gaming Segment",
+  "type": "Segment",
+  "aliases": [
+   "Client and Gaming Segment"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "segment:compute-and-networking-segment",
+  "name": "Compute & Networking segment",
+  "type": "Segment",
+  "aliases": [
+   "Compute & Networking segment"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "segment:data-center-building-block-solutions",
+  "name": "Data Center Building Block Solutions",
+  "type": "Segment",
+  "aliases": [
+   "DCBBS",
+   "Data Center Building Block Solutions"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "segment:data-center-segment",
+  "name": "Data Center Segment",
+  "type": "Segment",
+  "aliases": [
+   "Data Center Segment"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "segment:dcai",
+  "name": "DCAI",
+  "type": "Segment",
+  "aliases": [
+   "DCAI"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "segment:design-automation-segment",
+  "name": "Design Automation Segment",
+  "type": "Segment",
+  "aliases": [
+   "Design Automation Segment"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "segment:design-ip-segment",
+  "name": "Design IP segment",
+  "type": "Segment",
+  "aliases": [
+   "Design IP segment"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "segment:embedded-processing",
+  "name": "Embedded Processing",
+  "type": "Segment",
+  "aliases": [
+   "Embedded Processing"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "segment:embedded-segment",
+  "name": "Embedded Segment",
+  "type": "Segment",
+  "aliases": [
+   "Embedded Segment"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "segment:graphics-segment",
+  "name": "Graphics segment",
+  "type": "Segment",
+  "aliases": [
+   "Graphics segment"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "segment:intel-foundry",
+  "name": "Intel Foundry",
+  "type": "Segment",
+  "aliases": [
+   "Intel Foundry"
+  ],
+  "mentions": 4
+ },
+ {
+  "id": "segment:isg",
+  "name": "ISG",
+  "type": "Segment",
+  "aliases": [
+   "ISG"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "segment:other",
+  "name": "Other",
+  "type": "Segment",
+  "aliases": [
+   "Other"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "segment:pcb-and-component-inspection",
+  "name": "PCB and Component Inspection",
+  "type": "Segment",
+  "aliases": [
+   "PCB and Component Inspection"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "segment:psg",
+  "name": "PSG",
+  "type": "Segment",
+  "aliases": [
+   "PSG"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "segment:qct",
+  "name": "QCT",
+  "type": "Segment",
+  "aliases": [
+   "QCT",
+   "Qualcomm CDMA Technologies"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "segment:qsi",
+  "name": "QSI",
+  "type": "Segment",
+  "aliases": [
+   "QSI",
+   "Qualcomm Strategic Initiatives"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "segment:qtl",
+  "name": "QTL",
+  "type": "Segment",
+  "aliases": [
+   "QTL",
+   "Qualcomm Technology Licensing"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "segment:semiconductor-process-control",
+  "name": "Semiconductor Process Control",
+  "type": "Segment",
+  "aliases": [
+   "Semiconductor Process Control"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "segment:semiconductor-systems",
+  "name": "Semiconductor Systems",
+  "type": "Segment",
+  "aliases": [
+   "Semiconductor Systems"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "segment:specialty-semiconductor-process",
+  "name": "Specialty Semiconductor Process",
+  "type": "Segment",
+  "aliases": [
+   "Specialty Semiconductor Process"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "segment:total-it-solutions",
+  "name": "Total IT Solutions",
+  "type": "Segment",
+  "aliases": [
+   "Total IT Solutions"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:5g",
+  "name": "5G",
+  "type": "Technology",
+  "aliases": [
+   "5G"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:6g",
+  "name": "6G",
+  "type": "Technology",
+  "aliases": [
+   "6G"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:adreno-gpu",
+  "name": "Adreno GPU",
+  "type": "Technology",
+  "aliases": [
+   "Adreno GPU"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:ai",
+  "name": "AI",
+  "type": "Technology",
+  "aliases": [
+   "AI"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:ai-enabled-digital-twin",
+  "name": "AI-enabled digital twin",
+  "type": "Technology",
+  "aliases": [
+   "AI-enabled digital twin"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:arm-amba-interconnect-fabric",
+  "name": "Arm AMBA interconnect fabric",
+  "type": "Technology",
+  "aliases": [
+   "Arm AMBA interconnect fabric"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:arm-architecture",
+  "name": "ARM architecture",
+  "type": "Technology",
+  "aliases": [
+   "ARM architecture"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:cowos-technology",
+  "name": "CoWoS technology",
+  "type": "Technology",
+  "aliases": [
+   "CoWoS technology"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:cuda",
+  "name": "CUDA",
+  "type": "Technology",
+  "aliases": [
+   "CUDA"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:ddr5-memory",
+  "name": "DDR5 memory",
+  "type": "Technology",
+  "aliases": [
+   "DDR5 memory"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:dpu",
+  "name": "DPU",
+  "type": "Technology",
+  "aliases": [
+   "DPU"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:emib",
+  "name": "EMIB",
+  "type": "Technology",
+  "aliases": [
+   "EMIB"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:emib-technology",
+  "name": "EMIB technology",
+  "type": "Technology",
+  "aliases": [
+   "EMIB technology"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:emibt",
+  "name": "EMIB\u2011T",
+  "type": "Technology",
+  "aliases": [
+   "EMIB\u2011T"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:fidelity-les",
+  "name": "Fidelity LES",
+  "type": "Technology",
+  "aliases": [
+   "Fidelity LES"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:foveros",
+  "name": "Foveros",
+  "type": "Technology",
+  "aliases": [
+   "Foveros"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:foveros-advanced-packaging",
+  "name": "Foveros advanced packaging",
+  "type": "Technology",
+  "aliases": [
+   "Foveros advanced packaging"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:gan",
+  "name": "GaN",
+  "type": "Technology",
+  "aliases": [
+   "GaN"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:gpu",
+  "name": "GPU",
+  "type": "Technology",
+  "aliases": [
+   "GPU"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:hexagon-npu",
+  "name": "Hexagon NPU",
+  "type": "Technology",
+  "aliases": [
+   "Hexagon NPU"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:intel-14a",
+  "name": "Intel 14A",
+  "type": "Technology",
+  "aliases": [
+   "Intel 14A"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "technology:intel-18a",
+  "name": "Intel 18A",
+  "type": "Technology",
+  "aliases": [
+   "Intel 18A"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "technology:intel-18a-process",
+  "name": "Intel 18A process",
+  "type": "Technology",
+  "aliases": [
+   "Intel 18A process"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:intel-3-process",
+  "name": "Intel 3 process",
+  "type": "Technology",
+  "aliases": [
+   "Intel 3 process"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "technology:intel-4-process",
+  "name": "Intel 4 process",
+  "type": "Technology",
+  "aliases": [
+   "Intel 4 process"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:intel-7",
+  "name": "Intel 7",
+  "type": "Technology",
+  "aliases": [
+   "Intel 7"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:intel-7-process",
+  "name": "Intel 7 process",
+  "type": "Technology",
+  "aliases": [
+   "Intel 7 process"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:intel-amx",
+  "name": "Intel AMX",
+  "type": "Technology",
+  "aliases": [
+   "Intel AMX"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:intel-quickassist-technology",
+  "name": "Intel QuickAssist Technology (QAT)",
+  "type": "Technology",
+  "aliases": [
+   "Intel QuickAssist Technology (QAT)"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:intel-tdx",
+  "name": "Intel TDX",
+  "type": "Technology",
+  "aliases": [
+   "Intel TDX"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:kryo",
+  "name": "Kryo",
+  "type": "Technology",
+  "aliases": [
+   "Kryo"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:liquid-cooling-technology",
+  "name": "Liquid cooling technology",
+  "type": "Technology",
+  "aliases": [
+   "Liquid cooling technology"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:npu",
+  "name": "NPU",
+  "type": "Technology",
+  "aliases": [
+   "NPU"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:photonic-fabric-tm",
+  "name": "Photonic Fabric TM",
+  "type": "Technology",
+  "aliases": [
+   "Photonic Fabric TM"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:powervia",
+  "name": "PowerVia",
+  "type": "Technology",
+  "aliases": [
+   "PowerVia"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "technology:qualcomm-oryon",
+  "name": "Qualcomm Oryon",
+  "type": "Technology",
+  "aliases": [
+   "Qualcomm Oryon"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:rdma",
+  "name": "RDMA",
+  "type": "Technology",
+  "aliases": [
+   "RDMA"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:ribbonfet",
+  "name": "RibbonFET",
+  "type": "Technology",
+  "aliases": [
+   "RibbonFET"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "technology:rocm-software-stack",
+  "name": "ROCm software stack",
+  "type": "Technology",
+  "aliases": [
+   "ROCm software stack"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:silicon",
+  "name": "silicon",
+  "type": "Technology",
+  "aliases": [
+   "silicon"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:silicon-carbide",
+  "name": "silicon carbide",
+  "type": "Technology",
+  "aliases": [
+   "silicon carbide"
+  ],
+  "mentions": 1
+ },
+ {
+  "id": "technology:x-e-2-gpu-architecture",
+  "name": "X e 2 GPU architecture",
+  "type": "Technology",
+  "aliases": [
+   "X e 2 GPU architecture"
+  ],
+  "mentions": 2
+ },
+ {
+  "id": "technology:x86-architecture",
+  "name": "x86 architecture",
+  "type": "Technology",
+  "aliases": [
+   "x86 architecture"
+  ],
+  "mentions": 1
+ }
+]

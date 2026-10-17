@@ -1,0 +1,49 @@
+{
+ "entities": [
+  {
+   "name": "Broadcom Inc.",
+   "type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0047",
+   "confidence": 1.0,
+   "aliases": [
+    "AVGO"
+   ]
+  },
+  {
+   "name": "LSI Corporation",
+   "type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0047",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Charlie B. Kawwas, Ph.D.",
+   "type": "Person",
+   "chunk_id": "AVGO-10-K-2025#c0047",
+   "confidence": 1.0,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Charlie B. Kawwas, Ph.D.",
+   "subject_type": "Person",
+   "relation": "EXECUTIVE_OF",
+   "object": "Broadcom Inc.",
+   "object_type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0047",
+   "evidence": "Charlie B. Kawwas, Ph.D. has served as our President, Semiconductor Solutions Group",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Broadcom Inc.",
+   "subject_type": "Company",
+   "relation": "ACQUIRED",
+   "object": "LSI Corporation",
+   "object_type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0047",
+   "evidence": "its acquisition by us in 2014",
+   "confidence": 1.0
+  }
+ ]
+}

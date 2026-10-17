@@ -1,0 +1,12 @@
+{
+ "entities": [
+  {
+   "name": "Microchip Technology Incorporated",
+   "type": "Company",
+   "chunk_id": "MCHP-10-K-2026#c0000",
+   "confidence": 0.95,
+   "aliases": []
+  }
+ ],
+ "relations": []
+}

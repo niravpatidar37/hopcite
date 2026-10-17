@@ -1,0 +1,423 @@
+{
+ "entities": [
+  {
+   "name": "ON Semiconductor Corporation",
+   "type": "Company",
+   "chunk_id": "ON-10-K-2025#c0000",
+   "confidence": 0.99,
+   "aliases": [
+    "onsemi"
+   ]
+  },
+  {
+   "name": "Infineon Technologies AG",
+   "type": "Company",
+   "chunk_id": "ON-10-K-2025#c0023",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "STMicroelectronics N.V.",
+   "type": "Company",
+   "chunk_id": "ON-10-K-2025#c0023",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "Wolfspeed Inc.",
+   "type": "Company",
+   "chunk_id": "ON-10-K-2025#c0023",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "ROHM Semiconductor",
+   "type": "Company",
+   "chunk_id": "ON-10-K-2025#c0023",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "Nexperia BV",
+   "type": "Company",
+   "chunk_id": "ON-10-K-2025#c0023",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "Texas Instruments Incorporated",
+   "type": "Company",
+   "chunk_id": "ON-10-K-2025#c0024",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "Analog Devices, Inc.",
+   "type": "Company",
+   "chunk_id": "ON-10-K-2025#c0024",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "Renesas Electronics Corporation",
+   "type": "Company",
+   "chunk_id": "ON-10-K-2025#c0024",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "Monolithic Power Systems Inc.",
+   "type": "Company",
+   "chunk_id": "ON-10-K-2025#c0024",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "NXP Semiconductors N.V.",
+   "type": "Company",
+   "chunk_id": "ON-10-K-2025#c0024",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "Sony Semiconductor Manufacturing Corporation",
+   "type": "Company",
+   "chunk_id": "ON-10-K-2025#c0025",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "Samsung Electronics Co., Ltd.",
+   "type": "Company",
+   "chunk_id": "ON-10-K-2025#c0025",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "Omnivision Technologies Inc.",
+   "type": "Company",
+   "chunk_id": "ON-10-K-2025#c0025",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "PSG",
+   "type": "Segment",
+   "chunk_id": "ON-10-K-2025#c0008",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "AMG",
+   "type": "Segment",
+   "chunk_id": "ON-10-K-2025#c0008",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "ISG",
+   "type": "Segment",
+   "chunk_id": "ON-10-K-2025#c0008",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "silicon",
+   "type": "Technology",
+   "chunk_id": "ON-10-K-2025#c0023",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "silicon carbide",
+   "type": "Technology",
+   "chunk_id": "ON-10-K-2025#c0023",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "GaN",
+   "type": "Technology",
+   "chunk_id": "ON-10-K-2025#c0023",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "automotive",
+   "type": "Market",
+   "chunk_id": "ON-10-K-2025#c0000",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "industrial",
+   "type": "Market",
+   "chunk_id": "ON-10-K-2025#c0000",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "AI data center",
+   "type": "Market",
+   "chunk_id": "ON-10-K-2025#c0000",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "medical",
+   "type": "Market",
+   "chunk_id": "ON-10-K-2025#c0001",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Delaware",
+   "type": "Location",
+   "chunk_id": "ON-10-K-2025#c0000",
+   "confidence": 0.99,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "ON Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "PSG",
+   "object_type": "Segment",
+   "chunk_id": "ON-10-K-2025#c0008",
+   "evidence": "The following table illustrates the product technologies under each of our segments",
+   "confidence": 0.96
+  },
+  {
+   "subject": "ON Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "AMG",
+   "object_type": "Segment",
+   "chunk_id": "ON-10-K-2025#c0008",
+   "evidence": "The following table illustrates the product technologies under each of our segments",
+   "confidence": 0.96
+  },
+  {
+   "subject": "ON Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "ISG",
+   "object_type": "Segment",
+   "chunk_id": "ON-10-K-2025#c0008",
+   "evidence": "The following table illustrates the product technologies under each of our segments",
+   "confidence": 0.96
+  },
+  {
+   "subject": "ON Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Infineon Technologies AG",
+   "object_type": "Company",
+   "chunk_id": "ON-10-K-2025#c0023",
+   "evidence": "PSG’s primary competitors include: Infineon Technologies AG",
+   "confidence": 0.98
+  },
+  {
+   "subject": "ON Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "STMicroelectronics N.V.",
+   "object_type": "Company",
+   "chunk_id": "ON-10-K-2025#c0023",
+   "evidence": "PSG’s primary competitors include: ... STMicroelectronics",
+   "confidence": 0.98
+  },
+  {
+   "subject": "ON Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Wolfspeed Inc.",
+   "object_type": "Company",
+   "chunk_id": "ON-10-K-2025#c0023",
+   "evidence": "PSG’s primary competitors include: ... Wolfspeed Inc.",
+   "confidence": 0.98
+  },
+  {
+   "subject": "ON Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "ROHM Semiconductor",
+   "object_type": "Company",
+   "chunk_id": "ON-10-K-2025#c0023",
+   "evidence": "PSG’s primary competitors include: ... ROHM Semiconductor",
+   "confidence": 0.98
+  },
+  {
+   "subject": "ON Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Nexperia BV",
+   "object_type": "Company",
+   "chunk_id": "ON-10-K-2025#c0023",
+   "evidence": "PSG’s primary competitors include: ... Nexperia BV",
+   "confidence": 0.98
+  },
+  {
+   "subject": "ON Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Texas Instruments Incorporated",
+   "object_type": "Company",
+   "chunk_id": "ON-10-K-2025#c0024",
+   "evidence": "Competitors for certain of AMG's products ... Texas Instruments Incorporated",
+   "confidence": 0.98
+  },
+  {
+   "subject": "ON Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Analog Devices, Inc.",
+   "object_type": "Company",
+   "chunk_id": "ON-10-K-2025#c0024",
+   "evidence": "Competitors for certain of AMG's products ... Analog Devices, Inc.",
+   "confidence": 0.98
+  },
+  {
+   "subject": "ON Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Renesas Electronics Corporation",
+   "object_type": "Company",
+   "chunk_id": "ON-10-K-2025#c0024",
+   "evidence": "Competitors for certain of AMG's products ... Renesas Electronics Corporation",
+   "confidence": 0.98
+  },
+  {
+   "subject": "ON Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Monolithic Power Systems Inc.",
+   "object_type": "Company",
+   "chunk_id": "ON-10-K-2025#c0024",
+   "evidence": "Competitors for certain of AMG's products ... Monolithic Power Systems Inc.",
+   "confidence": 0.98
+  },
+  {
+   "subject": "ON Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "NXP Semiconductors N.V.",
+   "object_type": "Company",
+   "chunk_id": "ON-10-K-2025#c0024",
+   "evidence": "Competitors for certain of AMG's products ... NXP Semiconductors N.V.",
+   "confidence": 0.98
+  },
+  {
+   "subject": "ON Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Sony Semiconductor Manufacturing Corporation",
+   "object_type": "Company",
+   "chunk_id": "ON-10-K-2025#c0025",
+   "evidence": "Competitors for certain of ISG's products ... Sony Semiconductor Manufacturing Corporation",
+   "confidence": 0.98
+  },
+  {
+   "subject": "ON Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Samsung Electronics Co., Ltd.",
+   "object_type": "Company",
+   "chunk_id": "ON-10-K-2025#c0025",
+   "evidence": "Competitors for certain of ISG's products ... Samsung Electronics Co., Ltd.",
+   "confidence": 0.98
+  },
+  {
+   "subject": "ON Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Omnivision Technologies Inc.",
+   "object_type": "Company",
+   "chunk_id": "ON-10-K-2025#c0025",
+   "evidence": "Competitors for certain of ISG's products ... Omnivision Technologies Inc.",
+   "confidence": 0.98
+  },
+  {
+   "subject": "ON Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "USES_TECHNOLOGY",
+   "object": "silicon",
+   "object_type": "Technology",
+   "chunk_id": "ON-10-K-2025#c0023",
+   "evidence": "intelligent power technology based on silicon, silicon carbide, and GaN",
+   "confidence": 0.94
+  },
+  {
+   "subject": "ON Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "USES_TECHNOLOGY",
+   "object": "silicon carbide",
+   "object_type": "Technology",
+   "chunk_id": "ON-10-K-2025#c0023",
+   "evidence": "intelligent power technology based on silicon, silicon carbide, and GaN",
+   "confidence": 0.94
+  },
+  {
+   "subject": "ON Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "USES_TECHNOLOGY",
+   "object": "GaN",
+   "object_type": "Technology",
+   "chunk_id": "ON-10-K-2025#c0023",
+   "evidence": "intelligent power technology based on silicon, silicon carbide, and GaN",
+   "confidence": 0.94
+  },
+  {
+   "subject": "ON Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "automotive",
+   "object_type": "Market",
+   "chunk_id": "ON-10-K-2025#c0000",
+   "evidence": "drive electrification ... in automotive",
+   "confidence": 0.95
+  },
+  {
+   "subject": "ON Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "industrial",
+   "object_type": "Market",
+   "chunk_id": "ON-10-K-2025#c0000",
+   "evidence": "intelligent power and intelligent sensing solutions ... in automotive, industrial, and other end-markets",
+   "confidence": 0.95
+  },
+  {
+   "subject": "ON Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "AI data center",
+   "object_type": "Market",
+   "chunk_id": "ON-10-K-2025#c0000",
+   "evidence": "including AI data center",
+   "confidence": 0.95
+  },
+  {
+   "subject": "ON Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "medical",
+   "object_type": "Market",
+   "chunk_id": "ON-10-K-2025#c0001",
+   "evidence": "In the medical field, our intelligent power technologies extend the life of personal diagnostic devices",
+   "confidence": 0.95
+  },
+  {
+   "subject": "ON Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "HEADQUARTERED_IN",
+   "object": "Delaware",
+   "object_type": "Location",
+   "chunk_id": "ON-10-K-2025#c0000",
+   "evidence": "incorporated under the laws of the State of Delaware",
+   "confidence": 0.99
+  }
+ ]
+}

@@ -1,0 +1,533 @@
+{
+ "entities": [
+  {
+   "name": "KLA Corporation",
+   "type": "Company",
+   "chunk_id": "KLAC-10-K-2026#c0000",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Applied Materials, Inc.",
+   "type": "Company",
+   "chunk_id": "KLAC-10-K-2026#c0027",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "ASML Holding N.V.",
+   "type": "Company",
+   "chunk_id": "KLAC-10-K-2026#c0027",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Hitachi High-Tech Corporation",
+   "type": "Company",
+   "chunk_id": "KLAC-10-K-2026#c0027",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Lasertec, Inc.",
+   "type": "Company",
+   "chunk_id": "KLAC-10-K-2026#c0027",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Onto Innovation, Inc.",
+   "type": "Company",
+   "chunk_id": "KLAC-10-K-2026#c0027",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Taiwan Semiconductor Manufacturing Company Limited",
+   "type": "Company",
+   "chunk_id": "KLAC-10-K-2026#c0010",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Semiconductor Process Control",
+   "type": "Segment",
+   "chunk_id": "KLAC-10-K-2026#c0001",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Specialty Semiconductor Process",
+   "type": "Segment",
+   "chunk_id": "KLAC-10-K-2026#c0001",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "PCB and Component Inspection",
+   "type": "Segment",
+   "chunk_id": "KLAC-10-K-2026#c0001",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Klarity",
+   "type": "Product",
+   "chunk_id": "KLAC-10-K-2026#c0019",
+   "confidence": 0.95,
+   "aliases": [
+    "Klarity ®"
+   ]
+  },
+  {
+   "name": "5D Analyzer",
+   "type": "Product",
+   "chunk_id": "KLAC-10-K-2026#c0019",
+   "confidence": 0.95,
+   "aliases": [
+    "5D Analyzer ®"
+   ]
+  },
+  {
+   "name": "OVALiS",
+   "type": "Product",
+   "chunk_id": "KLAC-10-K-2026#c0019",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "aiSIGHT",
+   "type": "Product",
+   "chunk_id": "KLAC-10-K-2026#c0019",
+   "confidence": 0.95,
+   "aliases": [
+    "aiSIGHT™"
+   ]
+  },
+  {
+   "name": "Anchor",
+   "type": "Product",
+   "chunk_id": "KLAC-10-K-2026#c0019",
+   "confidence": 0.95,
+   "aliases": [
+    "Anchor product family"
+   ]
+  },
+  {
+   "name": "RDC",
+   "type": "Product",
+   "chunk_id": "KLAC-10-K-2026#c0019",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "FabVision",
+   "type": "Product",
+   "chunk_id": "KLAC-10-K-2026#c0019",
+   "confidence": 0.95,
+   "aliases": [
+    "FabVision ® Series"
+   ]
+  },
+  {
+   "name": "ProDATA",
+   "type": "Product",
+   "chunk_id": "KLAC-10-K-2026#c0019",
+   "confidence": 0.95,
+   "aliases": [
+    "ProDATA™"
+   ]
+  },
+  {
+   "name": "PROLITH",
+   "type": "Product",
+   "chunk_id": "KLAC-10-K-2026#c0019",
+   "confidence": 0.95,
+   "aliases": [
+    "PROLITH™"
+   ]
+  },
+  {
+   "name": "ProETCH",
+   "type": "Product",
+   "chunk_id": "KLAC-10-K-2026#c0019",
+   "confidence": 0.95,
+   "aliases": [
+    "ProETCH ®"
+   ]
+  },
+  {
+   "name": "I-PAT",
+   "type": "Product",
+   "chunk_id": "KLAC-10-K-2026#c0019",
+   "confidence": 0.95,
+   "aliases": [
+    "I-PAT ®"
+   ]
+  },
+  {
+   "name": "SPOT",
+   "type": "Product",
+   "chunk_id": "KLAC-10-K-2026#c0019",
+   "confidence": 0.95,
+   "aliases": [
+    "SPOT ®"
+   ]
+  },
+  {
+   "name": "Surfscan",
+   "type": "Product",
+   "chunk_id": "KLAC-10-K-2026#c0019",
+   "confidence": 0.95,
+   "aliases": [
+    "Surfscan ® Series"
+   ]
+  },
+  {
+   "name": "High‑performance computing",
+   "type": "Market",
+   "chunk_id": "KLAC-10-K-2026#c0007",
+   "confidence": 0.9,
+   "aliases": [
+    "HPC"
+   ]
+  },
+  {
+   "name": "Data centers",
+   "type": "Market",
+   "chunk_id": "KLAC-10-K-2026#c0007",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Artificial intelligence",
+   "type": "Market",
+   "chunk_id": "KLAC-10-K-2026#c0007",
+   "confidence": 0.9,
+   "aliases": [
+    "AI"
+   ]
+  },
+  {
+   "name": "Memory",
+   "type": "Market",
+   "chunk_id": "KLAC-10-K-2026#c0007",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Foundry/logic",
+   "type": "Market",
+   "chunk_id": "KLAC-10-K-2026#c0007",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "5G",
+   "type": "Market",
+   "chunk_id": "KLAC-10-K-2026#c0007",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Healthcare",
+   "type": "Market",
+   "chunk_id": "KLAC-10-K-2026#c0007",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Industrial applications",
+   "type": "Market",
+   "chunk_id": "KLAC-10-K-2026#c0007",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Electric vehicles",
+   "type": "Market",
+   "chunk_id": "KLAC-10-K-2026#c0007",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Automotive",
+   "type": "Market",
+   "chunk_id": "KLAC-10-K-2026#c0007",
+   "confidence": 0.9,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "KLA Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "Semiconductor Process Control",
+   "object_type": "Segment",
+   "chunk_id": "KLAC-10-K-2026#c0001",
+   "evidence": "We are organized into three reportable segments: Semiconductor Process Control, Specialty Semiconductor Process and PCB and Component Inspection.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "KLA Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "Specialty Semiconductor Process",
+   "object_type": "Segment",
+   "chunk_id": "KLAC-10-K-2026#c0001",
+   "evidence": "We are organized into three reportable segments: Semiconductor Process Control, Specialty Semiconductor Process and PCB and Component Inspection.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "KLA Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "PCB and Component Inspection",
+   "object_type": "Segment",
+   "chunk_id": "KLAC-10-K-2026#c0001",
+   "evidence": "We are organized into three reportable segments: Semiconductor Process Control, Specialty Semiconductor Process and PCB and Component Inspection.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "KLA Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Klarity",
+   "object_type": "Product",
+   "chunk_id": "KLAC-10-K-2026#c0019",
+   "evidence": "Klarity ® product family, 5D Analyzer ® , OVALiS, aiSIGHT™...",
+   "confidence": 0.95
+  },
+  {
+   "subject": "KLA Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "5D Analyzer",
+   "object_type": "Product",
+   "chunk_id": "KLAC-10-K-2026#c0019",
+   "evidence": "Klarity ® product family, 5D Analyzer ® , OVALiS, aiSIGHT™...",
+   "confidence": 0.95
+  },
+  {
+   "subject": "KLA Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "OVALiS",
+   "object_type": "Product",
+   "chunk_id": "KLAC-10-K-2026#c0019",
+   "evidence": "Klarity ® product family, 5D Analyzer ® , OVALiS, aiSIGHT™...",
+   "confidence": 0.95
+  },
+  {
+   "subject": "KLA Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "aiSIGHT",
+   "object_type": "Product",
+   "chunk_id": "KLAC-10-K-2026#c0019",
+   "evidence": "Klarity ® product family, 5D Analyzer ® , OVALiS, aiSIGHT™...",
+   "confidence": 0.95
+  },
+  {
+   "subject": "KLA Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Anchor",
+   "object_type": "Product",
+   "chunk_id": "KLAC-10-K-2026#c0019",
+   "evidence": "Anchor product family, RDC, FabVision ® Series...",
+   "confidence": 0.95
+  },
+  {
+   "subject": "KLA Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "RDC",
+   "object_type": "Product",
+   "chunk_id": "KLAC-10-K-2026#c0019",
+   "evidence": "Anchor product family, RDC, FabVision ® Series...",
+   "confidence": 0.95
+  },
+  {
+   "subject": "KLA Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "FabVision",
+   "object_type": "Product",
+   "chunk_id": "KLAC-10-K-2026#c0019",
+   "evidence": "FabVision ® Series, ProDATA™, PROLITH™...",
+   "confidence": 0.95
+  },
+  {
+   "subject": "KLA Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "ProDATA",
+   "object_type": "Product",
+   "chunk_id": "KLAC-10-K-2026#c0019",
+   "evidence": "FabVision ® Series, ProDATA™, PROLITH™...",
+   "confidence": 0.95
+  },
+  {
+   "subject": "KLA Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "PROLITH",
+   "object_type": "Product",
+   "chunk_id": "KLAC-10-K-2026#c0019",
+   "evidence": "PROLITH™, ProETCH ® , I-PAT ®, SPOT ® .",
+   "confidence": 0.95
+  },
+  {
+   "subject": "KLA Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "ProETCH",
+   "object_type": "Product",
+   "chunk_id": "KLAC-10-K-2026#c0019",
+   "evidence": "PROLITH™, ProETCH ® , I-PAT ®, SPOT ® .",
+   "confidence": 0.95
+  },
+  {
+   "subject": "KLA Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "I-PAT",
+   "object_type": "Product",
+   "chunk_id": "KLAC-10-K-2026#c0019",
+   "evidence": "I-PAT ®, SPOT ® .",
+   "confidence": 0.95
+  },
+  {
+   "subject": "KLA Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "SPOT",
+   "object_type": "Product",
+   "chunk_id": "KLAC-10-K-2026#c0019",
+   "evidence": "I-PAT ®, SPOT ® .",
+   "confidence": 0.95
+  },
+  {
+   "subject": "KLA Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Surfscan",
+   "object_type": "Product",
+   "chunk_id": "KLAC-10-K-2026#c0019",
+   "evidence": "Surfscan ® Series, 2835, 2367 Pro...",
+   "confidence": 0.95
+  },
+  {
+   "subject": "KLA Corporation",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "High‑performance computing",
+   "object_type": "Market",
+   "chunk_id": "KLAC-10-K-2026#c0007",
+   "evidence": "High-performance computing (“HPC”) and data centers, supported by increasing adoption of AI...",
+   "confidence": 0.9
+  },
+  {
+   "subject": "KLA Corporation",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "Data centers",
+   "object_type": "Market",
+   "chunk_id": "KLAC-10-K-2026#c0007",
+   "evidence": "High-performance computing (“HPC”) and data centers, supported by increasing adoption of AI...",
+   "confidence": 0.9
+  },
+  {
+   "subject": "KLA Corporation",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "Artificial intelligence",
+   "object_type": "Market",
+   "chunk_id": "KLAC-10-K-2026#c0007",
+   "evidence": "High-performance computing (“HPC”) and data centers, supported by increasing adoption of AI...",
+   "confidence": 0.9
+  },
+  {
+   "subject": "KLA Corporation",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "Memory",
+   "object_type": "Market",
+   "chunk_id": "KLAC-10-K-2026#c0007",
+   "evidence": "Our semiconductor customers generally operate in one or both of the major semiconductor device manufacturing markets: memory and foundry/logic.",
+   "confidence": 0.9
+  },
+  {
+   "subject": "KLA Corporation",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "Foundry/logic",
+   "object_type": "Market",
+   "chunk_id": "KLAC-10-K-2026#c0007",
+   "evidence": "Our semiconductor customers generally operate in one or both of the major semiconductor device manufacturing markets: memory and foundry/logic.",
+   "confidence": 0.9
+  },
+  {
+   "subject": "KLA Corporation",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "5G",
+   "object_type": "Market",
+   "chunk_id": "KLAC-10-K-2026#c0007",
+   "evidence": "The digitization of industries, including 5G markets, advances in healthcare...",
+   "confidence": 0.9
+  },
+  {
+   "subject": "KLA Corporation",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "Healthcare",
+   "object_type": "Market",
+   "chunk_id": "KLAC-10-K-2026#c0007",
+   "evidence": "The digitization of industries, including 5G markets, advances in healthcare...",
+   "confidence": 0.9
+  },
+  {
+   "subject": "KLA Corporation",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "Industrial applications",
+   "object_type": "Market",
+   "chunk_id": "KLAC-10-K-2026#c0007",
+   "evidence": "The digitization of industries, including 5G markets, advances in healthcare and industrial applications...",
+   "confidence": 0.9
+  },
+  {
+   "subject": "KLA Corporation",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "Electric vehicles",
+   "object_type": "Market",
+   "chunk_id": "KLAC-10-K-2026#c0007",
+   "evidence": "the increasing adoption of electric vehicles and intelligence in automobiles...",
+   "confidence": 0.9
+  },
+  {
+   "subject": "KLA Corporation",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "Automotive",
+   "object_type": "Market",
+   "chunk_id": "KLAC-10-K-2026#c0007",
+   "evidence": "intelligence in automobiles, also supports leading‑edge design node technology investments...",
+   "confidence": 0.9
+  },
+  {
+   "subject": "KLA Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Applied Materials, Inc.",
+   "object_type": "Company",
+   "chunk_id": "KLAC-10-K-2026#c0027",
+   "evidence": "In each of our product markets, we have many competitors, including companies such as Applied Materials, Inc., ASML Holding N.V., ...",
+   "confidence": 0.95
+  }
+ ]
+}

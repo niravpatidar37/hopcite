@@ -1,0 +1,305 @@
+{
+ "entities": [
+  {
+   "name": "Cadence Design Systems, Inc.",
+   "type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0002",
+   "confidence": 1.0,
+   "aliases": [
+    "Cadence"
+   ]
+  },
+  {
+   "name": "Arm Artisan foundation IP business",
+   "type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0018",
+   "confidence": 1.0,
+   "aliases": [
+    "Arm Artisan"
+   ]
+  },
+  {
+   "name": "Secure-IC",
+   "type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0019",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "NVIDIA",
+   "type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0025",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Millennium™ Multiphysics Enterprise Platform",
+   "type": "Product",
+   "chunk_id": "CDNS-10-K-2025#c0025",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "M2000 supercomputer",
+   "type": "Product",
+   "chunk_id": "CDNS-10-K-2025#c0025",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Fidelity LES",
+   "type": "Technology",
+   "chunk_id": "CDNS-10-K-2025#c0025",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Integrity™ 3D-IC Platform",
+   "type": "Product",
+   "chunk_id": "CDNS-10-K-2025#c0025",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Innovus",
+   "type": "Product",
+   "chunk_id": "CDNS-10-K-2025#c0025",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Virtuoso",
+   "type": "Product",
+   "chunk_id": "CDNS-10-K-2025#c0025",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Allegro",
+   "type": "Product",
+   "chunk_id": "CDNS-10-K-2025#c0025",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "automotive",
+   "type": "Market",
+   "chunk_id": "CDNS-10-K-2025#c0018",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "data center",
+   "type": "Market",
+   "chunk_id": "CDNS-10-K-2025#c0018",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "mobile",
+   "type": "Market",
+   "chunk_id": "CDNS-10-K-2025#c0018",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "internet of things",
+   "type": "Market",
+   "chunk_id": "CDNS-10-K-2025#c0018",
+   "confidence": 1.0,
+   "aliases": [
+    "IoT"
+   ]
+  },
+  {
+   "name": "consumer electronics",
+   "type": "Market",
+   "chunk_id": "CDNS-10-K-2025#c0018",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "aerospace and defense",
+   "type": "Market",
+   "chunk_id": "CDNS-10-K-2025#c0019",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "semiconductor design",
+   "type": "Market",
+   "chunk_id": "CDNS-10-K-2025#c0025",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "drug discovery",
+   "type": "Market",
+   "chunk_id": "CDNS-10-K-2025#c0025",
+   "confidence": 1.0,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Cadence Design Systems, Inc.",
+   "subject_type": "Company",
+   "relation": "ACQUIRED",
+   "object": "Arm Artisan foundation IP business",
+   "object_type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0018",
+   "evidence": "acquisition of the Arm Artisan foundation IP business",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Cadence Design Systems, Inc.",
+   "subject_type": "Company",
+   "relation": "ACQUIRED",
+   "object": "Secure-IC",
+   "object_type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0019",
+   "evidence": "acquisition of Secure-IC, a leader in embedded security IP",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Cadence Design Systems, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Millennium™ Multiphysics Enterprise Platform",
+   "object_type": "Product",
+   "chunk_id": "CDNS-10-K-2025#c0025",
+   "evidence": "Our Millennium™ Multiphysics Enterprise Platform is an industry-first turnkey AI-enabled digital twin",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Cadence Design Systems, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "M2000 supercomputer",
+   "object_type": "Product",
+   "chunk_id": "CDNS-10-K-2025#c0025",
+   "evidence": "we announced the M2000 supercomputer",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Cadence Design Systems, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Integrity™ 3D-IC Platform",
+   "object_type": "Product",
+   "chunk_id": "CDNS-10-K-2025#c0025",
+   "evidence": "our customers use the Cadence ® Integrity™ 3D-IC Platform",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Cadence Design Systems, Inc.",
+   "subject_type": "Company",
+   "relation": "PARTNERS_WITH",
+   "object": "NVIDIA",
+   "object_type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0025",
+   "evidence": "M2000 is a specialized, AI-accelerated platform co-developed with NVIDIA",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Millennium™ Multiphysics Enterprise Platform",
+   "subject_type": "Product",
+   "relation": "USES_TECHNOLOGY",
+   "object": "AI-enabled digital twin",
+   "object_type": "Technology",
+   "chunk_id": "CDNS-10-K-2025#c0025",
+   "evidence": "AI-enabled digital twin",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Fidelity LES",
+   "subject_type": "Technology",
+   "relation": "USES_TECHNOLOGY",
+   "object": "GPU resident CFD solvers",
+   "object_type": "Technology",
+   "chunk_id": "CDNS-10-K-2025#c0025",
+   "evidence": "GPU resident CFD solvers such as Fidelity LES",
+   "confidence": 1.0
+  },
+  {
+   "subject": "M2000 supercomputer",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "semiconductor design",
+   "object_type": "Market",
+   "chunk_id": "CDNS-10-K-2025#c0025",
+   "evidence": "speed up complex simulations in fields like semiconductor design",
+   "confidence": 1.0
+  },
+  {
+   "subject": "M2000 supercomputer",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "aerospace and defense",
+   "object_type": "Market",
+   "chunk_id": "CDNS-10-K-2025#c0025",
+   "evidence": "fields like ... aerospace and defense",
+   "confidence": 1.0
+  },
+  {
+   "subject": "M2000 supercomputer",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "drug discovery",
+   "object_type": "Market",
+   "chunk_id": "CDNS-10-K-2025#c0025",
+   "evidence": "fields like ... drug discovery",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Integrity™ 3D-IC Platform",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "automotive",
+   "object_type": "Market",
+   "chunk_id": "CDNS-10-K-2025#c0018",
+   "evidence": "address ... markets such as automotive",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Integrity™ 3D-IC Platform",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "data center",
+   "object_type": "Market",
+   "chunk_id": "CDNS-10-K-2025#c0018",
+   "evidence": "address ... markets such as ... data center",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Integrity™ 3D-IC Platform",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "mobile",
+   "object_type": "Market",
+   "chunk_id": "CDNS-10-K-2025#c0018",
+   "evidence": "address ... markets such as ... mobile",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Integrity™ 3D-IC Platform",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "internet of things",
+   "object_type": "Market",
+   "chunk_id": "CDNS-10-K-2025#c0018",
+   "evidence": "address ... markets such as ... internet of things",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Integrity™ 3D-IC Platform",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "consumer electronics",
+   "object_type": "Market",
+   "chunk_id": "CDNS-10-K-2025#c0018",
+   "evidence": "address ... markets such as ... consumer electronics",
+   "confidence": 1.0
+  }
+ ]
+}

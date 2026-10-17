@@ -1,0 +1,102 @@
+{
+ "entities": [
+  {
+   "name": "Synopsys, Inc.",
+   "type": "Company",
+   "chunk_id": "SNPS-10-K-2025#c0041",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Mike Ellow",
+   "type": "Person",
+   "chunk_id": "SNPS-10-K-2025#c0054",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Siemens EDA",
+   "type": "Company",
+   "chunk_id": "SNPS-10-K-2025#c0054",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Siemens Digital Industries",
+   "type": "Company",
+   "chunk_id": "SNPS-10-K-2025#c0054",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Siemens Digital Industries Software",
+   "type": "Company",
+   "chunk_id": "SNPS-10-K-2025#c0054",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Berkeley Design Automation",
+   "type": "Company",
+   "chunk_id": "SNPS-10-K-2025#c0054",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Mentor Graphics",
+   "type": "Company",
+   "chunk_id": "SNPS-10-K-2025#c0054",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Cadence Design Systems",
+   "type": "Company",
+   "chunk_id": "SNPS-10-K-2025#c0054",
+   "confidence": 1.0,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Mike Ellow",
+   "subject_type": "Person",
+   "relation": "EXECUTIVE_OF",
+   "object": "Synopsys, Inc.",
+   "object_type": "Company",
+   "chunk_id": "SNPS-10-K-2025#c0054",
+   "evidence": "Mike Ellow has served as our Chief Revenue Officer since November 2025.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Mike Ellow",
+   "subject_type": "Person",
+   "relation": "EXECUTIVE_OF",
+   "object": "Siemens EDA",
+   "object_type": "Company",
+   "chunk_id": "SNPS-10-K-2025#c0054",
+   "evidence": "he was the Chief Executive Officer of Siemens EDA, a business unit of Siemens Digital Industries",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Siemens EDA",
+   "subject_type": "Company",
+   "relation": "SUBSIDIARY_OF",
+   "object": "Siemens Digital Industries",
+   "object_type": "Company",
+   "chunk_id": "SNPS-10-K-2025#c0054",
+   "evidence": "Siemens EDA, a business unit of Siemens Digital Industries",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Siemens Digital Industries Software",
+   "subject_type": "Company",
+   "relation": "ACQUIRED",
+   "object": "Mentor Graphics",
+   "object_type": "Company",
+   "chunk_id": "SNPS-10-K-2025#c0054",
+   "evidence": "through Mentor Graphics' acquisition by Siemens Digital Industries Software",
+   "confidence": 1.0
+  }
+ ]
+}

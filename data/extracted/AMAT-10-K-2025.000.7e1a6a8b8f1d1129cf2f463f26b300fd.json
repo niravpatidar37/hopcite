@@ -1,0 +1,281 @@
+{
+ "entities": [
+  {
+   "name": "Applied Materials, Inc.",
+   "type": "Company",
+   "chunk_id": "AMAT-10-K-2025#c0000",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Varian Semiconductor Equipment Associates, Inc.",
+   "type": "Company",
+   "chunk_id": "AMAT-10-K-2025#c0027",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Advanced Micro Devices, Inc.",
+   "type": "Company",
+   "chunk_id": "AMAT-10-K-2025#c0028",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Xilinx, Inc.",
+   "type": "Company",
+   "chunk_id": "AMAT-10-K-2025#c0028",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Intel Corporation",
+   "type": "Company",
+   "chunk_id": "AMAT-10-K-2025#c0028",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "KLA-Tencor Corporation",
+   "type": "Company",
+   "chunk_id": "AMAT-10-K-2025#c0027",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Mr. Dickerson",
+   "type": "Person",
+   "chunk_id": "AMAT-10-K-2025#c0027",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Mr. Hill",
+   "type": "Person",
+   "chunk_id": "AMAT-10-K-2025#c0028",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Dr. Raja",
+   "type": "Person",
+   "chunk_id": "AMAT-10-K-2025#c0028",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Semiconductor Systems",
+   "type": "Segment",
+   "chunk_id": "AMAT-10-K-2025#c0001",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Applied Global Services® (AGS)",
+   "type": "Segment",
+   "chunk_id": "AMAT-10-K-2025#c0001",
+   "confidence": 0.99,
+   "aliases": [
+    "AGS"
+   ]
+  },
+  {
+   "name": "United States",
+   "type": "Location",
+   "chunk_id": "AMAT-10-K-2025#c0008",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Singapore",
+   "type": "Location",
+   "chunk_id": "AMAT-10-K-2025#c0008",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Japan",
+   "type": "Location",
+   "chunk_id": "AMAT-10-K-2025#c0008",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "China",
+   "type": "Location",
+   "chunk_id": "AMAT-10-K-2025#c0008",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Korea",
+   "type": "Location",
+   "chunk_id": "AMAT-10-K-2025#c0008",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Taiwan",
+   "type": "Location",
+   "chunk_id": "AMAT-10-K-2025#c0008",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Israel",
+   "type": "Location",
+   "chunk_id": "AMAT-10-K-2025#c0008",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Europe",
+   "type": "Location",
+   "chunk_id": "AMAT-10-K-2025#c0008",
+   "confidence": 0.99,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Applied Materials, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "Semiconductor Systems",
+   "object_type": "Segment",
+   "chunk_id": "AMAT-10-K-2025#c0001",
+   "evidence": "We operate in two reportable segments: Semiconductor Systems and Applied Global Services® (AGS).",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Applied Materials, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "Applied Global Services® (AGS)",
+   "object_type": "Segment",
+   "chunk_id": "AMAT-10-K-2025#c0001",
+   "evidence": "We operate in two reportable segments: Semiconductor Systems and Applied Global Services® (AGS).",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Applied Materials, Inc.",
+   "subject_type": "Company",
+   "relation": "ACQUIRED",
+   "object": "Varian Semiconductor Equipment Associates, Inc.",
+   "object_type": "Company",
+   "chunk_id": "AMAT-10-K-2025#c0027",
+   "evidence": "its acquisition by us in November 2011.",
+   "confidence": 0.97
+  },
+  {
+   "subject": "Mr. Dickerson",
+   "subject_type": "Person",
+   "relation": "EXECUTIVE_OF",
+   "object": "Applied Materials, Inc.",
+   "object_type": "Company",
+   "chunk_id": "AMAT-10-K-2025#c0027",
+   "evidence": "was named President of Applied... appointed Chief Executive Officer...",
+   "confidence": 0.97
+  },
+  {
+   "subject": "Mr. Hill",
+   "subject_type": "Person",
+   "relation": "EXECUTIVE_OF",
+   "object": "Applied Materials, Inc.",
+   "object_type": "Company",
+   "chunk_id": "AMAT-10-K-2025#c0028",
+   "evidence": "has been Senior Vice President and Chief Financial Officer since March 2022.",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Dr. Raja",
+   "subject_type": "Person",
+   "relation": "EXECUTIVE_OF",
+   "object": "Applied Materials, Inc.",
+   "object_type": "Company",
+   "chunk_id": "AMAT-10-K-2025#c0028",
+   "evidence": "has been President, Semiconductor Products Group since March 2023.",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Applied Materials, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "United States",
+   "object_type": "Location",
+   "chunk_id": "AMAT-10-K-2025#c0008",
+   "evidence": "manufacturing and supply chain activities are conducted in various countries, including United States, Singapore...",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Applied Materials, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Singapore",
+   "object_type": "Location",
+   "chunk_id": "AMAT-10-K-2025#c0008",
+   "evidence": "including United States, Singapore, Japan, China, Korea, Taiwan, Israel and other countries...",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Applied Materials, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Japan",
+   "object_type": "Location",
+   "chunk_id": "AMAT-10-K-2025#c0008",
+   "evidence": "including United States, Singapore, Japan, China, Korea, Taiwan, Israel...",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Applied Materials, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "China",
+   "object_type": "Location",
+   "chunk_id": "AMAT-10-K-2025#c0008",
+   "evidence": "including United States, Singapore, Japan, China, Korea, Taiwan, Israel...",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Applied Materials, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Korea",
+   "object_type": "Location",
+   "chunk_id": "AMAT-10-K-2025#c0008",
+   "evidence": "including United States, Singapore, Japan, China, Korea, Taiwan, Israel...",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Applied Materials, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Taiwan",
+   "object_type": "Location",
+   "chunk_id": "AMAT-10-K-2025#c0008",
+   "evidence": "including United States, Singapore, Japan, China, Korea, Taiwan, Israel...",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Applied Materials, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Israel",
+   "object_type": "Location",
+   "chunk_id": "AMAT-10-K-2025#c0008",
+   "evidence": "including United States, Singapore, Japan, China, Korea, Taiwan, Israel...",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Applied Materials, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Europe",
+   "object_type": "Location",
+   "chunk_id": "AMAT-10-K-2025#c0008",
+   "evidence": "and other countries in Asia and Europe.",
+   "confidence": 0.9
+  }
+ ]
+}

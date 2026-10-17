@@ -1,0 +1,468 @@
+{
+ "entities": [
+  {
+   "name": "Super Micro Computer, Inc.",
+   "type": "Company",
+   "chunk_id": "SMCI-10-K-2026#c0000",
+   "confidence": 1.0,
+   "aliases": [
+    "Supermicro"
+   ]
+  },
+  {
+   "name": "NVIDIA",
+   "type": "Company",
+   "chunk_id": "SMCI-10-K-2026#c0020",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Intel",
+   "type": "Company",
+   "chunk_id": "SMCI-10-K-2026#c0020",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "AMD",
+   "type": "Company",
+   "chunk_id": "SMCI-10-K-2026#c0020",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Ablecom Technology, Inc.",
+   "type": "Company",
+   "chunk_id": "SMCI-10-K-2026#c0027",
+   "confidence": 0.98,
+   "aliases": [
+    "Ablecom"
+   ]
+  },
+  {
+   "name": "Compuware Technology, Inc.",
+   "type": "Company",
+   "chunk_id": "SMCI-10-K-2026#c0027",
+   "confidence": 0.98,
+   "aliases": [
+    "Compuware"
+   ]
+  },
+  {
+   "name": "Data Center Building Block Solutions",
+   "type": "Segment",
+   "chunk_id": "SMCI-10-K-2026#c0001",
+   "confidence": 0.95,
+   "aliases": [
+    "DCBBS"
+   ]
+  },
+  {
+   "name": "Total IT Solutions",
+   "type": "Segment",
+   "chunk_id": "SMCI-10-K-2026#c0001",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "NVIDIA Vera Rubin NVL72",
+   "type": "Product",
+   "chunk_id": "SMCI-10-K-2026#c0008",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "NVIDIA HGX Rubin NVL8",
+   "type": "Product",
+   "chunk_id": "SMCI-10-K-2026#c0008",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "AMD Instinct MI350 series GPUs",
+   "type": "Product",
+   "chunk_id": "SMCI-10-K-2026#c0008",
+   "confidence": 0.96,
+   "aliases": [
+    "MI350X",
+    "MI355X"
+   ]
+  },
+  {
+   "name": "AMD Instinct MI455X GPUs",
+   "type": "Product",
+   "chunk_id": "SMCI-10-K-2026#c0008",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "Helios system",
+   "type": "Product",
+   "chunk_id": "SMCI-10-K-2026#c0008",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "Arm®-based platforms",
+   "type": "Product",
+   "chunk_id": "SMCI-10-K-2026#c0008",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Liquid cooling technology",
+   "type": "Technology",
+   "chunk_id": "SMCI-10-K-2026#c0001",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "ROCm software stack",
+   "type": "Technology",
+   "chunk_id": "SMCI-10-K-2026#c0008",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Silicon Valley",
+   "type": "Location",
+   "chunk_id": "SMCI-10-K-2026#c0000",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "United States",
+   "type": "Location",
+   "chunk_id": "SMCI-10-K-2026#c0027",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Europe",
+   "type": "Location",
+   "chunk_id": "SMCI-10-K-2026#c0027",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Asia",
+   "type": "Location",
+   "chunk_id": "SMCI-10-K-2026#c0027",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "AI data centers",
+   "type": "Market",
+   "chunk_id": "SMCI-10-K-2026#c0000",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "High‑performance computing",
+   "type": "Market",
+   "chunk_id": "SMCI-10-K-2026#c0000",
+   "confidence": 0.95,
+   "aliases": [
+    "HPC"
+   ]
+  },
+  {
+   "name": "Enterprise",
+   "type": "Market",
+   "chunk_id": "SMCI-10-K-2026#c0000",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Cloud",
+   "type": "Market",
+   "chunk_id": "SMCI-10-K-2026#c0000",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Edge computing",
+   "type": "Market",
+   "chunk_id": "SMCI-10-K-2026#c0000",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "5G Telco",
+   "type": "Market",
+   "chunk_id": "SMCI-10-K-2026#c0000",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Retail",
+   "type": "Market",
+   "chunk_id": "SMCI-10-K-2026#c0000",
+   "confidence": 0.9,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "HEADQUARTERED_IN",
+   "object": "Silicon Valley",
+   "object_type": "Location",
+   "chunk_id": "SMCI-10-K-2026#c0000",
+   "evidence": "We are a Silicon Valley-based provider...",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "Data Center Building Block Solutions",
+   "object_type": "Segment",
+   "chunk_id": "SMCI-10-K-2026#c0001",
+   "evidence": "through our Data Center Building Block Solutions ® (“DCBBS”)",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "Total IT Solutions",
+   "object_type": "Segment",
+   "chunk_id": "SMCI-10-K-2026#c0001",
+   "evidence": "These complement our Total IT Solutions",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "NVIDIA Vera Rubin NVL72",
+   "object_type": "Product",
+   "chunk_id": "SMCI-10-K-2026#c0008",
+   "evidence": "support for ... NVIDIA Vera Rubin NVL72",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "NVIDIA HGX Rubin NVL8",
+   "object_type": "Product",
+   "chunk_id": "SMCI-10-K-2026#c0008",
+   "evidence": "support for ... NVIDIA HGX Rubin NVL8 systems",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "AMD Instinct MI350 series GPUs",
+   "object_type": "Product",
+   "chunk_id": "SMCI-10-K-2026#c0008",
+   "evidence": "introduced new products supporting ... AMD Instinct™ MI350 series GPUs",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "AMD Instinct MI455X GPUs",
+   "object_type": "Product",
+   "chunk_id": "SMCI-10-K-2026#c0008",
+   "evidence": "Helios ... powered by AMD Instinct MI455X GPUs",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Helios system",
+   "object_type": "Product",
+   "chunk_id": "SMCI-10-K-2026#c0008",
+   "evidence": "Helios is a 72‑GPU double‑width rack‑scale system",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Arm®-based platforms",
+   "object_type": "Product",
+   "chunk_id": "SMCI-10-K-2026#c0008",
+   "evidence": "expanded our portfolio with Arm®-based platforms",
+   "confidence": 0.9
+  },
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "USES_TECHNOLOGY",
+   "object": "Liquid cooling technology",
+   "object_type": "Technology",
+   "chunk_id": "SMCI-10-K-2026#c0001",
+   "evidence": "including using Supermicro’s state-of-the-art liquid cooling technologies",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "USES_TECHNOLOGY",
+   "object": "ROCm software stack",
+   "object_type": "Technology",
+   "chunk_id": "SMCI-10-K-2026#c0008",
+   "evidence": "unified by the open AMD ROCm™ software stack",
+   "confidence": 0.9
+  },
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "PARTNERS_WITH",
+   "object": "NVIDIA",
+   "object_type": "Company",
+   "chunk_id": "SMCI-10-K-2026#c0020",
+   "evidence": "We work closely with NVIDIA ... to develop products",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "PARTNERS_WITH",
+   "object": "Intel",
+   "object_type": "Company",
+   "chunk_id": "SMCI-10-K-2026#c0020",
+   "evidence": "We work closely with ... Intel ... to develop products",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "PARTNERS_WITH",
+   "object": "AMD",
+   "object_type": "Company",
+   "chunk_id": "SMCI-10-K-2026#c0020",
+   "evidence": "We work closely with ... AMD, among others, to develop products",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Ablecom Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "MANUFACTURES_FOR",
+   "object": "Super Micro Computer, Inc.",
+   "object_type": "Company",
+   "chunk_id": "SMCI-10-K-2026#c0027",
+   "evidence": "Ablecom also coordinates the manufacturing of chassis for us",
+   "confidence": 0.98
+  },
+  {
+   "subject": "Compuware Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "SUPPLIES_TO",
+   "object": "Super Micro Computer, Inc.",
+   "object_type": "Company",
+   "chunk_id": "SMCI-10-K-2026#c0027",
+   "evidence": "Compuware also serves as a non‑exclusive authorized distributor of our products",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "AI data centers",
+   "object_type": "Market",
+   "chunk_id": "SMCI-10-K-2026#c0000",
+   "evidence": "address demanding workloads ... from the enterprise and cloud to the intelligent edge",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "High‑performance computing",
+   "object_type": "Market",
+   "chunk_id": "SMCI-10-K-2026#c0000",
+   "evidence": "including artificial intelligence (“AI”) and high‑performance computing (“HPC”)",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "Enterprise",
+   "object_type": "Market",
+   "chunk_id": "SMCI-10-K-2026#c0000",
+   "evidence": "address demanding workloads from the enterprise",
+   "confidence": 0.9
+  },
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "Cloud",
+   "object_type": "Market",
+   "chunk_id": "SMCI-10-K-2026#c0000",
+   "evidence": "address demanding workloads ... cloud",
+   "confidence": 0.9
+  },
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "Edge computing",
+   "object_type": "Market",
+   "chunk_id": "SMCI-10-K-2026#c0000",
+   "evidence": "address demanding workloads ... to the intelligent edge",
+   "confidence": 0.9
+  },
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "5G Telco",
+   "object_type": "Market",
+   "chunk_id": "SMCI-10-K-2026#c0000",
+   "evidence": "edge computing applications, such as 5G Telco",
+   "confidence": 0.9
+  },
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "Retail",
+   "object_type": "Market",
+   "chunk_id": "SMCI-10-K-2026#c0000",
+   "evidence": "edge computing applications, such as ... Retail",
+   "confidence": 0.9
+  },
+  {
+   "subject": "Ablecom Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "United States",
+   "object_type": "Location",
+   "chunk_id": "SMCI-10-K-2026#c0027",
+   "evidence": "warehouses multiple components ... before shipping them to our facilities in the United States",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Ablecom Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Europe",
+   "object_type": "Location",
+   "chunk_id": "SMCI-10-K-2026#c0027",
+   "evidence": "shipping them to our facilities in the United States, Europe, and Asia",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Ablecom Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Asia",
+   "object_type": "Location",
+   "chunk_id": "SMCI-10-K-2026#c0027",
+   "evidence": "shipping them to our facilities in the United States, Europe, and Asia",
+   "confidence": 0.95
+  }
+ ]
+}

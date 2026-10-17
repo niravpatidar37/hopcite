@@ -1,0 +1,81 @@
+{
+ "entities": [
+  {
+   "name": "Texas Instruments Incorporated",
+   "type": "Company",
+   "chunk_id": "TXN-10-K-2025#c0000",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "Dallas, Texas",
+   "type": "Location",
+   "chunk_id": "TXN-10-K-2025#c0000",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "Analog",
+   "type": "Segment",
+   "chunk_id": "TXN-10-K-2025#c0000",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Embedded Processing",
+   "type": "Segment",
+   "chunk_id": "TXN-10-K-2025#c0000",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Other",
+   "type": "Segment",
+   "chunk_id": "TXN-10-K-2025#c0000",
+   "confidence": 0.95,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Texas Instruments Incorporated",
+   "subject_type": "Company",
+   "relation": "HEADQUARTERED_IN",
+   "object": "Dallas, Texas",
+   "object_type": "Location",
+   "chunk_id": "TXN-10-K-2025#c0000",
+   "evidence": "With headquarters in Dallas, Texas, we have design, manufacturing or sales operations...",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Texas Instruments Incorporated",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "Analog",
+   "object_type": "Segment",
+   "chunk_id": "TXN-10-K-2025#c0000",
+   "evidence": "Our two reportable segments are Analog and Embedded Processing...",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Texas Instruments Incorporated",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "Embedded Processing",
+   "object_type": "Segment",
+   "chunk_id": "TXN-10-K-2025#c0000",
+   "evidence": "Our two reportable segments are Analog and Embedded Processing...",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Texas Instruments Incorporated",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "Other",
+   "object_type": "Segment",
+   "chunk_id": "TXN-10-K-2025#c0000",
+   "evidence": "we report the results of our remaining business activities in Other.",
+   "confidence": 0.95
+  }
+ ]
+}

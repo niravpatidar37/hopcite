@@ -1,0 +1,340 @@
+{
+ "entities": [
+  {
+   "name": "Intel Corporation",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0016",
+   "confidence": 0.96,
+   "aliases": [
+    "Intel"
+   ]
+  },
+  {
+   "name": "TSMC",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0011",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "Advanced Micro Devices, Inc.",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0020",
+   "confidence": 0.95,
+   "aliases": [
+    "AMD"
+   ]
+  },
+  {
+   "name": "Apple Inc.",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0020",
+   "confidence": 0.93,
+   "aliases": []
+  },
+  {
+   "name": "Qualcomm Inc.",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0020",
+   "confidence": 0.93,
+   "aliases": []
+  },
+  {
+   "name": "MediaTek Inc.",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0020",
+   "confidence": 0.93,
+   "aliases": []
+  },
+  {
+   "name": "Altera",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0017",
+   "confidence": 0.92,
+   "aliases": []
+  },
+  {
+   "name": "CCG",
+   "type": "Segment",
+   "chunk_id": "INTC-10-K-2025#c0018",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "DCAI",
+   "type": "Segment",
+   "chunk_id": "INTC-10-K-2025#c0016",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Intel Foundry",
+   "type": "Segment",
+   "chunk_id": "INTC-10-K-2025#c0016",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Intel 14A",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0011",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "Intel 18A",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0013",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "Intel 18A-P",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0011",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "CPU",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0016",
+   "confidence": 0.92,
+   "aliases": []
+  },
+  {
+   "name": "x86 architecture",
+   "type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0020",
+   "confidence": 0.93,
+   "aliases": []
+  },
+  {
+   "name": "ARM architecture",
+   "type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0020",
+   "confidence": 0.93,
+   "aliases": []
+  },
+  {
+   "name": "Costa Rica",
+   "type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0011",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Ohio",
+   "type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0011",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Germany",
+   "type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0011",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Poland",
+   "type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0011",
+   "confidence": 0.95,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "TSMC",
+   "subject_type": "Company",
+   "relation": "MANUFACTURES_FOR",
+   "object": "Intel Corporation",
+   "object_type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0011",
+   "evidence": "shift manufacturing to third-party foundries, particularly TSMC",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Advanced Micro Devices, Inc.",
+   "object_type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0020",
+   "evidence": "CCG's primary competitor is AMD",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Apple Inc.",
+   "object_type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0020",
+   "evidence": "companies that design processors based on the ARM architecture, such as Apple",
+   "confidence": 0.9
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Qualcomm Inc.",
+   "object_type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0020",
+   "evidence": "companies that design processors based on the ARM architecture, such as ... Qualcomm",
+   "confidence": 0.9
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "MediaTek Inc.",
+   "object_type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0020",
+   "evidence": "companies that design processors based on the ARM architecture, such as ... MediaTek",
+   "confidence": 0.9
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "CCG",
+   "object_type": "Segment",
+   "chunk_id": "INTC-10-K-2025#c0018",
+   "evidence": "Intel Products is composed of two operating segments: CCG and DCAI",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "DCAI",
+   "object_type": "Segment",
+   "chunk_id": "INTC-10-K-2025#c0016",
+   "evidence": "includes our CCG and DCAI operating segments",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "Intel Foundry",
+   "object_type": "Segment",
+   "chunk_id": "INTC-10-K-2025#c0016",
+   "evidence": "manufactured by our Intel Foundry operating segment",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Costa Rica",
+   "object_type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0011",
+   "evidence": "our Costa Rican assembly and test operations",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Ohio",
+   "object_type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0011",
+   "evidence": "new Ohio wafer fabrication facility",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Germany",
+   "object_type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0011",
+   "evidence": "planned expansions in Germany (fab)",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Poland",
+   "object_type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0011",
+   "evidence": "planned expansions in Poland (assembly and test facility)",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Intel 14A",
+   "object_type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0011",
+   "evidence": "pursuit of Intel 14A and successor leading-edge process technologies",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Intel 18A",
+   "object_type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0013",
+   "evidence": "ramped Intel 18A into high-volume production",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Intel 18A-P",
+   "object_type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0011",
+   "evidence": "its derivative node, Intel 18A-P",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "USES_TECHNOLOGY",
+   "object": "x86 architecture",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0020",
+   "evidence": "designs processors based on the x86 architecture",
+   "confidence": 0.93
+  },
+  {
+   "subject": "Apple Inc.",
+   "subject_type": "Company",
+   "relation": "USES_TECHNOLOGY",
+   "object": "ARM architecture",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0020",
+   "evidence": "Apple with its M series products ... ARM architecture",
+   "confidence": 0.9
+  },
+  {
+   "subject": "Qualcomm Inc.",
+   "subject_type": "Company",
+   "relation": "USES_TECHNOLOGY",
+   "object": "ARM architecture",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0020",
+   "evidence": "Qualcomm with its Snapdragon products ... ARM architecture",
+   "confidence": 0.9
+  },
+  {
+   "subject": "MediaTek Inc.",
+   "subject_type": "Company",
+   "relation": "USES_TECHNOLOGY",
+   "object": "ARM architecture",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0020",
+   "evidence": "MediaTek with its Kompanio products ... ARM architecture",
+   "confidence": 0.9
+  }
+ ]
+}

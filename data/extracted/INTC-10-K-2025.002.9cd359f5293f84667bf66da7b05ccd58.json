@@ -1,0 +1,414 @@
+{
+ "entities": [
+  {
+   "name": "Intel Corporation",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0023",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "AMD",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0023",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "NVIDIA",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0023",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "Amazon",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0023",
+   "confidence": 0.97,
+   "aliases": []
+  },
+  {
+   "name": "Google",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0023",
+   "confidence": 0.97,
+   "aliases": []
+  },
+  {
+   "name": "Meta",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0023",
+   "confidence": 0.97,
+   "aliases": []
+  },
+  {
+   "name": "Microsoft",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0023",
+   "confidence": 0.97,
+   "aliases": []
+  },
+  {
+   "name": "Broadcom",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0023",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "TSMC",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0027",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "Samsung",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0027",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "GlobalFoundries",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0027",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "UMC",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0027",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "SMIC",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0027",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "Altera",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0029",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Client CPUs",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0033",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "Intel Core",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0033",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Intel Core Ultra",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0033",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "CCG",
+   "type": "Segment",
+   "chunk_id": "INTC-10-K-2025#c0033",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "DCAI",
+   "type": "Segment",
+   "chunk_id": "INTC-10-K-2025#c0023",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Intel Foundry",
+   "type": "Segment",
+   "chunk_id": "INTC-10-K-2025#c0024",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "PC industry",
+   "type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0033",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "AI workloads",
+   "type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0023",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "U.S.",
+   "type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0024",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Asia",
+   "type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0027",
+   "confidence": 0.95,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "AMD",
+   "object_type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0023",
+   "evidence": "competitors include AMD, which utilizes the x86 architecture and competes with us",
+   "confidence": 0.98
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "NVIDIA",
+   "object_type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0023",
+   "evidence": "providers of GPU systems such as NVIDIA, whose GPU systems have experienced the highest demand",
+   "confidence": 0.97
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Amazon",
+   "object_type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0023",
+   "evidence": "companies developing their own custom silicon, including many hyperscalers such as Amazon",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Google",
+   "object_type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0023",
+   "evidence": "companies developing their own custom silicon, including many hyperscalers such as ... Google",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Meta",
+   "object_type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0023",
+   "evidence": "companies developing their own custom silicon, including many hyperscalers such as ... Meta",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Microsoft",
+   "object_type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0023",
+   "evidence": "companies developing their own custom silicon, including many hyperscalers such as ... Microsoft",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Broadcom",
+   "object_type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0023",
+   "evidence": "We also compete with Broadcom in the custom ASICs development market.",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "TSMC",
+   "object_type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0027",
+   "evidence": "Our primary competitor in leading-edge semiconductor process technology is TSMC",
+   "confidence": 0.98
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Samsung",
+   "object_type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0027",
+   "evidence": "We also compete directly with Samsung in this market.",
+   "confidence": 0.98
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "GlobalFoundries",
+   "object_type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0027",
+   "evidence": "Other Intel Foundry competitors include GlobalFoundries, UMC and SMIC",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "UMC",
+   "object_type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0027",
+   "evidence": "Other Intel Foundry competitors include GlobalFoundries, UMC and SMIC",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "SMIC",
+   "object_type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0027",
+   "evidence": "Other Intel Foundry competitors include GlobalFoundries, UMC and SMIC",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "CCG",
+   "object_type": "Segment",
+   "chunk_id": "INTC-10-K-2025#c0033",
+   "evidence": "derived most of our consolidated revenue ... from our CCG and DCAI product offerings.",
+   "confidence": 0.99
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "DCAI",
+   "object_type": "Segment",
+   "chunk_id": "INTC-10-K-2025#c0023",
+   "evidence": "DCAI competitors include AMD...",
+   "confidence": 0.99
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "Intel Foundry",
+   "object_type": "Segment",
+   "chunk_id": "INTC-10-K-2025#c0024",
+   "evidence": "Intel Foundry, comprised of technology development, manufacturing and foundry services...",
+   "confidence": 0.99
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Client CPUs",
+   "object_type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0033",
+   "evidence": "The key product offerings of our CCG operating segment are ... Client CPUs.",
+   "confidence": 0.98
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Intel Core",
+   "object_type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0033",
+   "evidence": "Our Intel Core brands have been staples of the PC industry...",
+   "confidence": 0.99
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Intel Core Ultra",
+   "object_type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0033",
+   "evidence": "sales of Intel Core Ultra processors increase.",
+   "confidence": 0.98
+  },
+  {
+   "subject": "Intel Core",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "PC industry",
+   "object_type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0033",
+   "evidence": "staples of the PC industry for nearly two decades.",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Intel Core Ultra",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "PC industry",
+   "object_type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0033",
+   "evidence": "increase as sales of Intel Core Ultra processors increase.",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "HEADQUARTERED_IN",
+   "object": "U.S.",
+   "object_type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0024",
+   "evidence": "we continue to innovate and advance leading-edge semiconductor process technology and manufacturing in the U.S.",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "U.S.",
+   "object_type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0024",
+   "evidence": "we are the only company conducting both leading-edge logic R&D and high-volume manufacturing.",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Asia",
+   "object_type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0027",
+   "evidence": "foundries that deliver wafers and packaging technologies from fabrication plants located primarily in Asia.",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "SUBSIDIARY_OF",
+   "object": "Altera",
+   "object_type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0029",
+   "evidence": "Altera, which was previously a wholly-owned subsidiary, was deconsolidated",
+   "confidence": 0.97
+  }
+ ]
+}

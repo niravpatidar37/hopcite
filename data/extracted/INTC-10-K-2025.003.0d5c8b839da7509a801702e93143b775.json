@@ -1,0 +1,546 @@
+{
+ "entities": [
+  {
+   "name": "Intel Corporation",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0034",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "Intel Core Ultra",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0034",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "Intel Core Ultra Series 1",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0034",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "Intel Core Ultra Series 2",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0034",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "200V Series",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0034",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Intel Core Ultra Series 3",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0035",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Intel vPro Platform",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0035",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Intel vPro Fleet Services",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0035",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Intel Arc graphics family",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0036",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "Intel Arc B-Series",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0036",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Open Edge",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0036",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Wi‑Fi 7",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0036",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "Bluetooth 6",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0036",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "Thunderbolt 5",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0036",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "Intel Xeon 6 series processors",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0040",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "Intel Ethernet Controllers & Network Adapters E800 series",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0042",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Intel Ethernet Controllers & Network Adapters E600 series",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0042",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Infrastructure Processing Units (IPUs)",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0042",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "FlexCore",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0042",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "FlexRAN",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0042",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "cloud RAN Platform",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0042",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "Intel 4 process",
+   "type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0034",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "Intel 3 process",
+   "type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0034",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "Intel 18A process",
+   "type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0035",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "X e 2 GPU architecture",
+   "type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0034",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "NPU",
+   "type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0034",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "Foveros advanced packaging",
+   "type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0034",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "EMIB technology",
+   "type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0040",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "DDR5 memory",
+   "type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0040",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "Intel AMX",
+   "type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0040",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "Intel QuickAssist Technology (QAT)",
+   "type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0040",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "Intel TDX",
+   "type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0040",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "RDMA",
+   "type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0042",
+   "confidence": 0.93,
+   "aliases": []
+  },
+  {
+   "name": "PC market",
+   "type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0034",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Edge computing market",
+   "type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0036",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Consumer market",
+   "type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0036",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "Gaming market",
+   "type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0036",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "Enterprise market",
+   "type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0035",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "Data center market",
+   "type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0040",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "5G infrastructure market",
+   "type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0042",
+   "confidence": 0.93,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Intel Core Ultra",
+   "object_type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0034",
+   "evidence": "Our Intel Core Ultra family is designed for higher performance...",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Intel Core Ultra Series 1",
+   "subject_type": "Product",
+   "relation": "USES_TECHNOLOGY",
+   "object": "Intel 4 process",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0034",
+   "evidence": "manufactured using our Intel 4 process",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Intel Core Ultra Series 2",
+   "subject_type": "Product",
+   "relation": "USES_TECHNOLOGY",
+   "object": "Intel 3 process",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0034",
+   "evidence": "Manufacturing of our Intel Core Ultra Series 2 products is performed by Intel Foundry using our Intel 3 process",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Intel Core Ultra Series 2",
+   "subject_type": "Product",
+   "relation": "USES_TECHNOLOGY",
+   "object": "X e 2 GPU architecture",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0034",
+   "evidence": "leverages our X e 2 GPU architecture",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Intel Core Ultra Series 2",
+   "subject_type": "Product",
+   "relation": "USES_TECHNOLOGY",
+   "object": "NPU",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0034",
+   "evidence": "features the first implementation of an NPU",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Intel Core Ultra Series 2",
+   "subject_type": "Product",
+   "relation": "USES_TECHNOLOGY",
+   "object": "Foveros advanced packaging",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0034",
+   "evidence": "first implementation of ... Foveros advanced packaging technologies",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Intel Core Ultra Series 3",
+   "subject_type": "Product",
+   "relation": "USES_TECHNOLOGY",
+   "object": "Intel 18A process",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0035",
+   "evidence": "first products to be manufactured using our new Intel 18A process technology",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Intel vPro Platform",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "Enterprise market",
+   "object_type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0035",
+   "evidence": "to commercial customers with additional hardware features enabled",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Intel vPro Fleet Services",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "Enterprise market",
+   "object_type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0035",
+   "evidence": "new remote manageability capability ... for PC fleets",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Intel Arc graphics family",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "Consumer market",
+   "object_type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0036",
+   "evidence": "primarily designed for consumer and gaming PCs",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Intel Arc graphics family",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "Gaming market",
+   "object_type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0036",
+   "evidence": "primarily designed for consumer and gaming PCs",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Intel Arc B-Series",
+   "subject_type": "Product",
+   "relation": "USES_TECHNOLOGY",
+   "object": "X e 2 GPU architecture",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0036",
+   "evidence": "based on the latest X e 2 GPU architecture",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Open Edge",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "Edge computing market",
+   "object_type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0036",
+   "evidence": "make it easier for businesses to run AI ... at the edge",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Wi‑Fi 7",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "PC market",
+   "object_type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0036",
+   "evidence": "launched our third-generation Wi‑Fi 7 ... for our latest platforms",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Bluetooth 6",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "PC market",
+   "object_type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0036",
+   "evidence": "launched our third-generation ... Bluetooth 6 solutions",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Thunderbolt 5",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "PC market",
+   "object_type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0036",
+   "evidence": "updated our Thunderbolt 5 solution for our latest platforms",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Intel Xeon 6 series processors",
+   "subject_type": "Product",
+   "relation": "USES_TECHNOLOGY",
+   "object": "Intel 3 process",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0040",
+   "evidence": "manufactured using our Intel 3 process technology",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Intel Xeon 6 series processors",
+   "subject_type": "Product",
+   "relation": "USES_TECHNOLOGY",
+   "object": "Intel 7 process",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0040",
+   "evidence": "I/O dies are manufactured on our Intel 7 process technology",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Intel Xeon 6 series processors",
+   "subject_type": "Product",
+   "relation": "USES_TECHNOLOGY",
+   "object": "EMIB technology",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0040",
+   "evidence": "connected in a single package utilizing EMIB technology",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Intel Xeon 6 series processors",
+   "subject_type": "Product",
+   "relation": "USES_TECHNOLOGY",
+   "object": "DDR5 memory",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0040",
+   "evidence": "improves memory throughput with the fastest DDR5 memory available",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Intel Xeon 6 series processors",
+   "subject_type": "Product",
+   "relation": "USES_TECHNOLOGY",
+   "object": "Intel AMX",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0040",
+   "evidence": "incorporate differentiated features such as Intel AMX for AI",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Intel Xeon 6 series processors",
+   "subject_type": "Product",
+   "relation": "USES_TECHNOLOGY",
+   "object": "Intel QuickAssist Technology (QAT)",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0040",
+   "evidence": "Intel ® QuickAssist Technology (Intel ® QAT) for cryptography",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Intel Xeon 6 series processors",
+   "subject_type": "Product",
+   "relation": "USES_TECHNOLOGY",
+   "object": "Intel TDX",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0040",
+   "evidence": "Intel TDX for hardware-based security",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Intel Xeon 6 series processors",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "Data center market",
+   "object_type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0040",
+   "evidence": "support a range of workloads designed to enable data center architects",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Intel Ethernet Controllers & Network Adapters E800 series",
+   "subject_type": "Product",
+   "relation": "USES_TECHNOLOGY",
+   "object": "RDMA",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0042",
+   "evidence": "support advanced features like RDMA",
+   "confidence": 0.93
+  },
+  {
+   "subject": "Infrastructure Processing Units (IPUs)",
+   "subject_type": "Product",
+   "relation": "MANUFACTURES_FOR",
+   "object": "Intel Corporation",
+   "object_type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0042",
+   "evidence": "The IPUs are manufactured at an external foundry",
+   "confidence": 0.92
+  }
+ ]
+}

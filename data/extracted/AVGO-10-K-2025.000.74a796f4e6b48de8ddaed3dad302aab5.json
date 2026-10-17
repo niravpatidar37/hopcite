@@ -1,0 +1,381 @@
+{
+ "entities": [
+  {
+   "name": "Broadcom Inc.",
+   "type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0000",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "AT&T/Bell Labs",
+   "type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0000",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Lucent",
+   "type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0000",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Hewlett-Packard Company",
+   "type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0000",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "LSI Corporation",
+   "type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0000",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Broadcom Corporation",
+   "type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0000",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Brocade Communications Systems, Inc.",
+   "type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0000",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "CA, Inc.",
+   "type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0000",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Symantec Enterprise Security",
+   "type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0000",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "VMware, Inc.",
+   "type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0000",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Taiwan Semiconductor Manufacturing Company Limited",
+   "type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0030",
+   "confidence": 1.0,
+   "aliases": [
+    "TSMC"
+   ]
+  },
+  {
+   "name": "Advanced Semiconductor Engineering, Inc.",
+   "type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0030",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Foxconn Technology Group",
+   "type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0030",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Amkor Technology, Inc.",
+   "type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0030",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Siliconware Precision Industries Co., Ltd.",
+   "type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0030",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Integrated Circuit Systems, Inc.",
+   "type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0044",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Integrated Device Technology, Inc.",
+   "type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0044",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Commodore International, Ltd.",
+   "type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0044",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "PepsiCo, Inc.",
+   "type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0044",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "General Motors Corporation",
+   "type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0044",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Pacven Investment, Ltd.",
+   "type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0044",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Hume Industries Ltd.",
+   "type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0044",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "SanDisk Corporation",
+   "type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0046",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Western Digital Corporation",
+   "type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0046",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "FBAR filters",
+   "type": "Product",
+   "chunk_id": "AVGO-10-K-2025#c0030",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "vertical-cavity surface emitting laser",
+   "type": "Product",
+   "chunk_id": "AVGO-10-K-2025#c0030",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "side emitting lasers",
+   "type": "Product",
+   "chunk_id": "AVGO-10-K-2025#c0030",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Hock E. Tan",
+   "type": "Person",
+   "chunk_id": "AVGO-10-K-2025#c0046",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Mark D. Brazeal",
+   "type": "Person",
+   "chunk_id": "AVGO-10-K-2025#c0046",
+   "confidence": 1.0,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Broadcom Inc.",
+   "subject_type": "Company",
+   "relation": "ACQUIRED",
+   "object": "LSI Corporation",
+   "object_type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0000",
+   "evidence": "including LSI Corporation, Broadcom Corporation, Brocade Communications Systems, Inc., CA, Inc., Symantec Enterprise Security, and VMware, Inc.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Broadcom Inc.",
+   "subject_type": "Company",
+   "relation": "ACQUIRED",
+   "object": "Broadcom Corporation",
+   "object_type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0000",
+   "evidence": "including LSI Corporation, Broadcom Corporation, Brocade Communications Systems, Inc., CA, Inc., Symantec Enterprise Security, and VMware, Inc.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Broadcom Inc.",
+   "subject_type": "Company",
+   "relation": "ACQUIRED",
+   "object": "Brocade Communications Systems, Inc.",
+   "object_type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0000",
+   "evidence": "including LSI Corporation, Broadcom Corporation, Brocade Communications Systems, Inc., CA, Inc., Symantec Enterprise Security, and VMware, Inc.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Broadcom Inc.",
+   "subject_type": "Company",
+   "relation": "ACQUIRED",
+   "object": "CA, Inc.",
+   "object_type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0000",
+   "evidence": "including LSI Corporation, Broadcom Corporation, Brocade Communications Systems, Inc., CA, Inc., Symantec Enterprise Security, and VMware, Inc.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Broadcom Inc.",
+   "subject_type": "Company",
+   "relation": "ACQUIRED",
+   "object": "Symantec Enterprise Security",
+   "object_type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0000",
+   "evidence": "including LSI Corporation, Broadcom Corporation, Brocade Communications Systems, Inc., CA, Inc., Symantec Enterprise Security, and VMware, Inc.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Broadcom Inc.",
+   "subject_type": "Company",
+   "relation": "ACQUIRED",
+   "object": "VMware, Inc.",
+   "object_type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0000",
+   "evidence": "including LSI Corporation, Broadcom Corporation, Brocade Communications Systems, Inc., CA, Inc., Symantec Enterprise Security, and VMware, Inc.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "TSMC",
+   "subject_type": "Company",
+   "relation": "MANUFACTURES_FOR",
+   "object": "Broadcom Inc.",
+   "object_type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0030",
+   "evidence": "majority of our front-end wafer manufacturing operations is outsourced to external foundries, including Taiwan Semiconductor Manufacturing Company Limited (“TSMC”).",
+   "confidence": 1.0
+  },
+  {
+   "subject": "TSMC",
+   "subject_type": "Company",
+   "relation": "SUPPLIES_TO",
+   "object": "Broadcom Inc.",
+   "object_type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0030",
+   "evidence": "We use third-party CMs for a significant majority of our assembly and test operations, including TSMC, Advanced Semiconductor Engineering, Inc., ...",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Advanced Semiconductor Engineering, Inc.",
+   "subject_type": "Company",
+   "relation": "SUPPLIES_TO",
+   "object": "Broadcom Inc.",
+   "object_type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0030",
+   "evidence": "We use third-party CMs for a significant majority of our assembly and test operations, including TSMC, Advanced Semiconductor Engineering, Inc., ...",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Foxconn Technology Group",
+   "subject_type": "Company",
+   "relation": "SUPPLIES_TO",
+   "object": "Broadcom Inc.",
+   "object_type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0030",
+   "evidence": "We use third-party CMs for a significant majority of our assembly and test operations, including ... Foxconn Technology Group, ...",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Amkor Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "SUPPLIES_TO",
+   "object": "Broadcom Inc.",
+   "object_type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0030",
+   "evidence": "We use third-party CMs for a significant majority of our assembly and test operations, including ... Amkor Technology, Inc. ...",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Siliconware Precision Industries Co., Ltd.",
+   "subject_type": "Company",
+   "relation": "SUPPLIES_TO",
+   "object": "Broadcom Inc.",
+   "object_type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0030",
+   "evidence": "We use third-party CMs for a significant majority of our assembly and test operations, including ... Siliconware Precision Industries Co., Ltd.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Hock E. Tan",
+   "subject_type": "Person",
+   "relation": "EXECUTIVE_OF",
+   "object": "Broadcom Inc.",
+   "object_type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0044",
+   "evidence": "Hock E. Tan has served as our President and Chief Executive Officer since March 2006.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Mark D. Brazeal",
+   "subject_type": "Person",
+   "relation": "EXECUTIVE_OF",
+   "object": "Broadcom Inc.",
+   "object_type": "Company",
+   "chunk_id": "AVGO-10-K-2025#c0046",
+   "evidence": "Mark D. Brazeal has served as our Chief Legal and Corporate Affairs Officer since December 2021.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Broadcom Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "FBAR filters",
+   "object_type": "Product",
+   "chunk_id": "AVGO-10-K-2025#c0030",
+   "evidence": "we use our internal fabrication facilities for products utilizing our innovative and proprietary processes, such as our FBAR filters for wireless communications",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Broadcom Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "vertical-cavity surface emitting laser",
+   "object_type": "Product",
+   "chunk_id": "AVGO-10-K-2025#c0030",
+   "evidence": "our vertical-cavity surface emitting laser ... for fiber optic communications",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Broadcom Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "side emitting lasers",
+   "object_type": "Product",
+   "chunk_id": "AVGO-10-K-2025#c0030",
+   "evidence": "side emitting lasers based on gallium arsenide (“GaAs”) and indium phosphide (“InP”) lasers for fiber optic communications",
+   "confidence": 1.0
+  }
+ ]
+}

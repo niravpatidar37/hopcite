@@ -1,0 +1,369 @@
+{
+ "entities": [
+  {
+   "name": "QUALCOMM Incorporated",
+   "type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0043",
+   "confidence": 0.98,
+   "aliases": [
+    "QUALCOMM"
+   ]
+  },
+  {
+   "name": "Advanced Semiconductor Engineering",
+   "type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0030",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "Amkor Technology",
+   "type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0030",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "Siliconware Precision Industries",
+   "type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0030",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "STATSChipPAC",
+   "type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0030",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "Germany",
+   "type": "Location",
+   "chunk_id": "QCOM-10-K-2025#c0030",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Singapore",
+   "type": "Location",
+   "chunk_id": "QCOM-10-K-2025#c0030",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "China",
+   "type": "Location",
+   "chunk_id": "QCOM-10-K-2025#c0030",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Snapdragon",
+   "type": "Product",
+   "chunk_id": "QCOM-10-K-2025#c0031",
+   "confidence": 0.97,
+   "aliases": []
+  },
+  {
+   "name": "Dragonwing",
+   "type": "Product",
+   "chunk_id": "QCOM-10-K-2025#c0031",
+   "confidence": 0.97,
+   "aliases": []
+  },
+  {
+   "name": "QCT",
+   "type": "Segment",
+   "chunk_id": "QCOM-10-K-2025#c0030",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "QTL",
+   "type": "Segment",
+   "chunk_id": "QCOM-10-K-2025#c0035",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "Qualcomm Technologies, Inc.",
+   "type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0043",
+   "confidence": 0.98,
+   "aliases": [
+    "QTI"
+   ]
+  },
+  {
+   "name": "Apple",
+   "type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0044",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Samsung",
+   "type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0044",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Xiaomi",
+   "type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0044",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Heather Ace",
+   "type": "Person",
+   "chunk_id": "QCOM-10-K-2025#c0058",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "DexCom, Inc.",
+   "type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0058",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Orexigen Therapeutics, Inc.",
+   "type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0058",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Royal Philips",
+   "type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0058",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Volcano Corporation",
+   "type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0058",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Life Technologies Corporation",
+   "type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0058",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Gray, Cary, Ware & Freidenrich",
+   "type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0058",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Handsets",
+   "type": "Market",
+   "chunk_id": "QCOM-10-K-2025#c0031",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "Automotive",
+   "type": "Market",
+   "chunk_id": "QCOM-10-K-2025#c0031",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "Consumer IoT",
+   "type": "Market",
+   "chunk_id": "QCOM-10-K-2025#c0031",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "Industrial and Edge Networking IoT",
+   "type": "Market",
+   "chunk_id": "QCOM-10-K-2025#c0031",
+   "confidence": 0.94,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Advanced Semiconductor Engineering",
+   "subject_type": "Company",
+   "relation": "SUPPLIES_TO",
+   "object": "QUALCOMM Incorporated",
+   "object_type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0030",
+   "evidence": "Our primary semiconductor assembly and test suppliers are Advanced Semiconductor Engineering...",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Amkor Technology",
+   "subject_type": "Company",
+   "relation": "SUPPLIES_TO",
+   "object": "QUALCOMM Incorporated",
+   "object_type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0030",
+   "evidence": "Our primary semiconductor assembly and test suppliers are ... Amkor Technology ...",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Siliconware Precision Industries",
+   "subject_type": "Company",
+   "relation": "SUPPLIES_TO",
+   "object": "QUALCOMM Incorporated",
+   "object_type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0030",
+   "evidence": "Our primary semiconductor assembly and test suppliers are ... Siliconware Precision Industries ...",
+   "confidence": 0.96
+  },
+  {
+   "subject": "STATSChipPAC",
+   "subject_type": "Company",
+   "relation": "SUPPLIES_TO",
+   "object": "QUALCOMM Incorporated",
+   "object_type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0030",
+   "evidence": "Our primary semiconductor assembly and test suppliers are ... STATSChipPAC.",
+   "confidence": 0.96
+  },
+  {
+   "subject": "QUALCOMM Incorporated",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Germany",
+   "object_type": "Location",
+   "chunk_id": "QCOM-10-K-2025#c0030",
+   "evidence": "front-end processes primarily take place at manufacturing facilities located in Germany...",
+   "confidence": 0.95
+  },
+  {
+   "subject": "QUALCOMM Incorporated",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Singapore",
+   "object_type": "Location",
+   "chunk_id": "QCOM-10-K-2025#c0030",
+   "evidence": "front-end processes ... Singapore ... back-end manufacturing facilities are located in ... Singapore",
+   "confidence": 0.95
+  },
+  {
+   "subject": "QUALCOMM Incorporated",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "China",
+   "object_type": "Location",
+   "chunk_id": "QCOM-10-K-2025#c0030",
+   "evidence": "back-end manufacturing facilities are located in China",
+   "confidence": 0.95
+  },
+  {
+   "subject": "QUALCOMM Incorporated",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Snapdragon",
+   "object_type": "Product",
+   "chunk_id": "QCOM-10-K-2025#c0031",
+   "evidence": "Snapdragon as the preferred platform powering premium experiences...",
+   "confidence": 0.97
+  },
+  {
+   "subject": "QUALCOMM Incorporated",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Dragonwing",
+   "object_type": "Product",
+   "chunk_id": "QCOM-10-K-2025#c0031",
+   "evidence": "Dragonwing as the leading-edge products for industrial and edge networking IoT",
+   "confidence": 0.97
+  },
+  {
+   "subject": "QUALCOMM Incorporated",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "QCT",
+   "object_type": "Segment",
+   "chunk_id": "QCOM-10-K-2025#c0030",
+   "evidence": "Our primary semiconductor assembly and test suppliers are ... (refers to QCT operations)",
+   "confidence": 0.9
+  },
+  {
+   "subject": "QUALCOMM Incorporated",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "QTL",
+   "object_type": "Segment",
+   "chunk_id": "QCOM-10-K-2025#c0035",
+   "evidence": "QTL Segment . QTL grants licenses ...",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Qualcomm Technologies, Inc.",
+   "subject_type": "Company",
+   "relation": "SUBSIDIARY_OF",
+   "object": "QUALCOMM Incorporated",
+   "object_type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0043",
+   "evidence": "Qualcomm Technologies, Inc. (QTI), a subsidiary of QUALCOMM Incorporated",
+   "confidence": 0.98
+  },
+  {
+   "subject": "Heather Ace",
+   "subject_type": "Person",
+   "relation": "EXECUTIVE_OF",
+   "object": "QUALCOMM Incorporated",
+   "object_type": "Company",
+   "chunk_id": "QCOM-10-K-2025#c0058",
+   "evidence": "Heather Ace ... has served as Chief Human Resources Officer ... at Qualcomm",
+   "confidence": 0.98
+  },
+  {
+   "subject": "Snapdragon",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "Handsets",
+   "object_type": "Market",
+   "chunk_id": "QCOM-10-K-2025#c0031",
+   "evidence": "Snapdragon as the preferred platform powering premium experiences across handsets...",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Snapdragon",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "Automotive",
+   "object_type": "Market",
+   "chunk_id": "QCOM-10-K-2025#c0031",
+   "evidence": "Snapdragon ... across ... automotive ...",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Snapdragon",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "Consumer IoT",
+   "object_type": "Market",
+   "chunk_id": "QCOM-10-K-2025#c0031",
+   "evidence": "Snapdragon ... across ... consumer IoT",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Dragonwing",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "Industrial and Edge Networking IoT",
+   "object_type": "Market",
+   "chunk_id": "QCOM-10-K-2025#c0031",
+   "evidence": "Dragonwing as the leading-edge products for industrial and edge networking IoT",
+   "confidence": 0.94
+  }
+ ]
+}

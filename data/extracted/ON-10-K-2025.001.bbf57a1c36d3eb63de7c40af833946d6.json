@@ -1,0 +1,170 @@
+{
+ "entities": [
+  {
+   "name": "ON Semiconductor Corporation",
+   "type": "Company",
+   "chunk_id": "ON-10-K-2025#c0031",
+   "confidence": 1.0,
+   "aliases": [
+    "onsemi"
+   ]
+  },
+  {
+   "name": "Leshan-Phoenix Semiconductor Company Limited",
+   "type": "Company",
+   "chunk_id": "ON-10-K-2025#c0031",
+   "confidence": 1.0,
+   "aliases": [
+    "Leshan"
+   ]
+  },
+  {
+   "name": "Leshan Radio Company Ltd.",
+   "type": "Company",
+   "chunk_id": "ON-10-K-2025#c0031",
+   "confidence": 1.0,
+   "aliases": [
+    "Leshan Radio"
+   ]
+  },
+  {
+   "name": "Cypress Semiconductor Corporation",
+   "type": "Company",
+   "chunk_id": "ON-10-K-2025#c0046",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Infineon",
+   "type": "Company",
+   "chunk_id": "ON-10-K-2025#c0047",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Lumentum Holdings Inc.",
+   "type": "Company",
+   "chunk_id": "ON-10-K-2025#c0047",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Leia Inc.",
+   "type": "Company",
+   "chunk_id": "ON-10-K-2025#c0046",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Shamago Advisors",
+   "type": "Company",
+   "chunk_id": "ON-10-K-2025#c0050",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Intel",
+   "type": "Company",
+   "chunk_id": "ON-10-K-2025#c0050",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Conexant Systems, Inc.",
+   "type": "Company",
+   "chunk_id": "ON-10-K-2025#c0050",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Leshan, China",
+   "type": "Location",
+   "chunk_id": "ON-10-K-2025#c0031",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Hassane El-Khoury",
+   "type": "Person",
+   "chunk_id": "ON-10-K-2025#c0046",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Thad Trent",
+   "type": "Person",
+   "chunk_id": "ON-10-K-2025#c0047",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Sudhir Gopalswamy",
+   "type": "Person",
+   "chunk_id": "ON-10-K-2025#c0050",
+   "confidence": 1.0,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "ON Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Leshan, China",
+   "object_type": "Location",
+   "chunk_id": "ON-10-K-2025#c0031",
+   "evidence": "assembly and test operations facility located in Leshan, China",
+   "confidence": 1.0
+  },
+  {
+   "subject": "ON Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "PARTNERS_WITH",
+   "object": "Leshan Radio Company Ltd.",
+   "object_type": "Company",
+   "chunk_id": "ON-10-K-2025#c0031",
+   "evidence": "Our joint venture partner is Leshan Radio Company Ltd.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "ON Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "PARTNERS_WITH",
+   "object": "Leshan-Phoenix Semiconductor Company Limited",
+   "object_type": "Company",
+   "chunk_id": "ON-10-K-2025#c0031",
+   "evidence": "owned by Leshan-Phoenix Semiconductor Company Limited, a joint venture company",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Hassane El-Khoury",
+   "subject_type": "Person",
+   "relation": "EXECUTIVE_OF",
+   "object": "ON Semiconductor Corporation",
+   "object_type": "Company",
+   "chunk_id": "ON-10-K-2025#c0046",
+   "evidence": "appointed as President, Chief Executive Officer and Director of onsemi",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Thad Trent",
+   "subject_type": "Person",
+   "relation": "EXECUTIVE_OF",
+   "object": "ON Semiconductor Corporation",
+   "object_type": "Company",
+   "chunk_id": "ON-10-K-2025#c0047",
+   "evidence": "appointed Executive Vice President and Chief Financial Officer of onsemi",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Sudhir Gopalswamy",
+   "subject_type": "Person",
+   "relation": "EXECUTIVE_OF",
+   "object": "ON Semiconductor Corporation",
+   "object_type": "Company",
+   "chunk_id": "ON-10-K-2025#c0050",
+   "evidence": "joined onsemi in March 2022 and is currently the Group President, ISG and AMG of onsemi",
+   "confidence": 1.0
+  }
+ ]
+}

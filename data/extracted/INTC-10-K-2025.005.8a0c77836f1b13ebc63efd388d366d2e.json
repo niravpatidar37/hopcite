@@ -1,0 +1,312 @@
+{
+ "entities": [
+  {
+   "name": "Intel Corporation",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0054",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Intel 18A",
+   "type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0054",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "RibbonFET",
+   "type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0054",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "PowerVia",
+   "type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0054",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Intel Core Ultra Series 3",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0054",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Intel 14A",
+   "type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0055",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "EMIB",
+   "type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0056",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "EMIB‑T",
+   "type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0056",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Foveros",
+   "type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0056",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "ASML",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0059",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Oregon",
+   "type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0057",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Arizona",
+   "type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0057",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Ireland",
+   "type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0057",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Israel",
+   "type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0057",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "China",
+   "type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0057",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "New Mexico",
+   "type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0057",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Vietnam",
+   "type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0057",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Malaysia",
+   "type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0057",
+   "confidence": 1.0,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "USES_TECHNOLOGY",
+   "object": "RibbonFET",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0054",
+   "evidence": "RibbonFET, our implementation of a gate-all-around transistor",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "USES_TECHNOLOGY",
+   "object": "PowerVia",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0054",
+   "evidence": "PowerVia is our unique industry-first implementation of backside power delivery",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Intel Core Ultra Series 3",
+   "object_type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0054",
+   "evidence": "first Intel Core Ultra Series 3 processor",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Intel Core Ultra Series 3",
+   "subject_type": "Product",
+   "relation": "USES_TECHNOLOGY",
+   "object": "Intel 18A",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0054",
+   "evidence": "Intel 18A is utilized for our first Intel Core Ultra Series 3 processor",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "USES_TECHNOLOGY",
+   "object": "Intel 18A",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0054",
+   "evidence": "Intel 18A, currently our most advanced leading-edge node",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "USES_TECHNOLOGY",
+   "object": "Intel 14A",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0055",
+   "evidence": "Intel 14A , our next-generation leading-edge node",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "USES_TECHNOLOGY",
+   "object": "EMIB",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0056",
+   "evidence": "EMIB, which entered high‑volume manufacturing in 2017",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "USES_TECHNOLOGY",
+   "object": "EMIB‑T",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0056",
+   "evidence": "we introduced EMIB‑T in 2025",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "USES_TECHNOLOGY",
+   "object": "Foveros",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0056",
+   "evidence": "we continued to invest in Foveros, our three‑dimensional die‑stacking technology",
+   "confidence": 1.0
+  },
+  {
+   "subject": "ASML",
+   "subject_type": "Company",
+   "relation": "SUPPLIES_TO",
+   "object": "Intel Corporation",
+   "object_type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0059",
+   "evidence": "sole-source providers, such as with the EUV lithography tools manufactured by ASML",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Oregon",
+   "object_type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0057",
+   "evidence": "our Oregon R&D facilities and fabs",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Arizona",
+   "object_type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0057",
+   "evidence": "Arizona (Intel 7 and ramping Intel 18A)",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Ireland",
+   "object_type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0057",
+   "evidence": "Ireland (Intel 4 and Intel 3)",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Israel",
+   "object_type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0057",
+   "evidence": "Israel (Intel 7)",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "China",
+   "object_type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0057",
+   "evidence": "assembly and test facilities were in China",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "New Mexico",
+   "object_type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0057",
+   "evidence": "New Mexico being our key advanced packaging facility",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Vietnam",
+   "object_type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0057",
+   "evidence": "assembly and test facilities were in Vietnam",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Malaysia",
+   "object_type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0057",
+   "evidence": "new advanced packaging facility being built in Malaysia",
+   "confidence": 1.0
+  }
+ ]
+}

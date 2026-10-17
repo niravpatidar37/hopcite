@@ -1,0 +1,335 @@
+{
+ "entities": [
+  {
+   "name": "NVIDIA Corporation",
+   "type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0000",
+   "confidence": 1.0,
+   "aliases": [
+    "NVIDIA"
+   ]
+  },
+  {
+   "name": "Mellanox",
+   "type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0004",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Santa Clara, California",
+   "type": "Location",
+   "chunk_id": "NVDA-10-K-2026#c0008",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Compute & Networking segment",
+   "type": "Segment",
+   "chunk_id": "NVDA-10-K-2026#c0008",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Graphics segment",
+   "type": "Segment",
+   "chunk_id": "NVDA-10-K-2026#c0008",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "GeForce GPUs",
+   "type": "Product",
+   "chunk_id": "NVDA-10-K-2026#c0008",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Quadro/NVIDIA RTX GPUs",
+   "type": "Product",
+   "chunk_id": "NVDA-10-K-2026#c0008",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Tensor Core GPU",
+   "type": "Product",
+   "chunk_id": "NVDA-10-K-2026#c0004",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Grace CPU",
+   "type": "Product",
+   "chunk_id": "NVDA-10-K-2026#c0004",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Blackwell GPUs",
+   "type": "Product",
+   "chunk_id": "NVDA-10-K-2026#c0004",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "NVIDIA DRIVE stack",
+   "type": "Product",
+   "chunk_id": "NVDA-10-K-2026#c0004",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Clara",
+   "type": "Product",
+   "chunk_id": "NVDA-10-K-2026#c0004",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Omniverse",
+   "type": "Product",
+   "chunk_id": "NVDA-10-K-2026#c0004",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "NVIDIA AI Enterprise",
+   "type": "Product",
+   "chunk_id": "NVDA-10-K-2026#c0004",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "CUDA",
+   "type": "Technology",
+   "chunk_id": "NVDA-10-K-2026#c0000",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "GPU",
+   "type": "Technology",
+   "chunk_id": "NVDA-10-K-2026#c0000",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "DPU",
+   "type": "Technology",
+   "chunk_id": "NVDA-10-K-2026#c0004",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Data Center market",
+   "type": "Market",
+   "chunk_id": "NVDA-10-K-2026#c0003",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Automotive market",
+   "type": "Market",
+   "chunk_id": "NVDA-10-K-2026#c0003",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Healthcare market",
+   "type": "Market",
+   "chunk_id": "NVDA-10-K-2026#c0003",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Gaming market",
+   "type": "Market",
+   "chunk_id": "NVDA-10-K-2026#c0008",
+   "confidence": 0.9,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "HEADQUARTERED_IN",
+   "object": "Santa Clara, California",
+   "object_type": "Location",
+   "chunk_id": "NVDA-10-K-2026#c0008",
+   "evidence": "Headquartered in Santa Clara, California, NVIDIA was incorporated...",
+   "confidence": 1.0
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "Compute & Networking segment",
+   "object_type": "Segment",
+   "chunk_id": "NVDA-10-K-2026#c0008",
+   "evidence": "The Compute & Networking segment includes our Data Center ...",
+   "confidence": 1.0
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "Graphics segment",
+   "object_type": "Segment",
+   "chunk_id": "NVDA-10-K-2026#c0008",
+   "evidence": "The Graphics segment includes GeForce GPUs for gaming and PCs...",
+   "confidence": 1.0
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "GeForce GPUs",
+   "object_type": "Product",
+   "chunk_id": "NVDA-10-K-2026#c0008",
+   "evidence": "The Graphics segment includes GeForce GPUs for gaming and PCs...",
+   "confidence": 1.0
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Quadro/NVIDIA RTX GPUs",
+   "object_type": "Product",
+   "chunk_id": "NVDA-10-K-2026#c0008",
+   "evidence": "and Quadro/NVIDIA RTX GPUs for enterprise workstation graphics.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Tensor Core GPU",
+   "object_type": "Product",
+   "chunk_id": "NVDA-10-K-2026#c0004",
+   "evidence": "We introduced our first Tensor Core GPU in 2017...",
+   "confidence": 0.95
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Grace CPU",
+   "object_type": "Product",
+   "chunk_id": "NVDA-10-K-2026#c0004",
+   "evidence": "In 2023, we introduced our first data center CPU, Grace...",
+   "confidence": 0.95
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Blackwell GPUs",
+   "object_type": "Product",
+   "chunk_id": "NVDA-10-K-2026#c0004",
+   "evidence": "In 2024, we launched the NVIDIA Blackwell architecture – connecting ... 72 Blackwell GPUs...",
+   "confidence": 0.95
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "NVIDIA DRIVE stack",
+   "object_type": "Product",
+   "chunk_id": "NVDA-10-K-2026#c0004",
+   "evidence": "including NVIDIA DRIVE stack for autonomous driving...",
+   "confidence": 0.95
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Clara",
+   "object_type": "Product",
+   "chunk_id": "NVDA-10-K-2026#c0004",
+   "evidence": "...Clara for healthcare...",
+   "confidence": 0.95
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Omniverse",
+   "object_type": "Product",
+   "chunk_id": "NVDA-10-K-2026#c0004",
+   "evidence": "...Omniverse for physical AI applications...",
+   "confidence": 0.95
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "NVIDIA AI Enterprise",
+   "object_type": "Product",
+   "chunk_id": "NVDA-10-K-2026#c0004",
+   "evidence": "...NVIDIA AI Enterprise software – essentially an operating system for enterprise AI applications.",
+   "confidence": 0.95
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "ACQUIRED",
+   "object": "Mellanox",
+   "object_type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0004",
+   "evidence": "Our acquisition of Mellanox in 2020 expanded our offerings...",
+   "confidence": 0.95
+  },
+  {
+   "subject": "NVIDIA GPUs",
+   "subject_type": "Product",
+   "relation": "USES_TECHNOLOGY",
+   "object": "CUDA",
+   "object_type": "Technology",
+   "chunk_id": "NVDA-10-K-2026#c0000",
+   "evidence": "our technology stack includes ... NVIDIA CUDA development platform that runs on all NVIDIA GPUs",
+   "confidence": 1.0
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "Data Center market",
+   "object_type": "Market",
+   "chunk_id": "NVDA-10-K-2026#c0003",
+   "evidence": "we address them with a unified underlying programmable architecture allowing us to support several multi-billion-dollar end markets",
+   "confidence": 0.9
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "Automotive market",
+   "object_type": "Market",
+   "chunk_id": "NVDA-10-K-2026#c0003",
+   "evidence": "including automotive ... platforms",
+   "confidence": 0.9
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "Healthcare market",
+   "object_type": "Market",
+   "chunk_id": "NVDA-10-K-2026#c0003",
+   "evidence": "including healthcare ... platforms",
+   "confidence": 0.9
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "Gaming market",
+   "object_type": "Market",
+   "chunk_id": "NVDA-10-K-2026#c0008",
+   "evidence": "GeForce GPUs for gaming and PCs",
+   "confidence": 0.9
+  }
+ ]
+}

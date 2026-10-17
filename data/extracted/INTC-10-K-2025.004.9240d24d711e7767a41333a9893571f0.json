@@ -1,0 +1,258 @@
+{
+ "entities": [
+  {
+   "name": "Intel Corporation",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0045",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "TSMC",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0045",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "UMC",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0049",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Intel 7",
+   "type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0052",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Intel Foundry",
+   "type": "Segment",
+   "chunk_id": "INTC-10-K-2025#c0046",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "CCG semiconductor products",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0046",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "DCAI semiconductor products",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0046",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Intel Core processors",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0052",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "computing market",
+   "type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0049",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "smartphone market",
+   "type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0049",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "cloud services market",
+   "type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0049",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "automotive market",
+   "type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0049",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "communications market",
+   "type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0049",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "aerospace and defense market",
+   "type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0049",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "hyperscalers market",
+   "type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0049",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "U.S. government market",
+   "type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0049",
+   "confidence": 1.0,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "TSMC",
+   "subject_type": "Company",
+   "relation": "MANUFACTURES_FOR",
+   "object": "Intel Corporation",
+   "object_type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0045",
+   "evidence": "we have also strategically utilized third‑party foundry manufacturing capacity, including at one of our key foundry competitors, TSMC",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "TSMC",
+   "object_type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0045",
+   "evidence": "one of our key foundry competitors, TSMC",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "PARTNERS_WITH",
+   "object": "UMC",
+   "object_type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0049",
+   "evidence": "strategic collaboration with UMC to develop a 12 nm process platform",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "USES_TECHNOLOGY",
+   "object": "Intel 7",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0052",
+   "evidence": "Intel 7 ... continues in production for our 13th and 14th Gen Intel Core processors",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Intel Foundry",
+   "subject_type": "Segment",
+   "relation": "OFFERS",
+   "object": "CCG semiconductor products",
+   "object_type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0046",
+   "evidence": "We manufacture the majority of our CCG and DCAI semiconductor products internally and market semiconductor manufacturing offerings to external customers through our Intel Foundry business",
+   "confidence": 0.9
+  },
+  {
+   "subject": "Intel Foundry",
+   "subject_type": "Segment",
+   "relation": "OFFERS",
+   "object": "DCAI semiconductor products",
+   "object_type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0046",
+   "evidence": "We manufacture the majority of our CCG and DCAI semiconductor products internally",
+   "confidence": 0.9
+  },
+  {
+   "subject": "Intel Foundry",
+   "subject_type": "Segment",
+   "relation": "SERVES_MARKET",
+   "object": "computing market",
+   "object_type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0049",
+   "evidence": "Potential customers include traditional fabless semiconductor companies in the computing ... markets",
+   "confidence": 0.9
+  },
+  {
+   "subject": "Intel Foundry",
+   "subject_type": "Segment",
+   "relation": "SERVES_MARKET",
+   "object": "smartphone market",
+   "object_type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0049",
+   "evidence": "Potential customers include ... smartphone ... markets",
+   "confidence": 0.9
+  },
+  {
+   "subject": "Intel Foundry",
+   "subject_type": "Segment",
+   "relation": "SERVES_MARKET",
+   "object": "cloud services market",
+   "object_type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0049",
+   "evidence": "Potential customers include ... cloud services ... markets",
+   "confidence": 0.9
+  },
+  {
+   "subject": "Intel Foundry",
+   "subject_type": "Segment",
+   "relation": "SERVES_MARKET",
+   "object": "automotive market",
+   "object_type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0049",
+   "evidence": "Potential customers include ... automotive ... markets",
+   "confidence": 0.9
+  },
+  {
+   "subject": "Intel Foundry",
+   "subject_type": "Segment",
+   "relation": "SERVES_MARKET",
+   "object": "communications market",
+   "object_type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0049",
+   "evidence": "Potential customers include ... communications ... markets",
+   "confidence": 0.9
+  },
+  {
+   "subject": "Intel Foundry",
+   "subject_type": "Segment",
+   "relation": "SERVES_MARKET",
+   "object": "aerospace and defense market",
+   "object_type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0049",
+   "evidence": "Potential customers include ... aerospace and defense markets",
+   "confidence": 0.9
+  },
+  {
+   "subject": "Intel Foundry",
+   "subject_type": "Segment",
+   "relation": "SERVES_MARKET",
+   "object": "hyperscalers market",
+   "object_type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0049",
+   "evidence": "Potential customers include ... hyperscalers ... markets",
+   "confidence": 0.9
+  },
+  {
+   "subject": "Intel Foundry",
+   "subject_type": "Segment",
+   "relation": "SERVES_MARKET",
+   "object": "U.S. government market",
+   "object_type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0049",
+   "evidence": "Potential customers include ... the U.S. government",
+   "confidence": 0.9
+  }
+ ]
+}

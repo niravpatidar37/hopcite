@@ -1,0 +1,428 @@
+{
+ "entities": [
+  {
+   "name": "Advanced Micro Devices, Inc.",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0000",
+   "confidence": 0.99,
+   "aliases": [
+    "AMD"
+   ]
+  },
+  {
+   "name": "ZT Group Int’l, Inc.",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0009",
+   "confidence": 0.99,
+   "aliases": [
+    "ZT Systems"
+   ]
+  },
+  {
+   "name": "Sanmina Corporation",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0009",
+   "confidence": 0.99,
+   "aliases": [
+    "Sanmina"
+   ]
+  },
+  {
+   "name": "Sony",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0020",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "Microsoft",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0020",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "Valve",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0020",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "AMD Ryzen",
+   "type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0015",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "AMD Ryzen AI",
+   "type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0015",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "AMD Radeon RX",
+   "type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0020",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Radeon RX 9000 Series",
+   "type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0020",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "AMD UltraScale+",
+   "type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "UltraScale 7 Series",
+   "type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "AMD Zynq SoC",
+   "type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Zynq UltraScale+ MPSoC",
+   "type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Zynq UltraScale+ RFSoC",
+   "type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Versal",
+   "type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Versal RF Series",
+   "type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Versal Premium Series Gen 2",
+   "type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Client Market",
+   "type": "Market",
+   "chunk_id": "AMD-10-K-2025#c0015",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "Gaming Market",
+   "type": "Market",
+   "chunk_id": "AMD-10-K-2025#c0015",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "Aerospace and Defense Market",
+   "type": "Market",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "Automotive Market",
+   "type": "Market",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "Industrial Market",
+   "type": "Market",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "Vision and Healthcare Market",
+   "type": "Market",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "Communications Infrastructure Market",
+   "type": "Market",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "Test and Measurement Market",
+   "type": "Market",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "Emulation and Prototyping Market",
+   "type": "Market",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "Audio, Video and Broadcasting Market",
+   "type": "Market",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "confidence": 0.98,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "ACQUIRED",
+   "object": "ZT Group Int’l, Inc.",
+   "object_type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0009",
+   "evidence": "we acquired ZT Group Int’l, Inc. (ZT Systems)",
+   "confidence": 0.97
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "SUPPLIES_TO",
+   "object": "Sony",
+   "object_type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0020",
+   "evidence": "power the Sony PlayStation ® 5",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "SUPPLIES_TO",
+   "object": "Microsoft",
+   "object_type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0020",
+   "evidence": "power the Microsoft ® Xbox Series S™",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "SUPPLIES_TO",
+   "object": "Valve",
+   "object_type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0020",
+   "evidence": "power ... Valve Steam Machine PC",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "AMD Ryzen",
+   "object_type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0015",
+   "evidence": "marketed under the AMD Ryzen™ ... brands",
+   "confidence": 0.98
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "AMD Ryzen AI",
+   "object_type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0015",
+   "evidence": "AMD Ryzen™ AI brands",
+   "confidence": 0.98
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "AMD Radeon RX",
+   "object_type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0020",
+   "evidence": "AMD Radeon RX discrete GPU processors",
+   "confidence": 0.98
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Radeon RX 9000 Series",
+   "object_type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0020",
+   "evidence": "released our Radeon RX 9000 Series graphics cards",
+   "confidence": 0.98
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "AMD UltraScale+",
+   "object_type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "evidence": "Our FPGA families include AMD UltraScale+™",
+   "confidence": 0.98
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "UltraScale 7 Series",
+   "object_type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "evidence": "UltraScale™ 7 Series",
+   "confidence": 0.98
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "AMD Zynq SoC",
+   "object_type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "evidence": "AMD Zynq™ SoC",
+   "confidence": 0.98
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Zynq UltraScale+ MPSoC",
+   "object_type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "evidence": "Zynq UltraScale+ Multi-Processing System-on-a-Chip (MPSoC)",
+   "confidence": 0.98
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Zynq UltraScale+ RFSoC",
+   "object_type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "evidence": "Zynq UltraScale+ RFSoC",
+   "confidence": 0.98
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Versal",
+   "object_type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "evidence": "The AMD Versal™ portfolio",
+   "confidence": 0.98
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Versal RF Series",
+   "object_type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "evidence": "Our Versal RF Series delivers compute performance",
+   "confidence": 0.98
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Versal Premium Series Gen 2",
+   "object_type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "evidence": "Versal Premium Series Gen 2, the first adaptive compute devices",
+   "confidence": 0.98
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "Client Market",
+   "object_type": "Market",
+   "chunk_id": "AMD-10-K-2025#c0015",
+   "evidence": "The Client market encompasses the global personal computing ecosystem",
+   "confidence": 0.97
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "Gaming Market",
+   "object_type": "Market",
+   "chunk_id": "AMD-10-K-2025#c0015",
+   "evidence": "Our CPUs and APUs power PCs ... for gamers and creators",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "Aerospace and Defense Market",
+   "object_type": "Market",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "evidence": "accelerate applications in ... aerospace and defense",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "Automotive Market",
+   "object_type": "Market",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "evidence": "accelerate applications in ... automotive",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "Industrial Market",
+   "object_type": "Market",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "evidence": "accelerate applications in ... industrial",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "Vision and Healthcare Market",
+   "object_type": "Market",
+   "chunk_id": "AMD-10-K-2025#c0024",
+   "evidence": "accelerate applications in ... vision and healthcare",
+   "confidence": 0.96
+  }
+ ]
+}

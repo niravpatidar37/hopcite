@@ -1,0 +1,66 @@
+{
+ "entities": [
+  {
+   "name": "Cadence Design Systems, Inc.",
+   "type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0048",
+   "confidence": 0.98,
+   "aliases": [
+    "CDNS"
+   ]
+  },
+  {
+   "name": "Verisity Ltd.",
+   "type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0057",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "Paul Scannell",
+   "type": "Person",
+   "chunk_id": "CDNS-10-K-2025#c0057",
+   "confidence": 0.97,
+   "aliases": []
+  },
+  {
+   "name": "Marc Taxay",
+   "type": "Person",
+   "chunk_id": "CDNS-10-K-2025#c0058",
+   "confidence": 0.97,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Cadence Design Systems, Inc.",
+   "subject_type": "Company",
+   "relation": "ACQUIRED",
+   "object": "Verisity Ltd.",
+   "object_type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0057",
+   "evidence": "through Cadence's acquisition of Verisity Ltd.",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Paul Scannell",
+   "subject_type": "Person",
+   "relation": "EXECUTIVE_OF",
+   "object": "Cadence Design Systems, Inc.",
+   "object_type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0057",
+   "evidence": "PAUL SCANNELL has served as Senior Vice President ... of Cadence since May 2024.",
+   "confidence": 0.97
+  },
+  {
+   "subject": "Marc Taxay",
+   "subject_type": "Person",
+   "relation": "EXECUTIVE_OF",
+   "object": "Cadence Design Systems, Inc.",
+   "object_type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0058",
+   "evidence": "MARC TAXAY has served as Senior Vice President ... of Cadence since May 2025.",
+   "confidence": 0.97
+  }
+ ]
+}

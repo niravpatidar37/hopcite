@@ -1,0 +1,153 @@
+{
+ "entities": [
+  {
+   "name": "Analog Devices, Inc.",
+   "type": "Company",
+   "chunk_id": "ADI-10-K-2025#c0000",
+   "confidence": 1.0,
+   "aliases": [
+    "ADI"
+   ]
+  },
+  {
+   "name": "Taiwan Semiconductor Manufacturing Company",
+   "type": "Company",
+   "chunk_id": "ADI-10-K-2025#c0036",
+   "confidence": 1.0,
+   "aliases": [
+    "TSMC"
+   ]
+  },
+  {
+   "name": "Wilmington, Massachusetts",
+   "type": "Location",
+   "chunk_id": "ADI-10-K-2025#c0036",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Camas, Washington",
+   "type": "Location",
+   "chunk_id": "ADI-10-K-2025#c0036",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Beaverton, Oregon",
+   "type": "Location",
+   "chunk_id": "ADI-10-K-2025#c0036",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Limerick, Ireland",
+   "type": "Location",
+   "chunk_id": "ADI-10-K-2025#c0036",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Penang, Malaysia",
+   "type": "Location",
+   "chunk_id": "ADI-10-K-2025#c0036",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Philippines",
+   "type": "Location",
+   "chunk_id": "ADI-10-K-2025#c0036",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Thailand",
+   "type": "Location",
+   "chunk_id": "ADI-10-K-2025#c0036",
+   "confidence": 1.0,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Taiwan Semiconductor Manufacturing Company",
+   "subject_type": "Company",
+   "relation": "MANUFACTURES_FOR",
+   "object": "Analog Devices, Inc.",
+   "object_type": "Company",
+   "chunk_id": "ADI-10-K-2025#c0036",
+   "evidence": "source more than half of our wafer requirements annually from third-party wafer fabrication foundries, such as Taiwan Semiconductor Manufacturing Company (TSMC)",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Analog Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Wilmington, Massachusetts",
+   "object_type": "Location",
+   "chunk_id": "ADI-10-K-2025#c0036",
+   "evidence": "internal production facilities in Wilmington, Massachusetts",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Analog Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Camas, Washington",
+   "object_type": "Location",
+   "chunk_id": "ADI-10-K-2025#c0036",
+   "evidence": "internal production facilities in ... Camas, Washington",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Analog Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Beaverton, Oregon",
+   "object_type": "Location",
+   "chunk_id": "ADI-10-K-2025#c0036",
+   "evidence": "internal production facilities in ... Beaverton, Oregon",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Analog Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Limerick, Ireland",
+   "object_type": "Location",
+   "chunk_id": "ADI-10-K-2025#c0036",
+   "evidence": "internal production facilities in ... Limerick, Ireland",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Analog Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Penang, Malaysia",
+   "object_type": "Location",
+   "chunk_id": "ADI-10-K-2025#c0036",
+   "evidence": "assembly, wafer sort and testing facility in Penang, Malaysia",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Analog Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Philippines",
+   "object_type": "Location",
+   "chunk_id": "ADI-10-K-2025#c0036",
+   "evidence": "wafer sort and test facilities in the Philippines",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Analog Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Thailand",
+   "object_type": "Location",
+   "chunk_id": "ADI-10-K-2025#c0036",
+   "evidence": "wafer sort and test facilities in ... Thailand",
+   "confidence": 0.95
+  }
+ ]
+}

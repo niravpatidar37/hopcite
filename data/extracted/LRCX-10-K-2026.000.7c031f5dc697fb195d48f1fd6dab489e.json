@@ -1,0 +1,509 @@
+{
+ "entities": [
+  {
+   "name": "Lam Research Corporation",
+   "type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0000",
+   "confidence": 1.0,
+   "aliases": [
+    "Lam Research",
+    "Lam"
+   ]
+  },
+  {
+   "name": "Fremont, California",
+   "type": "Location",
+   "chunk_id": "LRCX-10-K-2026#c0000",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Asia",
+   "type": "Location",
+   "chunk_id": "LRCX-10-K-2026#c0000",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Europe",
+   "type": "Location",
+   "chunk_id": "LRCX-10-K-2026#c0000",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "United States",
+   "type": "Location",
+   "chunk_id": "LRCX-10-K-2026#c0000",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Applied Materials, Inc.",
+   "type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0042",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "ASM International",
+   "type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0042",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Wonik IPS",
+   "type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0042",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Hitachi, Ltd.",
+   "type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0042",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Tokyo Electron, Ltd.",
+   "type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0042",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Screen Holding Co., Ltd.",
+   "type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0042",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Semes Co., Ltd.",
+   "type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0042",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Micron Technology, Inc.",
+   "type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0030",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Samsung Electronics Company, Ltd.",
+   "type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0030",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "SK hynix Inc.",
+   "type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0030",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Taiwan Semiconductor Manufacturing Company",
+   "type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0030",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Timothy M. Archer",
+   "type": "Person",
+   "chunk_id": "LRCX-10-K-2026#c0049",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Douglas R. Bettinger",
+   "type": "Person",
+   "chunk_id": "LRCX-10-K-2026#c0049",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Seshasayee (Sesha) Varadarajan",
+   "type": "Person",
+   "chunk_id": "LRCX-10-K-2026#c0049",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Neil J. Fernandes",
+   "type": "Person",
+   "chunk_id": "LRCX-10-K-2026#c0049",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Ava A. Harter",
+   "type": "Person",
+   "chunk_id": "LRCX-10-K-2026#c0049",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Vahid Vahedi",
+   "type": "Person",
+   "chunk_id": "LRCX-10-K-2026#c0049",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Karthikeyan (Karthik) Rammohan",
+   "type": "Person",
+   "chunk_id": "LRCX-10-K-2026#c0049",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "semiconductor industry",
+   "type": "Market",
+   "chunk_id": "LRCX-10-K-2026#c0001",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "mobile phones",
+   "type": "Market",
+   "chunk_id": "LRCX-10-K-2026#c0001",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "personal computers",
+   "type": "Market",
+   "chunk_id": "LRCX-10-K-2026#c0001",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "cloud and enterprise servers",
+   "type": "Market",
+   "chunk_id": "LRCX-10-K-2026#c0001",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "wearables",
+   "type": "Market",
+   "chunk_id": "LRCX-10-K-2026#c0001",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "automotive vehicles",
+   "type": "Market",
+   "chunk_id": "LRCX-10-K-2026#c0001",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "data storage devices",
+   "type": "Market",
+   "chunk_id": "LRCX-10-K-2026#c0001",
+   "confidence": 1.0,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Lam Research Corporation",
+   "subject_type": "Company",
+   "relation": "HEADQUARTERED_IN",
+   "object": "Fremont, California",
+   "object_type": "Location",
+   "chunk_id": "LRCX-10-K-2026#c0000",
+   "evidence": "headquartered in Fremont, California.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Lam Research Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Asia",
+   "object_type": "Location",
+   "chunk_id": "LRCX-10-K-2026#c0000",
+   "evidence": "network of facilities throughout Asia",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Lam Research Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Europe",
+   "object_type": "Location",
+   "chunk_id": "LRCX-10-K-2026#c0000",
+   "evidence": "network of facilities throughout ... Europe",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Lam Research Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "United States",
+   "object_type": "Location",
+   "chunk_id": "LRCX-10-K-2026#c0000",
+   "evidence": "network of facilities throughout ... United States",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Lam Research Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Applied Materials, Inc.",
+   "object_type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0042",
+   "evidence": "primary competitor ... is Applied Materials, Inc.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Lam Research Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "ASM International",
+   "object_type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0042",
+   "evidence": "we also compete against ASM International",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Lam Research Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Wonik IPS",
+   "object_type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0042",
+   "evidence": "we also compete against ... Wonik IPS",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Lam Research Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Hitachi, Ltd.",
+   "object_type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0042",
+   "evidence": "primary competitors ... Hitachi, Ltd.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Lam Research Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Tokyo Electron, Ltd.",
+   "object_type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0042",
+   "evidence": "primary competitors ... Tokyo Electron, Ltd.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Lam Research Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Screen Holding Co., Ltd.",
+   "object_type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0042",
+   "evidence": "primary competitors ... Screen Holding Co., Ltd.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Lam Research Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Semes Co., Ltd.",
+   "object_type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0042",
+   "evidence": "primary competitors ... Semes Co., Ltd.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Lam Research Corporation",
+   "subject_type": "Company",
+   "relation": "SUPPLIES_TO",
+   "object": "Micron Technology, Inc.",
+   "object_type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0030",
+   "evidence": "most significant customers ... included Micron Technology, Inc.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Lam Research Corporation",
+   "subject_type": "Company",
+   "relation": "SUPPLIES_TO",
+   "object": "Samsung Electronics Company, Ltd.",
+   "object_type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0030",
+   "evidence": "most significant customers ... Samsung Electronics Company, Ltd.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Lam Research Corporation",
+   "subject_type": "Company",
+   "relation": "SUPPLIES_TO",
+   "object": "SK hynix Inc.",
+   "object_type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0030",
+   "evidence": "most significant customers ... SK hynix Inc.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Lam Research Corporation",
+   "subject_type": "Company",
+   "relation": "SUPPLIES_TO",
+   "object": "Taiwan Semiconductor Manufacturing Company",
+   "object_type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0030",
+   "evidence": "most significant customers ... Taiwan Semiconductor Manufacturing Company",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Timothy M. Archer",
+   "subject_type": "Person",
+   "relation": "EXECUTIVE_OF",
+   "object": "Lam Research Corporation",
+   "object_type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0049",
+   "evidence": "Timothy M. Archer ... President, Chief Executive Officer",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Douglas R. Bettinger",
+   "subject_type": "Person",
+   "relation": "EXECUTIVE_OF",
+   "object": "Lam Research Corporation",
+   "object_type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0049",
+   "evidence": "Douglas R. Bettinger ... Executive Vice President, Chief Financial Officer",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Seshasayee (Sesha) Varadarajan",
+   "subject_type": "Person",
+   "relation": "EXECUTIVE_OF",
+   "object": "Lam Research Corporation",
+   "object_type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0049",
+   "evidence": "Seshasayee (Sesha) Varadarajan ... Executive Vice President, Chief Operating Officer",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Neil J. Fernandes",
+   "subject_type": "Person",
+   "relation": "EXECUTIVE_OF",
+   "object": "Lam Research Corporation",
+   "object_type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0049",
+   "evidence": "Neil J. Fernandes ... Senior Vice President, Global Customer Operations",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Ava A. Harter",
+   "subject_type": "Person",
+   "relation": "EXECUTIVE_OF",
+   "object": "Lam Research Corporation",
+   "object_type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0049",
+   "evidence": "Ava A. Harter ... Senior Vice President, Chief Legal Officer and Secretary",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Vahid Vahedi",
+   "subject_type": "Person",
+   "relation": "EXECUTIVE_OF",
+   "object": "Lam Research Corporation",
+   "object_type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0049",
+   "evidence": "Vahid Vahedi ... Senior Vice President, Chief Technology and Sustainability Officer",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Karthikeyan (Karthik) Rammohan",
+   "subject_type": "Person",
+   "relation": "EXECUTIVE_OF",
+   "object": "Lam Research Corporation",
+   "object_type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0049",
+   "evidence": "Karthikeyan (Karthik) Rammohan ... Senior Vice President, Global Operations and Enterprise Solutions",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Lam Research Corporation",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "semiconductor industry",
+   "object_type": "Market",
+   "chunk_id": "LRCX-10-K-2026#c0001",
+   "evidence": "global supplier of innovative wafer fabrication equipment and services to the semiconductor industry",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Lam Research Corporation",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "mobile phones",
+   "object_type": "Market",
+   "chunk_id": "LRCX-10-K-2026#c0001",
+   "evidence": "devices that are used in ... mobile phones",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Lam Research Corporation",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "personal computers",
+   "object_type": "Market",
+   "chunk_id": "LRCX-10-K-2026#c0001",
+   "evidence": "devices that are used in ... personal computers",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Lam Research Corporation",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "cloud and enterprise servers",
+   "object_type": "Market",
+   "chunk_id": "LRCX-10-K-2026#c0001",
+   "evidence": "devices that are used in ... cloud and enterprise servers",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Lam Research Corporation",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "wearables",
+   "object_type": "Market",
+   "chunk_id": "LRCX-10-K-2026#c0001",
+   "evidence": "devices that are used in ... wearables",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Lam Research Corporation",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "automotive vehicles",
+   "object_type": "Market",
+   "chunk_id": "LRCX-10-K-2026#c0001",
+   "evidence": "devices that are used in ... automotive vehicles",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Lam Research Corporation",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "data storage devices",
+   "object_type": "Market",
+   "chunk_id": "LRCX-10-K-2026#c0001",
+   "evidence": "devices that are used in ... data storage devices",
+   "confidence": 1.0
+  }
+ ]
+}

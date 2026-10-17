@@ -1,0 +1,106 @@
+{
+ "entities": [
+  {
+   "name": "Taiwan Semiconductor Manufacturing Company Limited",
+   "type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0000",
+   "confidence": 0.98,
+   "aliases": [
+    "TSMC"
+   ]
+  },
+  {
+   "name": "Hsinchu, Taiwan",
+   "type": "Location",
+   "chunk_id": "TSM-20-F-2025#c0001",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "Wafer Fabrication Processes",
+   "type": "Product",
+   "chunk_id": "TSM-20-F-2025#c0001",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "TSMC 3DFabric®",
+   "type": "Product",
+   "chunk_id": "TSM-20-F-2025#c0001",
+   "confidence": 0.95,
+   "aliases": [
+    "3DFabric"
+   ]
+  },
+  {
+   "name": "TSMC SoIC®",
+   "type": "Product",
+   "chunk_id": "TSM-20-F-2025#c0015",
+   "confidence": 0.94,
+   "aliases": [
+    "SoIC"
+   ]
+  },
+  {
+   "name": "TSMC CoWoS®",
+   "type": "Product",
+   "chunk_id": "TSM-20-F-2025#c0015",
+   "confidence": 0.94,
+   "aliases": [
+    "CoWoS"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Taiwan Semiconductor Manufacturing Company Limited",
+   "subject_type": "Company",
+   "relation": "HEADQUARTERED_IN",
+   "object": "Hsinchu, Taiwan",
+   "object_type": "Location",
+   "chunk_id": "TSM-20-F-2025#c0001",
+   "evidence": "Our principal executive office is located at No. 8, Li-Hsin Road 6, Hsinchu Science Park, Hsinchu, Taiwan",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Taiwan Semiconductor Manufacturing Company Limited",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Wafer Fabrication Processes",
+   "object_type": "Product",
+   "chunk_id": "TSM-20-F-2025#c0001",
+   "evidence": "We offer a comprehensive range of wafer fabrication processes, including processes to manufacture CMOS logic, mixed‑signal, RF, embedded memory, BiCMOS...",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Taiwan Semiconductor Manufacturing Company Limited",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "TSMC 3DFabric®",
+   "object_type": "Product",
+   "chunk_id": "TSM-20-F-2025#c0001",
+   "evidence": "We also offer design, mask making, TSMC 3DFabric® advanced silicon stacking and packaging services, and testing services.",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Taiwan Semiconductor Manufacturing Company Limited",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "TSMC SoIC®",
+   "object_type": "Product",
+   "chunk_id": "TSM-20-F-2025#c0015",
+   "evidence": "We will continue to optimize our HPC platform and strengthen collaboration with customers to help them capture market growth in HPC markets.",
+   "confidence": 0.6
+  },
+  {
+   "subject": "Taiwan Semiconductor Manufacturing Company Limited",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "TSMC CoWoS®",
+   "object_type": "Product",
+   "chunk_id": "TSM-20-F-2025#c0015",
+   "evidence": "We also offer multiple TSMC 3DFabric® advanced silicon stacking and packaging solutions, such as TSMC‑SoIC® manufacturing services and CoWoS® advanced packaging services",
+   "confidence": 0.94
+  }
+ ]
+}

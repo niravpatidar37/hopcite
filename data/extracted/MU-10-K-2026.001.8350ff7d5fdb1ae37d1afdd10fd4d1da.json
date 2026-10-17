@@ -1,0 +1,81 @@
+{
+ "entities": [
+  {
+   "name": "April S. Arnzen",
+   "type": "Person",
+   "chunk_id": "MU-10-K-2026#c0058",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Manish Bhatia",
+   "type": "Person",
+   "chunk_id": "MU-10-K-2026#c0058",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Michael D. Cordano",
+   "type": "Person",
+   "chunk_id": "MU-10-K-2026#c0059",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Scott J. DeBoer",
+   "type": "Person",
+   "chunk_id": "MU-10-K-2026#c0059",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Micron Technology, Inc.",
+   "type": "Company",
+   "chunk_id": "MU-10-K-2026#c0058",
+   "confidence": 0.99,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "April S. Arnzen",
+   "subject_type": "Person",
+   "relation": "EXECUTIVE_OF",
+   "object": "Micron Technology, Inc.",
+   "object_type": "Company",
+   "chunk_id": "MU-10-K-2026#c0058",
+   "evidence": "April S. Arnzen ... Executive Vice President and Chief People Officer",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Manish Bhatia",
+   "subject_type": "Person",
+   "relation": "EXECUTIVE_OF",
+   "object": "Micron Technology, Inc.",
+   "object_type": "Company",
+   "chunk_id": "MU-10-K-2026#c0058",
+   "evidence": "Manish Bhatia ... President and Chief Operating Officer",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Michael D. Cordano",
+   "subject_type": "Person",
+   "relation": "EXECUTIVE_OF",
+   "object": "Micron Technology, Inc.",
+   "object_type": "Company",
+   "chunk_id": "MU-10-K-2026#c0059",
+   "evidence": "Michael D. Cordano ... Executive Vice President, Worldwide Sales",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Scott J. DeBoer",
+   "subject_type": "Person",
+   "relation": "EXECUTIVE_OF",
+   "object": "Micron Technology, Inc.",
+   "object_type": "Company",
+   "chunk_id": "MU-10-K-2026#c0059",
+   "evidence": "Scott J. DeBoer ... President and Chief Technology and Products Officer",
+   "confidence": 0.95
+  }
+ ]
+}

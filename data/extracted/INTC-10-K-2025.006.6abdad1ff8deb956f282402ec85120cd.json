@@ -1,0 +1,138 @@
+{
+ "entities": [
+  {
+   "name": "Intel Corporation",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0062",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Intel Core Ultra",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0066",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Intel Core",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0066",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Intel Xeon",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0066",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Consumer",
+   "type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0066",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Commercial",
+   "type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0066",
+   "confidence": 1.0,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Intel Core Ultra",
+   "object_type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0066",
+   "evidence": "The Intel Core Ultra, Intel Core and Intel Xeon processor families remain our flagship CPU brands.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Intel Core",
+   "object_type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0066",
+   "evidence": "The Intel Core Ultra, Intel Core and Intel Xeon processor families remain our flagship CPU brands.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Intel Xeon",
+   "object_type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0066",
+   "evidence": "The Intel Core Ultra, Intel Core and Intel Xeon processor families remain our flagship CPU brands.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Intel Core Ultra",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "Consumer",
+   "object_type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0066",
+   "evidence": "We market to consumer and commercial audiences.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Intel Core Ultra",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "Commercial",
+   "object_type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0066",
+   "evidence": "We market to consumer and commercial audiences.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Intel Core",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "Consumer",
+   "object_type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0066",
+   "evidence": "We market to consumer and commercial audiences.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Intel Core",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "Commercial",
+   "object_type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0066",
+   "evidence": "We market to consumer and commercial audiences.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Intel Xeon",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "Consumer",
+   "object_type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0066",
+   "evidence": "We market to consumer and commercial audiences.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Intel Xeon",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "Commercial",
+   "object_type": "Market",
+   "chunk_id": "INTC-10-K-2025#c0066",
+   "evidence": "We market to consumer and commercial audiences.",
+   "confidence": 1.0
+  }
+ ]
+}

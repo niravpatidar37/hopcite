@@ -1,0 +1,26 @@
+{
+ "entities": [
+  {
+   "name": "Microsoft Corporation",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0057",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Sony Interactive Entertainment, Inc.",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0057",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Arm Limited",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0057",
+   "confidence": 0.95,
+   "aliases": []
+  }
+ ],
+ "relations": []
+}

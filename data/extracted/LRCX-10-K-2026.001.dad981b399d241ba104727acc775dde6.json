@@ -1,0 +1,30 @@
+{
+ "entities": [
+  {
+   "name": "Lam Research Corporation",
+   "type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0051",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Douglas R. Bettinger",
+   "type": "Person",
+   "chunk_id": "LRCX-10-K-2026#c0051",
+   "confidence": 0.95,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Douglas R. Bettinger",
+   "subject_type": "Person",
+   "relation": "EXECUTIVE_OF",
+   "object": "Lam Research Corporation",
+   "object_type": "Company",
+   "chunk_id": "LRCX-10-K-2026#c0051",
+   "evidence": "Douglas R. Bettinger is our executive vice president and chief financial officer ...",
+   "confidence": 0.95
+  }
+ ]
+}

@@ -1,0 +1,514 @@
+{
+ "entities": [
+  {
+   "name": "NVIDIA Corporation",
+   "type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0012",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "Taiwan Semiconductor Manufacturing Company Limited",
+   "type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0029",
+   "confidence": 0.98,
+   "aliases": [
+    "TSMC"
+   ]
+  },
+  {
+   "name": "Samsung Electronics Co., Ltd.",
+   "type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0029",
+   "confidence": 0.98,
+   "aliases": [
+    "Samsung"
+   ]
+  },
+  {
+   "name": "SK Hynix Inc.",
+   "type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0029",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "Micron Technology, Inc.",
+   "type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0029",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "Hon Hai Precision Industry Co., Ltd.",
+   "type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0029",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "Wistron Corporation",
+   "type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0029",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "Fabrinet",
+   "type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0029",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "Advanced Micro Devices, Inc.",
+   "type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0031",
+   "confidence": 0.97,
+   "aliases": [
+    "AMD"
+   ]
+  },
+  {
+   "name": "Huawei Technologies Co. Ltd.",
+   "type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0031",
+   "confidence": 0.97,
+   "aliases": [
+    "Huawei"
+   ]
+  },
+  {
+   "name": "Intel Corporation",
+   "type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0031",
+   "confidence": 0.97,
+   "aliases": [
+    "Intel"
+   ]
+  },
+  {
+   "name": "Alibaba Group",
+   "type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0032",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "Alphabet Inc.",
+   "type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0032",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "Amazon, Inc.",
+   "type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0032",
+   "confidence": 0.96,
+   "aliases": [
+    "Amazon"
+   ]
+  },
+  {
+   "name": "Baidu, Inc.",
+   "type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0032",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "Microsoft Corporation",
+   "type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0032",
+   "confidence": 0.96,
+   "aliases": [
+    "Microsoft"
+   ]
+  },
+  {
+   "name": "Ambarella, Inc.",
+   "type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0032",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Broadcom",
+   "type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0032",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Qualcomm Incorporated",
+   "type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0032",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Renesas Electronics Corporation",
+   "type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0032",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Tesla, Inc.",
+   "type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0032",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "LSI Logic Corporation",
+   "type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0044",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "Jen-Hsun Huang",
+   "type": "Person",
+   "chunk_id": "NVDA-10-K-2026#c0046",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Colette M. Kress",
+   "type": "Person",
+   "chunk_id": "NVDA-10-K-2026#c0046",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Ajay K. Puri",
+   "type": "Person",
+   "chunk_id": "NVDA-10-K-2026#c0046",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Debora Shoquist",
+   "type": "Person",
+   "chunk_id": "NVDA-10-K-2026#c0046",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "Timothy S. Teter",
+   "type": "Person",
+   "chunk_id": "NVDA-10-K-2026#c0046",
+   "confidence": 0.99,
+   "aliases": []
+  },
+  {
+   "name": "CUDA development platform",
+   "type": "Product",
+   "chunk_id": "NVDA-10-K-2026#c0012",
+   "confidence": 0.97,
+   "aliases": []
+  },
+  {
+   "name": "CUDA-X collection",
+   "type": "Product",
+   "chunk_id": "NVDA-10-K-2026#c0012",
+   "confidence": 0.97,
+   "aliases": []
+  },
+  {
+   "name": "NVIDIA AI Enterprise",
+   "type": "Product",
+   "chunk_id": "NVDA-10-K-2026#c0012",
+   "confidence": 0.97,
+   "aliases": []
+  },
+  {
+   "name": "NVIDIA vGPU software",
+   "type": "Product",
+   "chunk_id": "NVDA-10-K-2026#c0012",
+   "confidence": 0.97,
+   "aliases": []
+  },
+  {
+   "name": "CoWoS technology",
+   "type": "Technology",
+   "chunk_id": "NVDA-10-K-2026#c0029",
+   "confidence": 0.96,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "CUDA development platform",
+   "object_type": "Product",
+   "chunk_id": "NVDA-10-K-2026#c0012",
+   "evidence": "our large body of software, including the CUDA development platform",
+   "confidence": 0.95
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "CUDA-X collection",
+   "object_type": "Product",
+   "chunk_id": "NVDA-10-K-2026#c0012",
+   "evidence": "the CUDA-X collection of acceleration libraries",
+   "confidence": 0.95
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "NVIDIA AI Enterprise",
+   "object_type": "Product",
+   "chunk_id": "NVDA-10-K-2026#c0012",
+   "evidence": "paid licenses to NVIDIA AI Enterprise",
+   "confidence": 0.95
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "NVIDIA vGPU software",
+   "object_type": "Product",
+   "chunk_id": "NVDA-10-K-2026#c0012",
+   "evidence": "NVIDIA vGPU software for graphics-rich virtual desktops",
+   "confidence": 0.95
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "USES_TECHNOLOGY",
+   "object": "CoWoS technology",
+   "object_type": "Technology",
+   "chunk_id": "NVDA-10-K-2026#c0029",
+   "evidence": "We utilize CoWoS technology for semiconductor packaging",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Taiwan Semiconductor Manufacturing Company Limited",
+   "subject_type": "Company",
+   "relation": "MANUFACTURES_FOR",
+   "object": "NVIDIA Corporation",
+   "object_type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0029",
+   "evidence": "We utilize foundries, such as Taiwan Semiconductor Manufacturing Company Limited, or TSMC, ... to produce our semiconductor wafers",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Samsung Electronics Co., Ltd.",
+   "subject_type": "Company",
+   "relation": "MANUFACTURES_FOR",
+   "object": "NVIDIA Corporation",
+   "object_type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0029",
+   "evidence": "We utilize foundries, such as ... Samsung Electronics Co., Ltd., or Samsung, to produce our semiconductor wafers",
+   "confidence": 0.96
+  },
+  {
+   "subject": "SK Hynix Inc.",
+   "subject_type": "Company",
+   "relation": "SUPPLIES_TO",
+   "object": "NVIDIA Corporation",
+   "object_type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0029",
+   "evidence": "We purchase memory from SK Hynix Inc.",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Micron Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "SUPPLIES_TO",
+   "object": "NVIDIA Corporation",
+   "object_type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0029",
+   "evidence": "We purchase memory from ... Micron Technology, Inc.",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Samsung Electronics Co., Ltd.",
+   "subject_type": "Company",
+   "relation": "SUPPLIES_TO",
+   "object": "NVIDIA Corporation",
+   "object_type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0029",
+   "evidence": "We purchase memory from ... Samsung",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Hon Hai Precision Industry Co., Ltd.",
+   "subject_type": "Company",
+   "relation": "MANUFACTURES_FOR",
+   "object": "NVIDIA Corporation",
+   "object_type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0029",
+   "evidence": "We engage with independent subcontractors ... such as Hon Hai Precision Industry Co., Ltd., ... to perform assembly, testing and packaging of our final products",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Wistron Corporation",
+   "subject_type": "Company",
+   "relation": "MANUFACTURES_FOR",
+   "object": "NVIDIA Corporation",
+   "object_type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0029",
+   "evidence": "We engage with independent subcontractors ... Wistron Corporation ... to perform assembly, testing and packaging",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Fabrinet",
+   "subject_type": "Company",
+   "relation": "MANUFACTURES_FOR",
+   "object": "NVIDIA Corporation",
+   "object_type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0029",
+   "evidence": "We engage with independent subcontractors ... Fabrinet to perform assembly, testing and packaging",
+   "confidence": 0.95
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Advanced Micro Devices, Inc.",
+   "object_type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0031",
+   "evidence": "Our current competitors include ... Advanced Micro Devices, Inc., or AMD",
+   "confidence": 0.96
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Huawei Technologies Co. Ltd.",
+   "object_type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0031",
+   "evidence": "Our current competitors include ... Huawei Technologies Co. Ltd., or Huawei",
+   "confidence": 0.96
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Intel Corporation",
+   "object_type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0031",
+   "evidence": "Our current competitors include ... Intel Corporation, or Intel",
+   "confidence": 0.96
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Alibaba Group",
+   "object_type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0032",
+   "evidence": "large cloud services companies ... such as Alibaba Group",
+   "confidence": 0.95
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Alphabet Inc.",
+   "object_type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0032",
+   "evidence": "large cloud services companies ... such as ... Alphabet Inc.",
+   "confidence": 0.95
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Amazon, Inc.",
+   "object_type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0032",
+   "evidence": "large cloud services companies ... such as ... Amazon, Inc., or Amazon",
+   "confidence": 0.95
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Baidu, Inc.",
+   "object_type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0032",
+   "evidence": "large cloud services companies ... such as Baidu, Inc.",
+   "confidence": 0.95
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Microsoft Corporation",
+   "object_type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0032",
+   "evidence": "large cloud services companies ... such as Microsoft Corporation, or Microsoft",
+   "confidence": 0.95
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Ambarella, Inc.",
+   "object_type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0032",
+   "evidence": "suppliers of hardware and software for SoC products ... such as Ambarella, Inc.",
+   "confidence": 0.94
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Broadcom",
+   "object_type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0032",
+   "evidence": "suppliers of hardware and software for SoC products ... such as Broadcom",
+   "confidence": 0.94
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Qualcomm Incorporated",
+   "object_type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0032",
+   "evidence": "suppliers of hardware and software for SoC products ... such as Qualcomm Incorporated",
+   "confidence": 0.94
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Renesas Electronics Corporation",
+   "object_type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0032",
+   "evidence": "suppliers of hardware and software for SoC products ... such as Renesas Electronics Corporation",
+   "confidence": 0.94
+  },
+  {
+   "subject": "NVIDIA Corporation",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Tesla, Inc.",
+   "object_type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0032",
+   "evidence": "companies with internal teams designing SoC products ... such as Tesla, Inc.",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Jen-Hsun Huang",
+   "subject_type": "Person",
+   "relation": "EXECUTIVE_OF",
+   "object": "NVIDIA Corporation",
+   "object_type": "Company",
+   "chunk_id": "NVDA-10-K-2026#c0046",
+   "evidence": "Jen-Hsun Huang ... President and Chief Executive Officer",
+   "confidence": 0.99
+  }
+ ]
+}

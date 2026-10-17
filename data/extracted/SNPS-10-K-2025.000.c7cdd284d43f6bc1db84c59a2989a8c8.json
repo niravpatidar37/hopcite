@@ -1,0 +1,272 @@
+{
+ "entities": [
+  {
+   "name": "Synopsys, Inc.",
+   "type": "Company",
+   "chunk_id": "SNPS-10-K-2025#c0000",
+   "confidence": 1.0,
+   "aliases": [
+    "Synopsys"
+   ]
+  },
+  {
+   "name": "ANSYS, Inc.",
+   "type": "Company",
+   "chunk_id": "SNPS-10-K-2025#c0007",
+   "confidence": 0.95,
+   "aliases": [
+    "Ansys"
+   ]
+  },
+  {
+   "name": "Microsoft Azure",
+   "type": "Company",
+   "chunk_id": "SNPS-10-K-2025#c0010",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "Design Automation Segment",
+   "type": "Segment",
+   "chunk_id": "SNPS-10-K-2025#c0010",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "EDA products",
+   "type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0010",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Synopsys Cloud",
+   "type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0010",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Synopsys TCAD",
+   "type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0019",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Proteus TM",
+   "type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0019",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "CATS ®",
+   "type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0019",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Yield Explorer Odyssey",
+   "type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0019",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Yield-Manager ®",
+   "type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0019",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "QuantumATK ®",
+   "type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0019",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "AI market",
+   "type": "Market",
+   "chunk_id": "SNPS-10-K-2025#c0007",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "5G market",
+   "type": "Market",
+   "chunk_id": "SNPS-10-K-2025#c0007",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "automotive market",
+   "type": "Market",
+   "chunk_id": "SNPS-10-K-2025#c0007",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "cloud computing infrastructure market",
+   "type": "Market",
+   "chunk_id": "SNPS-10-K-2025#c0007",
+   "confidence": 0.9,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Synopsys, Inc.",
+   "subject_type": "Company",
+   "relation": "ACQUIRED",
+   "object": "ANSYS, Inc.",
+   "object_type": "Company",
+   "chunk_id": "SNPS-10-K-2025#c0007",
+   "evidence": "with ANSYS, Inc, (Ansys) now part of Synopsys",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Synopsys, Inc.",
+   "subject_type": "Company",
+   "relation": "PARTNERS_WITH",
+   "object": "Microsoft Azure",
+   "object_type": "Company",
+   "chunk_id": "SNPS-10-K-2025#c0010",
+   "evidence": "developed in partnership with Microsoft Azure",
+   "confidence": 0.9
+  },
+  {
+   "subject": "Synopsys, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "Design Automation Segment",
+   "object_type": "Segment",
+   "chunk_id": "SNPS-10-K-2025#c0010",
+   "evidence": "Our Design Automation segment includes the EDA, Ansys and Other revenue groups.",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Synopsys, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "EDA products",
+   "object_type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0010",
+   "evidence": "Designers use our EDA products to accelerate and automate the chip design process",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Synopsys, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Synopsys Cloud",
+   "object_type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0010",
+   "evidence": "Our Synopsys Cloud offering provides customers additional options for accessing our EDA products",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Synopsys, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Synopsys TCAD",
+   "object_type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0019",
+   "evidence": "Our manufacturing solutions include Synopsys technology computer-aided design (TCAD)",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Synopsys, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Proteus TM",
+   "object_type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0019",
+   "evidence": "We also offer Proteus TM mask synthesis tools",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Synopsys, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "CATS ®",
+   "object_type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0019",
+   "evidence": "CATS ® mask data preparation software",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Synopsys, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Yield Explorer Odyssey",
+   "object_type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0019",
+   "evidence": "Yield Explorer Odyssey",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Synopsys, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Yield-Manager ®",
+   "object_type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0019",
+   "evidence": "Yield-Manager ® yield management solutions",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Synopsys, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "QuantumATK ®",
+   "object_type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0019",
+   "evidence": "QuantumATK ® atomic-scale modeling software",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Synopsys, Inc.",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "AI market",
+   "object_type": "Market",
+   "chunk_id": "SNPS-10-K-2025#c0007",
+   "evidence": "market verticals including AI ... have contributed to the ongoing demand for our products",
+   "confidence": 0.9
+  },
+  {
+   "subject": "Synopsys, Inc.",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "5G market",
+   "object_type": "Market",
+   "chunk_id": "SNPS-10-K-2025#c0007",
+   "evidence": "market verticals including ... 5G ... have contributed to the ongoing demand",
+   "confidence": 0.9
+  },
+  {
+   "subject": "Synopsys, Inc.",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "automotive market",
+   "object_type": "Market",
+   "chunk_id": "SNPS-10-K-2025#c0007",
+   "evidence": "market verticals including ... automotive ... have contributed to the ongoing demand",
+   "confidence": 0.9
+  },
+  {
+   "subject": "Synopsys, Inc.",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "cloud computing infrastructure market",
+   "object_type": "Market",
+   "chunk_id": "SNPS-10-K-2025#c0007",
+   "evidence": "market verticals including ... cloud computing infrastructure have contributed to the ongoing demand",
+   "confidence": 0.9
+  }
+ ]
+}

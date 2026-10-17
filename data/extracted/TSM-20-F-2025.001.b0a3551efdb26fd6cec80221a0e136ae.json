@@ -1,0 +1,138 @@
+{
+ "entities": [
+  {
+   "name": "Taiwan Semiconductor Manufacturing Company Limited",
+   "type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0035",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Vanguard International Semiconductor Corporation",
+   "type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0042",
+   "confidence": 0.95,
+   "aliases": [
+    "VIS"
+   ]
+  },
+  {
+   "name": "TSMC Washington, LLC",
+   "type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0043",
+   "confidence": 0.95,
+   "aliases": [
+    "TSMC Washington"
+   ]
+  },
+  {
+   "name": "TSMC Global Ltd.",
+   "type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0043",
+   "confidence": 0.95,
+   "aliases": [
+    "TSMC Global"
+   ]
+  },
+  {
+   "name": "Systems on Silicon Manufacturing Company Pte. Ltd.",
+   "type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0043",
+   "confidence": 0.9,
+   "aliases": [
+    "SSMC"
+   ]
+  },
+  {
+   "name": "Global Unichip Corporation",
+   "type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0044",
+   "confidence": 0.9,
+   "aliases": [
+    "GUC"
+   ]
+  },
+  {
+   "name": "VisEra Technologies Company, Ltd.",
+   "type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0044",
+   "confidence": 0.9,
+   "aliases": [
+    "VisEra Technologies"
+   ]
+  },
+  {
+   "name": "Xintec, Inc.",
+   "type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0045",
+   "confidence": 0.9,
+   "aliases": []
+  },
+  {
+   "name": "TSMC China",
+   "type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0044",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "TSMC Nanjing",
+   "type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0045",
+   "confidence": 0.95,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Vanguard International Semiconductor Corporation",
+   "subject_type": "Company",
+   "relation": "SUBSIDIARY_OF",
+   "object": "Taiwan Semiconductor Manufacturing Company Limited",
+   "object_type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0042",
+   "evidence": "Our Subsidiaries and Affiliates Vanguard International Semiconductor Corporation (“VIS”).",
+   "confidence": 0.96
+  },
+  {
+   "subject": "TSMC Washington, LLC",
+   "subject_type": "Company",
+   "relation": "SUBSIDIARY_OF",
+   "object": "Taiwan Semiconductor Manufacturing Company Limited",
+   "object_type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0043",
+   "evidence": "As of February 28, 2026 , we owned 100% of the equity interest in TSMC Washington.",
+   "confidence": 0.96
+  },
+  {
+   "subject": "TSMC Global Ltd.",
+   "subject_type": "Company",
+   "relation": "SUBSIDIARY_OF",
+   "object": "Taiwan Semiconductor Manufacturing Company Limited",
+   "object_type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0043",
+   "evidence": "TSMC Global is a wholly-owned subsidiary primarily engaged in corporate treasury investment activities.",
+   "confidence": 0.96
+  },
+  {
+   "subject": "TSMC China",
+   "subject_type": "Company",
+   "relation": "SUBSIDIARY_OF",
+   "object": "Taiwan Semiconductor Manufacturing Company Limited",
+   "object_type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0044",
+   "evidence": "TSMC China ... a wholly-owned subsidiary primarily engaged in the manufacture and sale of integrated circuits.",
+   "confidence": 0.96
+  },
+  {
+   "subject": "TSMC Nanjing",
+   "subject_type": "Company",
+   "relation": "SUBSIDIARY_OF",
+   "object": "Taiwan Semiconductor Manufacturing Company Limited",
+   "object_type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0045",
+   "evidence": "TSMC Nanjing ... a wholly-owned subsidiary.",
+   "confidence": 0.96
+  }
+ ]
+}

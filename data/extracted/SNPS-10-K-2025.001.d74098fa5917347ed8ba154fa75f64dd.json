@@ -1,0 +1,173 @@
+{
+ "entities": [
+  {
+   "name": "Synopsys, Inc.",
+   "type": "Company",
+   "chunk_id": "SNPS-10-K-2025#c0026",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Logic libraries and embedded memories",
+   "type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0026",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "configurable ARC processors",
+   "type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0026",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Neural Network processors",
+   "type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0026",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Digital Signal Processor cores",
+   "type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0026",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "cryptographic cores",
+   "type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0026",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Arm AMBA interconnect fabric",
+   "type": "Technology",
+   "chunk_id": "SNPS-10-K-2025#c0026",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "emulation and prototyping systems",
+   "type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0033",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Design IP segment",
+   "type": "Segment",
+   "chunk_id": "SNPS-10-K-2025#c0037",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "automotive market",
+   "type": "Market",
+   "chunk_id": "SNPS-10-K-2025#c0026",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Keysight Technologies, Inc.",
+   "type": "Company",
+   "chunk_id": "SNPS-10-K-2025#c0033",
+   "confidence": 1.0,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Synopsys, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Logic libraries and embedded memories",
+   "object_type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0026",
+   "evidence": "Logic libraries and embedded memories, including memory compilers...",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Synopsys, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "configurable ARC processors",
+   "object_type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0026",
+   "evidence": "Processor solutions, including configurable ARC ® processors...",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Synopsys, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Neural Network processors",
+   "object_type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0026",
+   "evidence": "Processor solutions, including ... Neural Network processors...",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Synopsys, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Digital Signal Processor cores",
+   "object_type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0026",
+   "evidence": "Processor solutions, including ... Digital Signal Processor cores...",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Synopsys, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "cryptographic cores",
+   "object_type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0026",
+   "evidence": "Security IP solutions, including cryptographic cores...",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Synopsys, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "emulation and prototyping systems",
+   "object_type": "Product",
+   "chunk_id": "SNPS-10-K-2025#c0033",
+   "evidence": "Our hardware products, which principally consist of our emulation and prototyping systems...",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Synopsys, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "Design IP segment",
+   "object_type": "Segment",
+   "chunk_id": "SNPS-10-K-2025#c0037",
+   "evidence": "Within our Design IP segment, Synopsys competes against...",
+   "confidence": 0.97
+  },
+  {
+   "subject": "Synopsys, Inc.",
+   "subject_type": "Company",
+   "relation": "SERVES_MARKET",
+   "object": "automotive market",
+   "object_type": "Market",
+   "chunk_id": "SNPS-10-K-2025#c0026",
+   "evidence": "Industry-leading IP offerings for the automotive market...",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Synopsys, Inc.",
+   "subject_type": "Company",
+   "relation": "USES_TECHNOLOGY",
+   "object": "Arm AMBA interconnect fabric",
+   "object_type": "Technology",
+   "chunk_id": "SNPS-10-K-2025#c0026",
+   "evidence": "Arm ® AMBA ® interconnect fabric and peripherals...",
+   "confidence": 0.96
+  }
+ ]
+}

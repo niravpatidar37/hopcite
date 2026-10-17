@@ -1,0 +1,247 @@
+{
+ "entities": [
+  {
+   "name": "Taiwan Semiconductor Manufacturing Company Limited",
+   "type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0046",
+   "confidence": 0.95,
+   "aliases": [
+    "TSMC"
+   ]
+  },
+  {
+   "name": "TSMC Nanjing",
+   "type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0046",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "TSMC Arizona",
+   "type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0046",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "JASM",
+   "type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0047",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Sony Semiconductor Solution Corporation",
+   "type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0047",
+   "confidence": 0.95,
+   "aliases": [
+    "Sony"
+   ]
+  },
+  {
+   "name": "DENSO Corporation",
+   "type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0048",
+   "confidence": 0.95,
+   "aliases": [
+    "DENSO"
+   ]
+  },
+  {
+   "name": "Toyota Motor Corporation",
+   "type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0048",
+   "confidence": 0.95,
+   "aliases": [
+    "Toyota"
+   ]
+  },
+  {
+   "name": "ESMC",
+   "type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0048",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Robert Bosch GmbH",
+   "type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0048",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Infineon Technologies AG",
+   "type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0048",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "NXP Semiconductors Germany GmbH",
+   "type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0048",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "NXP Semiconductors N.V.",
+   "type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0048",
+   "confidence": 0.95,
+   "aliases": [
+    "NXP"
+   ]
+  },
+  {
+   "name": "U.S. Department of Commerce",
+   "type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0046",
+   "confidence": 0.9,
+   "aliases": [
+    "DOC"
+   ]
+  },
+  {
+   "name": "Phoenix, Arizona",
+   "type": "Location",
+   "chunk_id": "TSM-20-F-2025#c0046",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Nanjing",
+   "type": "Location",
+   "chunk_id": "TSM-20-F-2025#c0046",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Kumamoto, Japan",
+   "type": "Location",
+   "chunk_id": "TSM-20-F-2025#c0047",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Dresden, Germany",
+   "type": "Location",
+   "chunk_id": "TSM-20-F-2025#c0048",
+   "confidence": 0.95,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "TSMC Nanjing",
+   "subject_type": "Company",
+   "relation": "SUBSIDIARY_OF",
+   "object": "Taiwan Semiconductor Manufacturing Company Limited",
+   "object_type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0046",
+   "evidence": "wholly-owned subsidiary primarily engaged in the manufacture and sale of integrated circuits. TSMC Nanjing commenced commercial production",
+   "confidence": 0.95
+  },
+  {
+   "subject": "TSMC Arizona",
+   "subject_type": "Company",
+   "relation": "SUBSIDIARY_OF",
+   "object": "Taiwan Semiconductor Manufacturing Company Limited",
+   "object_type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0046",
+   "evidence": "we established TSMC Arizona (of which the manufacturing entity is Fab 21), a wholly-owned subsidiary",
+   "confidence": 0.95
+  },
+  {
+   "subject": "TSMC Arizona",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Phoenix, Arizona",
+   "object_type": "Location",
+   "chunk_id": "TSM-20-F-2025#c0046",
+   "evidence": "plans to build and operate multiple advanced semiconductor manufacturing facilities in Phoenix, Arizona",
+   "confidence": 0.95
+  },
+  {
+   "subject": "JASM",
+   "subject_type": "Company",
+   "relation": "SUBSIDIARY_OF",
+   "object": "Taiwan Semiconductor Manufacturing Company Limited",
+   "object_type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0047",
+   "evidence": "we established JASM (of which the manufacturing entity is Fab 23) in Kumamoto, Japan",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Sony Semiconductor Solution Corporation",
+   "subject_type": "Company",
+   "relation": "ACQUIRED",
+   "object": "JASM",
+   "object_type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0047",
+   "evidence": "Sony acquired a less than 20% equity interest in JASM",
+   "confidence": 0.95
+  },
+  {
+   "subject": "DENSO Corporation",
+   "subject_type": "Company",
+   "relation": "ACQUIRED",
+   "object": "JASM",
+   "object_type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0048",
+   "evidence": "DENSO acquired a more than 10% minority equity interest in JASM",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Toyota Motor Corporation",
+   "subject_type": "Company",
+   "relation": "ACQUIRED",
+   "object": "JASM",
+   "object_type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0048",
+   "evidence": "Toyota also took a minority stake in JASM",
+   "confidence": 0.9
+  },
+  {
+   "subject": "ESMC",
+   "subject_type": "Company",
+   "relation": "SUBSIDIARY_OF",
+   "object": "Taiwan Semiconductor Manufacturing Company Limited",
+   "object_type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0048",
+   "evidence": "we established ESMC in Dresden, Germany, which is expected to be primarily engaged in the manufacturing and sale of integrated circuits",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Robert Bosch GmbH",
+   "subject_type": "Company",
+   "relation": "ACQUIRED",
+   "object": "ESMC",
+   "object_type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0048",
+   "evidence": "Robert Bosch GmbH ... each acquired 10% equity interest ... in ESMC",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Infineon Technologies AG",
+   "subject_type": "Company",
+   "relation": "ACQUIRED",
+   "object": "ESMC",
+   "object_type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0048",
+   "evidence": "Infineon Technologies AG ... each acquired 10% equity interest ... in ESMC",
+   "confidence": 0.95
+  },
+  {
+   "subject": "NXP Semiconductors Germany GmbH",
+   "subject_type": "Company",
+   "relation": "ACQUIRED",
+   "object": "ESMC",
+   "object_type": "Company",
+   "chunk_id": "TSM-20-F-2025#c0048",
+   "evidence": "NXP Semiconductors Germany GmbH ... each acquired 10% equity interest ... in ESMC",
+   "confidence": 0.95
+  }
+ ]
+}

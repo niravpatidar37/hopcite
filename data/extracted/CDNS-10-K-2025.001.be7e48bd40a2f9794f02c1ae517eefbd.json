@@ -1,0 +1,278 @@
+{
+ "entities": [
+  {
+   "name": "Cadence Design Systems, Inc.",
+   "type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0028",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Synopsys, Inc.",
+   "type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Ansys, Inc.",
+   "type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Siemens EDA",
+   "type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Keysight Technologies, Inc.",
+   "type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Schrödinger, Inc.",
+   "type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "CEVA, Inc.",
+   "type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Altium Limited",
+   "type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Renesas Electronics Corporation",
+   "type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Zuken, Inc.",
+   "type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Huada Empyrean",
+   "type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Xpeedic Technology",
+   "type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "X-EPIC",
+   "type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Primarius Technologies",
+   "type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Univista",
+   "type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Giga Design Automation",
+   "type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "confidence": 1.0,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Cadence Design Systems, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Synopsys, Inc.",
+   "object_type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "evidence": "Key competitors include Synopsys, Inc., Ansys, Inc. (acquired by Synopsys)",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Cadence Design Systems, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Ansys, Inc.",
+   "object_type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "evidence": "Key competitors include Synopsys, Inc., Ansys, Inc. (acquired by Synopsys)",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Cadence Design Systems, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Siemens EDA",
+   "object_type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "evidence": "Key competitors include ... Siemens EDA",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Cadence Design Systems, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Keysight Technologies, Inc.",
+   "object_type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "evidence": "U.S.-based competitors include Keysight Technologies, Inc.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Cadence Design Systems, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Schrödinger, Inc.",
+   "object_type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "evidence": "U.S.-based competitors include ... Schrödinger, Inc.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Cadence Design Systems, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "CEVA, Inc.",
+   "object_type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "evidence": "U.S.-based competitors include ... CEVA, Inc.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Cadence Design Systems, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Altium Limited",
+   "object_type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "evidence": "international competitors include Altium Limited (acquired by Renesas Electronics Corporation)",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Cadence Design Systems, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Zuken, Inc.",
+   "object_type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "evidence": "Zuken, Inc. (Japan)",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Cadence Design Systems, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Huada Empyrean",
+   "object_type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "evidence": "emerging players in China such as Huada Empyrean",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Cadence Design Systems, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Xpeedic Technology",
+   "object_type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "evidence": "Xpeedic Technology",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Cadence Design Systems, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "X-EPIC",
+   "object_type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "evidence": "X-EPIC",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Cadence Design Systems, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Primarius Technologies",
+   "object_type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "evidence": "Primarius Technologies",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Cadence Design Systems, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Univista",
+   "object_type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "evidence": "Univista",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Cadence Design Systems, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Giga Design Automation",
+   "object_type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "evidence": "Giga Design Automation",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Synopsys, Inc.",
+   "subject_type": "Company",
+   "relation": "ACQUIRED",
+   "object": "Ansys, Inc.",
+   "object_type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "evidence": "Ansys, Inc. (acquired by Synopsys)",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Renesas Electronics Corporation",
+   "subject_type": "Company",
+   "relation": "ACQUIRED",
+   "object": "Altium Limited",
+   "object_type": "Company",
+   "chunk_id": "CDNS-10-K-2025#c0047",
+   "evidence": "Altium Limited (acquired by Renesas Electronics Corporation)",
+   "confidence": 1.0
+  }
+ ]
+}

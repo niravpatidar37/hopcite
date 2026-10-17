@@ -1,0 +1,139 @@
+{
+ "entities": [
+  {
+   "name": "Intel Corporation",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0000",
+   "confidence": 0.98,
+   "aliases": []
+  },
+  {
+   "name": "NVIDIA Corporation",
+   "type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0007",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "Panther Lake",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0007",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Intel Core Ultra Series 3 processors",
+   "type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0009",
+   "confidence": 0.96,
+   "aliases": []
+  },
+  {
+   "name": "Intel 18A",
+   "type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0009",
+   "confidence": 0.97,
+   "aliases": []
+  },
+  {
+   "name": "Intel 14A",
+   "type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0009",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "RibbonFET",
+   "type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0009",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "PowerVia",
+   "type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0009",
+   "confidence": 0.94,
+   "aliases": []
+  },
+  {
+   "name": "United States",
+   "type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0001",
+   "confidence": 0.93,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "PARTNERS_WITH",
+   "object": "NVIDIA Corporation",
+   "object_type": "Company",
+   "chunk_id": "INTC-10-K-2025#c0007",
+   "evidence": "announced a strategic partnership with NVIDIA to co-develop custom client and data center products",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Panther Lake",
+   "object_type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0007",
+   "evidence": "introduced new x86 solutions ... client CPU code named Panther Lake",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Intel Core Ultra Series 3 processors",
+   "object_type": "Product",
+   "chunk_id": "INTC-10-K-2025#c0009",
+   "evidence": "released our initial Intel Core Ultra Series 3 processors",
+   "confidence": 0.96
+  },
+  {
+   "subject": "Intel Core Ultra Series 3 processors",
+   "subject_type": "Product",
+   "relation": "USES_TECHNOLOGY",
+   "object": "Intel 18A",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0009",
+   "evidence": "first products to be manufactured using our new Intel 18A process technology",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Intel 18A",
+   "subject_type": "Technology",
+   "relation": "USES_TECHNOLOGY",
+   "object": "RibbonFET",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0009",
+   "evidence": "gate-all-around transistors (RibbonFET)",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Intel 18A",
+   "subject_type": "Technology",
+   "relation": "USES_TECHNOLOGY",
+   "object": "PowerVia",
+   "object_type": "Technology",
+   "chunk_id": "INTC-10-K-2025#c0009",
+   "evidence": "backside power delivery (PowerVia)",
+   "confidence": 0.94
+  },
+  {
+   "subject": "Intel Corporation",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "United States",
+   "object_type": "Location",
+   "chunk_id": "INTC-10-K-2025#c0001",
+   "evidence": "many of which are in the U.S.",
+   "confidence": 0.93
+  }
+ ]
+}

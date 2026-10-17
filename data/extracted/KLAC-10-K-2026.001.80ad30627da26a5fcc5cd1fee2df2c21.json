@@ -1,0 +1,14 @@
+{
+ "entities": [
+  {
+   "name": "KLA Corporation",
+   "type": "Company",
+   "chunk_id": "KLAC-10-K-2026#c0031",
+   "confidence": 0.95,
+   "aliases": [
+    "KLA"
+   ]
+  }
+ ],
+ "relations": []
+}

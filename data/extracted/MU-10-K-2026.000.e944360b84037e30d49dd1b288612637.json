@@ -1,0 +1,241 @@
+{
+ "entities": [
+  {
+   "name": "Micron Technology, Inc.",
+   "type": "Company",
+   "chunk_id": "MU-10-K-2026#c0000",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Samsung Electronics Co., Ltd.",
+   "type": "Company",
+   "chunk_id": "MU-10-K-2026#c0024",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "SK hynix Inc.",
+   "type": "Company",
+   "chunk_id": "MU-10-K-2026#c0024",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Kioxia Holdings Corporation",
+   "type": "Company",
+   "chunk_id": "MU-10-K-2026#c0024",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Sandisk Corporation",
+   "type": "Company",
+   "chunk_id": "MU-10-K-2026#c0024",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "ChangXin Memory Technologies, Inc.",
+   "type": "Company",
+   "chunk_id": "MU-10-K-2026#c0024",
+   "confidence": 1.0,
+   "aliases": [
+    "CXMT"
+   ]
+  },
+  {
+   "name": "Yangtze Memory Technologies Co., Ltd.",
+   "type": "Company",
+   "chunk_id": "MU-10-K-2026#c0024",
+   "confidence": 1.0,
+   "aliases": [
+    "YMTC"
+   ]
+  },
+  {
+   "name": "DRAM",
+   "type": "Product",
+   "chunk_id": "MU-10-K-2026#c0000",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "NAND",
+   "type": "Product",
+   "chunk_id": "MU-10-K-2026#c0000",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "NOR",
+   "type": "Product",
+   "chunk_id": "MU-10-K-2026#c0000",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Singapore",
+   "type": "Location",
+   "chunk_id": "MU-10-K-2026#c0001",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Taiwan",
+   "type": "Location",
+   "chunk_id": "MU-10-K-2026#c0001",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "semiconductor memory and storage market",
+   "type": "Market",
+   "chunk_id": "MU-10-K-2026#c0024",
+   "confidence": 1.0,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Micron Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Samsung Electronics Co., Ltd.",
+   "object_type": "Company",
+   "chunk_id": "MU-10-K-2026#c0024",
+   "evidence": "We face intense competition ... from a number of companies, including Samsung Electronics Co., Ltd.;",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Micron Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "SK hynix Inc.",
+   "object_type": "Company",
+   "chunk_id": "MU-10-K-2026#c0024",
+   "evidence": "We face intense competition ... from a number of companies, including ... SK hynix Inc.;",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Micron Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Kioxia Holdings Corporation",
+   "object_type": "Company",
+   "chunk_id": "MU-10-K-2026#c0024",
+   "evidence": "We face intense competition ... from a number of companies, including ... Kioxia Holdings Corporation;",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Micron Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Sandisk Corporation",
+   "object_type": "Company",
+   "chunk_id": "MU-10-K-2026#c0024",
+   "evidence": "We face intense competition ... from a number of companies, including ... Sandisk Corporation;",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Micron Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "ChangXin Memory Technologies, Inc.",
+   "object_type": "Company",
+   "chunk_id": "MU-10-K-2026#c0024",
+   "evidence": "We face intense competition ... from a number of companies, including ... ChangXin Memory Technologies, Inc. (“CXMT”);",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Micron Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Yangtze Memory Technologies Co., Ltd.",
+   "object_type": "Company",
+   "chunk_id": "MU-10-K-2026#c0024",
+   "evidence": "We face intense competition ... from a number of companies, including ... Yangtze Memory Technologies Co., Ltd. (“YMTC”).",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Micron Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "DRAM",
+   "object_type": "Product",
+   "chunk_id": "MU-10-K-2026#c0000",
+   "evidence": "our comprehensive portfolio of high-performance DRAM, NAND, and NOR solutions",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Micron Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "NAND",
+   "object_type": "Product",
+   "chunk_id": "MU-10-K-2026#c0000",
+   "evidence": "our comprehensive portfolio of high-performance DRAM, NAND, and NOR solutions",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Micron Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "NOR",
+   "object_type": "Product",
+   "chunk_id": "MU-10-K-2026#c0000",
+   "evidence": "our comprehensive portfolio of high-performance DRAM, NAND, and NOR solutions",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Micron Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Singapore",
+   "object_type": "Location",
+   "chunk_id": "MU-10-K-2026#c0001",
+   "evidence": "For our locations in Singapore and Taiwan, this is also a combination of bringing fabrication and back-end manufacturing together.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Micron Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Taiwan",
+   "object_type": "Location",
+   "chunk_id": "MU-10-K-2026#c0001",
+   "evidence": "For our locations in Singapore and Taiwan, this is also a combination of bringing fabrication and back-end manufacturing together.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "DRAM",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "semiconductor memory and storage market",
+   "object_type": "Market",
+   "chunk_id": "MU-10-K-2026#c0000",
+   "evidence": "high-performance DRAM, NAND, and NOR solutions ... semiconductor memory and storage markets",
+   "confidence": 0.9
+  },
+  {
+   "subject": "NAND",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "semiconductor memory and storage market",
+   "object_type": "Market",
+   "chunk_id": "MU-10-K-2026#c0000",
+   "evidence": "high-performance DRAM, NAND, and NOR solutions ... semiconductor memory and storage markets",
+   "confidence": 0.9
+  },
+  {
+   "subject": "NOR",
+   "subject_type": "Product",
+   "relation": "SERVES_MARKET",
+   "object": "semiconductor memory and storage market",
+   "object_type": "Market",
+   "chunk_id": "MU-10-K-2026#c0000",
+   "evidence": "high-performance DRAM, NAND, and NOR solutions ... semiconductor memory and storage markets",
+   "confidence": 0.9
+  }
+ ]
+}

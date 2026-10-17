@@ -1,0 +1,565 @@
+{
+ "entities": [
+  {
+   "name": "Marvell Technology, Inc.",
+   "type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0000",
+   "confidence": 1.0,
+   "aliases": [
+    "MTI"
+   ]
+  },
+  {
+   "name": "Infineon Technologies AG",
+   "type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0001",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Celestial AI, Inc.",
+   "type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0001",
+   "confidence": 1.0,
+   "aliases": [
+    "Celestial"
+   ]
+  },
+  {
+   "name": "Advanced Micro Devices, Inc.",
+   "type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "confidence": 1.0,
+   "aliases": [
+    "AMD"
+   ]
+  },
+  {
+   "name": "Alchip Technologies",
+   "type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "confidence": 1.0,
+   "aliases": [
+    "Alchip"
+   ]
+  },
+  {
+   "name": "Astera Labs, Inc.",
+   "type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Ayar Labs, Inc.",
+   "type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "confidence": 1.0,
+   "aliases": [
+    "Ayar Labs"
+   ]
+  },
+  {
+   "name": "Broadcom Inc.",
+   "type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "confidence": 1.0,
+   "aliases": [
+    "Broadcom"
+   ]
+  },
+  {
+   "name": "Cisco Systems, Inc.",
+   "type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "confidence": 1.0,
+   "aliases": [
+    "Cisco"
+   ]
+  },
+  {
+   "name": "Credo Technology Group Holding Ltd",
+   "type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Intel Corporation",
+   "type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Global Unichip Corporation",
+   "type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "confidence": 1.0,
+   "aliases": [
+    "GUC"
+   ]
+  },
+  {
+   "name": "Lightmatter, Inc.",
+   "type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "confidence": 1.0,
+   "aliases": [
+    "Lightmatter"
+   ]
+  },
+  {
+   "name": "MACOM Technology Solutions Holdings, Inc.",
+   "type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "MediaTek Inc.",
+   "type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Microchip Technology Inc.",
+   "type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Montage Technology",
+   "type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Nvidia Corporation",
+   "type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "NXP Semiconductors N.V.",
+   "type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Phison Electronics Corporation",
+   "type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Qualcomm Incorporated",
+   "type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "confidence": 1.0,
+   "aliases": [
+    "Qualcomm"
+   ]
+  },
+  {
+   "name": "Rambus, Inc.",
+   "type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Ranovus Inc.",
+   "type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "confidence": 1.0,
+   "aliases": [
+    "Ranovus"
+   ]
+  },
+  {
+   "name": "Realtek Semiconductor Corporation",
+   "type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Semtech Corporation",
+   "type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Silicon Motion Technology Corporation",
+   "type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Socionext Inc.",
+   "type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Wilmington, Delaware",
+   "type": "Location",
+   "chunk_id": "MRVL-10-K-2026#c0000",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Argentina",
+   "type": "Location",
+   "chunk_id": "MRVL-10-K-2026#c0000",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "China",
+   "type": "Location",
+   "chunk_id": "MRVL-10-K-2026#c0000",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "India",
+   "type": "Location",
+   "chunk_id": "MRVL-10-K-2026#c0000",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Israel",
+   "type": "Location",
+   "chunk_id": "MRVL-10-K-2026#c0000",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Japan",
+   "type": "Location",
+   "chunk_id": "MRVL-10-K-2026#c0000",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Singapore",
+   "type": "Location",
+   "chunk_id": "MRVL-10-K-2026#c0000",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "South Korea",
+   "type": "Location",
+   "chunk_id": "MRVL-10-K-2026#c0000",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Taiwan",
+   "type": "Location",
+   "chunk_id": "MRVL-10-K-2026#c0000",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Vietnam",
+   "type": "Location",
+   "chunk_id": "MRVL-10-K-2026#c0000",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Bravera HDD controllers",
+   "type": "Product",
+   "chunk_id": "MRVL-10-K-2026#c0026",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Photonic Fabric TM",
+   "type": "Technology",
+   "chunk_id": "MRVL-10-K-2026#c0001",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Data center market",
+   "type": "Market",
+   "chunk_id": "MRVL-10-K-2026#c0026",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Enterprise market",
+   "type": "Market",
+   "chunk_id": "MRVL-10-K-2026#c0026",
+   "confidence": 1.0,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Marvell Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "HEADQUARTERED_IN",
+   "object": "Wilmington, Delaware",
+   "object_type": "Location",
+   "chunk_id": "MRVL-10-K-2026#c0000",
+   "evidence": "Our corporate headquarters is 1000 N. West Street, Suite 1200 Wilmington, Delaware 19801",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Marvell Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Argentina",
+   "object_type": "Location",
+   "chunk_id": "MRVL-10-K-2026#c0000",
+   "evidence": "operations in many countries, including Argentina, China, India, Israel, Japan, Singapore, South Korea, Taiwan and Vietnam",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Marvell Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "China",
+   "object_type": "Location",
+   "chunk_id": "MRVL-10-K-2026#c0000",
+   "evidence": "operations in many countries, including Argentina, China, India, Israel, Japan, Singapore, South Korea, Taiwan and Vietnam",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Marvell Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "India",
+   "object_type": "Location",
+   "chunk_id": "MRVL-10-K-2026#c0000",
+   "evidence": "operations in many countries, including Argentina, China, India, Israel, Japan, Singapore, South Korea, Taiwan and Vietnam",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Marvell Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Israel",
+   "object_type": "Location",
+   "chunk_id": "MRVL-10-K-2026#c0000",
+   "evidence": "operations in many countries, including Argentina, China, India, Israel, Japan, Singapore, South Korea, Taiwan and Vietnam",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Marvell Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Japan",
+   "object_type": "Location",
+   "chunk_id": "MRVL-10-K-2026#c0000",
+   "evidence": "operations in many countries, including Argentina, China, India, Israel, Japan, Singapore, South Korea, Taiwan and Vietnam",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Marvell Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Singapore",
+   "object_type": "Location",
+   "chunk_id": "MRVL-10-K-2026#c0000",
+   "evidence": "operations in many countries, including Argentina, China, India, Israel, Japan, Singapore, South Korea, Taiwan and Vietnam",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Marvell Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "South Korea",
+   "object_type": "Location",
+   "chunk_id": "MRVL-10-K-2026#c0000",
+   "evidence": "operations in many countries, including Argentina, China, India, Israel, Japan, Singapore, South Korea, Taiwan and Vietnam",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Marvell Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Taiwan",
+   "object_type": "Location",
+   "chunk_id": "MRVL-10-K-2026#c0000",
+   "evidence": "operations in many countries, including Argentina, China, India, Israel, Japan, Singapore, South Korea, Taiwan and Vietnam",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Marvell Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_FACILITY_IN",
+   "object": "Vietnam",
+   "object_type": "Location",
+   "chunk_id": "MRVL-10-K-2026#c0000",
+   "evidence": "operations in many countries, including Argentina, China, India, Israel, Japan, Singapore, South Korea, Taiwan and Vietnam",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Marvell Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "ACQUIRED",
+   "object": "Celestial AI, Inc.",
+   "object_type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0001",
+   "evidence": "we completed the previously announced acquisition of Celestial AI, Inc.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Marvell Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Advanced Micro Devices, Inc.",
+   "object_type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "evidence": "Companies that compete directly with our businesses include, but are not limited to, Advanced Micro Devices, Inc.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Marvell Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Alchip Technologies",
+   "object_type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "evidence": "Alchip Technologies (“Alchip”)",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Marvell Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Astera Labs, Inc.",
+   "object_type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "evidence": "Astera Labs, Inc.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Marvell Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Ayar Labs, Inc.",
+   "object_type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "evidence": "Ayar Labs, Inc. (“Ayar Labs”)",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Marvell Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Broadcom Inc.",
+   "object_type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "evidence": "Broadcom Inc. (“Broadcom”)",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Marvell Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Cisco Systems, Inc.",
+   "object_type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "evidence": "Cisco Systems, Inc. (“Cisco”)",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Marvell Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Credo Technology Group Holding Ltd",
+   "object_type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "evidence": "Credo Technology Group Holding Ltd",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Marvell Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Intel Corporation",
+   "object_type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "evidence": "Intel Corporation",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Marvell Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Global Unichip Corporation",
+   "object_type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "evidence": "Global Unichip Corporation (“GUC”)",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Marvell Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Lightmatter, Inc.",
+   "object_type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "evidence": "Lightmatter, Inc. (“Lightmatter”)",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Marvell Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "MACOM Technology Solutions Holdings, Inc.",
+   "object_type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "evidence": "MACOM Technology Solutions Holdings, Inc.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Marvell Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "MediaTek Inc.",
+   "object_type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "evidence": "MediaTek Inc.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Marvell Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Microchip Technology Inc.",
+   "object_type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "evidence": "Microchip Technology Inc.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Marvell Technology, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Montage Technology",
+   "object_type": "Company",
+   "chunk_id": "MRVL-10-K-2026#c0045",
+   "evidence": "Montage Technology",
+   "confidence": 1.0
+  }
+ ]
+}

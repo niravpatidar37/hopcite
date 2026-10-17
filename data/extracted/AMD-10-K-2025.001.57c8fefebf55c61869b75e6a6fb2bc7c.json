@@ -1,0 +1,495 @@
+{
+ "entities": [
+  {
+   "name": "Advanced Micro Devices, Inc.",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0027",
+   "confidence": 1.0,
+   "aliases": [
+    "AMD"
+   ]
+  },
+  {
+   "name": "Intel Corporation",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0038",
+   "confidence": 1.0,
+   "aliases": [
+    "Intel"
+   ]
+  },
+  {
+   "name": "Nvidia Corporation",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0038",
+   "confidence": 1.0,
+   "aliases": [
+    "Nvidia"
+   ]
+  },
+  {
+   "name": "Altera",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0038",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Lattice Semiconductor Corporation",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0040",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Microsemi Corporation",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0040",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Broadcom Corporation",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0040",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Marvell Technology Group, Ltd.",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0040",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Analog Devices",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0040",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Texas Instruments Incorporated",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0040",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "NXP Semiconductors N.V.",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0040",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Qualcomm Incorporated",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0040",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Taiwan Semiconductor Manufacturing Company Limited",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0043",
+   "confidence": 1.0,
+   "aliases": [
+    "TSMC"
+   ]
+  },
+  {
+   "name": "GLOBALFOUNDRIES Inc.",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0043",
+   "confidence": 1.0,
+   "aliases": [
+    "GF"
+   ]
+  },
+  {
+   "name": "United Microelectronics Corporation",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0043",
+   "confidence": 1.0,
+   "aliases": [
+    "UMC"
+   ]
+  },
+  {
+   "name": "Samsung Electronics Co., Ltd.",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0043",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Tongfu Microelectronics Co., Ltd.",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0043",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Siliconware Precision Industries Ltd.",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0043",
+   "confidence": 1.0,
+   "aliases": [
+    "SPIL"
+   ]
+  },
+  {
+   "name": "King Yuan Electronics Company",
+   "type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0043",
+   "confidence": 1.0,
+   "aliases": [
+    "KYEC"
+   ]
+  },
+  {
+   "name": "Data Center Segment",
+   "type": "Segment",
+   "chunk_id": "AMD-10-K-2025#c0038",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Client and Gaming Segment",
+   "type": "Segment",
+   "chunk_id": "AMD-10-K-2025#c0031",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Embedded Segment",
+   "type": "Segment",
+   "chunk_id": "AMD-10-K-2025#c0031",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "AMD Vivado™ Design Suite",
+   "type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0027",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Vitis™ unified software platform",
+   "type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0027",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Vitis AI unified software platform",
+   "type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0027",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "Alveo products",
+   "type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0031",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "HPC products",
+   "type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0043",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "FPGA products",
+   "type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0043",
+   "confidence": 1.0,
+   "aliases": []
+  },
+  {
+   "name": "adaptive SoC products",
+   "type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0043",
+   "confidence": 1.0,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Intel Corporation",
+   "object_type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0038",
+   "evidence": "we compete primarily against Intel Corporation (Intel)",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Nvidia Corporation",
+   "object_type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0038",
+   "evidence": "we compete primarily against ... Nvidia Corporation (Nvidia",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Altera",
+   "object_type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0038",
+   "evidence": "we compete against Altera with our FPGA",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Lattice Semiconductor Corporation",
+   "object_type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0040",
+   "evidence": "primary FPGA competitors such as Altera, Lattice Semiconductor Corporation",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Microsemi Corporation",
+   "object_type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0040",
+   "evidence": "primary FPGA competitors such as ... Microsemi Corporation",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Broadcom Corporation",
+   "object_type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0040",
+   "evidence": "ASSP vendors such as Broadcom Corporation",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Marvell Technology Group, Ltd.",
+   "object_type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0040",
+   "evidence": "ASSP vendors such as ... Marvell Technology Group, Ltd.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Analog Devices",
+   "object_type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0040",
+   "evidence": "ASSP vendors such as ... Analog Devices",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Texas Instruments Incorporated",
+   "object_type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0040",
+   "evidence": "ASSP vendors such as ... Texas Instruments Incorporated",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "NXP Semiconductors N.V.",
+   "object_type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0040",
+   "evidence": "ASSP vendors such as ... NXP Semiconductors N.V.",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Qualcomm Incorporated",
+   "object_type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0040",
+   "evidence": "ASSP vendors such as ... Qualcomm Incorporated",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Taiwan Semiconductor Manufacturing Company Limited",
+   "subject_type": "Company",
+   "relation": "MANUFACTURES_FOR",
+   "object": "Advanced Micro Devices, Inc.",
+   "object_type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0043",
+   "evidence": "We utilize Taiwan Semiconductor Manufacturing Company Limited (TSMC) for the production of wafers",
+   "confidence": 1.0
+  },
+  {
+   "subject": "GLOBALFOUNDRIES Inc.",
+   "subject_type": "Company",
+   "relation": "MANUFACTURES_FOR",
+   "object": "Advanced Micro Devices, Inc.",
+   "object_type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0043",
+   "evidence": "GLOBALFOUNDRIES Inc. (GF), with respect to wafer purchases for our HPC products",
+   "confidence": 1.0
+  },
+  {
+   "subject": "United Microelectronics Corporation",
+   "subject_type": "Company",
+   "relation": "MANUFACTURES_FOR",
+   "object": "Advanced Micro Devices, Inc.",
+   "object_type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0043",
+   "evidence": "we utilize ... United Microelectronics Corporation (UMC) ... for the production of our ICs",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Samsung Electronics Co., Ltd.",
+   "subject_type": "Company",
+   "relation": "MANUFACTURES_FOR",
+   "object": "Advanced Micro Devices, Inc.",
+   "object_type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0043",
+   "evidence": "we utilize ... Samsung Electronics Co., Ltd. for the production of our ICs",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Siliconware Precision Industries Ltd.",
+   "subject_type": "Company",
+   "relation": "MANUFACTURES_FOR",
+   "object": "Advanced Micro Devices, Inc.",
+   "object_type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0043",
+   "evidence": "The ATMP JVs, Siliconware Precision Industries Ltd. (SPIL) ... provide ATMP services for our products",
+   "confidence": 1.0
+  },
+  {
+   "subject": "King Yuan Electronics Company",
+   "subject_type": "Company",
+   "relation": "MANUFACTURES_FOR",
+   "object": "Advanced Micro Devices, Inc.",
+   "object_type": "Company",
+   "chunk_id": "AMD-10-K-2025#c0043",
+   "evidence": "The ATMP JVs ... King Yuan Electronics Company (KYEC) provide ATMP services for our products",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "Data Center Segment",
+   "object_type": "Segment",
+   "chunk_id": "AMD-10-K-2025#c0038",
+   "evidence": "Competition in Data Center Segment",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "Client and Gaming Segment",
+   "object_type": "Segment",
+   "chunk_id": "AMD-10-K-2025#c0031",
+   "evidence": "Our Client and Gaming Segment customers",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "HAS_SEGMENT",
+   "object": "Embedded Segment",
+   "object_type": "Segment",
+   "chunk_id": "AMD-10-K-2025#c0031",
+   "evidence": "Our Embedded Segment products",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "AMD Vivado™ Design Suite",
+   "object_type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0027",
+   "evidence": "Our AMD Vivado™ Design Suite provides hardware design teams",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Vitis™ unified software platform",
+   "object_type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0027",
+   "evidence": "Our Vitis™ unified software platform enables the development",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Vitis AI unified software platform",
+   "object_type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0027",
+   "evidence": "Our Vitis AI unified software platform enables the development",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "Alveo products",
+   "object_type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0031",
+   "evidence": "network of Value Added Resellers (VARs) and Integrated Solution Vendors (ISVs) for our Alveo products",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "HPC products",
+   "object_type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0043",
+   "evidence": "production of wafers for our HPC, FPGA and adaptive SoC products",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "FPGA products",
+   "object_type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0043",
+   "evidence": "production of wafers for our ... FPGA ... products",
+   "confidence": 1.0
+  },
+  {
+   "subject": "Advanced Micro Devices, Inc.",
+   "subject_type": "Company",
+   "relation": "OFFERS",
+   "object": "adaptive SoC products",
+   "object_type": "Product",
+   "chunk_id": "AMD-10-K-2025#c0043",
+   "evidence": "production of wafers for our ... adaptive SoC products",
+   "confidence": 1.0
+  }
+ ]
+}

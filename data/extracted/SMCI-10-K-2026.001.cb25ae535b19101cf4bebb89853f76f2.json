@@ -1,0 +1,132 @@
+{
+ "entities": [
+  {
+   "name": "Super Micro Computer, Inc.",
+   "type": "Company",
+   "chunk_id": "SMCI-10-K-2026#c0029",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Cisco",
+   "type": "Company",
+   "chunk_id": "SMCI-10-K-2026#c0029",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Dell",
+   "type": "Company",
+   "chunk_id": "SMCI-10-K-2026#c0029",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Hewlett-Packard Enterprise",
+   "type": "Company",
+   "chunk_id": "SMCI-10-K-2026#c0029",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Lenovo",
+   "type": "Company",
+   "chunk_id": "SMCI-10-K-2026#c0029",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Foxconn",
+   "type": "Company",
+   "chunk_id": "SMCI-10-K-2026#c0029",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Quanta Computer",
+   "type": "Company",
+   "chunk_id": "SMCI-10-K-2026#c0029",
+   "confidence": 0.95,
+   "aliases": []
+  },
+  {
+   "name": "Wiwynn Corporation",
+   "type": "Company",
+   "chunk_id": "SMCI-10-K-2026#c0029",
+   "confidence": 0.95,
+   "aliases": []
+  }
+ ],
+ "relations": [
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Cisco",
+   "object_type": "Company",
+   "chunk_id": "SMCI-10-K-2026#c0029",
+   "evidence": "principal competitors include: • global technology vendors, such as Cisco, Dell, Hewlett-Packard Enterprise, and Lenovo",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Dell",
+   "object_type": "Company",
+   "chunk_id": "SMCI-10-K-2026#c0029",
+   "evidence": "principal competitors include: • global technology vendors, such as Cisco, Dell, Hewlett-Packard Enterprise, and Lenovo",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Hewlett-Packard Enterprise",
+   "object_type": "Company",
+   "chunk_id": "SMCI-10-K-2026#c0029",
+   "evidence": "principal competitors include: • global technology vendors, such as Cisco, Dell, Hewlett-Packard Enterprise, and Lenovo",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Lenovo",
+   "object_type": "Company",
+   "chunk_id": "SMCI-10-K-2026#c0029",
+   "evidence": "principal competitors include: • global technology vendors, such as Cisco, Dell, Hewlett-Packard Enterprise, and Lenovo",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Foxconn",
+   "object_type": "Company",
+   "chunk_id": "SMCI-10-K-2026#c0029",
+   "evidence": "ODMs, such as Foxconn, Quanta Computer, and Wiwynn Corporation.",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Quanta Computer",
+   "object_type": "Company",
+   "chunk_id": "SMCI-10-K-2026#c0029",
+   "evidence": "ODMs, such as Foxconn, Quanta Computer, and Wiwynn Corporation.",
+   "confidence": 0.95
+  },
+  {
+   "subject": "Super Micro Computer, Inc.",
+   "subject_type": "Company",
+   "relation": "COMPETES_WITH",
+   "object": "Wiwynn Corporation",
+   "object_type": "Company",
+   "chunk_id": "SMCI-10-K-2026#c0029",
+   "evidence": "ODMs, such as Foxconn, Quanta Computer, and Wiwynn Corporation.",
+   "confidence": 0.95
+  }
+ ]
+}
