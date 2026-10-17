@@ -1,0 +1,93 @@
+{"a": "Qualcomm Incorporated", "b": "Qualcomm Technologies, Inc.", "cosine": 0.957, "rule_merge": false}
+{"a": "Siemens Digital Industries", "b": "Siemens Digital Industries Software", "cosine": 0.9517, "rule_merge": false}
+{"a": "Infineon", "b": "Infineon Technologies AG", "cosine": 0.9396, "rule_merge": false}
+{"a": "TSMC", "b": "TSMC Global Ltd.", "cosine": 0.9146, "rule_merge": false}
+{"a": "Foxconn", "b": "Foxconn Technology Group", "cosine": 0.914, "rule_merge": false}
+{"a": "Sony Semiconductor Manufacturing Corporation", "b": "Sony Semiconductor Solution Corporation", "cosine": 0.9123, "rule_merge": false}
+{"a": "TSMC", "b": "TSMC China", "cosine": 0.9065, "rule_merge": false}
+{"a": "Hitachi, Ltd.", "b": "Hitachi High-Tech Corporation", "cosine": 0.9046, "rule_merge": false}
+{"a": "Hewlett-Packard Company", "b": "Hewlett-Packard Enterprise", "cosine": 0.9026, "rule_merge": false}
+{"a": "Cisco", "b": "Cisco Systems, Inc.", "cosine": 0.8989, "rule_merge": true}
+{"a": "ChangXin Memory Technologies, Inc.", "b": "Yangtze Memory Technologies Co., Ltd.", "cosine": 0.8871, "rule_merge": false}
+{"a": "TSMC China", "b": "TSMC Global Ltd.", "cosine": 0.8839, "rule_merge": false}
+{"a": "Samsung", "b": "Samsung Electronics Co., Ltd.", "cosine": 0.8835, "rule_merge": true}
+{"a": "NXP Semiconductors Germany GmbH", "b": "NXP Semiconductors N.V.", "cosine": 0.8824, "rule_merge": false}
+{"a": "TSMC China", "b": "TSMC Nanjing", "cosine": 0.8822, "rule_merge": false}
+{"a": "TSMC", "b": "TSMC Arizona", "cosine": 0.8813, "rule_merge": false}
+{"a": "Sony", "b": "Sony Semiconductor Solution Corporation", "cosine": 0.8573, "rule_merge": true}
+{"a": "Microsoft Corporation", "b": "Microsoft Azure", "cosine": 0.8564, "rule_merge": false}
+{"a": "TSMC", "b": "TSMC Washington, LLC", "cosine": 0.849, "rule_merge": false}
+{"a": "TSMC", "b": "TSMC Nanjing", "cosine": 0.8455, "rule_merge": false}
+{"a": "NXP Semiconductors N.V.", "b": "STMicroelectronics N.V.", "cosine": 0.8415, "rule_merge": false}
+{"a": "TSMC Arizona", "b": "TSMC Washington, LLC", "cosine": 0.8347, "rule_merge": false}
+{"a": "TSMC Global Ltd.", "b": "TSMC Washington, LLC", "cosine": 0.8338, "rule_merge": false}
+{"a": "TSMC Arizona", "b": "TSMC Global Ltd.", "cosine": 0.833, "rule_merge": false}
+{"a": "Lattice Semiconductor Corporation", "b": "ON Semiconductor Corporation", "cosine": 0.8323, "rule_merge": false}
+{"a": "TSMC Arizona", "b": "TSMC China", "cosine": 0.8321, "rule_merge": false}
+{"a": "ASML", "b": "ASML Holding N.V.", "cosine": 0.8307, "rule_merge": false}
+{"a": "Berkeley Design Automation", "b": "Giga Design Automation", "cosine": 0.8274, "rule_merge": false}
+{"a": "Alchip Technologies", "b": "Microchip Technology Inc.", "cosine": 0.8268, "rule_merge": false}
+{"a": "Sony", "b": "Sony Semiconductor Manufacturing Corporation", "cosine": 0.8245, "rule_merge": false}
+{"a": "Advanced Semiconductor Engineering", "b": "ON Semiconductor Corporation", "cosine": 0.8211, "rule_merge": false}
+{"a": "TSMC Global Ltd.", "b": "TSMC Nanjing", "cosine": 0.821, "rule_merge": false}
+{"a": "Advanced Micro Devices, Inc.", "b": "Advanced Semiconductor Engineering", "cosine": 0.8187, "rule_merge": false}
+{"a": "Integrated Circuit Systems, Inc.", "b": "Integrated Device Technology, Inc.", "cosine": 0.8158, "rule_merge": false}
+{"a": "Siemens Digital Industries", "b": "Siemens EDA", "cosine": 0.8111, "rule_merge": false}
+{"a": "TSMC China", "b": "TSMC Washington, LLC", "cosine": 0.8111, "rule_merge": false}
+{"a": "Sony", "b": "Sony Interactive Entertainment, Inc.", "cosine": 0.8034, "rule_merge": false}
+{"a": "STMicroelectronics N.V.", "b": "United Microelectronics Corporation", "cosine": 0.8032, "rule_merge": false}
+{"a": "KLA Corporation", "b": "KLA-Tencor Corporation", "cosine": 0.7969, "rule_merge": false}
+{"a": "Global Foundries", "b": "GLOBALFOUNDRIES Inc.", "cosine": 0.7955, "rule_merge": false}
+{"a": "Microchip Technology Inc.", "b": "Micron Technology, Inc.", "cosine": 0.7933, "rule_merge": false}
+{"a": "Cypress Semiconductor Corporation", "b": "Lattice Semiconductor Corporation", "cosine": 0.7918, "rule_merge": false}
+{"a": "Siliconware Precision Industries Ltd.", "b": "Systems on Silicon Manufacturing Company Pte. Ltd.", "cosine": 0.7914, "rule_merge": false}
+{"a": "ESMC", "b": "TSMC", "cosine": 0.7852, "rule_merge": false}
+{"a": "Integrated Circuit Systems, Inc.", "b": "Monolithic Power Systems Inc.", "cosine": 0.7847, "rule_merge": false}
+{"a": "Realtek Semiconductor Corporation", "b": "Sony Semiconductor Solution Corporation", "cosine": 0.784, "rule_merge": false}
+{"a": "Siemens Digital Industries Software", "b": "Siemens EDA", "cosine": 0.7835, "rule_merge": false}
+{"a": "Advanced Micro Devices, Inc.", "b": "Super Micro Computer, Inc.", "cosine": 0.7824, "rule_merge": false}
+{"a": "Hon Hai Precision Industry Co., Ltd.", "b": "Siliconware Precision Industries Ltd.", "cosine": 0.7775, "rule_merge": false}
+{"a": "Advanced Micro Devices, Inc.", "b": "Integrated Device Technology, Inc.", "cosine": 0.7752, "rule_merge": false}
+{"a": "Advanced Micro Devices, Inc.", "b": "Microchip Technology Inc.", "cosine": 0.7736, "rule_merge": false}
+{"a": "Silicon Motion Technology Corporation", "b": "Systems on Silicon Manufacturing Company Pte. Ltd.", "cosine": 0.7734, "rule_merge": false}
+{"a": "Advanced Semiconductor Engineering", "b": "Lattice Semiconductor Corporation", "cosine": 0.7707, "rule_merge": false}
+{"a": "Tongfu Microelectronics Co., Ltd.", "b": "United Microelectronics Corporation", "cosine": 0.7684, "rule_merge": false}
+{"a": "Analog Devices", "b": "Renesas Electronics Corporation", "cosine": 0.7669, "rule_merge": false}
+{"a": "Xilinx, Inc.", "b": "Xintec, Inc.", "cosine": 0.7669, "rule_merge": false}
+{"a": "AMD", "b": "Intel Corporation", "cosine": 0.7668, "rule_merge": false}
+{"a": "MediaTek Inc.", "b": "Realtek Semiconductor Corporation", "cosine": 0.7664, "rule_merge": false}
+{"a": "Sony Semiconductor Manufacturing Corporation", "b": "Taiwan Semiconductor Manufacturing Company Limited", "cosine": 0.7659, "rule_merge": false}
+{"a": "Berkeley Design Automation", "b": "Cadence Design Systems", "cosine": 0.7655, "rule_merge": false}
+{"a": "Cypress Semiconductor Corporation", "b": "ON Semiconductor Corporation", "cosine": 0.765, "rule_merge": false}
+{"a": "Integrated Device Technology, Inc.", "b": "Silicon Motion Technology Corporation", "cosine": 0.7638, "rule_merge": false}
+{"a": "Integrated Circuit Systems, Inc.", "b": "ON Semiconductor Corporation", "cosine": 0.7636, "rule_merge": false}
+{"a": "NXP Semiconductors N.V.", "b": "ON Semiconductor Corporation", "cosine": 0.7632, "rule_merge": false}
+{"a": "Advanced Micro Devices, Inc.", "b": "Analog Devices", "cosine": 0.763, "rule_merge": false}
+{"a": "Silicon Motion Technology Corporation", "b": "Siliconware Precision Industries Ltd.", "cosine": 0.7621, "rule_merge": false}
+{"a": "Microchip Technology Inc.", "b": "Silicon Motion Technology Corporation", "cosine": 0.7619, "rule_merge": false}
+{"a": "Advanced Micro Devices, Inc.", "b": "Silicon Motion Technology Corporation", "cosine": 0.7612, "rule_merge": false}
+{"a": "TSMC Arizona", "b": "TSMC Nanjing", "cosine": 0.7593, "rule_merge": false}
+{"a": "Leshan-Phoenix Semiconductor Company Limited", "b": "ON Semiconductor Corporation", "cosine": 0.7588, "rule_merge": false}
+{"a": "Vanguard International Semiconductor Corporation", "b": "Varian Semiconductor Equipment Associates, Inc.", "cosine": 0.7585, "rule_merge": false}
+{"a": "ON Semiconductor Corporation", "b": "ROHM Semiconductor", "cosine": 0.7579, "rule_merge": false}
+{"a": "Cisco Systems, Inc.", "b": "Integrated Circuit Systems, Inc.", "cosine": 0.7573, "rule_merge": false}
+{"a": "Analog Devices", "b": "STMicroelectronics N.V.", "cosine": 0.7562, "rule_merge": false}
+{"a": "Huawei Technologies Co. Ltd.", "b": "Qualcomm Technologies, Inc.", "cosine": 0.7562, "rule_merge": false}
+{"a": "Realtek Semiconductor Corporation", "b": "Sony Semiconductor Manufacturing Corporation", "cosine": 0.7562, "rule_merge": false}
+{"a": "General Motors Corporation", "b": "Toyota Motor Corporation", "cosine": 0.7561, "rule_merge": false}
+{"a": "Integrated Device Technology, Inc.", "b": "Microchip Technology Inc.", "cosine": 0.7552, "rule_merge": false}
+{"a": "NXP Semiconductors Germany GmbH", "b": "Realtek Semiconductor Corporation", "cosine": 0.7552, "rule_merge": false}
+{"a": "Advanced Micro Devices, Inc.", "b": "Micron Technology, Inc.", "cosine": 0.7545, "rule_merge": false}
+{"a": "NXP Semiconductors Germany GmbH", "b": "Vanguard International Semiconductor Corporation", "cosine": 0.7528, "rule_merge": false}
+{"a": "Advanced Semiconductor Engineering", "b": "Leshan-Phoenix Semiconductor Company Limited", "cosine": 0.7527, "rule_merge": false}
+{"a": "Taiwan Semiconductor Manufacturing Company Limited", "b": "Vanguard International Semiconductor Corporation", "cosine": 0.7525, "rule_merge": false}
+{"a": "ON Semiconductor Corporation", "b": "Vanguard International Semiconductor Corporation", "cosine": 0.7523, "rule_merge": false}
+{"a": "Analog Devices", "b": "Integrated Circuit Systems, Inc.", "cosine": 0.7521, "rule_merge": false}
+{"a": "NXP Semiconductors Germany GmbH", "b": "STMicroelectronics N.V.", "cosine": 0.752, "rule_merge": false}
+{"a": "Micron Technology, Inc.", "b": "Super Micro Computer, Inc.", "cosine": 0.7515, "rule_merge": false}
+{"a": "TSMC Nanjing", "b": "TSMC Washington, LLC", "cosine": 0.7512, "rule_merge": false}
+{"a": "Advanced Semiconductor Engineering", "b": "NXP Semiconductors N.V.", "cosine": 0.7507, "rule_merge": false}
+{"a": "NXP Semiconductors N.V.", "b": "Vanguard International Semiconductor Corporation", "cosine": 0.7505, "rule_merge": false}
+{"a": "Advanced Micro Devices, Inc.", "b": "AMD", "cosine": 0.7107, "rule_merge": true}
+{"a": "UMC", "b": "United Microelectronics Corporation", "cosine": 0.6466, "rule_merge": true}
+{"a": "Taiwan Semiconductor Manufacturing Company Limited", "b": "TSMC", "cosine": 0.6163, "rule_merge": true}
