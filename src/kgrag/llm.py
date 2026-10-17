@@ -216,14 +216,14 @@ class LLMClient:
             except httpx.TransportError as exc:
                 if attempt == self.max_retries:
                     raise LLMError(f"transport error: {type(exc).__name__}") from exc
-                time.sleep(delay + random.uniform(0, 1))  # noqa: S311 - jitter, not crypto
+                time.sleep(delay + random.uniform(0, 1))  # noqa: S311  # nosec B311 - jitter, not crypto
                 delay = min(delay * 2, 60)
                 continue
             if r.status_code == 429 or r.status_code >= 500:
                 if attempt == self.max_retries:
                     raise LLMError(f"HTTP {r.status_code} after {attempt} retries")
                 retry_after = _parse_retry_after(r.headers.get("retry-after"))
-                wait = max(retry_after or 0.0, delay) + random.uniform(0, 1)  # noqa: S311
+                wait = max(retry_after or 0.0, delay) + random.uniform(0, 1)  # noqa: S311  # nosec B311
                 time.sleep(min(wait, 120))
                 delay = min(delay * 2, 60)
                 continue

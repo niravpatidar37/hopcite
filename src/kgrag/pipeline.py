@@ -17,8 +17,8 @@ from kgrag.llm import CallStats
 from kgrag.router import Route, Router, RoutingDecision, redact_pii
 from kgrag.vector_store import Passage, VectorStore
 
-GRAPH_PASSAGES = 4  # graph-linked passages added to the context on graph/hybrid routes
-FACT_CHUNK_PASSAGES = 4  # passages backing the graph facts (so citations resolve to real text)
+GRAPH_PASSAGES = 2  # passages from chunks that mention the linked entities
+FACT_CHUNK_PASSAGES = 2  # passages backing the graph facts (so citations resolve to real text)
 
 
 @dataclass
@@ -71,7 +71,8 @@ class Pipeline:
 
     # ------------------------------------------------------------------ graph retrieval
     def graph_retrieve(self, decision: RoutingDecision) -> tuple[list[list[Hop]], str | None]:
-        assert self.graph is not None
+        if self.graph is None:
+            raise RuntimeError("graph store not configured")
         plan = decision.plan
         paths: list[list[Hop]] = []
         template = None
@@ -130,10 +131,11 @@ class Pipeline:
                     mention_chunks = self._chunks_mentioning(decision.entity_ids)
                     passages += self.vectors.search_within(qvec, mention_chunks, k=GRAPH_PASSAGES)
                 timings["graph_ms"] = (time.perf_counter() - ts) * 1000
-            if route in (Route.VECTOR, Route.HYBRID) or not facts:
-                ts = time.perf_counter()
-                passages += self.vectors.search(qvec, k=self.top_k)
-                timings["vector_ms"] = (time.perf_counter() - ts) * 1000
+            # Vector passages are always merged in: graph-linked passages first, then the vector
+            # top-k fill the shared passage budget. The router decides whether the graph runs.
+            ts = time.perf_counter()
+            passages += self.vectors.search(qvec, k=self.top_k)
+            timings["vector_ms"] = (time.perf_counter() - ts) * 1000
         # Same passage budget for both systems; the hybrid's extra context is the graph facts.
         passages = dedupe_passages(passages, limit=self.top_k)
 
@@ -148,7 +150,8 @@ class Pipeline:
         return res
 
     def _chunks_mentioning(self, entity_ids: list[str]) -> list[str]:
-        assert self.graph is not None
+        if self.graph is None:
+            raise RuntimeError("graph store not configured")
         rows = self.graph.run_template("chunks_mentioning", {"entity_ids": entity_ids[:3]})
         return [r["id"] for r in rows]
 

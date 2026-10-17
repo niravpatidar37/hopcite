@@ -234,7 +234,8 @@ class GraphStore:
         if key not in TEMPLATES:
             raise KeyError(f"unknown template {key}")
         cypher = TEMPLATES[key]
-        assert not READ_ONLY_FORBIDDEN.search(cypher), "templates must be read-only"
+        if READ_ONLY_FORBIDDEN.search(cypher):  # defence in depth; templates are constants
+            raise ValueError("templates must be read-only")
         runner = self.runner
         if isinstance(runner, Neo4jRunner):
             return runner.run_read(cypher, params)

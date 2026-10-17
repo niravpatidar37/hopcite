@@ -48,7 +48,7 @@ jobs:
       - name: pip-audit (locked runtime deps)
         run: |
           uv export --frozen --no-dev --no-emit-project --format requirements-txt --no-hashes > "$RUNNER_TEMP/req.txt"
-          uv run --frozen pip-audit --strict --disable-pip -r "$RUNNER_TEMP/req.txt"
+          uv run --frozen pip-audit --strict --disable-pip --no-deps -r "$RUNNER_TEMP/req.txt"
       - name: Bandit
         run: uv run --frozen bandit -c pyproject.toml -r src -q
       - name: Gitleaks (full history)
