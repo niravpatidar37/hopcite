@@ -30,7 +30,9 @@ MUTANTS: list[tuple[str, str, str, str]] = [
     (
         "src/kgrag/graph_store.py",
         "run arbitrary text when the template key is unknown",
-        '        if key not in TEMPLATES:\n            raise KeyError(f"unknown template {key}")\n        cypher = TEMPLATES[key]\n',
+        "        if key not in TEMPLATES:\n"
+        '            raise KeyError(f"unknown template {key}")\n'
+        "        cypher = TEMPLATES[key]\n",
         "        cypher = TEMPLATES.get(key, key)\n",
     ),
     (
@@ -95,7 +97,7 @@ def main() -> int:
         assert orig.count(old) == 1, f"{label}: anchor found {orig.count(old)} times"
         p.write_text(orig.replace(old, new), encoding="utf-8", newline="\n")
         try:
-            r = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, env=env, timeout=600)  # noqa: S603
+            r = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, env=env, timeout=600)
             out = r.stdout + r.stderr
             failed = [ln for ln in out.splitlines() if ln.startswith("FAILED")]
             status = "KILLED" if r.returncode and failed else ("ERROR" if r.returncode else "SURVIVED")
