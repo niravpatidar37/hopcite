@@ -95,6 +95,36 @@ def test_low_confidence_falls_back_to_both_paths() -> None:
     assert d.entity_ids == ["company:nvidia"]
 
 
+def test_router_model_chain_falls_back_to_second_model() -> None:
+    from kgrag.llm import LLMError
+
+    class FlakyLLM:
+        def __init__(self) -> None:
+            self.models: list[str] = []
+
+        def complete_json(self, messages, model, schema_cls, **kw):  # type: ignore[no-untyped-def]
+            self.models.append(model)
+            if model == "primary":
+                raise LLMError("HTTP 429: retry-after 180s exceeds latency budget")
+            return schema_cls.model_validate(
+                {
+                    "route": "graph",
+                    "confidence": 0.9,
+                    "query_type": "neighbors",
+                    "entities": ["AMD"],
+                    "hop_relations": [["COMPETES_WITH"]],
+                    "direction": "out",
+                    "target_type": "Company",
+                }
+            )
+
+    llm = FlakyLLM()
+    r = Router(llm, "primary", EntityCatalog.from_rows(CATALOG_ROWS), 0.6, fallback_models=["backup"])  # type: ignore[arg-type]
+    d = r.route("Who competes with AMD?")
+    assert llm.models == ["primary", "backup"] and d.model_used == "backup"
+    assert d.route == Route.GRAPH and d.fallback_reason.startswith("router_model_fallback")
+
+
 def test_router_failure_falls_back_to_hybrid() -> None:
     r = Router(None, "m", EntityCatalog.from_rows(CATALOG_ROWS), 0.6)
     d = r.route("Which foundries does AMD use?")
@@ -111,7 +141,7 @@ def test_routing_log_redacts_pii(tmp_path: Path) -> None:
         question = "Email jane.doe@example.com or call +1 (408) 555-1234 about TSMC"
         mode, route, fallback_reason, template, entity_ids = "vector", "vector", "", None, []
         graph_facts, retrieved_chunk_ids, refused, citations, regenerations = [], [], True, [], 0
-        latency_ms, usd = 1.0, 0.0
+        latency_ms, usd, router_model_used = 1.0, 0.0, None
 
     p._log(R(), None)  # type: ignore[arg-type]
     row = json.loads(log.read_text())

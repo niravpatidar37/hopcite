@@ -37,6 +37,7 @@ class AskResult:
     entity_ids: list[str]
     fallback_reason: str
     latency_ms: float
+    router_model_used: str | None
     usd: float
     llm_calls: int
     cached_llm_calls: int
@@ -196,6 +197,7 @@ class Pipeline:
             template=template,
             entity_ids=decision.entity_ids if decision else [],
             fallback_reason=decision.fallback_reason if decision else "",
+            router_model_used=decision.model_used if decision else None,
             latency_ms=round((time.perf_counter() - t0) * 1000, 1),
             usd=round(stats.usd, 6),
             llm_calls=stats.calls,
@@ -222,6 +224,7 @@ class Pipeline:
             "hop_relations": [[r.value for r in hop] for hop in out.hop_relations] if out else None,
             "final_route": res.route,
             "fallback_reason": res.fallback_reason,
+            "router_model_used": res.router_model_used,
             "template": res.template,
             "entity_ids": res.entity_ids,
             "n_graph_facts": len(res.graph_facts),

@@ -47,7 +47,9 @@ def build_services(use_router_llm: bool = True, use_cache: bool = True) -> Servi
     )
     # Router has a tight latency budget: on rate limits/timeouts it fails fast and the pipeline
     # falls back to running both retrieval paths (logged as router_error).
-    router = Router(router_llm, s.router_model, catalog, s.router_confidence_floor)
+    router = Router(
+        router_llm, s.router_model, catalog, s.router_confidence_floor, fallback_models=list(s.router_fallback_models)
+    )
     provider, model = answer_backend()
     answerer = Answerer(LLMClient(provider, timeout_s=180, use_cache=use_cache), model)
     pipe = Pipeline(

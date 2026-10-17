@@ -53,6 +53,7 @@ class Settings:
     extraction_model: str = "openai/gpt-oss-120b"
     answer_model: str = "openai/gpt-oss-120b"
     router_model: str = "openai/gpt-oss-20b"
+    router_fallback_models: tuple[str, ...] = ("openai/gpt-oss-safeguard-20b",)
     embed_model: str = "BAAI/bge-small-en-v1.5"
     embed_dim: int = 384
     hnsw_ef_search: int = 80

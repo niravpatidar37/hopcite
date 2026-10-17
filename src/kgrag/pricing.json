@@ -3,12 +3,14 @@
   "_sources": [
     "https://console.groq.com/docs/model/openai/gpt-oss-120b",
     "https://console.groq.com/docs/model/openai/gpt-oss-20b",
+    "https://console.groq.com/docs/model/openai/gpt-oss-safeguard-20b",
     "https://groq.com/pricing"
   ],
   "_retrieved": "2026-10-16",
   "groq": {
     "openai/gpt-oss-120b": {"input": 0.15, "output": 0.60},
-    "openai/gpt-oss-20b": {"input": 0.075, "output": 0.30}
+    "openai/gpt-oss-20b": {"input": 0.075, "output": 0.30},
+    "openai/gpt-oss-safeguard-20b": {"input": 0.075, "output": 0.30}
   },
   "anthropic": {
     "_note": "Placeholder model id and price. Verify the id via GET https://api.anthropic.com/v1/models and the price on https://www.anthropic.com/pricing before enabling.",

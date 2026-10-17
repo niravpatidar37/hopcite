@@ -276,6 +276,7 @@ class RoutingDecision:
     plan: GraphPlan | None
     entity_ids: list[str]
     latency_ms: float
+    model_used: str | None = None
 
 
 class Router:
@@ -286,9 +287,11 @@ class Router:
         catalog: EntityCatalog,
         confidence_floor: float = 0.6,
         log_path: Path | None = None,
+        fallback_models: list[str] | None = None,
     ) -> None:
         self.llm = llm
         self.model = model
+        self.fallback_models = fallback_models or []
         self.catalog = catalog
         self.floor = confidence_floor
         self.log_path = log_path
@@ -298,20 +301,31 @@ class Router:
         t0 = time.perf_counter()
         out: RouterOutput | None = None
         reason = ""
+        model_used = None
         if self.llm is not None:
-            try:
-                out = self.llm.complete_json(
-                    [{"role": "system", "content": self._system}, {"role": "user", "content": "Q: " + question}],
-                    self.model,
-                    RouterOutput,
-                    max_tokens=600,
-                    attempts=2,
-                    reasoning_effort="low",
-                    stats=stats,
-                    stage="router",
-                )
-            except (StructuredOutputError, LLMError, BudgetExceeded) as exc:
-                reason = f"router_error:{type(exc).__name__}"
+            errors = []
+            # Model chain: primary router model, then same-size/same-price fallbacks (each fails fast
+            # under rate limits), then the deterministic both-paths fallback below.
+            for model in [self.model, *self.fallback_models]:
+                try:
+                    out = self.llm.complete_json(
+                        [{"role": "system", "content": self._system}, {"role": "user", "content": "Q: " + question}],
+                        model,
+                        RouterOutput,
+                        max_tokens=600,
+                        attempts=2,
+                        reasoning_effort="low",
+                        stats=stats,
+                        stage="router",
+                    )
+                    model_used = model
+                    break
+                except (StructuredOutputError, LLMError, BudgetExceeded) as exc:
+                    errors.append(f"{model.split('/')[-1]}:{type(exc).__name__}")
+            if out is None:
+                reason = "router_error:" + ",".join(errors)
+            elif errors:
+                reason = "router_model_fallback:" + ",".join(errors)
         else:
             reason = "router_disabled"
         # Resolve entities: model-named entities first, then deterministic scan of the question.
@@ -333,7 +347,7 @@ class Router:
         plan = build_plan(out, ids) if out is not None else None
         if route in (Route.GRAPH, Route.HYBRID) and plan is None and out is not None and route == Route.GRAPH:
             route, reason = Route.HYBRID, "no_graph_plan"
-        dec = RoutingDecision(question, out, route, reason, plan, ids, (time.perf_counter() - t0) * 1000)
+        dec = RoutingDecision(question, out, route, reason, plan, ids, (time.perf_counter() - t0) * 1000, model_used)
         self._log(dec)
         return dec
 
