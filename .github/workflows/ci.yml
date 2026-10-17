@@ -71,3 +71,116 @@ jobs:
           docker run --rm -v /var/run/docker.sock:/var/run/docker.sock \
             aquasec/trivy:0.76.0@sha256:2416d1f74045b57274df1a340eee6b510cacd73c66a6ccb8da092b117eb7d222 \
             image --exit-code 1 --severity HIGH,CRITICAL --ignore-unfixed --no-progress kg-rag-enterprise:ci
+
+  # Migrations and readiness against real Postgres (pgvector) and Neo4j service containers.
+  # Throwaway credentials scoped to this job; no repository secrets are used.
+  migrations:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      CI_DB_PASSWORD: ci-only-${{ github.run_id }}-${{ github.run_attempt }}
+    services:
+      postgres:
+        image: pgvector/pgvector:0.8.1-pg17@sha256:3e8b3adfd27b5707128f60956f62a793c3c9326ea8cfaf0eab7adccb5d700b21
+        env:
+          POSTGRES_USER: kgrag
+          POSTGRES_DB: kgrag
+          POSTGRES_PASSWORD: ci-only-${{ github.run_id }}-${{ github.run_attempt }}
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U kgrag -d kgrag" --health-interval 5s --health-timeout 5s --health-retries 20
+      neo4j:
+        image: neo4j:5.26.12-community@sha256:9f75e8df4325a24f00fdd7a8c0bcce650a58375049b1058e496e8b43d6c36b37
+        env:
+          NEO4J_AUTH: neo4j/ci-only-${{ github.run_id }}-${{ github.run_attempt }}
+        ports:
+          - 7687:7687
+        options: >-
+          --health-cmd "wget -q --spider http://127.0.0.1:7474 || exit 1" --health-interval 10s --health-timeout 5s
+          --health-retries 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
+        with:
+          version: "0.9.21"
+      - name: Install (locked)
+        run: uv sync --frozen --python 3.12
+      - name: Migrate up twice (idempotent), then status must report nothing pending
+        env:
+          KGRAG_LOAD_DOTENV: "0"
+          PG_HOST: 127.0.0.1
+          PG_PORT: "5432"
+          POSTGRES_PASSWORD: ${{ env.CI_DB_PASSWORD }}
+          NEO4J_URI: bolt://127.0.0.1:7687
+          NEO4J_PASSWORD: ${{ env.CI_DB_PASSWORD }}
+        run: |
+          uv run --frozen python -m kgrag.migrate up
+          uv run --frozen python -m kgrag.migrate up
+          uv run --frozen python -m kgrag.migrate status
+      - name: Integration tests (migrations, drift, routing_log sink, MERGE idempotency, read-only session)
+        env:
+          KGRAG_INTEGRATION: "1"
+          KGRAG_LOAD_DOTENV: "0"
+          PG_HOST: 127.0.0.1
+          PG_PORT: "5432"
+          POSTGRES_PASSWORD: ${{ env.CI_DB_PASSWORD }}
+          NEO4J_URI: bolt://127.0.0.1:7687
+          NEO4J_PASSWORD: ${{ env.CI_DB_PASSWORD }}
+        run: uv run --frozen pytest -p no:cacheprovider -q -rs tests/test_migrations_integration.py tests/test_integration.py
+
+  terraform:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e # v4.0.1
+        with:
+          terraform_version: "1.16.6"
+          terraform_wrapper: false
+      - name: terraform fmt -check
+        run: terraform -chdir=infra/terraform fmt -check -recursive -diff
+      - name: init (no backend) + validate, per environment
+        run: |
+          set -euo pipefail
+          for env in staging prod; do
+            terraform -chdir="infra/terraform/envs/${env}" init -backend=false -input=false -lockfile=readonly
+            terraform -chdir="infra/terraform/envs/${env}" validate -no-color
+          done
+
+  tflint:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: terraform-linters/setup-tflint@6ffdbaa3be476b3431f7275c26966ef32ff60337 # v6.3.2
+        with:
+          tflint_version: v0.64.0
+      - name: tflint (terraform recommended + google ruleset 0.40.0)
+        env:
+          GITHUB_TOKEN: ${{ github.token }} # read-only token; avoids API rate limits when fetching the ruleset
+        run: |
+          set -euo pipefail
+          cfg="$GITHUB_WORKSPACE/infra/terraform/.tflint.hcl"
+          cd infra/terraform
+          tflint --init --config "$cfg"
+          tflint --recursive --config "$cfg" -f compact
+
+  iac-scan:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Checkov (Terraform); every skip is justified inline in the .tf files
+        run: |
+          docker run --rm -v "$PWD/infra/terraform:/tf:ro" \
+            bridgecrew/checkov:3.3.29@sha256:3cc125b5337717b7303dbddd4e79374c120687b5ff6a24f9abdad56b562469f3 \
+            -d /tf --framework terraform --quiet --compact

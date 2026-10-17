@@ -20,7 +20,7 @@ from typing import Any, TypeVar
 import httpx
 from pydantic import BaseModel, ValidationError
 
-from kgrag.config import get_settings, load_env
+from kgrag.config import get_settings, kill_switch_on, load_env
 from kgrag.spend import BudgetExceeded, SpendLedger, estimate_tokens, price_for
 
 T = TypeVar("T", bound=BaseModel)
@@ -40,6 +40,10 @@ class LLMError(RuntimeError):
 
 class StructuredOutputError(LLMError):
     pass
+
+
+class LLMDisabled(LLMError):
+    """KGRAG_KILL_SWITCH is on: no LLM call (paid or local) is made."""
 
 
 @dataclass
@@ -114,6 +118,8 @@ class LLMClient:
         reasoning_effort: str | None = "low",
         cache_salt: str = "",
     ) -> LLMResult:
+        if kill_switch_on():  # operator kill switch, checked before the cache and before any network call
+            raise LLMDisabled("LLM calls disabled by operator (KGRAG_KILL_SWITCH)")
         payload: dict[str, Any] = {
             "provider": self.provider,
             "model": model,

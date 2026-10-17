@@ -1,12 +1,16 @@
 """Local embeddings: BAAI/bge-small-en-v1.5 (384-d) via fastembed (ONNX runtime, no torch).
 
 Same model weights as the sentence-transformers checkpoint; ONNX keeps the Docker image small.
+
+In the container image the model is baked in at build time from a pinned Hugging Face revision
+(scripts/fetch_embed_model.py, sha256-checked) and loaded from KGRAG_EMBED_MODEL_PATH with
+HF_HUB_OFFLINE=1, so nothing is downloaded at startup or request time.
 """
 
 from __future__ import annotations
 
 from functools import lru_cache
-from typing import Protocol
+from typing import Any, Protocol
 
 import numpy as np
 import numpy.typing as npt
@@ -30,7 +34,12 @@ class FastEmbedder:
 
         s = get_settings()
         self.dim = s.embed_dim
-        self._model = TextEmbedding(model_name=model or s.embed_model, cache_dir=str(s.data_dir / "cache" / "models"))
+        kwargs: dict[str, Any] = {}
+        if s.embed_model_path:  # pre-baked model dir: never touch the network
+            kwargs = {"specific_model_path": s.embed_model_path, "local_files_only": True}
+        self._model = TextEmbedding(
+            model_name=model or s.embed_model, cache_dir=str(s.data_dir / "cache" / "models"), **kwargs
+        )
 
     def embed_docs(self, texts: list[str]) -> npt.NDArray[np.float32]:
         if not texts:

@@ -5,7 +5,6 @@
 !.env.example
 data/raw
 data/cache
-data/extracted
 logs
 results
 bench
@@ -14,3 +13,7 @@ tests
 .ruff_cache
 .pytest_cache
 **/__pycache__
+infra
+docs
+.github
+models

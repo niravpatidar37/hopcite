@@ -40,8 +40,29 @@ services:
       retries: 12
     restart: unless-stopped
 
+  # Versioned schema migrations (Postgres + Neo4j), the same step Cloud Run runs as a Job before
+  # each deploy. Idempotent: `docker compose -p p1-kgrag --profile api run --rm migrate`.
+  migrate:
+    profiles: ["api"]
+    build: .
+    image: kg-rag-enterprise:local
+    command: ["python", "-m", "kgrag.migrate", "up"]
+    env_file:
+      - .env
+    environment:
+      NEO4J_URI: bolt://neo4j:7687
+      PG_HOST: postgres
+      PG_PORT: "5432"
+    depends_on:
+      neo4j:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+
   # Optional: the API in a container. Default local workflow runs the API on the host
   # (uv run kgrag-api) so it can share the on-disk LLM cache and spend ledger.
+  # KGRAG_API_KEY (>= 16 chars) must be set in .env: the container binds 0.0.0.0 and refuses to
+  # start without a key.
   api:
     profiles: ["api"]
     build: .
@@ -54,15 +75,15 @@ services:
       PG_HOST: postgres
       PG_PORT: "5432"
       KGRAG_HOST: 0.0.0.0
+      KGRAG_ROUTING_LOG: postgres
     ports:
       - "127.0.0.1:8101:8101"
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    stop_grace_period: 15s
     depends_on:
-      neo4j:
-        condition: service_healthy
-      postgres:
-        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
 
 volumes:
   neo4j_data:

@@ -22,13 +22,7 @@ class CypherRunner(Protocol):
     def run(self, cypher: str, params: dict[str, Any]) -> list[dict[str, Any]]: ...
 
 
-SCHEMA_STATEMENTS = [
-    "CREATE CONSTRAINT entity_id IF NOT EXISTS FOR (e:Entity) REQUIRE e.id IS UNIQUE",
-    "CREATE CONSTRAINT chunk_id IF NOT EXISTS FOR (c:Chunk) REQUIRE c.id IS UNIQUE",
-    "CREATE CONSTRAINT doc_id IF NOT EXISTS FOR (d:Document) REQUIRE d.id IS UNIQUE",
-    "CREATE INDEX entity_type IF NOT EXISTS FOR (e:Entity) ON (e.type)",
-    "CREATE INDEX entity_name IF NOT EXISTS FOR (e:Entity) ON (e.name)",
-]
+# Constraints and indexes are versioned migrations: kgrag/migrations/neo4j (python -m kgrag.migrate up).
 
 MERGE_DOCS = """
 UNWIND $rows AS row
@@ -185,7 +179,17 @@ class Neo4jRunner:
     def __init__(self, uri: str, user: str, password: str, database: str = "neo4j") -> None:
         from neo4j import GraphDatabase
 
-        self._driver = GraphDatabase.driver(uri, auth=(user, password))
+        # Bounded connect time, and a liveness check on pooled connections that sat idle: managed
+        # Neo4j (AuraDB) and NAT paths drop idle connections, which would otherwise surface as a
+        # failed request after an idle period.
+        self._driver = GraphDatabase.driver(
+            uri,
+            auth=(user, password),
+            connection_timeout=10.0,
+            connection_acquisition_timeout=15.0,
+            liveness_check_timeout=30.0,
+            max_connection_lifetime=1800,
+        )
         self._db = database
 
     def run(self, cypher: str, params: dict[str, Any]) -> list[dict[str, Any]]:
@@ -195,6 +199,13 @@ class Neo4jRunner:
     def run_read(self, cypher: str, params: dict[str, Any]) -> list[dict[str, Any]]:
         with self._driver.session(database=self._db, default_access_mode="READ") as s:
             return list(s.execute_read(lambda tx: [r.data() for r in tx.run(cypher, params)]))
+
+    def ping(self, timeout_s: float = 3.0) -> bool:
+        from neo4j import Query
+
+        with self._driver.session(database=self._db, default_access_mode="READ") as s:
+            rec = s.run(Query("RETURN 1 AS ok", timeout=timeout_s)).single()
+            return rec is not None and rec["ok"] == 1
 
     def close(self) -> None:
         self._driver.close()
@@ -206,8 +217,10 @@ class GraphStore:
 
     # ---------------------------------------------------------------- writes (ingestion only)
     def ensure_schema(self) -> None:
-        for stmt in SCHEMA_STATEMENTS:
-            self.runner.run(stmt, {})
+        """Apply the versioned Neo4j migrations (same code path as the migration job)."""
+        from kgrag.migrate import migrate_neo4j
+
+        migrate_neo4j(self.runner)
 
     def write_documents(self, rows: list[dict[str, Any]]) -> None:
         self.runner.run(MERGE_DOCS, {"rows": rows})

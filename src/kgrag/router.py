@@ -6,7 +6,6 @@ validated and resolved to node ids by code before they are bound to a fixed temp
 from __future__ import annotations
 
 import json
-import re
 import time
 from dataclasses import dataclass, field
 from enum import StrEnum
@@ -17,6 +16,7 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 from kgrag.llm import CallStats, LLMClient, LLMError, StructuredOutputError
 from kgrag.ontology import EntityType, RelationType
+from kgrag.redact import redact_pii
 from kgrag.spend import BudgetExceeded
 
 
@@ -369,14 +369,3 @@ class Router:
         }
         with self.log_path.open("a", encoding="utf-8") as fh:
             fh.write(json.dumps(row) + "\n")
-
-
-_EMAIL = re.compile(r"[\w.+-]+@[\w-]+\.[\w.-]+")
-_PHONE = re.compile(r"\+?\d[\d\s().-]{7,}\d")
-_SSN = re.compile(r"\b\d{3}-\d{2}-\d{4}\b")
-
-
-def redact_pii(text: str) -> str:
-    text = _EMAIL.sub("[EMAIL]", text)
-    text = _SSN.sub("[SSN]", text)
-    return _PHONE.sub("[PHONE]", text)

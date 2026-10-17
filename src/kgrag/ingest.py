@@ -203,9 +203,9 @@ def cmd_build() -> None:
                 row["evidence"].append(r.evidence[:200])
             row["confidence"] = max(row["confidence"], r.confidence)
 
-    runner = Neo4jRunner(s.neo4j_uri, s.neo4j_user, s.neo4j_password)
+    runner = Neo4jRunner(s.neo4j_uri, s.neo4j_user, s.neo4j_password, s.neo4j_database)
     g = GraphStore(runner)
-    g.ensure_schema()
+    g.ensure_schema()  # versioned migrations (idempotent)
     g.write_documents(
         [
             {
@@ -234,7 +234,7 @@ def cmd_build() -> None:
     runner.close()
 
     vs = VectorStore(s.pg_dsn, s.embed_dim, s.hnsw_ef_search)
-    vs.ensure_schema()
+    vs.ensure_schema()  # versioned migrations (idempotent)
     t0 = time.time()
     vecs = emb.embed_docs([c.text for c in chunks])
     embed_s = time.time() - t0

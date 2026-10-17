@@ -5,7 +5,9 @@ benchmark compares retrieval, not prompts."""
 from __future__ import annotations
 
 import json
+import logging
 import time
+from collections.abc import Callable
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any
@@ -14,8 +16,12 @@ from kgrag.answer import Answerer, AnswerResult, Fact, dedupe_passages, paths_to
 from kgrag.embeddings import Embedder
 from kgrag.graph_store import GraphStore, Hop, rows_to_hops
 from kgrag.llm import CallStats
-from kgrag.router import Route, Router, RoutingDecision, redact_pii
+from kgrag.redact import redact_pii
+from kgrag.router import Route, Router, RoutingDecision
 from kgrag.vector_store import Passage, VectorStore
+
+RoutingSink = Callable[[dict[str, Any]], None]
+_log = logging.getLogger("kgrag.pipeline")
 
 GRAPH_PASSAGES = 2  # passages from chunks that mention the linked entities
 FACT_CHUNK_PASSAGES = 2  # passages backing the graph facts (so citations resolve to real text)
@@ -61,6 +67,7 @@ class Pipeline:
         router: Router | None = None,
         top_k: int = 8,
         log_path: Path | None = None,
+        log_sink: RoutingSink | None = None,
     ) -> None:
         self.vectors = vectors
         self.embedder = embedder
@@ -69,6 +76,7 @@ class Pipeline:
         self.router = router
         self.top_k = top_k
         self.log_path = log_path
+        self.log_sink = log_sink  # e.g. the Postgres routing_log table on Cloud Run; else JSONL at log_path
 
     # ------------------------------------------------------------------ graph retrieval
     def graph_retrieve(self, decision: RoutingDecision) -> tuple[list[list[Hop]], str | None]:
@@ -210,8 +218,9 @@ class Pipeline:
         )
 
     def _log(self, res: AskResult, decision: RoutingDecision | None) -> None:
-        """Every routing decision with the question and its outcome (JSONL; PII-redacted question)."""
-        if self.log_path is None:
+        """Every routing decision with the question and its outcome (PII-redacted question).
+        Goes to `log_sink` when set (a failing sink never fails the request), else JSONL at log_path."""
+        if self.log_path is None and self.log_sink is None:
             return
         out = decision.output if decision else None
         row = {
@@ -235,6 +244,14 @@ class Pipeline:
             "latency_ms": res.latency_ms,
             "usd": res.usd,
         }
+        if self.log_sink is not None:
+            try:
+                self.log_sink(row)
+            except Exception as exc:  # observability must not take the answer path down
+                _log.warning("routing log sink failed", extra={"fields": {"error": type(exc).__name__}})
+            return
+        if self.log_path is None:
+            return
         self.log_path.parent.mkdir(parents=True, exist_ok=True)
         with self.log_path.open("a", encoding="utf-8") as fh:
             fh.write(json.dumps(row) + "\n")

@@ -88,6 +88,70 @@
     ]
   },
   {
+    "mutant": "non-loopback bind allowed without an API key",
+    "file": "src/kgrag/api.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_deploy_controls.py::test_non_loopback_bind_without_key_refused[0.0.0.0]"
+    ]
+  },
+  {
+    "mutant": "short API keys accepted for an off-host bind",
+    "file": "src/kgrag/api.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_deploy_controls.py::test_non_loopback_bind_with_short_key_refused"
+    ]
+  },
+  {
+    "mutant": "rate limit not enforced",
+    "file": "src/kgrag/api.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_deploy_controls.py::test_rate_limit_returns_429_with_retry_after"
+    ]
+  },
+  {
+    "mutant": "kill switch ignored by the API",
+    "file": "src/kgrag/api.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_deploy_controls.py::test_kill_switch_blocks_ask_before_the_pipeline"
+    ]
+  },
+  {
+    "mutant": "kill switch ignored by the LLM client",
+    "file": "src/kgrag/llm.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_deploy_controls.py::test_kill_switch_blocks_llm_client_before_any_http[groq]"
+    ]
+  },
+  {
+    "mutant": "readiness reports ready without checking dependencies",
+    "file": "src/kgrag/api.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_deploy_controls.py::test_readyz_503_when_neo4j_down - asser..."
+    ]
+  },
+  {
+    "mutant": "PII not redacted from structured log fields",
+    "file": "src/kgrag/logs.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_deploy_controls.py::test_json_logs_redact_pii_in_message_and_fields"
+    ]
+  },
+  {
+    "mutant": "edited (drifted) migration accepted",
+    "file": "src/kgrag/migrate.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_migrations.py::test_edited_migration_is_drift - Failed: DID..."
+    ]
+  },
+  {
     "mutant": "unsupported (invented) evidence accepted",
     "file": "src/kgrag/extract.py",
     "status": "KILLED",

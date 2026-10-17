@@ -1,0 +1,232 @@
+name: deploy
+
+# Build once -> push to Artifact Registry -> migrate + deploy STAGING by digest -> smoke test ->
+# PROD (GitHub `production` environment, manual approval) -> migrate -> canary revision with no
+# traffic -> smoke the tagged URL -> 10% -> smoke -> 100%, with automatic rollback to the previous
+# revision when any smoke test fails.
+#
+# Every job is skipped until the repository variable GCP_PROJECT_ID is set (see README
+# "Deployment"), so this workflow passes without a cloud project. Auth is keyless Workload Identity
+# Federation; no GCP secrets are stored in GitHub.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false # never cancel a deploy half-way
+
+env:
+  REGION: ${{ vars.GCP_REGION || 'us-central1' }}
+  PROJECT_ID: ${{ vars.GCP_PROJECT_ID }}
+  REPOSITORY: kgrag
+  IMAGE_NAME: kg-rag-enterprise
+
+jobs:
+  build-push:
+    if: vars.GCP_PROJECT_ID != ''
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      id-token: write # mint the WIF token for Google auth
+    outputs:
+      image: ${{ steps.push.outputs.image }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093 # v3.0.0
+        with:
+          workload_identity_provider: ${{ vars.GCP_WIF_PROVIDER }}
+          service_account: ${{ vars.GCP_DEPLOY_SA }}
+      - uses: google-github-actions/setup-gcloud@aa5489c8933f4cc7a4f7d45035b3b1440c9c10db # v3.0.1
+      - name: Build and push (deploy by digest)
+        id: push
+        env:
+          SHA: ${{ github.sha }}
+          ATTEMPT: ${{ github.run_attempt }}
+        run: |
+          set -euo pipefail
+          registry="${REGION}-docker.pkg.dev"
+          ref="${registry}/${PROJECT_ID}/${REPOSITORY}/${IMAGE_NAME}"
+          gcloud auth configure-docker "$registry" --quiet
+          docker build -t "${ref}:${SHA}-${ATTEMPT}" .
+          docker push "${ref}:${SHA}-${ATTEMPT}"
+          digest="$(docker inspect --format '{{index .RepoDigests 0}}' "${ref}:${SHA}-${ATTEMPT}")"
+          case "$digest" in *@sha256:*) ;; *) echo "no digest for pushed image" >&2; exit 1 ;; esac
+          echo "image=${digest}" >> "$GITHUB_OUTPUT"
+          echo "Pushed ${digest}" >> "$GITHUB_STEP_SUMMARY"
+
+  deploy-staging:
+    if: vars.GCP_PROJECT_ID != ''
+    needs: build-push
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    environment: staging
+    permissions:
+      contents: read
+      id-token: write # WIF auth + ID token for the smoke test
+    env:
+      SERVICE: kgrag-staging-api
+      MIGRATE_JOB: kgrag-staging-migrate
+      INGEST_JOB: kgrag-staging-ingest
+      IMAGE: ${{ needs.build-push.outputs.image }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093 # v3.0.0
+        with:
+          workload_identity_provider: ${{ vars.GCP_WIF_PROVIDER }}
+          service_account: ${{ vars.GCP_DEPLOY_SA }}
+      - uses: google-github-actions/setup-gcloud@aa5489c8933f4cc7a4f7d45035b3b1440c9c10db # v3.0.1
+      - name: Run migrations (Cloud Run Job, new image)
+        run: |
+          set -euo pipefail
+          gcloud run jobs update "$MIGRATE_JOB" --image "$IMAGE" --region "$REGION" --quiet
+          gcloud run jobs execute "$MIGRATE_JOB" --region "$REGION" --wait
+          gcloud run jobs update "$INGEST_JOB" --image "$IMAGE" --region "$REGION" --quiet
+      - name: Record current revision
+        id: prev
+        run: |
+          set -euo pipefail
+          rev="$(gcloud run services describe "$SERVICE" --region "$REGION" --format json \
+            | jq -r '[.status.traffic[] | select((.percent // 0) > 0)] | max_by(.percent) | .revisionName // empty')"
+          echo "revision=${rev}" >> "$GITHUB_OUTPUT"
+      - name: Deploy
+        id: deploy
+        run: |
+          set -euo pipefail
+          gcloud run deploy "$SERVICE" --image "$IMAGE" --region "$REGION" --quiet
+          # A previous rollback pins traffic to a named revision; route to the new one explicitly.
+          gcloud run services update-traffic "$SERVICE" --region "$REGION" --to-latest --quiet
+          url="$(gcloud run services describe "$SERVICE" --region "$REGION" --format 'value(status.url)')"
+          echo "url=${url}" >> "$GITHUB_OUTPUT"
+      - uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093 # v3.0.0
+        id: idtoken
+        with:
+          workload_identity_provider: ${{ vars.GCP_WIF_PROVIDER }}
+          service_account: ${{ vars.GCP_DEPLOY_SA }}
+          token_format: id_token
+          id_token_audience: kgrag-staging-api
+          id_token_include_email: true
+      - name: Smoke test
+        env:
+          URL: ${{ steps.deploy.outputs.url }}
+          ID_TOKEN: ${{ steps.idtoken.outputs.id_token }}
+        run: bash scripts/smoke_test.sh "$URL" "$ID_TOKEN"
+      - name: Roll back on failure
+        if: failure() && steps.prev.outputs.revision != ''
+        env:
+          PREV: ${{ steps.prev.outputs.revision }}
+        run: |
+          gcloud run services update-traffic "$SERVICE" --region "$REGION" --to-revisions "${PREV}=100" --quiet
+          echo "Rolled back ${SERVICE} to ${PREV}" >> "$GITHUB_STEP_SUMMARY"
+
+  deploy-prod:
+    if: vars.GCP_PROJECT_ID != ''
+    needs: [build-push, deploy-staging]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    environment: production # required reviewers configured on the environment = manual approval gate
+    permissions:
+      contents: read
+      id-token: write # WIF auth + ID token for the smoke test
+    env:
+      SERVICE: kgrag-prod-api
+      MIGRATE_JOB: kgrag-prod-migrate
+      INGEST_JOB: kgrag-prod-ingest
+      IMAGE: ${{ needs.build-push.outputs.image }}
+      CANARY_PERCENT: ${{ vars.CANARY_PERCENT || '10' }}
+      CANARY_SOAK_SECONDS: ${{ vars.CANARY_SOAK_SECONDS || '300' }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093 # v3.0.0
+        with:
+          workload_identity_provider: ${{ vars.GCP_WIF_PROVIDER }}
+          service_account: ${{ vars.GCP_DEPLOY_SA }}
+      - uses: google-github-actions/setup-gcloud@aa5489c8933f4cc7a4f7d45035b3b1440c9c10db # v3.0.1
+      - name: Record current revision
+        id: prev
+        run: |
+          set -euo pipefail
+          rev="$(gcloud run services describe "$SERVICE" --region "$REGION" --format json \
+            | jq -r '[.status.traffic[] | select((.percent // 0) > 0)] | max_by(.percent) | .revisionName // empty')"
+          [ -n "$rev" ] || { echo "no serving revision found" >&2; exit 1; }
+          echo "revision=${rev}" >> "$GITHUB_OUTPUT"
+      - name: Run migrations (expand-only; the previous revision keeps working)
+        run: |
+          set -euo pipefail
+          gcloud run jobs update "$MIGRATE_JOB" --image "$IMAGE" --region "$REGION" --quiet
+          gcloud run jobs execute "$MIGRATE_JOB" --region "$REGION" --wait
+          gcloud run jobs update "$INGEST_JOB" --image "$IMAGE" --region "$REGION" --quiet
+      - name: Deploy candidate revision with no traffic
+        id: deploy
+        run: |
+          set -euo pipefail
+          gcloud run deploy "$SERVICE" --image "$IMAGE" --region "$REGION" --no-traffic --tag candidate --quiet
+          desc="$(gcloud run services describe "$SERVICE" --region "$REGION" --format json)"
+          echo "url=$(jq -r '.status.url' <<<"$desc")" >> "$GITHUB_OUTPUT"
+          echo "candidate_url=$(jq -r '.status.traffic[] | select(.tag == "candidate") | .url' <<<"$desc")" >> "$GITHUB_OUTPUT"
+          echo "candidate=$(jq -r '.status.latestCreatedRevisionName' <<<"$desc")" >> "$GITHUB_OUTPUT"
+      - uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093 # v3.0.0
+        id: idtoken
+        with:
+          workload_identity_provider: ${{ vars.GCP_WIF_PROVIDER }}
+          service_account: ${{ vars.GCP_DEPLOY_SA }}
+          token_format: id_token
+          id_token_audience: kgrag-prod-api
+          id_token_include_email: true
+      - name: Smoke test candidate (0% traffic)
+        env:
+          URL: ${{ steps.deploy.outputs.candidate_url }}
+          ID_TOKEN: ${{ steps.idtoken.outputs.id_token }}
+        run: bash scripts/smoke_test.sh "$URL" "$ID_TOKEN"
+      - name: Canary traffic shift
+        env:
+          CANDIDATE: ${{ steps.deploy.outputs.candidate }}
+          PREV: ${{ steps.prev.outputs.revision }}
+        run: |
+          set -euo pipefail
+          rest=$((100 - CANARY_PERCENT))
+          gcloud run services update-traffic "$SERVICE" --region "$REGION" \
+            --to-revisions "${CANDIDATE}=${CANARY_PERCENT},${PREV}=${rest}" --quiet
+      - name: Smoke test during canary soak
+        env:
+          URL: ${{ steps.deploy.outputs.url }}
+          ID_TOKEN: ${{ steps.idtoken.outputs.id_token }}
+        run: |
+          set -euo pipefail
+          end=$((SECONDS + CANARY_SOAK_SECONDS))
+          while [ "$SECONDS" -lt "$end" ]; do
+            SMOKE_ATTEMPTS=3 bash scripts/smoke_test.sh "$URL" "$ID_TOKEN"
+            sleep 30
+          done
+      - name: Promote to 100%
+        env:
+          CANDIDATE: ${{ steps.deploy.outputs.candidate }}
+          URL: ${{ steps.deploy.outputs.url }}
+          ID_TOKEN: ${{ steps.idtoken.outputs.id_token }}
+        run: |
+          set -euo pipefail
+          # --to-latest (the candidate is the latest revision) so later env-only revisions, such as the
+          # kill switch in docs/RUNBOOK.md, receive traffic instead of staying pinned to this one.
+          latest="$(gcloud run services describe "$SERVICE" --region "$REGION" --format 'value(status.latestCreatedRevisionName)')"
+          [ "$latest" = "$CANDIDATE" ] || { echo "latest revision changed during the deploy" >&2; exit 1; }
+          gcloud run services update-traffic "$SERVICE" --region "$REGION" --to-latest --quiet
+          bash scripts/smoke_test.sh "$URL" "$ID_TOKEN"
+          echo "Promoted ${CANDIDATE} to 100%" >> "$GITHUB_STEP_SUMMARY"
+      - name: Roll back on failure
+        if: failure() && steps.prev.outputs.revision != ''
+        env:
+          PREV: ${{ steps.prev.outputs.revision }}
+        run: |
+          gcloud run services update-traffic "$SERVICE" --region "$REGION" --to-revisions "${PREV}=100" --quiet
+          echo "Rolled back ${SERVICE} to ${PREV}" >> "$GITHUB_STEP_SUMMARY"

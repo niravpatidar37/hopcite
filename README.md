@@ -59,12 +59,12 @@ Other measured artifacts:
 - Ingestion is idempotent ([`results/idempotency_check.json`](results/idempotency_check.json)):
   re-running `build` on the built graph gives identical node, edge and row counts and 0 duplicate edges.
 - Security controls are mutation-tested ([`results/mutation_check.json`](results/mutation_check.json)):
-  12 of 12 mutants (one per control broken) are killed by the unit tests.
+  20 of 20 mutants (one per control broken) are killed by the unit tests.
 - Gold answers are traceable ([`results/gold_verification.json`](results/gold_verification.json)):
   all 113 evidence quotes occur verbatim in the fetched filings.
 
 Demo video: TODO (human): record a 90 s demo. Shot list: (1) README table, (2) `docker compose up` +
-`/health`, (3) a 3-hop `curl POST /ask` that returns graph facts and citations, (4) the same question with
+`/readyz`, (3) a 3-hop `curl POST /ask` that returns graph facts and citations, (4) the same question with
 `"mode":"vector"` failing, (5) Neo4j browser showing the TSMC neighborhood, (6) `pytest
 tests/test_no_model_cypher.py` passing and the mutation check output.
 
@@ -172,7 +172,7 @@ Threat model: questions come from untrusted users (Project 6 will attack `POST /
 anything later ingested, are untrusted text that can carry prompt injection or poisoned facts. Model
 outputs (extraction, routing, answers) are untrusted.
 
-Controls in code, each with a test that fails when the control is removed (12/12 mutants killed,
+Controls in code, each with a test that fails when the control is removed (20/20 mutants killed,
 `scripts/mutation_check.py`):
 
 | Control | Where | Test |
@@ -184,6 +184,12 @@ Controls in code, each with a test that fails when the control is removed (12/12
 | Extraction evidence must appear in the cited chunk; types checked against the ontology | `extract.py` | `tests/test_extract.py` |
 | API key (constant-time compare) when `KGRAG_API_KEY` is set; otherwise loopback clients only | `api.py` | `tests/test_api.py` |
 | Input limits: 3-500 chars, control characters stripped, unknown fields rejected | `api.py` | `test_input_validation` |
+| Fail-closed startup: a non-loopback `KGRAG_HOST` without an API key of >= 16 chars refuses to start; comma-separated keys allow zero-downtime rotation | `api.assert_safe_binding` | `test_non_loopback_bind_without_key_refused`, `test_main_refuses_before_binding`, `test_multiple_api_keys_for_rotation` |
+| Rate limit: token bucket per API key (or client), 429 + `Retry-After` | `ratelimit.py`, `api.py` | `test_rate_limit_returns_429_with_retry_after`, `test_rate_limit_buckets_are_per_api_key` |
+| Kill switch: `KGRAG_KILL_SWITCH=1` answers 503 before retrieval and blocks every LLM call (API, router, jobs) | `api.py`, `llm.py` | `test_kill_switch_blocks_ask_before_the_pipeline`, `test_kill_switch_blocks_llm_client_before_any_http` |
+| Readiness checks both stores with a timeout; liveness never touches dependencies | `api.py` | `test_readyz_503_when_neo4j_down`, `test_readyz_times_out_on_a_hanging_dependency` |
+| Structured JSON logs: PII redacted in messages and fields; exception text never logged | `logs.py` | `test_json_logs_redact_pii_in_message_and_fields`, `test_json_logs_omit_exception_text` |
+| Versioned migrations: an edited, already-applied migration stops the run; the runtime DB role gets SELECT on chunks and INSERT on routing_log only | `migrate.py`, `migrations/` | `test_edited_migration_is_drift`, `test_runtime_role_gets_only_its_grants` (integration) |
 | Hard spend cap: worst-case estimate checked before every paid call, global $25 and project $5; a corrupt ledger fails closed | `spend.py`, `llm.py` | `tests/test_spend_and_llm.py` |
 | SSRF guard: only `https://www.sec.gov` and `https://data.sec.gov` | `corpus.py` | `test_ssrf_guard` |
 | PII (emails, phone numbers, SSNs) redacted from routing logs | `router.redact_pii` | `test_routing_log_redacts_pii` |
@@ -201,6 +207,10 @@ Residual risk:
   allowlist or provenance trust score. Project 6 will measure this.
 - The spend check and the ledger write are not one transaction. Two processes can both pass the check
   before either records, so the cap can be overshot by at most one in-flight call per process.
+- On Cloud Run, the rate limiter and the LLM spend ledger are per instance (in memory and `/tmp`).
+  The effective limits are `limit x max_instances`, and the dollar cap resets when an instance is
+  replaced. Groq's own spend limit and the kill switch are the real backstops there; a shared
+  Postgres-backed ledger is the fix (not built).
 - Without `KGRAG_API_KEY` the API trusts loopback, so anything on the host can call it. Ollama on
   :11434 is unauthenticated, as installed.
 
@@ -217,7 +227,7 @@ OWASP Top 10 for LLM Applications (2025) mapping:
 | LLM07 System prompt leakage | Prompts hold no secrets; the leakage probe is an out-of-scope benchmark item (refused). |
 | LLM08 Vector and embedding weaknesses | Single-tenant index. Retrieved chunks are treated as untrusted. |
 | LLM09 Misinformation | Citation per claim, validated against retrieved ids; refusal on empty context. |
-| LLM10 Unbounded consumption | Input length limit, router latency budget, hard dollar cap, bounded retries and timeouts. |
+| LLM10 Unbounded consumption | Input length limit, per-key rate limit, router latency budget, hard dollar cap, kill switch, bounded retries and timeouts, Cloud Run max instances. |
 
 ## Cost
 
@@ -244,7 +254,8 @@ resolved entities); raised multi-hop question accuracy from 38% to 63% against a
 - **Attack surface**: `POST http://127.0.0.1:8101/ask` with body
   `{"question": str (3-500 chars), "mode": "hybrid"|"vector"}` and header `X-API-Key` if
   `KGRAG_API_KEY` is set. The response has `answer`, `refused`, `route`, `mode`, `citations[]`,
-  `claims[]`, `answer_entities`, `graph_facts`, `template`, `latency_ms` and `usd`. `GET /health`
+  `claims[]`, `answer_entities`, `graph_facts`, `template`, `latency_ms` and `usd`. `GET /healthz` is
+  liveness, `GET /readyz` checks Neo4j and Postgres (503 when either is down), and `GET /health`
   reports store connectivity.
 - **Planting a document**: write the text to `data/raw/<DOC_ID>.txt`, add a manifest entry to
   `data/manifest.json` (`doc_id`, `ticker`, `form`, `section`, `section_sha256`, and so on), then run
@@ -253,9 +264,52 @@ resolved entities); raised multi-hop question accuracy from 38% to 63% against a
   nodes and edges. To revert, delete the entry and rebuild into fresh volumes
   (`docker compose -p p1-kgrag down -v`).
 
+## Deployment
+
+**Status: deploy-ready; not applied (no cloud account connected).** Terraform validates, lints and
+scans clean in CI, and the deploy workflow is wired end to end, but nothing has been provisioned or
+deployed. Target: Google Cloud Run, provisioned by Terraform.
+
+- [docs/RUNBOOK.md](docs/RUNBOOK.md): bootstrap, first deploy, verify, rollback, secret rotation,
+  kill switch, common incidents (exact `gcloud` / `terraform` commands).
+- [docs/SLO.md](docs/SLO.md): SLIs/SLOs (availability, latency, quality) and a monthly cost estimate
+  (~$325 prod / ~$118 staging at 100k queries/month; an estimate from cited list prices).
+
+```mermaid
+flowchart LR
+  GH["GitHub Actions<br/>deploy.yml (WIF, no keys)"] -->|push digest| AR[("Artifact Registry")]
+  GH -->|execute| MJ["Cloud Run Job<br/>kgrag-ENV-migrate"]
+  GH -->|deploy + canary| API["Cloud Run service<br/>kgrag-ENV-api"]
+  IJ["Cloud Run Job<br/>kgrag-ENV-ingest"]
+  AR --> API & MJ & IJ
+  API & MJ & IJ -->|Direct VPC egress, TLS| SQL[("Cloud SQL Postgres 17<br/>pgvector, private IP")]
+  API & MJ & IJ -->|neo4j+s://| AURA[("Neo4j AuraDB<br/>external")]
+  API -->|HTTPS| GROQ["Groq LLMs"]
+  SM[("Secret Manager")] -.->|env at start| API & MJ & IJ
+```
+
+| Piece | Deploy-ready (in this repo, checked in CI or locally) | Assumed / not verified |
+|---|---|---|
+| Terraform ([`infra/terraform`](infra/terraform)) | Module + `envs/staging` and `envs/prod` (tfvars), google provider 8.7.0 pinned in committed `.terraform.lock.hcl`, GCS backend via `-backend-config`. Cloud Run v2 service (min/max instances, CPU/memory, concurrency, startup probe on `/readyz`, liveness on `/healthz`, ingress), migrate + ingest jobs, one service account per workload with per-secret access, Secret Manager containers (no values), Artifact Registry (immutable tags), VPC + Direct VPC egress, Private Service Access, Cloud SQL PG17 (private IP, TLS only, PITR). DB passwords are generated as ephemeral values through write-only arguments, so they never enter state. `fmt`, `validate`, `tflint` (google ruleset) and Checkov pass. | Never planned against a real project (`validate` checks schema, not API-side rules such as tier/edition combinations, quotas or org policies). |
+| Neo4j | AuraDB as an external dependency; URI/user/password in Secret Manager; driver liveness checks for idle connections; constraints applied by an idempotent migration. | AuraDB instance created by hand; no private networking to Aura (TLS over the internet). |
+| Embedding model | Baked into the image at build time from a pinned Hugging Face revision with a sha256 check; the build proves it loads offline; runtime sets `HF_HUB_OFFLINE=1`. Verified locally with `docker run --network none`. | - |
+| Migrations | `python -m kgrag.migrate up` (numbered SQL + `schema_migrations`, advisory lock, checksum drift detection; Neo4j constraints recorded on `:SchemaMigration`), run by CD as a Cloud Run Job before each deploy. CI applies them twice to real Postgres + Neo4j containers. Baselined on the populated local stack (925 chunks kept). | Expand-only discipline is a convention, not enforced. |
+| App controls | `/healthz` vs `/readyz`, fail-closed API-key requirement off loopback, key rotation, per-key rate limit, kill switch, JSON logs with PII redaction, graceful shutdown (pools/drivers closed on SIGTERM), env-only config in containers, routing log to Postgres. | Cloud Run behaviour (probes, SIGTERM timing) only exercised locally in Docker. |
+| CD ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)) | Build once, push, deploy by digest; staging migrate + deploy + smoke; prod behind the `production` environment; 0%-traffic candidate, smoke, canary %, soak, promote; automatic rollback to the previous revision. Every job is skipped until `GCP_PROJECT_ID` is set. | Never executed against GCP. |
+| Answer model | Cloud uses Groq `gpt-oss-20b` (Cloud Run has no Ollama). | **The published accuracy and latency numbers came from local `llama3.1:8b` and do not transfer**; re-run the benchmark with the cloud model before quoting cloud numbers. |
+
+One-time bootstrap (full commands in the runbook, section 1):
+
+1. Create a GCS state bucket, a Workload Identity pool + OIDC provider restricted to this repo's
+   `main`, and a `kgrag-deployer` service account with `roles/iam.workloadIdentityUser` for the repo.
+2. Set repository variables `GCP_PROJECT_ID`, `GCP_REGION`, `GCP_WIF_PROVIDER`, `GCP_DEPLOY_SA`
+   (variables, not secrets), and create the `production` environment with a required reviewer.
+3. `terraform apply` staging then prod (phase 1), add secret values, push a first image, `terraform apply
+   -var deploy_services=true -var image=<digest>` (phase 2), execute the migrate and ingest jobs.
+
 ## Setup and run
 
-Local docker compose only. Cloud IaC is not yet built.
+Local stack below; for Google Cloud see [Deployment](#deployment).
 
 Requirements: Docker, [uv](https://docs.astral.sh/uv/), Python 3.12 (uv installs it), Ollama with
 `llama3.1:8b`, and a Groq key in the shared env file (`PORTFOLIO_ENV_FILE`, default
@@ -267,10 +321,11 @@ cp .env.example .env                   # set NEO4J_PASSWORD, POSTGRES_PASSWORD, 
 
 # Restart the stack (data persists in named volumes p1-kgrag_neo4j_data / p1-kgrag_pg_data)
 docker compose -p p1-kgrag up -d neo4j postgres     # neo4j 127.0.0.1:17474/17687, postgres 127.0.0.1:15432
+uv run python -m kgrag.migrate up                  # versioned schema migrations (idempotent)
 
 # Start the API on 127.0.0.1:8101 (host process; uses local Ollama + Groq router)
 uv run kgrag-api
-curl -s http://127.0.0.1:8101/health
+curl -s http://127.0.0.1:8101/readyz
 curl -s -X POST http://127.0.0.1:8101/ask -H 'content-type: application/json' \
   -d '{"question": "Which companies does Supermicro name as competitors?"}'
 
@@ -295,7 +350,8 @@ uv run python scripts/run_benchmark.py          # both systems, no LLM cache -> 
 uv run python scripts/make_report.py            # README tables
 ```
 
-Tests: `uv run pytest` (no services or secrets needed; 68 pass, 2 integration tests skip).
-`KGRAG_INTEGRATION=1 uv run pytest tests/test_integration.py` runs the MERGE-idempotency and
-read-only-session tests against the stack. `uv run python scripts/mutation_check.py` runs the
+Tests: `uv run pytest` (no services or secrets needed; 130 pass, 7 integration tests skip).
+`KGRAG_INTEGRATION=1 uv run pytest tests/test_integration.py tests/test_migrations_integration.py`
+runs the MERGE-idempotency, read-only-session, migration, drift and grant tests against the stack (CI
+runs them against service containers). `uv run python scripts/mutation_check.py` runs the
 security mutation check.

@@ -20,3 +20,10 @@ logs/
 dist/
 build/
 *.egg-info/
+
+# terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log

@@ -56,7 +56,7 @@ MUTANTS: list[tuple[str, str, str, str]] = [
     (
         "src/kgrag/api.py",
         "API key not enforced",
-        "if not x_api_key or not hmac.compare_digest(x_api_key.encode(), key.encode()):",
+        "if not x_api_key or not _key_matches(x_api_key, keys):",
         "if False:",
     ),
     (
@@ -77,6 +77,54 @@ MUTANTS: list[tuple[str, str, str, str]] = [
         "budget not checked before a paid call",
         "            self.ledger.check(worst_case)  # raises BudgetExceeded",
         "            pass",
+    ),
+    (
+        "src/kgrag/api.py",
+        "non-loopback bind allowed without an API key",
+        "    if is_loopback_host(s.api_host):\n        return\n",
+        "    return\n",
+    ),
+    (
+        "src/kgrag/api.py",
+        "short API keys accepted for an off-host bind",
+        "    if any(len(k) < MIN_API_KEY_CHARS for k in keys):",
+        "    if False:",
+    ),
+    (
+        "src/kgrag/api.py",
+        "rate limit not enforced",
+        "        if wait > 0:",
+        "        if False:",
+    ),
+    (
+        "src/kgrag/api.py",
+        "kill switch ignored by the API",
+        "        if kill_switch_on():\n            raise HTTPException(",
+        "        if False:\n            raise HTTPException(",
+    ),
+    (
+        "src/kgrag/llm.py",
+        "kill switch ignored by the LLM client",
+        "        if kill_switch_on():  # operator kill switch",
+        "        if False:  # operator kill switch",
+    ),
+    (
+        "src/kgrag/api.py",
+        "readiness reports ready without checking dependencies",
+        "        ready = all(checks.values())",
+        "        ready = True",
+    ),
+    (
+        "src/kgrag/logs.py",
+        "PII not redacted from structured log fields",
+        "        return redact_pii(value)\n    if isinstance(value, dict):",
+        "        return value\n    if isinstance(value, dict):",
+    ),
+    (
+        "src/kgrag/migrate.py",
+        "edited (drifted) migration accepted",
+        "        if m.checksum != checksum:",
+        "        if False:",
     ),
     (
         "src/kgrag/extract.py",
