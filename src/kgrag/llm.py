@@ -90,6 +90,7 @@ class LLMClient:
         use_cache: bool = True,
         timeout_s: float = 90.0,
         max_retries: int = 6,
+        max_wait_s: float = 120.0,
         transport: httpx.BaseTransport | None = None,
     ) -> None:
         load_env()
@@ -99,6 +100,7 @@ class LLMClient:
         self.cache_dir.mkdir(parents=True, exist_ok=True)
         self.use_cache = use_cache
         self.max_retries = max_retries
+        self.max_wait_s = max_wait_s  # latency budget for one backoff sleep (router uses a small one)
         self._http = httpx.Client(timeout=timeout_s, transport=transport)
 
     # ------------------------------------------------------------------ public API
@@ -223,8 +225,10 @@ class LLMClient:
                 if attempt == self.max_retries:
                     raise LLMError(f"HTTP {r.status_code} after {attempt} retries")
                 retry_after = _parse_retry_after(r.headers.get("retry-after"))
+                if retry_after is not None and retry_after > self.max_wait_s:
+                    raise LLMError(f"HTTP {r.status_code}: retry-after {retry_after:.0f}s exceeds latency budget")
                 wait = max(retry_after or 0.0, delay) + random.uniform(0, 1)  # noqa: S311  # nosec B311
-                time.sleep(min(wait, 120))
+                time.sleep(min(wait, self.max_wait_s))
                 delay = min(delay * 2, 60)
                 continue
             if r.status_code >= 400:

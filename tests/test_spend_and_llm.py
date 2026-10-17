@@ -113,6 +113,24 @@ class Out(BaseModel):
     value: int
 
 
+def test_retry_after_beyond_latency_budget_fails_fast(
+    tmp_path: Path, ledger: SpendLedger, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    monkeypatch.setenv("GROQ_API_KEY", "test")
+    sleeps: list[float] = []
+    monkeypatch.setattr(llm_mod.time, "sleep", lambda s: sleeps.append(s))
+    c = LLMClient(
+        "groq",
+        ledger=ledger,
+        cache_dir=tmp_path,
+        max_wait_s=8,
+        transport=httpx.MockTransport(lambda r: httpx.Response(429, headers={"retry-after": "60"})),
+    )
+    with pytest.raises(llm_mod.LLMError, match="latency budget"):
+        c.complete([{"role": "user", "content": "x"}], "openai/gpt-oss-20b")
+    assert sleeps == []
+
+
 def test_schema_retry_then_success(tmp_path: Path, ledger: SpendLedger, monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("GROQ_API_KEY", "test")
     seq = [_groq_ok('{"value": "nope"}'), _groq_ok('{"value": 3}')]

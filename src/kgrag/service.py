@@ -40,7 +40,13 @@ def build_services(use_router_llm: bool = True, use_cache: bool = True) -> Servi
     graph = GraphStore(runner)
     vectors = VectorStore(s.pg_dsn, s.embed_dim, s.hnsw_ef_search)
     catalog = EntityCatalog.from_rows(graph.entity_catalog())
-    router_llm = LLMClient("groq", use_cache=use_cache) if use_router_llm and os.environ.get("GROQ_API_KEY") else None
+    router_llm = (
+        LLMClient("groq", use_cache=use_cache, timeout_s=15, max_retries=1, max_wait_s=8)
+        if use_router_llm and os.environ.get("GROQ_API_KEY")
+        else None
+    )
+    # Router has a tight latency budget: on rate limits/timeouts it fails fast and the pipeline
+    # falls back to running both retrieval paths (logged as router_error).
     router = Router(router_llm, s.router_model, catalog, s.router_confidence_floor)
     provider, model = answer_backend()
     answerer = Answerer(LLMClient(provider, timeout_s=180, use_cache=use_cache), model)
