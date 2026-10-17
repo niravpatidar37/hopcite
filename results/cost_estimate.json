@@ -1,0 +1,21 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "documents": 18,
+  "chunks_total": 925,
+  "chunks_selected_for_extraction": 192,
+  "batches": 40,
+  "estimated_input_tokens": 87127,
+  "worst_case_usd_if_every_call_hits_max_tokens": 0.1331,
+  "price_per_m": {
+    "input": 0.15,
+    "output": 0.6
+  },
+  "pilot": {
+    "batches": 2,
+    "calls": 2,
+    "input_tokens": 4926,
+    "output_tokens": 5967,
+    "usd": 0.00432,
+    "projected_full_run_usd": 0.0848
+  }
+}

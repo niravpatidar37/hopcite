@@ -1,0 +1,45 @@
+{
+  "documents": 18,
+  "chunks": 925,
+  "pg_rows": 925,
+  "batches_with_extractions": 40,
+  "mentions": 784,
+  "resolved_entities": 494,
+  "graph": {
+    "entities": {
+      "Company": 173,
+      "Product": 115,
+      "Market": 66,
+      "Technology": 43,
+      "Location": 42,
+      "Person": 29,
+      "Segment": 26
+    },
+    "relations": {
+      "COMPETES_WITH": 101,
+      "OFFERS": 89,
+      "SERVES_MARKET": 80,
+      "HAS_FACILITY_IN": 52,
+      "USES_TECHNOLOGY": 40,
+      "EXECUTIVE_OF": 26,
+      "HAS_SEGMENT": 26,
+      "SUPPLIES_TO": 21,
+      "ACQUIRED": 21,
+      "MANUFACTURES_FOR": 18,
+      "SUBSIDIARY_OF": 10,
+      "PARTNERS_WITH": 9,
+      "HEADQUARTERED_IN": 8
+    }
+  },
+  "validation": {
+    "relations_in": 531,
+    "relations_kept": 522,
+    "dropped_bad_chunk": 0,
+    "dropped_bad_types": 6,
+    "dropped_unsupported": 3,
+    "entities_in": 660,
+    "entities_kept": 766
+  },
+  "embed_seconds": 56.3,
+  "er_threshold": 0.96
+}

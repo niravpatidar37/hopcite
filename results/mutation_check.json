@@ -1,0 +1,98 @@
+[
+  {
+    "mutant": "bind raw model entity string as node id",
+    "file": "src/kgrag/router.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_no_model_cypher.py::test_injected_entity_strings_never_reach_query_text[NVIDIA'}) DETACH DELETE n //]"
+    ]
+  },
+  {
+    "mutant": "skip entity resolution (model string used as id)",
+    "file": "src/kgrag/router.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_bench_router_misc.py::test_low_confidence_falls_back_to_both_paths"
+    ]
+  },
+  {
+    "mutant": "run arbitrary text when the template key is unknown",
+    "file": "src/kgrag/graph_store.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_no_model_cypher.py::test_templates_are_read_only_and_unknown_keys_refused"
+    ]
+  },
+  {
+    "mutant": "relation type for writes not validated against the enum",
+    "file": "src/kgrag/graph_store.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_no_model_cypher.py::test_write_relation_type_comes_from_enum_only"
+    ]
+  },
+  {
+    "mutant": "accept citations that were never retrieved",
+    "file": "src/kgrag/answer.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_answer.py::test_invented_citation_rejected_then_regenerated"
+    ]
+  },
+  {
+    "mutant": "do not neutralize fence-breaking tags in passages",
+    "file": "src/kgrag/answer.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_answer.py::test_context_is_labeled_and_fenced - assert 3 == 2"
+    ]
+  },
+  {
+    "mutant": "API key not enforced",
+    "file": "src/kgrag/api.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_api.py::test_api_key_required_when_set[None-401] - Assertio..."
+    ]
+  },
+  {
+    "mutant": "non-loopback clients served without a key",
+    "file": "src/kgrag/api.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_api.py::test_non_loopback_refused_without_key - AssertionEr..."
+    ]
+  },
+  {
+    "mutant": "global cap not enforced",
+    "file": "src/kgrag/spend.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_spend_and_llm.py::test_global_cap_blocks - Failed: DID NOT ..."
+    ]
+  },
+  {
+    "mutant": "corrupt ledger fails open",
+    "file": "src/kgrag/spend.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_spend_and_llm.py::test_corrupt_ledger_fails_closed - Failed..."
+    ]
+  },
+  {
+    "mutant": "budget not checked before a paid call",
+    "file": "src/kgrag/llm.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_spend_and_llm.py::test_budget_checked_before_any_http - Fai..."
+    ]
+  },
+  {
+    "mutant": "unsupported (invented) evidence accepted",
+    "file": "src/kgrag/extract.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_extract.py::test_drops_unsupported_evidence - AssertionErro..."
+    ]
+  }
+]

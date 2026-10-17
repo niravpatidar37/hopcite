@@ -1,0 +1,71 @@
+{
+  "check": "re-ran `python -m kgrag.ingest build` on an already-built graph",
+  "run1": {
+    "documents": 18,
+    "chunks": 925,
+    "pg_rows": 925,
+    "resolved_entities": 494,
+    "graph": {
+      "entities": {
+        "Company": 173,
+        "Product": 115,
+        "Market": 66,
+        "Technology": 43,
+        "Location": 42,
+        "Person": 29,
+        "Segment": 26
+      },
+      "relations": {
+        "COMPETES_WITH": 101,
+        "OFFERS": 89,
+        "SERVES_MARKET": 80,
+        "HAS_FACILITY_IN": 52,
+        "USES_TECHNOLOGY": 40,
+        "EXECUTIVE_OF": 26,
+        "HAS_SEGMENT": 26,
+        "SUPPLIES_TO": 21,
+        "ACQUIRED": 21,
+        "MANUFACTURES_FOR": 18,
+        "SUBSIDIARY_OF": 10,
+        "PARTNERS_WITH": 9,
+        "HEADQUARTERED_IN": 8
+      }
+    }
+  },
+  "run2": {
+    "documents": 18,
+    "chunks": 925,
+    "pg_rows": 925,
+    "resolved_entities": 494,
+    "graph": {
+      "entities": {
+        "Company": 173,
+        "Product": 115,
+        "Market": 66,
+        "Technology": 43,
+        "Location": 42,
+        "Person": 29,
+        "Segment": 26
+      },
+      "relations": {
+        "COMPETES_WITH": 101,
+        "OFFERS": 89,
+        "SERVES_MARKET": 80,
+        "HAS_FACILITY_IN": 52,
+        "USES_TECHNOLOGY": 40,
+        "EXECUTIVE_OF": 26,
+        "HAS_SEGMENT": 26,
+        "SUPPLIES_TO": 21,
+        "ACQUIRED": 21,
+        "MANUFACTURES_FOR": 18,
+        "SUBSIDIARY_OF": 10,
+        "PARTNERS_WITH": 9,
+        "HEADQUARTERED_IN": 8
+      }
+    }
+  },
+  "identical": true,
+  "neo4j_nodes_after": 1437,
+  "neo4j_edges_after": 2188,
+  "duplicate_typed_edges": 0
+}

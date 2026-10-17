@@ -1,0 +1,131 @@
+{
+  "questions": 64,
+  "systems": {
+    "hybrid": {
+      "system": "hybrid",
+      "n": 64,
+      "accuracy": 0.7031,
+      "by_category": {
+        "single_hop": {
+          "n": 20,
+          "accuracy": 0.7,
+          "mean_f1": 0.7043,
+          "p50_ms": 7499.6
+        },
+        "two_hop": {
+          "n": 14,
+          "accuracy": 0.7143,
+          "mean_f1": 0.7333,
+          "p50_ms": 11534.5
+        },
+        "three_hop": {
+          "n": 10,
+          "accuracy": 0.5,
+          "mean_f1": 0.4133,
+          "p50_ms": 9585.8
+        },
+        "aggregation": {
+          "n": 10,
+          "accuracy": 0.6,
+          "mean_f1": 0.5727,
+          "p50_ms": 11112.0
+        },
+        "out_of_scope": {
+          "n": 10,
+          "accuracy": 1.0,
+          "mean_f1": 1.0,
+          "p50_ms": 2991.1
+        }
+      },
+      "p50_ms": 8029.3,
+      "p95_ms": 15432.4,
+      "usd_total": 0.005272,
+      "usd_per_query": 8.24e-05,
+      "mean_f1": 0.6908,
+      "citation_valid_rate": 1.0
+    },
+    "vector": {
+      "system": "vector",
+      "n": 64,
+      "accuracy": 0.5781,
+      "by_category": {
+        "single_hop": {
+          "n": 20,
+          "accuracy": 0.65,
+          "mean_f1": 0.665,
+          "p50_ms": 6652.1
+        },
+        "two_hop": {
+          "n": 14,
+          "accuracy": 0.5,
+          "mean_f1": 0.4643,
+          "p50_ms": 7040.8
+        },
+        "three_hop": {
+          "n": 10,
+          "accuracy": 0.2,
+          "mean_f1": 0.1667,
+          "p50_ms": 9782.6
+        },
+        "aggregation": {
+          "n": 10,
+          "accuracy": 0.5,
+          "mean_f1": 0.4727,
+          "p50_ms": 11152.3
+        },
+        "out_of_scope": {
+          "n": 10,
+          "accuracy": 1.0,
+          "mean_f1": 1.0,
+          "p50_ms": 2432.0
+        }
+      },
+      "p50_ms": 6852.2,
+      "p95_ms": 14595.3,
+      "usd_total": 0.0,
+      "usd_per_query": 0.0,
+      "mean_f1": 0.5655,
+      "citation_valid_rate": 1.0
+    }
+  },
+  "answer_model": "ollama/llama3.1:8b",
+  "router_model": "groq/openai/gpt-oss-20b",
+  "extraction_model": "groq/openai/gpt-oss-120b",
+  "ingestion": {
+    "documents": 18,
+    "chunks": 925,
+    "resolved_entities": 494,
+    "graph": {
+      "entities": {
+        "Company": 173,
+        "Product": 115,
+        "Market": 66,
+        "Technology": 43,
+        "Location": 42,
+        "Person": 29,
+        "Segment": 26
+      },
+      "relations": {
+        "COMPETES_WITH": 101,
+        "OFFERS": 89,
+        "SERVES_MARKET": 80,
+        "HAS_FACILITY_IN": 52,
+        "USES_TECHNOLOGY": 40,
+        "EXECUTIVE_OF": 26,
+        "HAS_SEGMENT": 26,
+        "SUPPLIES_TO": 21,
+        "ACQUIRED": 21,
+        "MANUFACTURES_FOR": 18,
+        "SUBSIDIARY_OF": 10,
+        "PARTNERS_WITH": 9,
+        "HEADQUARTERED_IN": 8
+      }
+    },
+    "extraction_usd_ledger": 0.080213,
+    "extraction_paid_calls": 40,
+    "extraction_input_tokens": 91938,
+    "extraction_output_tokens": 103412
+  },
+  "benchmark_spend_usd_ledger_delta": 0.005275,
+  "wall_seconds": 1019.9
+}

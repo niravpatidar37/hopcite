@@ -1,0 +1,20 @@
+{
+  "batches": 40,
+  "paid_calls": 40,
+  "cached_calls": 0,
+  "input_tokens": 91938,
+  "output_tokens": 103412,
+  "usd_this_run": 0.07584,
+  "failures": [],
+  "validation": {
+    "relations_in": 531,
+    "relations_kept": 522,
+    "dropped_bad_chunk": 0,
+    "dropped_bad_types": 6,
+    "dropped_unsupported": 3,
+    "entities_in": 660,
+    "entities_kept": 766
+  },
+  "wall_s": 1358.1,
+  "aborted": ""
+}

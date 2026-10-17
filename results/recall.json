@@ -1,0 +1,81 @@
+{
+  "labeled_questions": 54,
+  "unmapped_quotes": 0,
+  "chunks_indexed": 925,
+  "embed_model": "BAAI/bge-small-en-v1.5",
+  "index": "hnsw (m=16, ef_construction=64, cosine)",
+  "overall": {
+    "recall@1": 0.2577,
+    "recall@3": 0.4343,
+    "recall@5": 0.4688,
+    "recall@8": 0.562,
+    "recall@10": 0.6552,
+    "recall@20": 0.7679
+  },
+  "by_category": {
+    "single_hop": {
+      "recall@1": 0.35,
+      "recall@3": 0.6,
+      "recall@5": 0.65,
+      "recall@8": 0.7,
+      "recall@10": 0.8,
+      "recall@20": 0.9,
+      "n": 20
+    },
+    "two_hop": {
+      "recall@1": 0.1071,
+      "recall@3": 0.3357,
+      "recall@5": 0.3857,
+      "recall@8": 0.4714,
+      "recall@10": 0.5929,
+      "recall@20": 0.7357,
+      "n": 14
+    },
+    "three_hop": {
+      "recall@1": 0.125,
+      "recall@3": 0.125,
+      "recall@5": 0.125,
+      "recall@8": 0.2917,
+      "recall@10": 0.2917,
+      "recall@20": 0.45,
+      "n": 10
+    },
+    "aggregation": {
+      "recall@1": 0.4167,
+      "recall@3": 0.55,
+      "recall@5": 0.5667,
+      "recall@8": 0.6833,
+      "recall@10": 0.8167,
+      "recall@20": 0.8667,
+      "n": 10
+    }
+  },
+  "hnsw_ef_search": [
+    {
+      "ef_search": 10,
+      "ann_recall@10_vs_exact": 0.95,
+      "p50_ms": 2.1
+    },
+    {
+      "ef_search": 20,
+      "ann_recall@10_vs_exact": 0.9926,
+      "p50_ms": 2.16
+    },
+    {
+      "ef_search": 40,
+      "ann_recall@10_vs_exact": 0.9944,
+      "p50_ms": 2.37
+    },
+    {
+      "ef_search": 80,
+      "ann_recall@10_vs_exact": 1.0,
+      "p50_ms": 5.27
+    },
+    {
+      "ef_search": 200,
+      "ann_recall@10_vs_exact": 1.0,
+      "p50_ms": 5.25
+    }
+  ],
+  "chosen_ef_search": 80
+}
