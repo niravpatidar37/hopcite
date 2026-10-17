@@ -1,0 +1,20 @@
+{
+  "_note": "estimate - verify against provider pricing page. USD per 1M tokens, Groq PAID rates (used even on free tier).",
+  "_sources": [
+    "https://console.groq.com/docs/model/openai/gpt-oss-120b",
+    "https://console.groq.com/docs/model/openai/gpt-oss-20b",
+    "https://groq.com/pricing"
+  ],
+  "_retrieved": "2026-10-16",
+  "groq": {
+    "openai/gpt-oss-120b": {"input": 0.15, "output": 0.60},
+    "openai/gpt-oss-20b": {"input": 0.075, "output": 0.30}
+  },
+  "anthropic": {
+    "_note": "Placeholder model id and price. Verify the id via GET https://api.anthropic.com/v1/models and the price on https://www.anthropic.com/pricing before enabling.",
+    "CLAUDE_MODEL_ID_PLACEHOLDER": {"input": 3.0, "output": 15.0}
+  },
+  "ollama": {
+    "llama3.1:8b": {"input": 0.0, "output": 0.0}
+  }
+}
