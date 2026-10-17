@@ -1,0 +1,69 @@
+name: p1-kgrag
+
+# Local stack only. Every port is bound to 127.0.0.1. Credentials come from ./.env
+# (gitignored; see .env.example). Volumes are named so `docker compose -p p1-kgrag stop` keeps data.
+services:
+  neo4j:
+    image: neo4j:5.26.12-community@sha256:9f75e8df4325a24f00fdd7a8c0bcce650a58375049b1058e496e8b43d6c36b37
+    container_name: p1-kgrag-neo4j
+    environment:
+      NEO4J_AUTH: "neo4j/${NEO4J_PASSWORD:?set NEO4J_PASSWORD in .env}"
+      NEO4J_server_memory_heap_max__size: "1G"
+      NEO4J_server_memory_pagecache_size: "512M"
+    ports:
+      - "127.0.0.1:17474:7474"
+      - "127.0.0.1:17687:7687"
+    volumes:
+      - neo4j_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://127.0.0.1:7474 || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    restart: unless-stopped
+
+  postgres:
+    image: pgvector/pgvector:0.8.1-pg17@sha256:3e8b3adfd27b5707128f60956f62a793c3c9326ea8cfaf0eab7adccb5d700b21
+    container_name: p1-kgrag-postgres
+    environment:
+      POSTGRES_USER: kgrag
+      POSTGRES_DB: kgrag
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}"
+    ports:
+      - "127.0.0.1:15432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kgrag -d kgrag"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+    restart: unless-stopped
+
+  # Optional: the API in a container. Default local workflow runs the API on the host
+  # (uv run kgrag-api) so it can share the on-disk LLM cache and spend ledger.
+  api:
+    profiles: ["api"]
+    build: .
+    image: kg-rag-enterprise:local
+    container_name: p1-kgrag-api
+    env_file:
+      - .env
+    environment:
+      NEO4J_URI: bolt://neo4j:7687
+      PG_HOST: postgres
+      PG_PORT: "5432"
+      KGRAG_HOST: 0.0.0.0
+    ports:
+      - "127.0.0.1:8101:8101"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      neo4j:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+
+volumes:
+  neo4j_data:
+  pg_data:

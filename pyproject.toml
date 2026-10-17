@@ -1,0 +1,76 @@
+[project]
+name = "kg-rag-enterprise"
+version = "0.1.0"
+description = "Hybrid knowledge-graph + vector RAG over SEC filings of semiconductor / AI supply-chain companies"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = { text = "MIT" }
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn>=0.32",
+    "pydantic>=2.9",
+    "httpx>=0.27",
+    "neo4j>=5.26,<6",
+    "psycopg[binary]>=3.2",
+    "pgvector>=0.3",
+    "numpy>=1.26",
+    "fastembed>=0.4",
+    "portalocker>=2.10",
+    "python-dotenv>=1.0",
+    "beautifulsoup4>=4.12",
+    "lxml>=5.3",
+]
+
+[project.optional-dependencies]
+anthropic = ["anthropic>=0.40"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "pytest-asyncio>=0.24",
+    "ruff>=0.7",
+    "mypy>=1.13",
+    "bandit>=1.7",
+    "pip-audit>=2.7",
+    "types-requests",
+    "lxml-stubs",
+]
+
+[project.scripts]
+kgrag-api = "kgrag.api:main"
+
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/kgrag"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+src = ["src", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "S", "SIM", "RUF"]
+ignore = ["S101", "RUF001", "RUF002", "RUF003"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S", "B"]
+"scripts/**" = ["S603", "S607"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+ignore_missing_imports = true
+mypy_path = "src"
+packages = ["kgrag"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = ["integration: needs the docker stack (neo4j + pgvector) running"]
+addopts = "-q"
+
+[tool.bandit]
+exclude_dirs = ["tests", ".venv"]

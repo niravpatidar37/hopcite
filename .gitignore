@@ -1,0 +1,22 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+wandb/
+# raw filings and caches (re-creatable with scripts/fetch_corpus.py)
+data/raw/
+data/cache/
+.cache/
+models/
+*.onnx
+*.safetensors
+*.bin
+logs/
+dist/
+build/
+*.egg-info/
