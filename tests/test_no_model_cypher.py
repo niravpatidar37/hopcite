@@ -150,8 +150,11 @@ def test_templates_are_read_only_and_unknown_keys_refused() -> None:
     for key, cypher in TEMPLATES.items():
         assert not READ_ONLY_FORBIDDEN.search(cypher), key
         assert "%" not in cypher and "{0" not in cypher, key
-    with pytest.raises(KeyError):
-        GraphStore(FakeRunner()).run_template("MATCH (n) DETACH DELETE n", {})
+    runner = FakeRunner()
+    for not_a_key in ["MATCH (n) DETACH DELETE n", "MATCH (n) RETURN n.password", "neighbors_out "]:
+        with pytest.raises(KeyError):
+            GraphStore(runner).run_template(not_a_key, {})
+    assert runner.calls == []
 
 
 def test_write_relation_type_comes_from_enum_only() -> None:
