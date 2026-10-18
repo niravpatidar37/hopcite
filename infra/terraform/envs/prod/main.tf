@@ -3,7 +3,7 @@ provider "google" {
   region  = var.region
 
   default_labels = {
-    app = "kg-rag-enterprise"
+    app = "hopcite"
     env = "prod"
   }
 }

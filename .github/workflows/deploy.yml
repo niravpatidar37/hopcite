@@ -24,7 +24,7 @@ env:
   REGION: ${{ vars.GCP_REGION || 'us-central1' }}
   PROJECT_ID: ${{ vars.GCP_PROJECT_ID }}
   REPOSITORY: kgrag
-  IMAGE_NAME: kg-rag-enterprise
+  IMAGE_NAME: hopcite
 
 jobs:
   build-push:

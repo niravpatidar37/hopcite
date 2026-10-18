@@ -23,7 +23,7 @@ from bs4 import BeautifulSoup, XMLParsedAsHTMLWarning
 
 warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
 
-DEFAULT_UA = "kg-rag-enterprise research niravpatidar37@users.noreply.github.com"
+DEFAULT_UA = "hopcite research niravpatidar37@users.noreply.github.com"
 ALLOWED_HOSTS = {"www.sec.gov", "data.sec.gov"}
 MIN_INTERVAL_S = 0.125
 

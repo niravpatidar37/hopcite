@@ -1,4 +1,4 @@
-# Runbook: kg-rag-enterprise on Google Cloud
+# Runbook: hopcite on Google Cloud
 
 Status: **deploy-ready; not applied (no cloud account connected).** Every command below is written
 for this repository's Terraform and workflows but has not been run against a real project. Treat the
@@ -40,17 +40,17 @@ gcloud storage buckets update "gs://${PROJECT_ID}-tfstate" --versioning
 
 # Keyless GitHub Actions auth: Workload Identity Federation, limited to this repo's main branch
 gcloud iam workload-identity-pools create github --location=global --display-name="GitHub Actions"
-gcloud iam workload-identity-pools providers create-oidc kg-rag-enterprise \
+gcloud iam workload-identity-pools providers create-oidc hopcite \
   --location=global --workload-identity-pool=github \
   --issuer-uri="https://token.actions.githubusercontent.com" \
   --attribute-mapping="google.subject=assertion.sub,attribute.repository=assertion.repository,attribute.ref=assertion.ref" \
-  --attribute-condition="assertion.repository=='niravpatidar37/kg-rag-enterprise' && assertion.ref=='refs/heads/main'"
+  --attribute-condition="assertion.repository=='niravpatidar37/hopcite' && assertion.ref=='refs/heads/main'"
 
-gcloud iam service-accounts create kgrag-deployer --display-name="kg-rag-enterprise GitHub deployer"
+gcloud iam service-accounts create kgrag-deployer --display-name="hopcite GitHub deployer"
 PROJECT_NUMBER=$(gcloud projects describe "$PROJECT_ID" --format='value(projectNumber)')
 gcloud iam service-accounts add-iam-policy-binding "kgrag-deployer@${PROJECT_ID}.iam.gserviceaccount.com" \
   --role=roles/iam.workloadIdentityUser \
-  --member="principalSet://iam.googleapis.com/projects/${PROJECT_NUMBER}/locations/global/workloadIdentityPools/github/attribute.repository/niravpatidar37/kg-rag-enterprise"
+  --member="principalSet://iam.googleapis.com/projects/${PROJECT_NUMBER}/locations/global/workloadIdentityPools/github/attribute.repository/niravpatidar37/hopcite"
 ```
 
 Repository variables (not secrets; nothing secret is stored in GitHub) and the approval gate:
@@ -58,10 +58,10 @@ Repository variables (not secrets; nothing secret is stored in GitHub) and the a
 ```bash
 gh variable set GCP_PROJECT_ID   --body "$PROJECT_ID"
 gh variable set GCP_REGION       --body "$REGION"
-gh variable set GCP_WIF_PROVIDER --body "projects/${PROJECT_NUMBER}/locations/global/workloadIdentityPools/github/providers/kg-rag-enterprise"
+gh variable set GCP_WIF_PROVIDER --body "projects/${PROJECT_NUMBER}/locations/global/workloadIdentityPools/github/providers/hopcite"
 gh variable set GCP_DEPLOY_SA    --body "kgrag-deployer@${PROJECT_ID}.iam.gserviceaccount.com"
 # Create the `production` environment with yourself as required reviewer (manual approval for prod):
-gh api -X PUT repos/niravpatidar37/kg-rag-enterprise/environments/production \
+gh api -X PUT repos/niravpatidar37/hopcite/environments/production \
   -F "reviewers[][type]=User" -F "reviewers[][id]=$(gh api user -q .id)"
 ```
 
@@ -80,7 +80,7 @@ cd infra/terraform/envs/$ENV
 terraform init -backend-config="bucket=${PROJECT_ID}-tfstate" -backend-config="prefix=kgrag/${ENV}"
 export TF_VAR_project_id=$PROJECT_ID TF_VAR_region=$REGION \
        TF_VAR_deployer_service_account="kgrag-deployer@${PROJECT_ID}.iam.gserviceaccount.com" \
-       TF_VAR_sec_user_agent="kg-rag-enterprise you@yourdomain.com"
+       TF_VAR_sec_user_agent="hopcite you@yourdomain.com"
 terraform plan -out=phase1.tfplan && terraform apply phase1.tfplan
 ```
 
@@ -103,7 +103,7 @@ Hand the API key to clients through your own channel; read it back with
 **2c. First image** (CD takes over afterwards):
 
 ```bash
-REG=${REGION}-docker.pkg.dev/${PROJECT_ID}/kgrag/kg-rag-enterprise
+REG=${REGION}-docker.pkg.dev/${PROJECT_ID}/kgrag/hopcite
 gcloud auth configure-docker "${REGION}-docker.pkg.dev"
 docker build -t "${REG}:bootstrap-$(git rev-parse --short HEAD)" . && docker push "${REG}:bootstrap-$(git rev-parse --short HEAD)"
 IMAGE=$(docker inspect --format '{{index .RepoDigests 0}}' "${REG}:bootstrap-$(git rev-parse --short HEAD)")
@@ -134,7 +134,7 @@ SELECT has_table_privilege('kgrag_app', 'chunks', 'INSERT');           -- must b
 
 Merging to `main` runs `.github/workflows/deploy.yml`:
 
-1. Build the image once, push `…/kg-rag-enterprise:<sha>-<attempt>`, resolve the **digest**.
+1. Build the image once, push `…/hopcite:<sha>-<attempt>`, resolve the **digest**.
 2. Staging: point both jobs at the digest, execute `migrate`, deploy the service, smoke test
    (`scripts/smoke_test.sh`: `/healthz` 200, `/readyz` 200 with both stores, `POST /ask` without a key is 401).
    Failure rolls staging back to its previous revision.

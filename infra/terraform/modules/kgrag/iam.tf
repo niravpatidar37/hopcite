@@ -6,7 +6,7 @@
 resource "google_service_account" "api" {
   project      = var.project_id
   account_id   = "${local.name}-api"
-  display_name = "kg-rag-enterprise API (${var.env})"
+  display_name = "hopcite API (${var.env})"
 
   depends_on = [google_project_service.apis]
 }
@@ -14,7 +14,7 @@ resource "google_service_account" "api" {
 resource "google_service_account" "jobs" {
   project      = var.project_id
   account_id   = "${local.name}-jobs"
-  display_name = "kg-rag-enterprise migration + ingestion jobs (${var.env})"
+  display_name = "hopcite migration + ingestion jobs (${var.env})"
 
   depends_on = [google_project_service.apis]
 }

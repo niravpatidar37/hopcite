@@ -45,7 +45,7 @@ services:
   migrate:
     profiles: ["api"]
     build: .
-    image: kg-rag-enterprise:local
+    image: hopcite:local
     command: ["python", "-m", "kgrag.migrate", "up"]
     env_file:
       - .env
@@ -66,7 +66,7 @@ services:
   api:
     profiles: ["api"]
     build: .
-    image: kg-rag-enterprise:local
+    image: hopcite:local
     container_name: p1-kgrag-api
     env_file:
       - .env

@@ -136,7 +136,7 @@ def create_app(services: Any | None = None) -> FastAPI:
                 await run_in_threadpool(svc.close)
             log.info("shutdown complete")
 
-    app = FastAPI(title="kg-rag-enterprise", version="0.2.0", lifespan=lifespan)
+    app = FastAPI(title="hopcite", version="0.2.0", lifespan=lifespan)
 
     @app.middleware("http")
     async def access_log(request: Request, call_next: Callable[[Request], Awaitable[Response]]) -> Response:

@@ -26,7 +26,7 @@ variable "deploy_services" {
 }
 
 variable "image" {
-  description = "Container image by digest (REGION-docker.pkg.dev/PROJECT/kgrag/kg-rag-enterprise@sha256:...). CD updates revisions after the first apply; Terraform ignores later image changes."
+  description = "Container image by digest (REGION-docker.pkg.dev/PROJECT/kgrag/hopcite@sha256:...). CD updates revisions after the first apply; Terraform ignores later image changes."
   type        = string
   default     = ""
 

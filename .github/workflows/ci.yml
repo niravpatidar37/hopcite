@@ -65,12 +65,12 @@ jobs:
         with:
           persist-credentials: false
       - name: Build image
-        run: docker build -t kg-rag-enterprise:ci .
+        run: docker build -t hopcite:ci .
       - name: Trivy image scan (fail on fixable HIGH/CRITICAL)
         run: |
           docker run --rm -v /var/run/docker.sock:/var/run/docker.sock \
             aquasec/trivy:0.76.0@sha256:2416d1f74045b57274df1a340eee6b510cacd73c66a6ccb8da092b117eb7d222 \
-            image --exit-code 1 --severity HIGH,CRITICAL --ignore-unfixed --no-progress kg-rag-enterprise:ci
+            image --exit-code 1 --severity HIGH,CRITICAL --ignore-unfixed --no-progress hopcite:ci
 
   # Migrations and readiness against real Postgres (pgvector) and Neo4j service containers.
   # Throwaway credentials scoped to this job; no repository secrets are used.

@@ -2,7 +2,7 @@ locals {
   name = "kgrag-${var.env}"
   labels = merge(
     {
-      app        = "kg-rag-enterprise"
+      app        = "hopcite"
       env        = var.env
       managed-by = "terraform"
     },
