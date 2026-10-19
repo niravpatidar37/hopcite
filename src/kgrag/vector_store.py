@@ -36,6 +36,27 @@ VALUES (%(ts)s, %(mode)s, %(question)s, %(model_route)s, %(model_confidence)s, %
 """
 
 
+# Privilege report for a database role. Cloud SQL makes every API-created user a member of
+# cloudsqlsuperuser; the runtime role must not keep that (or any role-level superpower). The LEFT JOIN
+# keeps the query valid on plain Postgres, where cloudsqlsuperuser does not exist.
+ROLE_REPORT_SQL = """
+SELECT r.rolname, r.rolsuper, r.rolcreaterole, r.rolcreatedb, r.rolbypassrls,
+       COALESCE(pg_has_role(r.oid, c.oid, 'MEMBER'), false) AS cloudsqlsuperuser
+FROM pg_roles r LEFT JOIN pg_roles c ON c.rolname = 'cloudsqlsuperuser'
+WHERE r.rolname = COALESCE(%(role)s::text, current_user::text)
+"""
+ROLE_FLAGS = ("superuser", "createrole", "createdb", "bypassrls", "cloudsqlsuperuser")
+
+
+def role_report(conn: Any, role: str | None = None) -> dict[str, Any] | None:
+    """Privilege flags of `role` (default: the connected user). None when the role does not exist."""
+    row = conn.execute(ROLE_REPORT_SQL, {"role": role}).fetchone()
+    if row is None:
+        return None
+    flags = dict(zip(ROLE_FLAGS, (bool(v) for v in row[1:]), strict=True))
+    return {"role": row[0], **flags, "least_privilege": not any(flags.values())}
+
+
 @dataclass
 class Passage:
     chunk_id: str
@@ -125,6 +146,12 @@ class VectorStore:
         with self._pool.connection(timeout=3.0) as conn:
             row = conn.execute("SELECT 1").fetchone()
         return bool(row == (1,))
+
+    def least_privilege(self) -> bool:
+        """True when the connected (runtime) user holds no superuser-like role attribute or membership."""
+        with self._pool.connection(timeout=3.0) as conn:
+            rep = role_report(conn)
+        return bool(rep and rep["least_privilege"])
 
     def close(self) -> None:
         self._pool.close()

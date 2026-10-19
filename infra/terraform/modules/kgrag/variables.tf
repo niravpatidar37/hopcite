@@ -57,7 +57,7 @@ variable "min_instances" {
 }
 
 variable "max_instances" {
-  description = "Maximum instances. Also bounds total rate-limit capacity and per-instance spend ledgers."
+  description = "Maximum instances. Rate limits and the spend cap are shared in Cloud SQL, so this bounds cost and DB connections, not the limits."
   type        = number
   default     = 3
 }
@@ -106,9 +106,15 @@ variable "answer_model" {
 }
 
 variable "rate_limit_per_min" {
-  description = "Per-client /ask rate limit per instance (KGRAG_RATE_LIMIT_PER_MIN)."
+  description = "Per-client /ask rate limit across ALL instances (KGRAG_RATE_LIMIT_PER_MIN; buckets live in Cloud SQL)."
   type        = number
   default     = 30
+}
+
+variable "rate_limit_burst" {
+  description = "Per-client token-bucket burst (KGRAG_RATE_LIMIT_BURST)."
+  type        = number
+  default     = 10
 }
 
 variable "kill_switch" {
@@ -118,7 +124,7 @@ variable "kill_switch" {
 }
 
 variable "llm_spend_cap_usd" {
-  description = "LLM_SPEND_CAP_USD for each instance's local ledger."
+  description = "LLM_SPEND_CAP_USD: global cap enforced against the shared llm_spend_ledger table (all instances and jobs)."
   type        = number
   default     = 5
 }
@@ -184,4 +190,29 @@ variable "labels" {
   description = "Extra labels on every labelled resource."
   type        = map(string)
   default     = {}
+}
+
+# ----------------------------------------------------------------------------- monitoring
+variable "alert_email" {
+  description = "Email address for alert notifications. Empty = alert policies are created without a notification channel."
+  type        = string
+  default     = ""
+}
+
+variable "slo_availability_goal" {
+  description = "Availability SLO for /ask over a rolling 28 days (docs/SLO.md)."
+  type        = number
+  default     = 0.995
+}
+
+variable "slo_latency_p95_ms" {
+  description = "p95 latency SLO in milliseconds; the latency alert fires above it (docs/SLO.md)."
+  type        = number
+  default     = 12000
+}
+
+variable "alert_5xx_ratio" {
+  description = "Alert when the share of 5xx responses exceeds this over 5 minutes."
+  type        = number
+  default     = 0.05
 }

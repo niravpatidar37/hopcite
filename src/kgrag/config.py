@@ -56,6 +56,40 @@ def kill_switch_on() -> bool:
     return env_flag("KGRAG_KILL_SWITCH")
 
 
+ENVIRONMENTS = ("dev", "ci", "test", "staging", "prod")
+DEPLOYED_ENVS = ("staging", "prod")  # real users / real money: shared limits, no fake LLM
+FAKE_LLM_ENVS = ("dev", "ci", "test")
+
+
+class UnsafeConfig(RuntimeError):
+    """A configuration that must never run (fake LLM in a deployed env, per-instance limits in prod)."""
+
+
+def runtime_env() -> str:
+    """KGRAG_ENV: dev (default) | ci | test | staging | prod. Unknown values count as prod."""
+    v = os.environ.get("KGRAG_ENV", "dev").strip().lower() or "dev"
+    return v if v in ENVIRONMENTS else "prod"
+
+
+def on_cloud_run() -> bool:
+    """Cloud Run sets K_SERVICE on services and CLOUD_RUN_JOB on jobs; neither is set locally."""
+    return bool(os.environ.get("K_SERVICE") or os.environ.get("CLOUD_RUN_JOB"))
+
+
+def fake_llm_requested() -> bool:
+    return os.environ.get("KGRAG_LLM_MODE", "").strip().lower() == "fake"
+
+
+def assert_fake_llm_allowed() -> None:
+    """The deterministic fake LLM exists for the CI smoke stack only. It is refused unless KGRAG_ENV is
+    dev/ci/test AND the process is not on Cloud Run, so a stray env var cannot turn prod answers fake."""
+    env = runtime_env()
+    if env not in FAKE_LLM_ENVS:
+        raise UnsafeConfig(f"KGRAG_LLM_MODE=fake is not allowed when KGRAG_ENV={env}")
+    if on_cloud_run():
+        raise UnsafeConfig("KGRAG_LLM_MODE=fake is not allowed on Cloud Run")
+
+
 def is_loopback_host(host: str | None) -> bool:
     if not host:
         return False
@@ -101,6 +135,9 @@ class Settings:
     # Production controls
     rate_limit_per_min: int = 30  # per client (API key or IP), per instance; 0 disables
     rate_limit_burst: int = 10
+    rate_limit_backend: str = "memory"  # memory (one process) | postgres (shared by every instance)
+    spend_backend: str = "file"  # file (JSONL + file lock, local) | postgres (shared ledger table)
+    env: str = "dev"
     routing_log: str = "file"  # file | postgres | stdout | off
     llm_cache: bool = True  # disk cache of LLM responses (off on Cloud Run: in-memory fs, user text at rest)
     log_format: str = "json"  # json | text
@@ -152,9 +189,28 @@ def get_settings() -> Settings:
         er_threshold=float(_env("KGRAG_ER_THRESHOLD", "0.96")),
         rate_limit_per_min=int(_env("KGRAG_RATE_LIMIT_PER_MIN", "30")),
         rate_limit_burst=int(_env("KGRAG_RATE_LIMIT_BURST", "10")),
+        rate_limit_backend=_env("KGRAG_RATE_LIMIT_BACKEND", "memory").strip().lower(),
+        spend_backend=_env("KGRAG_SPEND_BACKEND", "file").strip().lower(),
+        env=runtime_env(),
         routing_log=_env("KGRAG_ROUTING_LOG", "file").strip().lower(),
         llm_cache=env_flag("KGRAG_LLM_CACHE", default=True),
         log_format=_env("KGRAG_LOG_FORMAT", "json").strip().lower(),
         readiness_timeout_s=float(_env("KGRAG_READINESS_TIMEOUT_S", "3")),
         shutdown_grace_s=int(_env("KGRAG_SHUTDOWN_GRACE_S", "8")),
     )
+
+
+def assert_runtime_config(s: Settings) -> None:
+    """Fail closed at startup on configurations that are unsafe in a deployed environment."""
+    if s.rate_limit_backend not in ("memory", "postgres"):
+        raise UnsafeConfig(f"KGRAG_RATE_LIMIT_BACKEND must be memory or postgres, got {s.rate_limit_backend!r}")
+    if s.spend_backend not in ("file", "postgres"):
+        raise UnsafeConfig(f"KGRAG_SPEND_BACKEND must be file or postgres, got {s.spend_backend!r}")
+    if fake_llm_requested():
+        assert_fake_llm_allowed()
+    if s.env in DEPLOYED_ENVS or on_cloud_run():
+        # Per-instance limits multiply with the instance count and reset when an instance is replaced.
+        if s.rate_limit_backend != "postgres":
+            raise UnsafeConfig(f"KGRAG_ENV={s.env}: KGRAG_RATE_LIMIT_BACKEND must be postgres (shared limits)")
+        if s.spend_backend != "postgres":
+            raise UnsafeConfig(f"KGRAG_ENV={s.env}: KGRAG_SPEND_BACKEND must be postgres (shared spend ledger)")

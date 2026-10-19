@@ -51,10 +51,12 @@
 | **One shared key** | `chunk_id` is both the Neo4j `:Chunk` id and the pgvector primary key; every graph edge carries the `chunk_ids` it was extracted from, so a graph fact can always be cited. |
 | **Validated extraction** | Triples are checked against a 7-type / 14-relation ontology, and the evidence quote must appear in the cited chunk. |
 | **Fair baseline** | `"mode": "vector"` runs the same index, answer model, prompt and passage budget without the graph. |
-| **Bounded cost** | A hard spend cap (worst case checked before every paid call), a kill switch, per-key rate limits and a router latency budget with a deterministic fallback. |
+| **Bounded cost** | A hard spend cap (worst case reserved before every paid call), a kill switch, per-key rate limits and a router latency budget with a deterministic fallback. In staging/prod the cap and the limits live in Postgres, shared by every instance. |
 
-Every security control is mutation-tested: 20 of 20 mutants (one per control broken) are killed by the
-unit tests ([`results/mutation_check.json`](results/mutation_check.json)).
+Every security control is mutation-tested: 34 of 34 mutants (one control broken at a time) are killed,
+32 by the unit tests ([`results/mutation_check.json`](results/mutation_check.json)) and 2 SQL-level ones
+(shared bucket debit, spend-ledger advisory lock) by the Postgres integration tests
+(`scripts/mutation_check.py --only-pg`, run in the CI `migrations` job).
 
 ## Results
 
@@ -124,7 +126,7 @@ the router uses its deterministic fallback.
 
 ```bash
 uv sync --frozen                       # creates .venv
-cp .env.example .env                   # set NEO4J_PASSWORD, POSTGRES_PASSWORD, SEC_USER_AGENT
+cp .env.example .env                   # set NEO4J_PASSWORD, POSTGRES_PASSWORD, PG_APP_PASSWORD, KGRAG_API_KEY, SEC_USER_AGENT
 
 docker compose -p p1-kgrag up -d neo4j postgres     # neo4j 127.0.0.1:17474/17687, postgres 127.0.0.1:15432
 uv run python -m kgrag.migrate up                  # versioned schema migrations (idempotent)
@@ -136,14 +138,17 @@ curl -s -X POST http://127.0.0.1:8101/ask -H 'content-type: application/json' \
   -d '{"question": "Which companies does Supermicro name as competitors?"}'
 uv run python assets/demo/ask.py --mode vector "Which companies does Supermicro name as competitors?"
 
-docker compose -p p1-kgrag --profile api up -d --build api   # API in a container (needs KGRAG_API_KEY)
+docker compose -p p1-kgrag --profile api up -d --build api   # API in a container, as the least-privilege kgrag_app
+SMOKE_API_KEY=... python scripts/smoke.py --base-url http://127.0.0.1:8101 --expect-router-fallback   # end-to-end smoke
 docker compose -p p1-kgrag stop                               # stop (keeps volumes)
 ```
 
 `POST /ask` takes `{"question": str (3-500 chars), "mode": "hybrid"|"vector"}` (header `X-API-Key`
 when `KGRAG_API_KEY` is set) and returns `answer`, `refused`, `route`, `mode`, `citations[]`,
-`claims[]`, `answer_entities`, `graph_facts`, `template`, `latency_ms` and `usd`. `GET /healthz` is
-liveness, `GET /readyz` checks Neo4j and Postgres (503 when either is down).
+`claims[]`, `answer_entities`, `graph_facts`, `template`, `latency_ms`, `usd`, `retrieved_chunk_ids`
+(every chunk id the answer model saw; each citation must be one of them) and `fallback_reason`.
+`GET /healthz` is liveness, `GET /readyz` checks Neo4j and Postgres (503 when either is down) and
+reports `llm_enabled` and `db_least_privilege`.
 
 <details><summary><b>Rebuild everything from scratch</b> (corpus, graph, benchmark)</summary>
 
@@ -172,6 +177,10 @@ uv run python scripts/make_report.py            # README tables
 | `GROQ_API_KEY` | from `PORTFOLIO_ENV_FILE` | Router LLM; empty = deterministic router fallback |
 | `KGRAG_KILL_SWITCH` | `0` | `1` answers 503 and blocks every LLM call |
 | `KGRAG_RATE_LIMIT_PER_MIN`, `KGRAG_RATE_LIMIT_BURST` | `30`, `10` | Token bucket per key or client; `0` disables |
+| `KGRAG_ENV` | `dev` | `dev`, `ci`, `test`, `staging`, `prod`; staging/prod refuse per-instance limits and the fake LLM |
+| `KGRAG_RATE_LIMIT_BACKEND`, `KGRAG_SPEND_BACKEND` | `memory`, `file` | `postgres` shares buckets (`rate_limit_buckets`) and the spend ledger (`llm_spend_ledger`) across instances; required in staging/prod |
+| `KGRAG_LLM_MODE` | empty | `fake`: deterministic extractive stand-in for the answer model (CI smoke stack only; refused outside dev/ci/test and on Cloud Run) |
+| `PG_APP_PASSWORD` | - | Password of `kgrag_app`, the compose API's least-privilege DB user |
 | `KGRAG_LLM_CACHE` | `1` | Disk cache of LLM responses by content hash |
 | `KGRAG_ROUTING_LOG` | `file` | `file`, `postgres`, `stdout` or `off` |
 | `KGRAG_EF_SEARCH`, `KGRAG_ER_THRESHOLD` | `80`, `0.96` | HNSW search width; entity-resolution threshold |
@@ -181,11 +190,11 @@ uv run python scripts/make_report.py            # README tables
 | `SEC_USER_AGENT` | - | EDGAR User-Agent with a real contact email (corpus fetch only) |
 </details>
 
-Tests: `uv run pytest` (no services or secrets needed; 130 pass, 7 integration tests skip).
-`KGRAG_INTEGRATION=1 uv run pytest tests/test_integration.py tests/test_migrations_integration.py`
-runs the MERGE-idempotency, read-only-session, migration, drift and grant tests against the stack (CI
-runs them against service containers). `uv run python scripts/mutation_check.py` runs the
-security mutation check.
+Tests: `uv run pytest` (no services or secrets needed; 200 pass, 17 integration tests skip).
+`KGRAG_INTEGRATION=1 uv run pytest tests/test_integration.py tests/test_migrations_integration.py tests/test_shared_limits_integration.py`
+runs the MERGE-idempotency, read-only-session, migration, drift, grant, DB-role and two-instance
+shared-limit tests against the stack (CI runs them against service containers).
+`uv run python scripts/mutation_check.py` runs the security mutation check.
 
 ## Architecture
 
@@ -259,7 +268,7 @@ Threat model: questions come from untrusted users. Filings, and anything later i
 text that can carry prompt injection or poisoned facts. Model outputs (extraction, routing, answers)
 are untrusted.
 
-Controls in code, each with a test that fails when the control is removed (20/20 mutants killed,
+Controls in code, each with a test that fails when the control is removed (34/34 mutants killed,
 `scripts/mutation_check.py`):
 
 | Control | Where | Test |
@@ -273,11 +282,16 @@ Controls in code, each with a test that fails when the control is removed (20/20
 | Input limits: 3-500 chars, control characters stripped, unknown fields rejected | `api.py` | `test_input_validation` |
 | Fail-closed startup: a non-loopback `KGRAG_HOST` without an API key of >= 16 chars refuses to start; comma-separated keys allow zero-downtime rotation | `api.assert_safe_binding` | `test_non_loopback_bind_without_key_refused`, `test_main_refuses_before_binding`, `test_multiple_api_keys_for_rotation` |
 | Rate limit: token bucket per API key (or client), 429 + `Retry-After` | `ratelimit.py`, `api.py` | `test_rate_limit_returns_429_with_retry_after`, `test_rate_limit_buckets_are_per_api_key` |
+| Shared limits: one Postgres token bucket per key (single atomic upsert) and one spend ledger (cap check + reservation in one transaction under an advisory lock) for all instances; fails closed when Postgres is unreachable | `ratelimit.PostgresRateLimiter`, `spend.PostgresSpendLedger` | `test_two_instances_share_one_bucket`, `test_two_apps_share_the_limit`, `test_concurrent_reservations_on_two_instances_respect_the_cap`, `test_spend_survives_instance_replacement_and_settles` (integration), `test_unreachable_shared_limiter_fails_closed` |
+| Deployed-env guard: staging/prod (or any Cloud Run instance) refuse to start with per-instance limits; the fake LLM is refused outside dev/ci/test and on Cloud Run | `config.assert_runtime_config`, `config.assert_fake_llm_allowed` | `test_deployed_envs_require_shared_limits`, `test_fake_llm_refused_outside_dev_ci_test`, `test_fake_llm_refused_on_cloud_run_even_if_env_says_ci` |
+| Request hygiene: security headers on every response, 413 over 16 KB (also chunked), generic JSON 500s, no server banner, API docs off in staging/prod | `api.py` | `test_security_headers_on_success_and_error_responses`, `test_chunked_oversize_body_rejected`, `test_unhandled_errors_are_generic_500s` |
+| Runtime DB role: `migrate roles` / `migrate status` exit 3 and `/readyz` reports `db_least_privilege=false` when `kgrag_app` keeps `cloudsqlsuperuser` (or any superuser-like right) | `migrate.py`, `vector_store.role_report` | `test_role_check_reports_cloudsqlsuperuser_membership` (integration), `test_status_gate_fails_on_privileged_role_but_up_only_reports` |
+| Additive migrations: CI fails on DROP / RENAME / ALTER ... TYPE / TRUNCATE without a reasoned marker, and on edits to merged migrations | `scripts/check_migrations.py` | `tests/test_check_migrations.py` |
 | Kill switch: `KGRAG_KILL_SWITCH=1` answers 503 before retrieval and blocks every LLM call (API, router, jobs) | `api.py`, `llm.py` | `test_kill_switch_blocks_ask_before_the_pipeline`, `test_kill_switch_blocks_llm_client_before_any_http` |
 | Readiness checks both stores with a timeout; liveness never touches dependencies | `api.py` | `test_readyz_503_when_neo4j_down`, `test_readyz_times_out_on_a_hanging_dependency` |
 | Structured JSON logs: PII redacted in messages and fields; exception text never logged | `logs.py` | `test_json_logs_redact_pii_in_message_and_fields`, `test_json_logs_omit_exception_text` |
 | Versioned migrations: an edited, already-applied migration stops the run; the runtime DB role gets SELECT on chunks and INSERT on routing_log only | `migrate.py`, `migrations/` | `test_edited_migration_is_drift`, `test_runtime_role_gets_only_its_grants` (integration) |
-| Hard spend cap: worst-case estimate checked before every paid call, global $25 and project $5; a corrupt ledger fails closed | `spend.py`, `llm.py` | `tests/test_spend_and_llm.py` |
+| Hard spend cap: worst-case estimate reserved before every paid call, settled to the actual cost after it (released on provider errors, kept on timeouts), global $25 and project $5; a corrupt ledger fails closed | `spend.py`, `llm.py` | `tests/test_spend_and_llm.py`, `test_paid_call_reserves_then_settles_actual_cost`, `test_timeout_keeps_worst_case_reservation` |
 | SSRF guard: only `https://www.sec.gov` and `https://data.sec.gov` | `corpus.py` | `test_ssrf_guard` |
 | PII (emails, phone numbers, SSNs) redacted from routing logs | `router.redact_pii` | `test_routing_log_redacts_pii` |
 
@@ -292,12 +306,13 @@ CI). The container runs non-root from a pinned base digest with a healthcheck. P
   misleading claim that cites a real (poisoned or unrelated) chunk.
 - Data poisoning: a planted document is extracted into the graph like any other. There is no source
   allowlist or provenance trust score.
-- The spend check and the ledger write are not one transaction. Two processes can both pass the check
-  before either records, so the cap can be overshot by at most one in-flight call per process.
-- On Cloud Run, the rate limiter and the LLM spend ledger are per instance (in memory and `/tmp`).
-  The effective limits are `limit x max_instances`, and the dollar cap resets when an instance is
-  replaced. Groq's own spend limit and the kill switch are the real backstops there; a shared
-  Postgres-backed ledger is the fix (not built).
+- Locally (file ledger) the spend check and the ledger write are separate lock holds, so two processes
+  can both pass the check before either records. The Postgres ledger used in staging/prod does the
+  check and the reservation in one transaction under an advisory lock, so it does not have this race.
+- The shared limits depend on Cloud SQL: while it is down, `/ask` fails closed with 503 (by design).
+  Reservations of calls that timed out stay at their worst-case estimate until an operator releases
+  them (RUNBOOK section 9), so the cap can trip early, never late. The cap counts only this project's
+  table, not other projects' spend on the same Groq account; Groq's own limits are the backstop.
 - Without `KGRAG_API_KEY` the API trusts loopback, so anything on the host can call it. Ollama on
   :11434 is unauthenticated, as installed.
 
@@ -307,14 +322,14 @@ CI). The container runs non-root from a pinned base digest with a healthcheck. P
 |---|---|
 | LLM01 Prompt injection | Mitigated in part: fenced, untrusted-labeled context; enum-only router; template-only Cypher. Residual risk above. |
 | LLM02 Sensitive information disclosure | Public filings only; PII redacted from logs; secrets kept out of the repo, images and CI. |
-| LLM03 Supply chain | `uv.lock`, pip-audit, Trivy image scan, digest-pinned images, SHA-pinned actions. |
+| LLM03 Supply chain | `uv.lock`, pip-audit, Trivy image scan, CycloneDX SBOM (CI artifact), keyless cosign signature verified before deploy, Dependabot, digest-pinned images, SHA-pinned actions. |
 | LLM04 Data and model poisoning | Evidence-in-chunk check at extraction. No defence against a fluent planted document. |
 | LLM05 Improper output handling | Model output validated by Pydantic; never executed as code, SQL or Cypher; links stripped. |
 | LLM06 Excessive agency | No tools, no writes at query time (READ session). |
 | LLM07 System prompt leakage | Prompts hold no secrets; the leakage probe is an out-of-scope benchmark item (refused). |
 | LLM08 Vector and embedding weaknesses | Single-tenant index. Retrieved chunks are treated as untrusted. |
 | LLM09 Misinformation | Citation per claim, validated against retrieved ids; refusal on empty context. |
-| LLM10 Unbounded consumption | Input length limit, per-key rate limit, router latency budget, hard dollar cap, kill switch, bounded retries and timeouts, Cloud Run max instances. |
+| LLM10 Unbounded consumption | Input and body size limits, per-key rate limit and hard dollar cap (both shared across instances in staging/prod), router latency budget, kill switch, bounded retries and timeouts, Cloud Run max instances. |
 </details>
 
 ## What did not work
@@ -389,9 +404,11 @@ flowchart LR
 | Terraform ([`infra/terraform`](infra/terraform)) | Module + `envs/staging` and `envs/prod` (tfvars), google provider 8.7.0 pinned in committed `.terraform.lock.hcl`, GCS backend via `-backend-config`. Cloud Run v2 service (min/max instances, CPU/memory, concurrency, startup probe on `/readyz`, liveness on `/healthz`, ingress), migrate + ingest jobs, one service account per workload with per-secret access, Secret Manager containers (no values), Artifact Registry (immutable tags), VPC + Direct VPC egress, Private Service Access, Cloud SQL PG17 (private IP, TLS only, PITR). DB passwords are generated as ephemeral values through write-only arguments, so they never enter state. `fmt`, `validate`, `tflint` (google ruleset) and Checkov pass. | Never planned against a real project (`validate` checks schema, not API-side rules such as tier/edition combinations, quotas or org policies). |
 | Neo4j | AuraDB as an external dependency; URI/user/password in Secret Manager; driver liveness checks for idle connections; constraints applied by an idempotent migration. | AuraDB instance created by hand; no private networking to Aura (TLS over the internet). |
 | Embedding model | Baked into the image at build time from a pinned Hugging Face revision with a sha256 check; the build proves it loads offline; runtime sets `HF_HUB_OFFLINE=1`. Verified locally with `docker run --network none`. | - |
-| Migrations | `python -m kgrag.migrate up` (numbered SQL + `schema_migrations`, advisory lock, checksum drift detection; Neo4j constraints recorded on `:SchemaMigration`), run by CD as a Cloud Run Job before each deploy. CI applies them twice to real Postgres + Neo4j containers. | Expand-only discipline is a convention, not enforced. |
+| Migrations | `python -m kgrag.migrate up` (numbered SQL + `schema_migrations`, advisory lock, checksum drift detection; Neo4j constraints recorded on `:SchemaMigration`), run by CD as a Cloud Run Job before each deploy. CI applies them twice to real Postgres + Neo4j containers, and `scripts/check_migrations.py` fails the build on destructive DDL or edited merged migrations. `migrate roles` reports a runtime role that kept `cloudsqlsuperuser`. | Whether `kgrag_owner` may revoke `cloudsqlsuperuser` on a real Cloud SQL instance (RUNBOOK 2e has the manual fix). |
+| Monitoring ([`monitoring.tf`](infra/terraform/modules/kgrag/monitoring.tf)) | `/healthz` uptime check, 5xx ratio, p95 latency, instance saturation, availability SLO with multi-window burn-rate alerts, Cloud SQL alerts, log-based alerts (DB role, spend cap, limiter down, router errors), email channel from a variable. Validated against google 8.7.0. | Never applied; thresholds untested against real traffic. |
+| Supply chain | Dependabot (actions, docker, compose, uv, terraform), CycloneDX SBOM from Trivy as a CI artifact, keyless cosign signing in `deploy.yml` and `cosign verify` (identity: this repo's deploy workflow on `main`) before staging and prod. | Signing/verification never executed (skipped without GCP). |
 | App controls | `/healthz` vs `/readyz`, fail-closed API-key requirement off loopback, key rotation, per-key rate limit, kill switch, JSON logs with PII redaction, graceful shutdown, env-only config in containers, routing log to Postgres. | Cloud Run behaviour (probes, SIGTERM timing) only exercised locally in Docker. |
-| CD ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)) | Build once, push, deploy by digest; staging migrate + deploy + smoke; prod behind the `production` environment; 0%-traffic candidate, smoke, canary %, soak, promote; automatic rollback to the previous revision. | Never executed against GCP. |
+| CD ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)) | Build once, push, sign, verify, deploy by digest; staging migrate + deploy + `scripts/smoke.py`; prod behind the `production` environment; 0%-traffic candidate, smoke, canary %, smoke during the soak, promote, smoke; automatic rollback to the previous revision. | Never executed against GCP. |
 | Answer model | Cloud uses Groq `gpt-oss-20b` (Cloud Run has no Ollama). | **The published accuracy and latency numbers came from local `llama3.1:8b` and do not transfer**; re-run the benchmark with the cloud model before quoting cloud numbers. |
 
 One-time bootstrap (full commands in the runbook, section 1): create a GCS state bucket, a Workload
@@ -399,6 +416,24 @@ Identity pool + OIDC provider restricted to `niravpatidar37/hopcite` on `main`, 
 service account; set repository variables `GCP_PROJECT_ID`, `GCP_REGION`, `GCP_WIF_PROVIDER`,
 `GCP_DEPLOY_SA` (variables, not secrets) and a `production` environment with a required reviewer; then
 `terraform apply` staging and prod.
+
+## Production readiness
+
+Honest checklist. "Done" means in this repo and exercised by CI or a local run; "not applied" means
+written and validated but never run against a cloud project (there is none); "human" needs a person.
+
+| Item | Status |
+|---|---|
+| End-to-end smoke test (`scripts/smoke.py`, 16 checks) | **Done.** Local dev stack: 16/16 PASS in 35.4 s ([`results/smoke_local.json`](results/smoke_local.json)): compose Neo4j + pgvector, host API as `kgrag_app` with the shared Postgres limiter and ledger, a second instance with the kill switch on, real `llama3.1:8b` answers from Ollama (LLM cache off), no Groq key (deterministic router fallback). That run asked "Which companies does Supermicro name as competitors?", the script's default question at the time. CI: the `smoke` job runs it on every PR against the compose stack with the fake LLM, then stops Postgres to prove `/readyz` really checks it. |
+| Shared rate limit + spend cap across instances (Postgres) | **Done** (two-instance integration tests in CI). Cloud SQL behaviour itself: not applied. |
+| Least-privilege runtime DB role check | **Done** (`migrate roles`, `/readyz`, alert, smoke `--require-least-privilege`). Revoking `cloudsqlsuperuser` on Cloud SQL: **human** (RUNBOOK 2e). |
+| Additive-only migrations | **Done** (CI guard + tests). |
+| Fake LLM for CI, impossible in staging/prod | **Done** (tests + mutants). |
+| Monitoring and alerting as code | **Not applied** (validated; tflint and Checkov clean in CI). Alert email: **human** (`TF_VAR_alert_email`). |
+| SBOM, Dependabot, image signing | SBOM and Dependabot **done**; signing/verification **not applied** (runs only with GCP). |
+| CD with smoke tests and rollback | **Not applied** (skipped until `GCP_PROJECT_ID` is set). |
+| Branch protection, release | Required CI checks on `main`, no force pushes; release `v0.1.0`. |
+| Load test, real-traffic SLO validation, pen test, DR drill | **Not done.** |
 
 ## Project layout
 
@@ -415,7 +450,9 @@ src/kgrag/          Python package (named kgrag; the distribution is still kg-ra
 bench/              64 questions with traceable gold evidence
 data/               manifest (hashes), committed extraction cache, entity catalog
 results/            every number in this README
-scripts/            corpus fetch, benchmark, recall, ER tuning, mutation check, report
+scripts/            corpus fetch, benchmark, recall, ER tuning, mutation check, report,
+                    smoke.py (end-to-end smoke test), check_migrations.py (additive-migration guard)
+smoke/              compose overlay + seed fixture (3 filings) for the CI smoke stack
 infra/terraform/    Cloud Run module + staging/prod envs (deploy-ready, not applied)
 assets/brand/       logo, icons, social preview (generated by tools/build_brand.py)
 assets/demo/        demo.gif, recorder and the scripts it runs

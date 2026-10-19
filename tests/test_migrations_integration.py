@@ -34,7 +34,7 @@ def test_postgres_up_is_idempotent(pg: Any) -> None:
     second = migrate_postgres()
     assert second == ["R__grants.sql"]  # only the repeatable step runs again
     rows = pg.execute("SELECT version, name FROM schema_migrations ORDER BY version").fetchall()
-    assert rows == [(1, "chunks_pgvector"), (2, "routing_log")]
+    assert rows == [(1, "chunks_pgvector"), (2, "routing_log"), (3, "shared_limits")]
     idx = {r[0] for r in pg.execute("SELECT indexname FROM pg_indexes WHERE tablename = 'chunks'")}
     assert {"chunks_hnsw_idx", "chunks_doc_idx", "chunks_entities_idx"} <= idx
     ext = pg.execute("SELECT extname FROM pg_extension WHERE extname = 'vector'").fetchone()
@@ -131,3 +131,29 @@ def test_runtime_role_gets_only_its_grants(pg: Any) -> None:
         pg.execute("DROP OWNED BY kgrag_app")
         pg.execute("DROP ROLE kgrag_app")
         pg.execute("DROP ROLE cloudsqlsuperuser")
+
+
+def test_role_check_reports_cloudsqlsuperuser_membership(pg: Any) -> None:
+    """`python -m kgrag.migrate roles` / check_app_role: a runtime role that is a member of
+    cloudsqlsuperuser (simulated with a stand-in role) is reported as not least-privilege."""
+    from kgrag.migrate import check_app_role
+
+    if pg.execute("SELECT 1 FROM pg_roles WHERE rolname IN ('cloudsqlsuperuser', 'kgrag_itest_app')").fetchall():
+        pytest.skip("refusing to modify pre-existing cloudsqlsuperuser / kgrag_itest_app roles")
+    pg.execute("CREATE ROLE cloudsqlsuperuser NOLOGIN")
+    pg.execute("CREATE ROLE kgrag_itest_app NOLOGIN")
+    try:
+        assert check_app_role(role="kgrag_itest_app")["least_privilege"] is True
+        pg.execute("GRANT cloudsqlsuperuser TO kgrag_itest_app")
+        rep = check_app_role(role="kgrag_itest_app")
+        assert rep["cloudsqlsuperuser"] is True and rep["least_privilege"] is False
+        pg.execute("REVOKE cloudsqlsuperuser FROM kgrag_itest_app")  # the RUNBOOK 2e fix
+        assert check_app_role(role="kgrag_itest_app")["least_privilege"] is True
+        assert check_app_role(role="kgrag_no_such_role") == {
+            "role": "kgrag_no_such_role",
+            "exists": False,
+            "least_privilege": None,
+        }
+    finally:
+        pg.execute("DROP ROLE IF EXISTS kgrag_itest_app")
+        pg.execute("DROP ROLE IF EXISTS cloudsqlsuperuser")

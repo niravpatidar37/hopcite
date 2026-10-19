@@ -20,11 +20,21 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+          fetch-depth: 0 # the migration guard compares against the base commit
       - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
         with:
           version: "0.9.21"
       - name: Install (locked)
         run: uv sync --frozen --python 3.12
+      - name: Migrations are additive (no DROP / RENAME / ALTER ... TYPE without a marker; merged files unchanged)
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          if [ -n "${BASE_SHA}" ] && git cat-file -e "${BASE_SHA}^{commit}" 2>/dev/null; then
+            uv run --frozen python scripts/check_migrations.py --base "${BASE_SHA}"
+          else
+            uv run --frozen python scripts/check_migrations.py
+          fi
       - name: Ruff
         run: uv run --frozen ruff check . && uv run --frozen ruff format --check .
       - name: Mypy (strict)
@@ -71,6 +81,20 @@ jobs:
           docker run --rm -v /var/run/docker.sock:/var/run/docker.sock \
             aquasec/trivy:0.76.0@sha256:2416d1f74045b57274df1a340eee6b510cacd73c66a6ccb8da092b117eb7d222 \
             image --exit-code 1 --severity HIGH,CRITICAL --ignore-unfixed --no-progress hopcite:ci
+      - name: CycloneDX SBOM of the image (trivy, pinned by digest)
+        run: |
+          mkdir -p sbom
+          docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v "$PWD/sbom:/out" \
+            aquasec/trivy:0.76.0@sha256:2416d1f74045b57274df1a340eee6b510cacd73c66a6ccb8da092b117eb7d222 \
+            image --format cyclonedx --output /out/hopcite-image.cdx.json --no-progress hopcite:ci
+          python3 -c "import json; d = json.load(open('sbom/hopcite-image.cdx.json')); print(d['bomFormat'], d['specVersion'], len(d.get('components', [])), 'components')"
+      - name: Upload SBOM
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: sbom-cyclonedx
+          path: sbom/hopcite-image.cdx.json
+          if-no-files-found: error
+          retention-days: 30
 
   # Migrations and readiness against real Postgres (pgvector) and Neo4j service containers.
   # Throwaway credentials scoped to this job; no repository secrets are used.
@@ -120,7 +144,7 @@ jobs:
           uv run --frozen python -m kgrag.migrate up
           uv run --frozen python -m kgrag.migrate up
           uv run --frozen python -m kgrag.migrate status
-      - name: Integration tests (migrations, drift, routing_log sink, MERGE idempotency, read-only session)
+      - name: Integration tests (migrations, drift, routing_log sink, MERGE idempotency, read-only session, shared limits)
         env:
           KGRAG_INTEGRATION: "1"
           KGRAG_LOAD_DOTENV: "0"
@@ -129,7 +153,85 @@ jobs:
           POSTGRES_PASSWORD: ${{ env.CI_DB_PASSWORD }}
           NEO4J_URI: bolt://127.0.0.1:7687
           NEO4J_PASSWORD: ${{ env.CI_DB_PASSWORD }}
-        run: uv run --frozen pytest -p no:cacheprovider -q -rs tests/test_migrations_integration.py tests/test_integration.py
+        run: >-
+          uv run --frozen pytest -p no:cacheprovider -q -rs tests/test_migrations_integration.py tests/test_integration.py
+          tests/test_shared_limits_integration.py
+      - name: Mutation check of the Postgres-only controls (shared bucket debit, spend advisory lock)
+        env:
+          KGRAG_INTEGRATION: "1"
+          KGRAG_LOAD_DOTENV: "0"
+          PG_HOST: 127.0.0.1
+          PG_PORT: "5432"
+          POSTGRES_PASSWORD: ${{ env.CI_DB_PASSWORD }}
+          NEO4J_URI: bolt://127.0.0.1:7687
+          NEO4J_PASSWORD: ${{ env.CI_DB_PASSWORD }}
+        run: uv run --frozen python scripts/mutation_check.py --only-pg --out "$RUNNER_TEMP/mutation_pg.json"
+
+  # End-to-end smoke test of the real image: compose stack (Neo4j + pgvector + least-privilege DB role +
+  # migrations + committed seed data + two API instances, one with the kill switch on) with the
+  # deterministic fake LLM (KGRAG_LLM_MODE=fake, refused outside KGRAG_ENV=dev/ci/test). No secrets.
+  smoke:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      COMPOSE: docker compose -p p1-kgrag -f docker-compose.yml -f smoke/compose.smoke.yml --profile api --profile smoke
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Throwaway credentials for this job only (no repository secrets)
+        run: |
+          umask 077
+          key="ci-$(openssl rand -hex 24)"
+          echo "::add-mask::${key}"
+          {
+            echo "NEO4J_PASSWORD=ci-$(openssl rand -hex 16)"
+            echo "POSTGRES_PASSWORD=ci-$(openssl rand -hex 16)"
+            echo "PG_APP_PASSWORD=ci-$(openssl rand -hex 16)"
+            echo "KGRAG_API_KEY=${key}"
+            echo "KGRAG_ENV=ci"
+            echo "KGRAG_LLM_MODE=fake"
+          } > .env
+      - name: Build image
+        run: $COMPOSE build api
+      - name: Start the stack (db role, migrations, seed, 2 API instances)
+        run: $COMPOSE up -d
+      - name: Smoke test (scripts/smoke.py)
+        run: |
+          SMOKE_API_KEY="$(grep '^KGRAG_API_KEY=' .env | cut -d= -f2-)"
+          export SMOKE_API_KEY
+          python3 scripts/smoke.py --base-url http://127.0.0.1:8101 --kill-switch-base-url http://127.0.0.1:8111 \
+            --expect-router-fallback --require-least-privilege --wait 300 \
+            --json-out smoke-results/smoke-ci.json --label ci-compose-fake-llm
+      - name: Readiness really checks dependencies (Postgres down -> /readyz 503 -> back -> 200)
+        run: |
+          set -euo pipefail
+          probe() { curl -s -o /dev/null -w '%{http_code}' --max-time 10 http://127.0.0.1:8101/readyz || true; }
+          $COMPOSE stop postgres
+          code=000
+          for _ in $(seq 1 20); do code="$(probe)"; [ "$code" = "503" ] && break; sleep 2; done
+          echo "postgres stopped: /readyz ${code}"
+          [ "$code" = "503" ]
+          $COMPOSE start postgres
+          for _ in $(seq 1 45); do code="$(probe)"; [ "$code" = "200" ] && break; sleep 2; done
+          echo "postgres back: /readyz ${code}"
+          [ "$code" = "200" ]
+      - name: Upload smoke summary
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: smoke-summary
+          path: smoke-results/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Compose state and logs (on failure)
+        if: failure()
+        run: |
+          $COMPOSE ps -a
+          $COMPOSE logs --no-color --timestamps --tail 300
+      - name: Tear down
+        if: always()
+        run: $COMPOSE down -v --remove-orphans
 
   terraform:
     runs-on: ubuntu-24.04

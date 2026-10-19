@@ -29,6 +29,8 @@ module "kgrag" {
   sql_high_availability = var.sql_high_availability
   deletion_protection   = var.deletion_protection
   rate_limit_per_min    = var.rate_limit_per_min
+  rate_limit_burst      = var.rate_limit_burst
+  alert_email           = var.alert_email
   llm_spend_cap_usd     = var.llm_spend_cap_usd
   public_invoker        = var.public_invoker
   kill_switch           = var.kill_switch

@@ -61,3 +61,14 @@ resource "google_secret_manager_secret_iam_member" "readers" {
   role      = "roles/secretmanager.secretAccessor"
   member    = each.value.reader == "api" ? google_service_account.api.member : google_service_account.jobs.member
 }
+
+# The CD smoke test (scripts/smoke.py in deploy.yml) calls /ask with a real API key to prove auth,
+# citations and the rate limit end to end. The deployer may read that one secret, nothing else.
+resource "google_secret_manager_secret_iam_member" "deployer_smoke_key" {
+  count = local.deployer == "" ? 0 : 1
+
+  project   = var.project_id
+  secret_id = google_secret_manager_secret.s["api-key"].secret_id
+  role      = "roles/secretmanager.secretAccessor"
+  member    = local.deployer
+}

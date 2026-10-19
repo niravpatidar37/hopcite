@@ -25,8 +25,8 @@ from kgrag.migrate import (
 
 def test_postgres_migrations_are_contiguous_and_packaged() -> None:
     ms = load_migrations("postgres")
-    assert [m.version for m in ms] == [1, 2]
-    assert [m.name for m in ms] == ["chunks_pgvector", "routing_log"]
+    assert [m.version for m in ms] == [1, 2, 3]
+    assert [m.name for m in ms] == ["chunks_pgvector", "routing_log", "shared_limits"]
     assert MIGRATIONS_DIR.parent.name == "kgrag"  # shipped inside the package (non-editable installs)
     assert all(len(m.checksum) == 64 for m in ms)
 
@@ -50,13 +50,23 @@ def test_runtime_role_is_least_privilege() -> None:
     assert "GRANT SELECT ON chunks TO kgrag_app" in body
     assert "GRANT INSERT ON routing_log TO kgrag_app" in body
     assert not re.search(r"GRANT\s+(ALL|INSERT|UPDATE|DELETE)[^;]*ON chunks", body)
+    # The shared spend ledger is append/update only for the runtime role: it cannot delete spend rows.
+    assert "GRANT SELECT, INSERT, UPDATE ON llm_spend_ledger TO kgrag_app" in body
+    assert not re.search(r"GRANT[^;]*DELETE[^;]*ON llm_spend_ledger", body)
+
+
+def test_shared_limit_tables_are_additive() -> None:
+    body = load_migrations("postgres")[2].body
+    assert "CREATE TABLE IF NOT EXISTS rate_limit_buckets" in body
+    assert "CREATE TABLE IF NOT EXISTS llm_spend_ledger" in body
+    assert not re.search(r"\b(DROP|RENAME|TRUNCATE)\b", body, re.IGNORECASE)
 
 
 def test_plan_returns_pending_in_order() -> None:
     ms = load_migrations("postgres")
     assert plan(ms, {}) == ms
     assert plan(ms, {1: ms[0].checksum}) == ms[1:]
-    assert plan(ms, {1: ms[0].checksum, 2: ms[1].checksum}) == []
+    assert plan(ms, {1: ms[0].checksum, 2: ms[1].checksum, 3: ms[2].checksum}) == []
 
 
 def test_edited_migration_is_drift() -> None:
@@ -68,7 +78,7 @@ def test_edited_migration_is_drift() -> None:
 def test_applied_migration_with_missing_file_is_drift() -> None:
     ms = load_migrations("postgres")
     with pytest.raises(MigrationDrift, match="missing"):
-        plan(ms, {1: ms[0].checksum, 2: ms[1].checksum, 3: "x"})
+        plan(ms, {1: ms[0].checksum, 2: ms[1].checksum, 3: ms[2].checksum, 4: "x"})
 
 
 def test_checksum_ignores_line_endings() -> None:
@@ -144,7 +154,11 @@ def test_runtime_never_creates_schema() -> None:
         assert "CREATE EXTENSION" not in text and "CREATE TABLE" not in text, mod
 
 
+_OK_ROLE = {"role": "kgrag_app", "exists": False, "least_privilege": None}
+
+
 def test_cli_status_reports_pending(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(migrate, "check_app_role", lambda: _OK_ROLE)
     monkeypatch.setattr(migrate, "migrate_postgres", lambda dry_run=False: ["0002_routing_log"])
     monkeypatch.setattr(migrate, "migrate_neo4j", lambda dry_run=False: [])
     assert migrate.main(["status"]) == 1
@@ -158,3 +172,65 @@ def test_cli_drift_exit_code(monkeypatch: pytest.MonkeyPatch) -> None:
 
     monkeypatch.setattr(migrate, "migrate_postgres", boom)
     assert migrate.main(["up", "--target", "postgres"]) == 2
+
+
+_PRIVILEGED = {
+    "role": "kgrag_app",
+    "exists": True,
+    "superuser": False,
+    "createrole": False,
+    "createdb": False,
+    "bypassrls": False,
+    "cloudsqlsuperuser": True,
+    "least_privilege": False,
+}
+
+
+def test_cli_roles_fails_when_runtime_role_keeps_cloudsqlsuperuser(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(migrate, "check_app_role", lambda: _PRIVILEGED)
+    assert migrate.main(["roles"]) == migrate.ROLES_EXIT
+    monkeypatch.setattr(
+        migrate, "check_app_role", lambda: {**_PRIVILEGED, "cloudsqlsuperuser": False, "least_privilege": True}
+    )
+    assert migrate.main(["roles"]) == 0
+    monkeypatch.setattr(migrate, "check_app_role", lambda: _OK_ROLE)  # role absent (local stack)
+    assert migrate.main(["roles"]) == 0
+
+
+def test_status_gate_fails_on_privileged_role_but_up_only_reports(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(migrate, "check_app_role", lambda: _PRIVILEGED)
+    monkeypatch.setattr(migrate, "migrate_postgres", lambda dry_run=False: [])
+    monkeypatch.setattr(migrate, "migrate_neo4j", lambda dry_run=False: [])
+    assert migrate.main(["status"]) == migrate.ROLES_EXIT
+    assert migrate.main(["up"]) == 0  # a deploy is not blocked; the log line drives an alert instead
+
+
+def test_role_check_unreachable_db_is_an_error(monkeypatch: pytest.MonkeyPatch) -> None:
+    def boom() -> dict[str, Any]:
+        raise ConnectionError("down")
+
+    monkeypatch.setattr(migrate, "check_app_role", boom)
+    assert migrate.main(["roles"]) == 2
+
+
+def test_role_report_flags() -> None:
+    from kgrag.vector_store import role_report
+
+    class Conn:
+        def __init__(self, row: tuple[Any, ...] | None) -> None:
+            self.row = row
+
+        def execute(self, sql: str, params: dict[str, Any]) -> Any:
+            assert "cloudsqlsuperuser" in sql and set(params) == {"role"}
+            return self
+
+        def fetchone(self) -> tuple[Any, ...] | None:
+            return self.row
+
+    assert role_report(Conn(None), "x") is None
+    ok = role_report(Conn(("kgrag_app", False, False, False, False, False)))
+    assert ok is not None and ok["least_privilege"] is True
+    bad = role_report(Conn(("kgrag_app", False, False, False, False, True)))
+    assert bad is not None and bad["least_privilege"] is False and bad["cloudsqlsuperuser"] is True
+    su = role_report(Conn(("kgrag", True, True, True, True, False)))
+    assert su is not None and su["least_privilege"] is False

@@ -11,7 +11,7 @@ model on a laptop GPU) and are quoted only as the baseline the cloud targets are
 |---|---|---|---|
 | Availability | Good = `POST /ask` responses with status < 500, excluding `503` sent while the kill switch is on. Bad = 5xx + Cloud Run `request_count` with `response_code_class="5xx"`. 401/422/429 are client outcomes, not errors. | **99.5%** (error budget: 3 h 22 min per 28 days) | Not measured. Dependency SLAs bound it: Cloud Run 99.95%, Cloud SQL Enterprise 99.95% (HA), AuraDB Professional (no uptime SLA; Business Critical has 99.95%), Groq (no SLA on the free/dev tier). |
 | Latency | `run.googleapis.com/request_latencies` for `/ask`, and `latency_ms` per row in the `routing_log` table | **p50 ≤ 5 s, p95 ≤ 12 s, p99 ≤ 20 s** (provisional, set before any cloud measurement) | Local hybrid: p50 8.0 s, p95 15.4 s, dominated by the local 8B answer model. Cloud answers run on Groq `gpt-oss-20b`; not yet measured. |
-| Readiness | Fraction of 1-minute probes where `/readyz` returns 200 (uptime check, not provisioned yet) | **99.5%** | Locally verified to flip to 503 when Postgres stops and recover when it returns. |
+| Readiness | Fraction of 1-minute probes where `/readyz` returns 200 | **99.5%** | Locally verified to flip to 503 when Postgres stops and recover when it returns; the CI `smoke` job re-checks this on every PR (stop Postgres -> 503 -> start -> 200). |
 | Citation validity (quality) | Answered (non-refused) `/ask` responses whose every citation is a retrieved chunk id. Enforced in code, so a miss is a bug. | **100%** | 100% of 128 benchmark answers had >= 1 validated citation. |
 | Out-of-scope refusal (quality) | Benchmark out-of-scope questions refused | **100%** on every release | 10/10 (both systems). |
 | Answer accuracy (quality, offline) | `scripts/run_benchmark.py` on the 64-question set before changing models, prompts or retrieval | Hybrid "All" accuracy **>= 65%** and multi-hop **>= 58%** (published 70% / 63% minus 5 pts for n = 64 noise) | 70% all, 63% multi-hop with local llama3.1:8b. Must be re-run with the cloud answer model before relying on these gates. |
@@ -20,9 +20,31 @@ model on a laptop GPU) and are quoted only as the baseline the cloud targets are
 Error budget policy: if the 28-day availability budget is spent, freeze feature deploys (CD still
 ships fixes), and look first at Groq rate limits and AuraDB, the two dependencies without SLAs.
 
-Not provisioned yet (follow-up): Cloud Monitoring SLO objects, uptime check on `/readyz`, alert policies
-(burn-rate alerts on availability, p95 latency, router fallback rate). The metrics they need already
-exist (Cloud Run request metrics, JSON logs, `routing_log`).
+### Monitoring as code
+
+`infra/terraform/modules/kgrag/monitoring.tf` provisions, per environment (validated against
+hashicorp/google 8.7.0, **not applied**):
+
+- an uptime check on `/healthz` (60 s, OIDC-authenticated) with an alert when it fails from 2+ regions;
+- the availability SLO above as a `google_monitoring_slo` (request-based: 5xx vs all requests,
+  28-day rolling, goal `slo_availability_goal` = 0.995) and **multi-window burn-rate alerts**: fast
+  (14.4x over 1 h AND 5 min) and slow (6x over 6 h AND 30 min), following the Google SRE workbook;
+- golden-signal alerts: 5xx ratio > 5% (5 min), p95 latency > 12 s (10 min, `slo_latency_p95_ms`),
+  instance saturation (all `max_instances` active, CPU p99 > 85%, memory p99 > 90%);
+- Cloud SQL: down, CPU > 80%, disk > 85%, connections > 80;
+- app-specific log-based alerts: runtime DB role not least-privilege, LLM spend cap refusals, shared
+  rate limiter unavailable, router fallback storms (> 20 in 10 min);
+- an email notification channel from `alert_email` (TF_VAR; not committed).
+
+The availability SLI counts every 5xx, including the 503s sent on purpose while the kill switch is on;
+Cloud Run's request metrics cannot tell them apart. Treat a kill-switch window as a planned budget
+spend. Alert responses are in docs/RUNBOOK.md section 8.
+
+### Verification
+
+`scripts/smoke.py` checks the functional SLIs on every deploy (CD) and every PR (CI compose stack):
+citations resolve to retrieved chunk ids, out-of-scope is refused, auth, limits, kill switch,
+security headers. See docs/RUNBOOK.md section 3.
 
 ## Monthly cost estimate
 
@@ -79,5 +101,6 @@ because the service is idle between requests. Levers: Cloud SQL zonal in prod (h
 the HA standby), one Cloud SQL instance with two databases for staging and prod, committed-use
 discounts, and `min_instances = 0` in prod if a cold start (model + catalog load) is acceptable.
 
-LLM spend is billed by Groq, not GCP, so GCP budgets do not cap it. In code the cap is the per-instance
-spend ledger (`LLM_SPEND_CAP_USD`); see the residual risks in the README.
+LLM spend is billed by Groq, not GCP, so GCP budgets do not cap it. In code the cap is the shared
+`llm_spend_ledger` table in Cloud SQL (`LLM_SPEND_CAP_USD`, checked and reserved in one transaction by
+every instance and job); see the residual risks in the README.

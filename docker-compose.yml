@@ -40,8 +40,25 @@ services:
       retries: 12
     restart: unless-stopped
 
+  # The API's least-privilege runtime role, like Terraform's google_sql_user.app on Cloud SQL.
+  # Idempotent: creates kgrag_app (LOGIN) or resets its password from PG_APP_PASSWORD. The migration
+  # step below then grants it only what R__grants.sql lists.
+  db-roles:
+    profiles: ["api"]
+    image: pgvector/pgvector:0.8.1-pg17@sha256:3e8b3adfd27b5707128f60956f62a793c3c9326ea8cfaf0eab7adccb5d700b21
+    command: ["psql", "-h", "postgres", "-U", "kgrag", "-d", "kgrag", "-v", "ON_ERROR_STOP=1", "-q", "-f", "/sql/db-roles.sql"]
+    environment:
+      PGPASSWORD: "${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}"
+      PG_APP_PASSWORD: "${PG_APP_PASSWORD:?set PG_APP_PASSWORD in .env}"
+    volumes:
+      - ./docker/db-roles.sql:/sql/db-roles.sql:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+
   # Versioned schema migrations (Postgres + Neo4j), the same step Cloud Run runs as a Job before
   # each deploy. Idempotent: `docker compose -p p1-kgrag --profile api run --rm migrate`.
+  # Runs as the owner (kgrag); `migrate up` also reports whether kgrag_app is least-privilege.
   migrate:
     profiles: ["api"]
     build: .
@@ -58,11 +75,14 @@ services:
         condition: service_healthy
       postgres:
         condition: service_healthy
+      db-roles:
+        condition: service_completed_successfully
 
-  # Optional: the API in a container. Default local workflow runs the API on the host
-  # (uv run kgrag-api) so it can share the on-disk LLM cache and spend ledger.
+  # The API in a container, configured like Cloud Run: least-privilege DB user (kgrag_app), rate-limit
+  # buckets and the LLM spend ledger in Postgres (shared by every instance), routing log in Postgres.
   # KGRAG_API_KEY (>= 16 chars) must be set in .env: the container binds 0.0.0.0 and refuses to
-  # start without a key.
+  # start without a key. Answers use local Ollama on the host (host.docker.internal) unless
+  # KGRAG_LLM_MODE=fake (CI smoke only; refused outside KGRAG_ENV=dev/ci/test).
   api:
     profiles: ["api"]
     build: .
@@ -70,17 +90,42 @@ services:
     container_name: p1-kgrag-api
     env_file:
       - .env
-    environment:
+    environment: &api_env
       NEO4J_URI: bolt://neo4j:7687
       PG_HOST: postgres
       PG_PORT: "5432"
+      PG_USER: kgrag_app
+      POSTGRES_PASSWORD: "${PG_APP_PASSWORD:?set PG_APP_PASSWORD in .env}"
       KGRAG_HOST: 0.0.0.0
+      KGRAG_ENV: "${KGRAG_ENV:-dev}"
+      KGRAG_LLM_MODE: "${KGRAG_LLM_MODE:-}"
       KGRAG_ROUTING_LOG: postgres
+      KGRAG_RATE_LIMIT_BACKEND: postgres
+      KGRAG_SPEND_BACKEND: postgres
     ports:
       - "127.0.0.1:8101:8101"
     extra_hosts:
       - "host.docker.internal:host-gateway"
     stop_grace_period: 15s
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+
+  # A second instance with the operator kill switch ON (smoke test: /ask must answer 503 while the
+  # probes stay green). Shares the database, so it also exercises the shared limiter.
+  api-killswitch:
+    profiles: ["smoke"]
+    image: hopcite:local
+    container_name: p1-kgrag-api-killswitch
+    env_file:
+      - .env
+    environment:
+      <<: *api_env
+      KGRAG_KILL_SWITCH: "1"
+    ports:
+      - "127.0.0.1:8111:8101"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     depends_on:
       migrate:
         condition: service_completed_successfully

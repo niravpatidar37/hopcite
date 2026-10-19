@@ -74,12 +74,12 @@ variable "deletion_protection" {
 }
 
 variable "rate_limit_per_min" {
-  description = "Per-client /ask limit per instance."
+  description = "Per-client /ask limit across all instances (shared in Cloud SQL)."
   type        = number
 }
 
 variable "llm_spend_cap_usd" {
-  description = "Per-instance LLM spend cap (local ledger)."
+  description = "Global LLM spend cap (shared llm_spend_ledger table)."
   type        = number
 }
 
@@ -92,4 +92,16 @@ variable "kill_switch" {
   description = "Disable all LLM calls."
   type        = bool
   default     = false
+}
+
+variable "rate_limit_burst" {
+  description = "Per-client token-bucket burst."
+  type        = number
+  default     = 10
+}
+
+variable "alert_email" {
+  description = "On-call email for alert notifications (pass with TF_VAR_alert_email; not committed). Empty = no channel."
+  type        = string
+  default     = ""
 }

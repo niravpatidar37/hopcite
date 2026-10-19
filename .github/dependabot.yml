@@ -1,0 +1,49 @@
+# Dependabot version updates. Ecosystem names verified against the GitHub "Dependabot options
+# reference" (github-actions, docker, docker-compose, uv, terraform). Security updates are separate
+# (repository setting) and also apply to uv.lock.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      actions:
+        patterns: ["*"]
+    commit-message:
+      prefix: ci
+
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: build
+
+  - package-ecosystem: docker-compose
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: build
+
+  - package-ecosystem: uv
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      python-minor-patch:
+        update-types: ["minor", "patch"]
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: deps
+
+  - package-ecosystem: terraform
+    directories:
+      - /infra/terraform/envs/staging
+      - /infra/terraform/envs/prod
+      - /infra/terraform/modules/kgrag
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: infra
