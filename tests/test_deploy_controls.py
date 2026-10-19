@@ -78,7 +78,13 @@ def test_readyz_ok_when_both_stores_answer() -> None:
     with _client() as c:
         r = c.get("/readyz")
     assert r.status_code == 200
-    assert r.json() == {"status": "ready", "neo4j": True, "postgres": True, "llm_enabled": True}
+    assert r.json() == {
+        "status": "ready",
+        "neo4j": True,
+        "postgres": True,
+        "llm_enabled": True,
+        "db_least_privilege": None,
+    }
 
 
 def test_readyz_503_when_neo4j_down() -> None:

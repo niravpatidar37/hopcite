@@ -10,8 +10,10 @@ from __future__ import annotations
 
 import hashlib
 import json
+import logging
 import os
 import random
+import re
 import time
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -20,10 +22,11 @@ from typing import Any, TypeVar
 import httpx
 from pydantic import BaseModel, ValidationError
 
-from kgrag.config import get_settings, kill_switch_on, load_env
-from kgrag.spend import BudgetExceeded, SpendLedger, estimate_tokens, price_for
+from kgrag.config import assert_fake_llm_allowed, get_settings, kill_switch_on, load_env
+from kgrag.spend import BudgetExceeded, PostgresSpendLedger, SpendLedger, default_ledger, estimate_tokens, price_for
 
 T = TypeVar("T", bound=BaseModel)
+_log = logging.getLogger("kgrag.llm")
 
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://127.0.0.1:11434") + "/api/chat"
@@ -35,7 +38,10 @@ CLAUDE_MODEL_ID = os.environ.get("CLAUDE_MODEL_ID", "CLAUDE_MODEL_ID_PLACEHOLDER
 
 
 class LLMError(RuntimeError):
-    pass
+    """`billed_unknown` is True when the request may have reached the provider (transport error,
+    timeout); the spend reservation is then kept at its worst case instead of being released."""
+
+    billed_unknown = False
 
 
 class StructuredOutputError(LLMError):
@@ -89,7 +95,7 @@ class LLMClient:
     def __init__(
         self,
         provider: str = "groq",
-        ledger: SpendLedger | None = None,
+        ledger: SpendLedger | PostgresSpendLedger | None = None,
         cache_dir: Path | None = None,
         use_cache: bool = True,
         timeout_s: float = 90.0,
@@ -98,8 +104,10 @@ class LLMClient:
         transport: httpx.BaseTransport | None = None,
     ) -> None:
         load_env()
+        if provider == "fake":
+            assert_fake_llm_allowed()  # raises UnsafeConfig in staging/prod and on Cloud Run
         self.provider = provider
-        self.ledger = ledger or SpendLedger()
+        self.ledger = ledger if ledger is not None else default_ledger()
         self.cache_dir = (cache_dir or get_settings().cache_dir) / "llm"
         self.cache_dir.mkdir(parents=True, exist_ok=True)
         self.use_cache = use_cache
@@ -148,24 +156,37 @@ class LLMClient:
         price = price_for(self.provider, model)
         prompt_tokens = sum(estimate_tokens(m["content"]) + 8 for m in messages)
         worst_case = price.cost(prompt_tokens, max_tokens)
-        if price.input_per_m or price.output_per_m:
-            self.ledger.check(worst_case)  # raises BudgetExceeded
+        paid = bool(price.input_per_m or price.output_per_m)
+        # Reserve the worst case BEFORE the call (raises BudgetExceeded); settle the actual cost after.
+        try:
+            reservation = self.ledger.reserve(worst_case) if paid else None
+        except BudgetExceeded:
+            # Log-based metric + alert (infra/terraform monitoring.tf: spend-cap-refusals).
+            _log.warning("llm spend cap reached", extra={"fields": {"provider": self.provider, "model": model}})
+            raise
 
         t0 = time.perf_counter()
-        if self.provider == "groq":
-            text, in_tok, out_tok = self._groq(
-                messages, model, max_tokens, temperature, response_schema, reasoning_effort
-            )
-        elif self.provider == "ollama":
-            text, in_tok, out_tok = self._ollama(messages, model, max_tokens, temperature, response_schema)
-        elif self.provider == "anthropic":
-            text, in_tok, out_tok = self._anthropic(messages, model, max_tokens, temperature)
-        else:
-            raise LLMError(f"unknown provider {self.provider}")
+        try:
+            if self.provider == "groq":
+                text, in_tok, out_tok = self._groq(
+                    messages, model, max_tokens, temperature, response_schema, reasoning_effort
+                )
+            elif self.provider == "ollama":
+                text, in_tok, out_tok = self._ollama(messages, model, max_tokens, temperature, response_schema)
+            elif self.provider == "anthropic":
+                text, in_tok, out_tok = self._anthropic(messages, model, max_tokens, temperature)
+            elif self.provider == "fake":
+                text, in_tok, out_tok = fake_complete(messages, response_schema)
+            else:
+                raise LLMError(f"unknown provider {self.provider}")
+        except LLMError as exc:
+            if reservation is not None and not exc.billed_unknown:
+                self.ledger.release(reservation)  # the provider answered with an error: nothing billed
+            raise
         latency_ms = (time.perf_counter() - t0) * 1000
         usd = price.cost(in_tok, out_tok)
-        if usd > 0:
-            self.ledger.record(self.provider, model, in_tok, out_tok, usd)
+        if reservation is not None:
+            self.ledger.settle(reservation, self.provider, model, in_tok, out_tok, usd)
         if self.use_cache:
             cache_file.write_text(
                 json.dumps({"text": text, "input_tokens": in_tok, "output_tokens": out_tok, "usd": usd}),
@@ -223,7 +244,9 @@ class LLMClient:
                 r = self._http.post(url, headers=headers, json=body)
             except httpx.TransportError as exc:
                 if attempt == self.max_retries:
-                    raise LLMError(f"transport error: {type(exc).__name__}") from exc
+                    err = LLMError(f"transport error: {type(exc).__name__}")
+                    err.billed_unknown = not isinstance(exc, httpx.ConnectError)  # a timeout may still bill
+                    raise err from exc
                 time.sleep(delay + random.uniform(0, 1))  # noqa: S311  # nosec B311 - jitter, not crypto
                 delay = min(delay * 2, 60)
                 continue
@@ -338,3 +361,57 @@ def _strip_fences(text: str) -> str:
         if t.endswith("```"):
             t = t[:-3]
     return t.strip()
+
+
+# --------------------------------------------------------------------------- deterministic fake LLM
+# KGRAG_LLM_MODE=fake (CI smoke stack only; refused in staging/prod and on Cloud Run, see
+# kgrag.config.assert_fake_llm_allowed). An extractive stand-in for the answer model: it answers with
+# the first sentence of the retrieved passage that shares the most content words with the question,
+# cites that passage's chunk id, and refuses when no passage shares at least two content words. It
+# exercises the real retrieval, prompt building, schema validation and citation checks without a
+# model. Answers are prefixed with "[fake-llm]" so they cannot be mistaken for model output.
+FAKE_PREFIX = "[fake-llm] "
+_PASSAGE = re.compile(r'<passage id="([^"]+)"[^>]*>\n(.*?)\n</passage>', re.DOTALL)
+_WORD = re.compile(r"[a-z0-9]+")
+_STOP_WORDS = (
+    "a an and are as at be by can do does for from has have how in is it its of on or that the their them "
+    "they this to was were what when where which who whom whose why will with would you your about into "
+    "name names named use uses used any all most more than also"
+)
+_STOP = frozenset(_STOP_WORDS.split(" "))
+
+
+def _content_words(text: str) -> set[str]:
+    words = (w for w in _WORD.findall(text.lower()) if len(w) >= 3 and w not in _STOP)
+    return {w[:-1] if len(w) > 4 and w.endswith("s") else w for w in words}  # crude plural folding
+
+
+def fake_complete(messages: list[dict[str, str]], schema: dict[str, Any] | None) -> tuple[str, int, int]:
+    if schema is None or schema.get("title") != "AnswerPayload":
+        raise LLMError("fake LLM only implements the answer schema")
+    user = next((m["content"] for m in reversed(messages) if m["role"] == "user" and "QUESTION:" in m["content"]), "")
+    question = user.rsplit("QUESTION:", 1)[-1].strip()
+    q_words = _content_words(question)
+    best: tuple[int, str, str] | None = None
+    for cid, text in _PASSAGE.findall(user):
+        score = len(q_words & _content_words(text))
+        if best is None or score > best[0]:
+            best = (score, cid, text)
+    if best is None or best[0] < 2:
+        payload: dict[str, Any] = {
+            "refused": True,
+            "answer": "I can't answer that from the indexed filings.",
+            "answer_entities": [],
+            "claims": [],
+        }
+    else:
+        _, cid, text = best
+        sentence = re.split(r"(?<=[.!?])\s+", " ".join(text.split()))[0][:400]
+        payload = {
+            "refused": False,
+            "answer": FAKE_PREFIX + sentence,
+            "answer_entities": [],
+            "claims": [{"text": sentence, "citations": [cid]}],
+        }
+    out = json.dumps(payload)
+    return out, sum(estimate_tokens(m["content"]) for m in messages), estimate_tokens(out)

@@ -34,7 +34,7 @@ def test_postgres_up_is_idempotent(pg: Any) -> None:
     second = migrate_postgres()
     assert second == ["R__grants.sql"]  # only the repeatable step runs again
     rows = pg.execute("SELECT version, name FROM schema_migrations ORDER BY version").fetchall()
-    assert rows == [(1, "chunks_pgvector"), (2, "routing_log")]
+    assert rows == [(1, "chunks_pgvector"), (2, "routing_log"), (3, "shared_limits")]
     idx = {r[0] for r in pg.execute("SELECT indexname FROM pg_indexes WHERE tablename = 'chunks'")}
     assert {"chunks_hnsw_idx", "chunks_doc_idx", "chunks_entities_idx"} <= idx
     ext = pg.execute("SELECT extname FROM pg_extension WHERE extname = 'vector'").fetchone()

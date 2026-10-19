@@ -3,6 +3,7 @@
     python -m kgrag.migrate up        # apply pending migrations to both stores (deploy step / Cloud Run Job)
     python -m kgrag.migrate status    # show applied / pending, exit 1 if anything is pending or drifted
     python -m kgrag.migrate up --target postgres
+    python -m kgrag.migrate roles     # privilege report for the runtime DB role; exit 3 if over-privileged
 
 Files live in kgrag/migrations/{postgres,neo4j}/NNNN_name.{sql,cypher}; versions start at 1 and must
 be contiguous. Postgres: each pending file runs in its own transaction together with its
@@ -38,6 +39,10 @@ CREATE TABLE IF NOT EXISTS schema_migrations (
     applied_at timestamptz NOT NULL DEFAULT now()
 )
 """
+
+
+APP_ROLE = "kgrag_app"  # the API's runtime database user (Terraform google_sql_user.app)
+ROLES_EXIT = 3
 
 
 class MigrationError(RuntimeError):
@@ -132,6 +137,20 @@ def migrate_postgres(dsn: str | None = None, dry_run: bool = False) -> list[str]
     return done
 
 
+def check_app_role(dsn: str | None = None, role: str = APP_ROLE) -> dict[str, Any]:
+    """Report whether the runtime role kept privileges it must not have (notably Cloud SQL's
+    cloudsqlsuperuser membership, which R__grants.sql tries to revoke but cannot always)."""
+    import psycopg
+
+    from kgrag.vector_store import role_report
+
+    with psycopg.connect(dsn or get_settings().pg_dsn, autocommit=True) as conn:
+        rep = role_report(conn, role)
+    if rep is None:
+        return {"role": role, "exists": False, "least_privilege": None}
+    return {"exists": True, **rep}
+
+
 # --------------------------------------------------------------------------- neo4j
 def migrate_neo4j(runner: Any | None = None, dry_run: bool = False) -> list[str]:
     from kgrag.graph_store import Neo4jRunner
@@ -167,13 +186,15 @@ def migrate_neo4j(runner: Any | None = None, dry_run: bool = False) -> list[str]
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="python -m kgrag.migrate")
-    ap.add_argument("cmd", choices=["up", "status"])
+    ap.add_argument("cmd", choices=["up", "status", "roles"])
     ap.add_argument("--target", choices=["all", "postgres", "neo4j"], default="all")
     args = ap.parse_args(argv)
     from kgrag.logs import configure_logging, get_logger
 
     configure_logging()
     log = get_logger("kgrag.migrate")
+    if args.cmd == "roles":
+        return _roles(log)
     dry = args.cmd == "status"
     rc = 0
     for target, fn in (("postgres", migrate_postgres), ("neo4j", migrate_neo4j)):
@@ -188,7 +209,24 @@ def main(argv: list[str] | None = None) -> int:
         log.info(f"{target} migrations {key}", extra={"fields": {"target": target, key: names}})
         if dry and names:
             rc = 1
+    if args.target in ("all", "postgres"):
+        roles_rc = _roles(log)
+        rc = rc or (roles_rc if dry else 0)  # `up` only reports; `status` (the gate) fails on it
     return rc
+
+
+def _roles(log: Any) -> int:
+    try:
+        rep = check_app_role()
+    except Exception as exc:
+        log.error("role check failed", extra={"fields": {"error": type(exc).__name__}})
+        return 2
+    if rep.get("least_privilege") is False:
+        # Log-based metric kgrag-<env>-db-role-privileged alerts on this message (infra/terraform).
+        log.error("db role not least-privilege", extra={"fields": rep})
+        return ROLES_EXIT
+    log.info("db role check", extra={"fields": rep})
+    return 0
 
 
 if __name__ == "__main__":

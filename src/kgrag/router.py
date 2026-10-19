@@ -6,6 +6,7 @@ validated and resolved to node ids by code before they are bound to a fixed temp
 from __future__ import annotations
 
 import json
+import logging
 import time
 from dataclasses import dataclass, field
 from enum import StrEnum
@@ -18,6 +19,8 @@ from kgrag.llm import CallStats, LLMClient, LLMError, StructuredOutputError
 from kgrag.ontology import EntityType, RelationType
 from kgrag.redact import redact_pii
 from kgrag.spend import BudgetExceeded
+
+_log = logging.getLogger("kgrag.router")
 
 
 class Route(StrEnum):
@@ -324,6 +327,8 @@ class Router:
                     errors.append(f"{model.split('/')[-1]}:{type(exc).__name__}")
             if out is None:
                 reason = "router_error:" + ",".join(errors)
+                # Log-based metric + alert (infra/terraform monitoring.tf: router-errors).
+                _log.warning("router fallback", extra={"fields": {"reason": reason}})
             elif errors:
                 reason = "router_model_fallback:" + ",".join(errors)
         else:
