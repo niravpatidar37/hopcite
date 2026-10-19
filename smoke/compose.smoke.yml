@@ -1,0 +1,34 @@
+# Smoke-test overlay for docker-compose.yml (CI `smoke` job; also usable locally on an empty stack).
+#
+#   docker compose -p p1-kgrag -f docker-compose.yml -f smoke/compose.smoke.yml \
+#     --profile api --profile smoke up -d --wait
+#
+# Adds a one-shot `seed` step that loads smoke/fixtures/seed.json (3 filings, 145 chunks, their graph
+# neighbourhood; exported from the real local index by `python -m kgrag.seed export`) into empty
+# databases, and makes both API instances wait for it so the entity catalog is loaded at startup.
+services:
+  seed:
+    profiles: ["smoke"]
+    image: hopcite:local
+    command: ["python", "-m", "kgrag.seed", "load", "/fixtures/seed.json"]
+    env_file:
+      - .env
+    environment:
+      NEO4J_URI: bolt://neo4j:7687
+      PG_HOST: postgres
+      PG_PORT: "5432"
+    volumes:
+      - ./smoke/fixtures:/fixtures:ro
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+
+  api:
+    depends_on:
+      seed:
+        condition: service_completed_successfully
+
+  api-killswitch:
+    depends_on:
+      seed:
+        condition: service_completed_successfully
