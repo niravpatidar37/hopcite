@@ -9,15 +9,18 @@ locals {
   }
 
   common_env = {
+    KGRAG_ENV         = var.env # staging/prod: the app refuses per-instance limits and the fake LLM
     KGRAG_LOAD_DOTENV = "0"
     KGRAG_LOG_FORMAT  = "json"
     KGRAG_KILL_SWITCH = var.kill_switch ? "1" : "0"
-    LLM_SPEND_CAP_USD = tostring(var.llm_spend_cap_usd)
-    LLM_SPEND_LEDGER  = "/tmp/kgrag-spend-ledger.jsonl"
-    PG_HOST           = google_sql_database_instance.pg.private_ip_address
-    PG_PORT           = "5432"
-    PG_DB             = google_sql_database.kgrag.name
-    PG_SSLMODE        = "require"
+    # Spend cap ledger in Cloud SQL (table llm_spend_ledger): shared by every instance and job and
+    # durable across instance replacement, so the cap is global, not per instance.
+    KGRAG_SPEND_BACKEND = "postgres"
+    LLM_SPEND_CAP_USD   = tostring(var.llm_spend_cap_usd)
+    PG_HOST             = google_sql_database_instance.pg.private_ip_address
+    PG_PORT             = "5432"
+    PG_DB               = google_sql_database.kgrag.name
+    PG_SSLMODE          = "require"
   }
 
   api_env = merge(local.common_env, {
@@ -27,6 +30,8 @@ locals {
     KGRAG_ANSWER_PROVIDER    = "groq"
     KGRAG_ANSWER_MODEL       = var.answer_model
     KGRAG_RATE_LIMIT_PER_MIN = tostring(var.rate_limit_per_min)
+    KGRAG_RATE_LIMIT_BURST   = tostring(var.rate_limit_burst)
+    KGRAG_RATE_LIMIT_BACKEND = "postgres" # token buckets in Cloud SQL, shared by every instance
     PG_USER                  = google_sql_user.app.name
   })
 
