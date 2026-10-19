@@ -365,13 +365,15 @@ def _strip_fences(text: str) -> str:
 
 # --------------------------------------------------------------------------- deterministic fake LLM
 # KGRAG_LLM_MODE=fake (CI smoke stack only; refused in staging/prod and on Cloud Run, see
-# kgrag.config.assert_fake_llm_allowed). An extractive stand-in for the answer model: it answers with
-# the first sentence of the retrieved passage that shares the most content words with the question,
-# cites that passage's chunk id, and refuses when no passage shares at least two content words. It
+# kgrag.config.assert_fake_llm_allowed). An extractive stand-in for the answer model: it picks the
+# retrieved passage that shares the most content words with the question, answers with that passage's
+# best-overlapping sentence, cites its chunk id, and refuses when no passage shares at least two content words. It
 # exercises the real retrieval, prompt building, schema validation and citation checks without a
 # model. Answers are prefixed with "[fake-llm]" so they cannot be mistaken for model output.
 FAKE_PREFIX = "[fake-llm] "
-_PASSAGE = re.compile(r'<passage id="([^"]+)"[^>]*>\n(.*?)\n</passage>', re.DOTALL)
+# Attribute values may contain ">" (section paths like "Item 1. Business > Competition"), so match
+# quoted attributes explicitly instead of [^>]*.
+_PASSAGE = re.compile(r'<passage id="([^"]+)"((?:\s+\w+="[^"]*")*)>\n(.*?)\n</passage>', re.DOTALL)
 _WORD = re.compile(r"[a-z0-9]+")
 _STOP_WORDS = (
     "a an and are as at be by can do does for from has have how in is it its of on or that the their them "
@@ -382,8 +384,9 @@ _STOP = frozenset(_STOP_WORDS.split(" "))
 
 
 def _content_words(text: str) -> set[str]:
-    words = (w for w in _WORD.findall(text.lower()) if len(w) >= 3 and w not in _STOP)
-    return {w[:-1] if len(w) > 4 and w.endswith("s") else w for w in words}  # crude plural folding
+    """Lower-cased content words, crudely stemmed to their first 6 letters (compet-itors/-ition,
+    compan-y/-ies, foundr-y/-ies) so the fake is not defeated by inflection."""
+    return {w[:6] for w in _WORD.findall(text.lower()) if len(w) >= 3 and w not in _STOP}
 
 
 def fake_complete(messages: list[dict[str, str]], schema: dict[str, Any] | None) -> tuple[str, int, int]:
@@ -393,8 +396,8 @@ def fake_complete(messages: list[dict[str, str]], schema: dict[str, Any] | None)
     question = user.rsplit("QUESTION:", 1)[-1].strip()
     q_words = _content_words(question)
     best: tuple[int, str, str] | None = None
-    for cid, text in _PASSAGE.findall(user):
-        score = len(q_words & _content_words(text))
+    for cid, attrs, text in _PASSAGE.findall(user):
+        score = len(q_words & _content_words(attrs + " " + text))  # the company attribute counts too
         if best is None or score > best[0]:
             best = (score, cid, text)
     if best is None or best[0] < 2:
@@ -406,7 +409,8 @@ def fake_complete(messages: list[dict[str, str]], schema: dict[str, Any] | None)
         }
     else:
         _, cid, text = best
-        sentence = re.split(r"(?<=[.!?])\s+", " ".join(text.split()))[0][:400]
+        sentences = re.split(r"(?<=[.!?])\s+", " ".join(text.split()))
+        sentence = max(sentences, key=lambda x: len(q_words & _content_words(x)))[:400]  # first best sentence
         payload = {
             "refused": False,
             "answer": FAKE_PREFIX + sentence,

@@ -45,7 +45,9 @@ import urllib.request
 from dataclasses import asdict, dataclass, field
 from typing import Any
 
-IN_SCOPE = "Which companies does Supermicro name as competitors?"
+# Defaults: a fact stated in NVIDIA's 10-K (in the CI seed fixture and the full index) and a
+# question the filings cannot answer. Override with --question / --out-of-scope-question.
+IN_SCOPE = "Which foundries does NVIDIA use to produce its semiconductor wafers?"
 OUT_OF_SCOPE = "Who painted the Mona Lisa?"
 ROUTES = {"graph", "vector", "hybrid", "out_of_scope"}
 FALLBACK_PREFIXES = ("router_disabled", "router_error")
@@ -272,9 +274,9 @@ def _schema_errors(body: Any) -> list[str]:
     return errs
 
 
-def check_functional(s: Smoke, expect_fallback: bool, ask_timeout: float) -> None:
+def check_functional(s: Smoke, expect_fallback: bool, ask_timeout: float, question: str, oos: str) -> None:
     k = s.api_key or None
-    r = s.ask({"question": IN_SCOPE}, key=k, timeout=ask_timeout)
+    r = s.ask({"question": question}, key=k, timeout=ask_timeout)
     body = r.json()
     if r.status != 200:
         s.record("ask_schema_citations", False, f"/ask {r.status}: {r.text[:160]}", r.ms)
@@ -304,7 +306,7 @@ def check_functional(s: Smoke, expect_fallback: bool, ask_timeout: float) -> Non
             s.record("router_fallback", ok_fb, f"route={route} fallback_reason={reason!r} (want hybrid + router_*)")
         else:
             s.record("router_fallback", route in ROUTES, f"route={route} fallback_reason={reason!r}")
-    r = s.ask({"question": OUT_OF_SCOPE}, key=k, timeout=ask_timeout)
+    r = s.ask({"question": oos}, key=k, timeout=ask_timeout)
     body = r.json() or {}
     ok = r.status == 200 and body.get("refused") is True and body.get("citations") == []
     s.record(
@@ -379,6 +381,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--skip-rate-limit", action="store_true")
     ap.add_argument("--rate-limit-max-requests", type=int, default=60)
     ap.add_argument("--label", default="", help="free text recorded in the JSON summary (e.g. local-dev)")
+    ap.add_argument("--question", default=IN_SCOPE, help="in-scope question that must be answered with citations")
+    ap.add_argument("--out-of-scope-question", default=OUT_OF_SCOPE, help="question that must be refused")
     a = ap.parse_args(argv)
 
     s = Smoke(
@@ -400,7 +404,7 @@ def main(argv: list[str] | None = None) -> int:
             s.record("ask_out_of_scope", None, "kill switch is on")
             s.record("router_fallback", None, "kill switch is on")
         else:
-            check_functional(s, a.expect_router_fallback, a.ask_timeout)
+            check_functional(s, a.expect_router_fallback, a.ask_timeout, a.question, a.out_of_scope_question)
         check_kill_switch(s, ready, a.kill_switch_base_url.rstrip("/") if a.kill_switch_base_url else None)
         check_auth_accepted(s)
         check_validation(s)
@@ -414,6 +418,8 @@ def main(argv: list[str] | None = None) -> int:
     summary = {
         "base_url": s.base,
         "label": a.label,
+        "question": a.question,
+        "out_of_scope_question": a.out_of_scope_question,
         "started_at": started,
         "duration_s": round(duration, 2),
         "passed": counts["PASS"],

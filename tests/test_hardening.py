@@ -351,7 +351,8 @@ def test_file_ledger_reserve_enforces_caps(tmp_path: Path) -> None:
 
 # --------------------------------------------------------------------------- fake answerer
 def _passage(cid: str, text: str) -> Passage:
-    return Passage(cid, cid.split("#")[0], "Super Micro Computer", "Business", text, 0.9, [])
+    # Real section paths contain ">" (e.g. "Item 1. Business > Competition"); the fake must parse them.
+    return Passage(cid, cid.split("#")[0], "Super Micro Computer", "Item 1. Business > Competition", text, 0.9, [])
 
 
 PASSAGES = [
