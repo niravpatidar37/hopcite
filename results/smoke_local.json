@@ -1,0 +1,109 @@
+{
+  "base_url": "http://127.0.0.1:8101",
+  "label": "local dev stack: neo4j + pgvector (docker compose), host API as kgrag_app, shared Postgres limits, Ollama llama3.1:8b, no Groq key, LLM cache off",
+  "started_at": "2026-10-19T06:39:21Z",
+  "duration_s": 35.44,
+  "passed": 16,
+  "failed": 0,
+  "skipped": 0,
+  "total": 16,
+  "ok": true,
+  "checks": [
+    {
+      "name": "liveness",
+      "status": "PASS",
+      "detail": "/healthz 200 in 30 ms",
+      "ms": 30.4
+    },
+    {
+      "name": "readiness",
+      "status": "PASS",
+      "detail": "/readyz 200 neo4j=true postgres=true in 49 ms",
+      "ms": 48.8
+    },
+    {
+      "name": "db_least_privilege",
+      "status": "PASS",
+      "detail": "runtime DB user holds no superuser-like role",
+      "ms": 0.0
+    },
+    {
+      "name": "auth_missing_key",
+      "status": "PASS",
+      "detail": "no key -> 401 (want 401)",
+      "ms": 26.5
+    },
+    {
+      "name": "auth_wrong_key",
+      "status": "PASS",
+      "detail": "wrong key -> 401 (want 401)",
+      "ms": 2.8
+    },
+    {
+      "name": "ask_schema_citations",
+      "status": "PASS",
+      "detail": "200 in 32638 ms, 1 citation(s), all in 12 retrieved chunk ids",
+      "ms": 32637.7
+    },
+    {
+      "name": "router_fallback",
+      "status": "PASS",
+      "detail": "route=hybrid fallback_reason='router_disabled' (want hybrid + router_*)",
+      "ms": 0.0
+    },
+    {
+      "name": "ask_out_of_scope",
+      "status": "PASS",
+      "detail": "200 refused=True citations=0",
+      "ms": 2461.5
+    },
+    {
+      "name": "kill_switch",
+      "status": "PASS",
+      "detail": "switch-on instance: healthz 200, readyz 200 llm_enabled=False, /ask 503 Retry-After=300",
+      "ms": 0.0
+    },
+    {
+      "name": "auth_valid_key",
+      "status": "PASS",
+      "detail": "valid key + empty question -> 422 (want 422, past auth)",
+      "ms": 13.6
+    },
+    {
+      "name": "input_validation",
+      "status": "PASS",
+      "detail": "4 bad inputs -> 422",
+      "ms": 0.0
+    },
+    {
+      "name": "oversize_question",
+      "status": "PASS",
+      "detail": "501-char question -> 422 (want 422)",
+      "ms": 7.4
+    },
+    {
+      "name": "oversize_body",
+      "status": "PASS",
+      "detail": "64 KB body -> 413 (want 413)",
+      "ms": 25.7
+    },
+    {
+      "name": "security_headers",
+      "status": "PASS",
+      "detail": "5 responses carry nosniff/DENY/no-store/CSP",
+      "ms": 0.0
+    },
+    {
+      "name": "no_stack_traces",
+      "status": "PASS",
+      "detail": "error bodies are JSON without tracebacks",
+      "ms": 0.0
+    },
+    {
+      "name": "rate_limit",
+      "status": "PASS",
+      "detail": "429 after 4 requests, Retry-After=2",
+      "ms": 63.9
+    }
+  ]
+}

@@ -80,11 +80,11 @@
     ]
   },
   {
-    "mutant": "budget not checked before a paid call",
+    "mutant": "budget not reserved before a paid call",
     "file": "src/kgrag/llm.py",
     "status": "KILLED",
     "failing_tests": [
-      "FAILED tests/test_spend_and_llm.py::test_budget_checked_before_any_http - Fai..."
+      "FAILED tests/test_hardening.py::test_paid_call_reserves_then_settles_actual_cost"
     ]
   },
   {
@@ -157,6 +157,118 @@
     "status": "KILLED",
     "failing_tests": [
       "FAILED tests/test_extract.py::test_drops_unsupported_evidence - AssertionErro..."
+    ]
+  },
+  {
+    "mutant": "fake LLM allowed in staging/prod",
+    "file": "src/kgrag/config.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_hardening.py::test_fake_llm_refused_outside_dev_ci_test[prod]"
+    ]
+  },
+  {
+    "mutant": "fake LLM allowed on Cloud Run",
+    "file": "src/kgrag/config.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_hardening.py::test_fake_llm_refused_on_cloud_run_even_if_env_says_ci"
+    ]
+  },
+  {
+    "mutant": "per-instance rate limiter accepted in staging/prod",
+    "file": "src/kgrag/config.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_hardening.py::test_deployed_envs_require_shared_limits[memory-postgres-False]"
+    ]
+  },
+  {
+    "mutant": "per-instance spend ledger accepted in staging/prod",
+    "file": "src/kgrag/config.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_hardening.py::test_deployed_envs_require_shared_limits[postgres-file-False]"
+    ]
+  },
+  {
+    "mutant": "shared limiter fails open when Postgres is unreachable",
+    "file": "src/kgrag/ratelimit.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_hardening.py::test_postgres_limiter_wraps_db_errors - Faile..."
+    ]
+  },
+  {
+    "mutant": "API serves /ask when the shared limiter is down",
+    "file": "src/kgrag/api.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_hardening.py::test_unreachable_shared_limiter_fails_closed"
+    ]
+  },
+  {
+    "mutant": "Postgres bucket never debited (no shared limit)",
+    "file": "src/kgrag/ratelimit.py",
+    "status": "PG_ONLY",
+    "failing_tests": [
+      "tests/test_shared_limits_integration.py"
+    ]
+  },
+  {
+    "mutant": "spend reservation not serialized across instances (no advisory lock)",
+    "file": "src/kgrag/spend.py",
+    "status": "PG_ONLY",
+    "failing_tests": [
+      "tests/test_shared_limits_integration.py"
+    ]
+  },
+  {
+    "mutant": "possibly-billed call (timeout) releases its reservation",
+    "file": "src/kgrag/llm.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_hardening.py::test_timeout_keeps_worst_case_reservation - A..."
+    ]
+  },
+  {
+    "mutant": "oversize bodies accepted",
+    "file": "src/kgrag/api.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_hardening.py::test_oversize_body_rejected_with_413_before_the_pipeline"
+    ]
+  },
+  {
+    "mutant": "security headers not set",
+    "file": "src/kgrag/api.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_hardening.py::test_security_headers_on_success_and_error_responses"
+    ]
+  },
+  {
+    "mutant": "unhandled errors leak the exception text",
+    "file": "src/kgrag/api.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_hardening.py::test_unhandled_errors_are_generic_500s - Asse..."
+    ]
+  },
+  {
+    "mutant": "status gate ignores an over-privileged runtime DB role",
+    "file": "src/kgrag/migrate.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_migrations.py::test_status_gate_fails_on_privileged_role_but_up_only_reports"
+    ]
+  },
+  {
+    "mutant": "migration guard ignores DROP",
+    "file": "scripts/check_migrations.py",
+    "status": "KILLED",
+    "failing_tests": [
+      "FAILED tests/test_check_migrations.py::test_destructive_statements_fail[DROP TABLE routing_log;-DROP]"
     ]
   }
 ]
