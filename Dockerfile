@@ -2,7 +2,7 @@
 # Multi-stage build: dependencies resolved from uv.lock in a builder, copied into a slim non-root runtime.
 # One image serves the API (Cloud Run service) and the batch entrypoints (Cloud Run Jobs:
 # `python -m kgrag.migrate up`, `python -m kgrag.jobs ingest`). Deploys reference it by digest.
-FROM python:3.12.12-slim-bookworm@sha256:593bd06efe90efa80dc4eee3948be7c0fde4134606dd40d8dd8dbcade98e669c AS build
+FROM python:3.15.0-slim-bookworm@sha256:0e019bbdfb5d9874cb2389f1c2884b64aa2ac97c99960b5bc521cef978c0617d AS build
 COPY --from=ghcr.io/astral-sh/uv:0.9.21@sha256:15f68a476b768083505fe1dbfcc998344d0135f0ca1b8465c4760b323904f05a /uv /bin/uv
 ENV UV_COMPILE_BYTECODE=1 UV_LINK_MODE=copy UV_PYTHON_DOWNLOADS=never
 WORKDIR /app
@@ -19,7 +19,7 @@ RUN /app/.venv/bin/python scripts/fetch_embed_model.py /app/models/bge-small-en-
 RUN HF_HUB_OFFLINE=1 KGRAG_LOAD_DOTENV=0 KGRAG_ROOT=/app KGRAG_EMBED_MODEL_PATH=/app/models/bge-small-en-v1.5 \
     /app/.venv/bin/python -c "from kgrag.embeddings import FastEmbedder; v = FastEmbedder().embed_query('TSMC foundry'); assert v.shape == (384,)"
 
-FROM python:3.12.12-slim-bookworm@sha256:593bd06efe90efa80dc4eee3948be7c0fde4134606dd40d8dd8dbcade98e669c
+FROM python:3.15.0-slim-bookworm@sha256:0e019bbdfb5d9874cb2389f1c2884b64aa2ac97c99960b5bc521cef978c0617d
 # Pick up Debian security fixes newer than the pinned base image (trivy gate fails on fixable HIGH/CRITICAL).
 RUN apt-get update && apt-get upgrade -y --no-install-recommends && rm -rf /var/lib/apt/lists/* \
     && useradd --uid 10001 --create-home --shell /usr/sbin/nologin app
