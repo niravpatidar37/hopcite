@@ -4,7 +4,7 @@ name: p1-kgrag
 # (gitignored; see .env.example). Volumes are named so `docker compose -p p1-kgrag stop` keeps data.
 services:
   neo4j:
-    image: neo4j:5.26.12-community@sha256:9f75e8df4325a24f00fdd7a8c0bcce650a58375049b1058e496e8b43d6c36b37
+    image: neo4j:5.26.32-community@sha256:249a1ec6e3c52d82101a5ed33d6ed2b5ed5b0017b21a28c0bfebc335e87fb177
     container_name: p1-kgrag-neo4j
     environment:
       NEO4J_AUTH: "neo4j/${NEO4J_PASSWORD:?set NEO4J_PASSWORD in .env}"
